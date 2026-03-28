@@ -1,0 +1,96 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      /* Character base styles */
+      .char-stroke { stroke: #2D2D2D; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .fill-white { fill: #FFFFFF; }
+      .fill-green { fill: #009D4E; }
+      .fill-yellow { fill: #FFD100; }
+      .fill-red { fill: #EE3224; }
+      .fill-horn { fill: #968370; }
+      .fill-blush { fill: #FFDADA; }
+      .stitching { stroke: #EE3224; stroke-width: 2; stroke-dasharray: 4 3; fill: none; }
+      .knot-line { stroke: #B08D00; stroke-width: 2; fill: none; }
+
+      /* Animation optimization - transform-origin setup */
+      svg { width: 100%; height: auto; }
+      g { transform-box: fill-box; transition: transform 0.3s ease; }
+      
+      /* Joint pivots for natural movement */
+      #head_group { transform-origin: 50% 95%; } /* Pivot at the neck junction */
+      #torso { transform-origin: 50% 50%; }      /* Pivot at the center for breathing/scaling */
+      #legs { transform-origin: 50% 0%; }       /* Pivot at the hip junction */
+      
+      /* Optional: Animation examples for the developer */
+      /* .idle-bob #head_group { animation: headBob 2s infinite ease-in-out; } */
+    </style>
+  </defs>
+
+  <g id="belek_mascot_final">
+    
+    <!-- LEGS & KELAŞ -->
+    <g id="legs">
+      <rect x="160" y="380" width="30" height="50" class="fill-white char-stroke" />
+      <rect x="210" y="380" width="30" height="50" class="fill-white char-stroke" />
+      <g id="kelas_left">
+        <path d="M 155 430 Q 175 425 195 430 L 195 455 L 150 455 Z" class="fill-white char-stroke" />
+        <path d="M 160 445 Q 175 440 190 445" class="stitching" />
+      </g>
+      <g id="kelas_right">
+        <path d="M 205 430 Q 225 425 245 430 L 250 455 L 205 455 Z" class="fill-white char-stroke" />
+        <path d="M 210 445 Q 225 440 240 445" class="stitching" />
+      </g>
+    </g>
+
+    <!-- BODY & CLOTHES -->
+    <g id="torso">
+      <path d="M 150 300 Q 200 280 250 300 L 265 390 Q 200 410 135 390 Z" class="fill-white char-stroke" />
+      <path d="M 160 290 Q 200 270 240 290 L 255 360 Q 200 375 145 360 Z" class="fill-green char-stroke" />
+      <g id="belt_group">
+        <rect x="145" y="355" width="110" height="20" rx="6" class="fill-yellow char-stroke" />
+        <path d="M 165 360 C 175 365, 185 365, 195 360" class="knot-line" />
+        <path d="M 165 365 C 175 370, 185 370, 195 365" class="knot-line" />
+        <path d="M 165 370 C 175 375, 185 375, 195 370" class="knot-line" />
+      </g>
+    </g>
+
+    <!-- HEAD ASSEMBLY -->
+    <g id="head_group">
+      <path d="M 115 190 Q 100 160 130 180" class="fill-white char-stroke" transform="rotate(-15, 115, 190)" />
+      <path d="M 285 190 Q 300 160 270 180" class="fill-white char-stroke" transform="rotate(15, 285, 190)" />
+      <path id="horn_left" d="M 145 150 C 120 110, 100 90, 140 70 C 150 80, 160 110, 160 135" class="fill-horn char-stroke" />
+      <path id="horn_right" d="M 255 150 C 280 110, 300 90, 260 70 C 250 80, 240 110, 240 135" class="fill-horn char-stroke" />
+      <circle cx="200" cy="210" r="90" class="fill-white char-stroke" />
+      
+      <g id="expressions">
+        <g id="expr_idle">
+          <circle cx="165" cy="225" r="9" fill="#2D2D2D" />
+          <circle cx="235" cy="225" r="9" fill="#2D2D2D" />
+          <path d="M 190 255 Q 200 265 210 255" class="char-stroke" style="stroke-width: 3;" />
+          <circle cx="140" cy="245" r="12" class="fill-blush" />
+          <circle cx="260" cy="245" r="12" class="fill-blush" />
+        </g>
+        <g id="expr_happy" style="display:none">
+          <path d="M 150 225 Q 165 210 180 225" class="char-stroke" style="stroke-width: 6;" />
+          <path d="M 220 225 Q 235 210 250 225" class="char-stroke" style="stroke-width: 6;" />
+          <path d="M 185 260 Q 200 285 215 260 Z" class="fill-red char-stroke" style="stroke-width: 2;" />
+          <circle cx="140" cy="245" r="15" class="fill-blush" />
+          <circle cx="260" cy="245" r="15" class="fill-blush" />
+        </g>
+        <g id="expr_thinking" style="display:none">
+          <circle cx="165" cy="220" r="10" fill="#2D2D2D" />
+          <path d="M 220 225 L 250 225" class="char-stroke" style="stroke-width: 5;" />
+          <path d="M 190 270 L 210 270" class="char-stroke" style="stroke-width: 3;" />
+          <path d="M 240 280 Q 270 240 250 200" class="char-stroke" style="stroke-width: 6;" />
+        </g>
+        <g id="expr_sad" style="display:none">
+          <path d="M 155 230 L 175 220" class="char-stroke" style="stroke-width: 4; opacity: 0.7;" />
+          <path d="M 225 220 L 245 230" class="char-stroke" style="stroke-width: 4; opacity: 0.7;" />
+          <path d="M 185 275 Q 200 260 215 275" class="char-stroke" style="stroke-width: 4;" />
+          <circle cx="170" cy="245" r="5" fill="#A0D8EF" />
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>

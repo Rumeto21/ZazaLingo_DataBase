@@ -1,0 +1,7 @@
+Music: Piano Sonata No. 10 in C Major, K.330  
+Composer: Wolfgang Amadeus Mozart  
+Performer: Alessio Averone  
+Source: Musopen  
+License: CC BY 3.0  
+License link: https://creativecommons.org/licenses/by/3.0/  
+Changes: trimmed / looped
