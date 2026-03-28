@@ -46,11 +46,6 @@ export interface AppTheme {
     settingsMusicSectionTitle: string; settingsInfoSectionTitle: string;
     settingsTeamTitle: string; settingsDedicationTitle: string;
     settingsMusicBadgeTitle: string;
-    settingsMusicVolumeTitle: string;
-    mascotHomeTop: number;
-    mascotHomeSize: number;
-    mascotQuestionTop: number;
-    mascotQuestionSize: number;
 }
 export const themeConfig: AppTheme = {
     "primary": "#58CC02",

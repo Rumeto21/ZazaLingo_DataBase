@@ -9,18 +9,11 @@ export interface MusicCredit {
     changes: string;
 }
 
-export interface Dedication {
-    from: string;
-    to: string;
-}
-
 export interface ZazaLingoInfoData {
     mainTitle: string;
     teamTitle: string;
     dedicationTitle: string;
     musicTitle: string;
-    missionTitle: string;
-    mission: string;
     team: string[];
     dedications: Dedication[];
     music: MusicCredit[];
