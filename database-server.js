@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 4000;
+// Paths for central storage
 const DATA_DIR = path.join(__dirname, 'data');
 const TESTS_DIR = path.join(DATA_DIR, 'tests');
 const MAP_DIR = path.join(DATA_DIR, 'map');
@@ -10,7 +11,7 @@ const THEME_DIR = path.join(DATA_DIR, 'theme');
 const PROVERBS_DIR = path.join(DATA_DIR, 'proverbs');
 const LOCALES_DIR = path.join(DATA_DIR, 'locales');
 
-// Ensure directories exist
+// Ensure directories exist locally
 [DATA_DIR, TESTS_DIR, MAP_DIR, THEME_DIR, PROVERBS_DIR, LOCALES_DIR].forEach(dir => {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
@@ -18,27 +19,32 @@ const LOCALES_DIR = path.join(DATA_DIR, 'locales');
 });
 
 /**
- * Safely injects JSON data into a TypeScript file by replacing the value 
- * of a specific exported variable, preserving interfaces and manual code above it.
+ * Safely injects JSON data into a TypeScript file.
  */
-function injectDataIntoTSFile(filePath, variableName, data, templateIfNotFound = null) {
+function injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFound = null) {
+    const filePath = path.join(DATA_DIR, relativePath);
+    
+    // Ensure parent directory exists
+    const dir = path.dirname(filePath);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+
     if (!fs.existsSync(filePath)) {
         if (templateIfNotFound) {
             fs.writeFileSync(filePath, templateIfNotFound.replace('{{DATA}}', JSON.stringify(data, null, 4)), 'utf-8');
-            console.log(`[SafeWrite] Created new file from template: ${path.basename(filePath)}`);
+            console.log(`[SafeWrite] Created new file: ${path.relative(process.cwd(), filePath)}`);
         }
         return;
     }
 
     const src = fs.readFileSync(filePath, 'utf-8');
-    // Regex for: export (const|let|var) variableName[: type] = [ANYTHING];
-    // We want to replace the [ANYTHING] part.
     const regex = new RegExp(`(export\\s+(const|let|var)\\s+${variableName}(\\s*:\\s*[^=]+)?\\s*=\\s*)([\\s\\S]+?)(;?\\s*$)`);
     
     if (regex.test(src)) {
         const updated = src.replace(regex, `$1${JSON.stringify(data, null, 4)}$5`);
         fs.writeFileSync(filePath, updated, 'utf-8');
-        console.log(`[SafeWrite] Injected data into existing file: ${path.basename(filePath)}`);
+        console.log(`[SafeWrite] Updated: ${path.relative(process.cwd(), filePath)}`);
     } else {
         console.warn(`[SafeWrite] Could not find variable '${variableName}' in ${filePath}. Falling back to overwrite.`);
         if (templateIfNotFound) {
@@ -271,17 +277,17 @@ const server = http.createServer((req, res) => {
 function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, theme, info, zazaConstants }) {
     // 1. Save Map Content (stations, decorations, config)
     if (stations) {
-        injectDataIntoTSFile(path.join(MAP_DIR, 'stations.ts'), 'courseLevels', stations, 
+        injectDataIntoTSFile(path.join('map', 'stations.ts'), 'courseLevels', stations, 
             `export const courseLevels = {{DATA}};`);
     }
 
     if (decorations) {
-        injectDataIntoTSFile(path.join(MAP_DIR, 'decorations.ts'), 'decorations', decorations, 
+        injectDataIntoTSFile(path.join('map', 'decorations.ts'), 'decorations', decorations, 
             `export const decorations = {{DATA}};`);
     }
 
     if (mapConfig) {
-        injectDataIntoTSFile(path.join(MAP_DIR, 'config.ts'), 'mapConfig', mapConfig, 
+        injectDataIntoTSFile(path.join('map', 'config.ts'), 'mapConfig', mapConfig, 
             `export const mapConfig = {{DATA}};`);
     }
 
@@ -329,21 +335,15 @@ import { TestData } from '../../types/question';
         currentTestFiles.add(path.join(folderName, fileName).replace(/\\/g, '/'));
 
         // Use safe injection for individual test files
-        injectDataIntoTSFile(filePath, testExportName, test, 
+        injectDataIntoTSFile(path.join('tests', folderName, fileName), testExportName, test, 
             `import { TestData } from '../../../types/question';\n\nexport const ${testExportName}: TestData = {{DATA}};\n`);
-
+        
         indexContent += `import { ${testExportName} } from './${folderName}/${testId.toLowerCase()}';\n`;
     }
 
+    const localIndex = path.join(TESTS_DIR, 'index.ts');
+    fs.writeFileSync(localIndex, indexContent, 'utf-8');
 
-    indexContent += `\nexport const TESTS: Record<string, TestData> = {\n`;
-    for (const testId of testIds) {
-        const testExportName = testId.replace(/[^a-zA-Z0-9]/g, '_');
-        indexContent += `    '${testId}': ${testExportName},\n`;
-    }
-    indexContent += `};\n\nexport const getTestById = (id: string): TestData | null => {\n    return TESTS[id] || null;\n};\n`;
-
-    fs.writeFileSync(path.join(TESTS_DIR, 'index.ts'), indexContent, 'utf-8');
 
     // Cleanup Tests
     function cleanupTests(dir, baseDir = '') {
@@ -374,29 +374,31 @@ import { TestData } from '../../types/question';
 
     // 3. Save Proverbs
     if (proverbs) {
-        injectDataIntoTSFile(path.join(PROVERBS_DIR, 'proverbs.ts'), 'proverbs', proverbs, 
+        injectDataIntoTSFile(path.join('proverbs', 'proverbs.ts'), 'proverbs', proverbs, 
             `export const proverbs = {{DATA}};`);
     }
 
     // 4. Save Theme
     if (theme) {
-        injectDataIntoTSFile(path.join(THEME_DIR, 'theme.ts'), 'themeConfig', theme, 
+        injectDataIntoTSFile(path.join('theme', 'theme.ts'), 'themeConfig', theme, 
             `export const themeConfig = {{DATA}};`);
         
         // sync themeConfig.json (JSON is always a complete overwrite)
-        fs.writeFileSync(path.join(THEME_DIR, 'themeConfig.json'), JSON.stringify(theme, null, 4), 'utf-8');
+        const localThemeJSON = path.join(THEME_DIR, 'themeConfig.json');
+        fs.writeFileSync(localThemeJSON, JSON.stringify(theme, null, 4), 'utf-8');
+        
         console.log('[Theme] Both theme.ts and themeConfig.json updated.');
     }
 
     // 5. Save Info
     if (info) {
-        injectDataIntoTSFile(path.join(DATA_DIR, 'info.ts'), 'zazaLingoInfo', info, 
+        injectDataIntoTSFile('info.ts', 'zazaLingoInfo', info, 
             `export const zazaLingoInfo = {{DATA}};`);
     }
 
     // 6. Save ZazaConstants
     if (zazaConstants) {
-        injectDataIntoTSFile(path.join(DATA_DIR, 'zazaConstants.ts'), 'zazaConstants', zazaConstants, 
+        injectDataIntoTSFile('zazaConstants.ts', 'zazaConstants', zazaConstants, 
             `export const zazaConstants = {{DATA}};`);
     }
     
@@ -411,7 +413,7 @@ function saveLocalesToFiles(locales) {
     const langs = ['tr', 'en', 'zzk', 'krmnc'];
     for (const lang of langs) {
         if (locales[lang]) {
-            injectDataIntoTSFile(path.join(LOCALES_DIR, `${lang}.ts`), lang, locales[lang], 
+            injectDataIntoTSFile(path.join('locales', `${lang}.ts`), lang, locales[lang], 
                 `export const ${lang} = {{DATA}};`);
         }
     }
