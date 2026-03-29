@@ -2,6 +2,6 @@
 // ve hep Zazaca kalması gereken sabit metinleri (label) tutar.
 
 export const zazaConstants = {
-    welcome: "Ti bi xeyr ameyî",
-    quoteTitle: "Vateyê Verênanê Roja",
+    "welcome": "Ti bi xeyr ameyî",
+    "quoteTitle": "Vateyê Verênanê Roja"
 };

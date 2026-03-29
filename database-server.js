@@ -199,6 +199,15 @@ const server = http.createServer((req, res) => {
                 mapConfig: readTSExport(path.join(MAP_DIR, 'config.ts')),
                 proverbs: readTSExport(path.join(PROVERBS_DIR, 'proverbs.ts')),
                 theme: readTSExport(path.join(THEME_DIR, 'theme.ts')),
+                themeSchemes: (() => {
+                    try {
+                        const p = path.join(THEME_DIR, 'themeSchemes.json');
+                        return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf-8') || '{}') : {};
+                    } catch (e) {
+                        console.error('[Error] themeSchemes.json okunamadı:', e.message);
+                        return {};
+                    }
+                })(),
                 info: readTSExport(path.join(SETTINGS_DIR, 'info.ts')),
                 zazaConstants: readTSExport(path.join(SETTINGS_DIR, 'zazaConstants.ts')),
                 locales: {
@@ -372,7 +381,7 @@ const server = http.createServer((req, res) => {
     }
 });
 
-function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, theme, info, zazaConstants }) {
+function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, theme, themeSchemes, info, zazaConstants }) {
     // 1. Save Map Content (stations, decorations, config)
     if (stations) {
         injectDataIntoTSFile(path.join('map', 'stations.ts'), 'courseLevels', stations, 
@@ -516,6 +525,13 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
         console.log('[Theme] Modular files and themeConfig.json updated.');
     }
 
+    // 4b. Save Theme Schemes
+    if (themeSchemes) {
+        const themeSchemesFile = path.join(THEME_DIR, 'themeSchemes.json');
+        fs.writeFileSync(themeSchemesFile, JSON.stringify(themeSchemes, null, 4), 'utf-8');
+        console.log('[Theme] themeSchemes.json updated.');
+    }
+
     // 5. Save Info (Modular Settings)
     if (info) {
         injectDataIntoTSFile(path.join('settings', 'info.ts'), 'zazaLingoInfo', info, 
@@ -559,7 +575,7 @@ server.on('error', (err) => {
     }
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`[Dev Tools] Save server running at http://localhost:${PORT}`);
     console.log('You can now save changes directly from the ZazaLingo Admin Panel.');
 });
