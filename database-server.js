@@ -53,15 +53,112 @@ function injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFou
     }
 }
 
+const SESSIONS = new Map(); // token -> user object
+
 const server = http.createServer((req, res) => {
     // CORS headers — allow Vite dev server (5173) and Expo web (8081)
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-API-KEY, Authorization');
 
     if (req.method === 'OPTIONS') {
         res.writeHead(204);
         res.end();
+        return;
+    }
+
+    // --- Authentication & Security Middleware ---
+    const AUTH_KEY = process.env.DATABASE_API_KEY || 'zaza_dev_secret_2026';
+    const clientKey = req.headers['x-api-key'];
+    const authHeader = req.headers['authorization'];
+    const bearerToken = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+
+    const isAuthenticated = (clientKey === AUTH_KEY) || (bearerToken && SESSIONS.has(bearerToken));
+
+    // Protected endpoints (Write operations)
+    if (req.method === 'POST' && req.url !== '/login') {
+        if (!isAuthenticated) {
+            console.warn(`[Security] Blocked unauthorized POST attempt to ${req.url} from ${req.socket.remoteAddress}`);
+            res.writeHead(401, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Unauthorized: Valid X-API-KEY or Authorization header required' }));
+            return;
+        }
+    }
+
+    // ── POST /upload ────────────────────────────────────────────────────────
+    if (req.method === 'POST' && req.url === '/upload') {
+        const fileName = req.headers['x-filename'];
+        if (!fileName) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ error: 'Missing X-FileName header' }));
+            return;
+        }
+
+        const ext = path.extname(fileName).toLowerCase();
+        let targetSubDir = 'Pictures';
+        if (['.mp3', '.wav', '.ogg', '.aac'].includes(ext)) {
+            targetSubDir = 'Audio';
+        }
+
+        const targetDir = path.join(__dirname, 'assets', 'questions', targetSubDir);
+        if (!fs.existsSync(targetDir)) {
+            fs.mkdirSync(targetDir, { recursive: true });
+        }
+
+        const filePath = path.join(targetDir, fileName);
+        const fileStream = fs.createWriteStream(filePath);
+
+        req.pipe(fileStream);
+
+        fileStream.on('finish', () => {
+            console.log(`[Upload] Received and saved: ${fileName} -> ${targetSubDir}`);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ 
+                success: true, 
+                path: `assets/questions/${targetSubDir}/${fileName}` 
+            }));
+        });
+
+        fileStream.on('error', (err) => {
+            console.error('[Upload] Error saving file:', err);
+            res.writeHead(500);
+            res.end(JSON.stringify({ error: 'Failed to save file' }));
+        });
+        return;
+    }
+
+    // ── POST /login ────────────────────────────────────────────────────────
+    if (req.method === 'POST' && req.url === '/login') {
+        let body = '';
+        req.on('data', chunk => { body += chunk.toString(); });
+        req.on('end', () => {
+            try {
+                const { username, password } = JSON.parse(body);
+                const usersFile = path.join(DATA_DIR, 'users.json');
+                const users = JSON.parse(fs.readFileSync(usersFile, 'utf-8'));
+                
+                const user = users.find(u => u.username === username && u.password === password);
+                
+                if (user) {
+                    const token = Math.random().toString(36).substring(2) + Date.now().toString(36);
+                    SESSIONS.set(token, { username: user.username, role: user.role });
+                    
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ 
+                        success: true, 
+                        token, 
+                        user: { username: user.username, role: user.role } 
+                    }));
+                    console.log(`[Auth] User logged in: ${username}`);
+                } else {
+                    res.writeHead(401, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: false, error: 'Invalid username or password' }));
+                }
+            } catch (err) {
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: 'Internal Server Error' }));
+            }
+        });
         return;
     }
 
