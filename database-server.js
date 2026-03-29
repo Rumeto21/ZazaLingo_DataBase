@@ -5,14 +5,15 @@ const path = require('path');
 const PORT = 4000;
 // Paths for central storage
 const DATA_DIR = path.join(__dirname, 'data');
-const TESTS_DIR = path.join(DATA_DIR, 'tests');
+const CURRICULUM_DIR = path.join(DATA_DIR, 'curriculum');
 const MAP_DIR = path.join(DATA_DIR, 'map');
 const THEME_DIR = path.join(DATA_DIR, 'theme');
 const PROVERBS_DIR = path.join(DATA_DIR, 'proverbs');
 const LOCALES_DIR = path.join(DATA_DIR, 'locales');
+const SETTINGS_DIR = path.join(DATA_DIR, 'settings');
 
 // Ensure directories exist locally
-[DATA_DIR, TESTS_DIR, MAP_DIR, THEME_DIR, PROVERBS_DIR, LOCALES_DIR].forEach(dir => {
+[DATA_DIR, CURRICULUM_DIR, MAP_DIR, THEME_DIR, PROVERBS_DIR, LOCALES_DIR, SETTINGS_DIR].forEach(dir => {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
     }
@@ -198,8 +199,8 @@ const server = http.createServer((req, res) => {
                 mapConfig: readTSExport(path.join(MAP_DIR, 'config.ts')),
                 proverbs: readTSExport(path.join(PROVERBS_DIR, 'proverbs.ts')),
                 theme: readTSExport(path.join(THEME_DIR, 'theme.ts')),
-                info: readTSExport(path.join(DATA_DIR, 'info.ts')),
-                zazaConstants: readTSExport(path.join(DATA_DIR, 'zazaConstants.ts')),
+                info: readTSExport(path.join(SETTINGS_DIR, 'info.ts')),
+                zazaConstants: readTSExport(path.join(SETTINGS_DIR, 'zazaConstants.ts')),
                 locales: {
                     tr: readLocale('tr'),
                     en: readLocale('en'),
@@ -388,67 +389,79 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
             `export const mapConfig = {{DATA}};`);
     }
 
-    // 2. Save Tests (Special handling - write each test ID to its own file)
-    if (!fs.existsSync(TESTS_DIR)) {
-        fs.mkdirSync(TESTS_DIR, { recursive: true });
+    // 2. Save Tests (Hierarchical: curriculum/Unit/Topic/testId.ts)
+    if (!fs.existsSync(CURRICULUM_DIR)) {
+        fs.mkdirSync(CURRICULUM_DIR, { recursive: true });
     }
 
     const testIds = Object.keys(tests || {});
     const currentTestFiles = new Set(['index.ts']);
 
-    // Map testIds to Unit folders (Logic to decide where each test goes)
-    const testToUnitFolder = {};
-    let lastUnitIndex = 1;
+    // Map testIds to Unit/Topic hierarchy
+    const testToPathMap = {};
+    const unitMap = {};
+    
+    // First pass: map units
     (stations || []).forEach(s => {
-        if (s.unitIndex) lastUnitIndex = s.unitIndex;
-        if (s.testIds) {
-            s.testIds.forEach(tid => {
-                testToUnitFolder[tid] = `unite${lastUnitIndex}`;
-            });
+        if (s.type === 'station') {
+            unitMap[s.id] = `Unite_${s.unitIndex || s.id}`;
         }
     });
 
-    let indexContent = `// Bu dosya Dev Server tarafından otomatik güncellenmiştir.
-import { TestData } from '../../types/question';
+    // Second pass: map topics to units and tests to topics
+    (stations || []).forEach(s => {
+        if (s.type === 'topic') {
+            const unitFolder = unitMap[s.parentUnitId] || 'diger';
+            const topicFolder = (s.zazaName || s.trName || s.id).replace(/[^a-zA-Z0-9]/g, '_');
+            const targetPath = path.join(unitFolder, topicFolder);
+            
+            if (s.testIds) {
+                s.testIds.forEach(tid => {
+                    testToPathMap[tid] = targetPath;
+                });
+            }
+        }
+    });
 
-`;
-
-
-    const unitFolders = new Set(['index.ts']);
+    let indexContent = `// Bu dosya Dev Server tarafından otomatik güncellenmiştir.\nimport { TestData } from '../../types/question';\n\n`;
 
     for (const testId of testIds) {
         const test = tests[testId];
-        const folderName = testToUnitFolder[testId] || 'diger';
-        const folderPath = path.join(TESTS_DIR, folderName);
+        const relativeFolderPath = testToPathMap[testId] || 'diger';
+        const folderPath = path.join(CURRICULUM_DIR, relativeFolderPath);
         
         if (!fs.existsSync(folderPath)) {
             fs.mkdirSync(folderPath, { recursive: true });
         }
 
         const fileName = `${testId.toLowerCase()}.ts`;
-        const filePath = path.join(folderPath, fileName);
         const testExportName = testId.replace(/[^a-zA-Z0-9]/g, '_');
+        const posixPath = path.join(relativeFolderPath, fileName).replace(/\\/g, '/');
         
-        currentTestFiles.add(path.join(folderName, fileName).replace(/\\/g, '/'));
+        currentTestFiles.add(posixPath.toLowerCase());
 
         // Use safe injection for individual test files
-        injectDataIntoTSFile(path.join('tests', folderName, fileName), testExportName, test, 
+        injectDataIntoTSFile(path.join('curriculum', posixPath), testExportName, test, 
             `import { TestData } from '../../../types/question';\n\nexport const ${testExportName}: TestData = {{DATA}};\n`);
         
-        indexContent += `import { ${testExportName} } from './${folderName}/${testId.toLowerCase()}';\n`;
+        indexContent += `import { ${testExportName} } from './${posixPath.replace('.ts', '')}';\n`;
     }
 
-    const localIndex = path.join(TESTS_DIR, 'index.ts');
-    fs.writeFileSync(localIndex, indexContent, 'utf-8');
+    indexContent += `\nexport const TESTS: Record<string, TestData> = {\n`;
+    testIds.forEach(tid => {
+        const testExportName = tid.replace(/[^a-zA-Z0-9]/g, '_');
+        indexContent += `    ${tid}: ${testExportName},\n`;
+    });
+    indexContent += `};\n`;
 
+    const localIndex = path.join(CURRICULUM_DIR, 'index.ts');
+    fs.writeFileSync(localIndex, indexContent, 'utf-8');
 
     // Cleanup Tests
     function cleanupTests(dir, baseDir = '') {
         if (!fs.existsSync(dir)) return;
         const files = fs.readdirSync(dir);
-        
-        // Convert currentTestFiles set to lowercase for safe comparison on Windows
-        const safeCurrentFiles = new Set([...currentTestFiles].map(f => f.toLowerCase()));
+        const safeCurrentFiles = currentTestFiles;
 
         files.forEach(file => {
             const fullPath = path.join(dir, file);
@@ -467,7 +480,7 @@ import { TestData } from '../../types/question';
             }
         });
     }
-    cleanupTests(TESTS_DIR);
+    cleanupTests(CURRICULUM_DIR);
 
     // 3. Save Proverbs
     if (proverbs) {
@@ -487,15 +500,15 @@ import { TestData } from '../../types/question';
         console.log('[Theme] Both theme.ts and themeConfig.json updated.');
     }
 
-    // 5. Save Info
+    // 5. Save Info (Modular Settings)
     if (info) {
-        injectDataIntoTSFile('info.ts', 'zazaLingoInfo', info, 
+        injectDataIntoTSFile(path.join('settings', 'info.ts'), 'zazaLingoInfo', info, 
             `export const zazaLingoInfo = {{DATA}};`);
     }
 
-    // 6. Save ZazaConstants
+    // 6. Save ZazaConstants (Modular Settings)
     if (zazaConstants) {
-        injectDataIntoTSFile('zazaConstants.ts', 'zazaConstants', zazaConstants, 
+        injectDataIntoTSFile(path.join('settings', 'zazaConstants.ts'), 'zazaConstants', zazaConstants, 
             `export const zazaConstants = {{DATA}};`);
     }
     
