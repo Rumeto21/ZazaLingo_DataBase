@@ -488,16 +488,32 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
             `export const proverbs = {{DATA}};`);
     }
 
-    // 4. Save Theme
+    // 4. Save Theme (Modular)
     if (theme) {
-        injectDataIntoTSFile(path.join('theme', 'theme.ts'), 'themeConfig', theme, 
-            `export const themeConfig = {{DATA}};`);
-        
-        // sync themeConfig.json (JSON is always a complete overwrite)
+        const themeMapping = {
+            'tokens/colors.ts': ['primary', 'primaryDark', 'secondary', 'tertiary', 'background', 'surface', 'textDark', 'textLight', 'textWhite', 'border', 'correct', 'correctShadow', 'incorrect', 'incorrectShadow', 'inactive', 'inactiveText', 'selectedBg', 'selectedBorder', 'progressBarBg', 'progressFill', 'feedbackCorrectBg', 'feedbackIncorrectBg', 'accent', 'accentLight', 'secondaryLight', 'headerTitleColor', 'headerSubtitleColor', 'buttonContinueColor', 'buttonContinueTextColor', 'buttonLogoutColor', 'buttonLogoutTextColor', 'questionTitleColor', 'questionPromptColor', 'questionBtnColor', 'questionBtnTextColor', 'proverbsTitleColor', 'proverbsTextColor', 'proverbsTranslationColor', 'proverbsBgColor', 'proverbsBorderColor'],
+            'tokens/spacing.ts': ['borderRadius', 'buttonPadding', 'buttonBorderRadius', 'buttonHeight', 'buttonVerticalMargin', 'buttonContainerPaddingHorizontal', 'buttonContainerPaddingBottom', 'headerHeight', 'headerTopMargin', 'headerBottomMargin', 'buttonContainerTopMargin', 'mascotHomeTop', 'mascotHomeSize', 'mascotQuestionTop', 'mascotQuestionSize'],
+            'tokens/typography.ts': ['buttonTextSize', 'headerTitleFontSize', 'proverbsTitleFontSize', 'proverbsTextFontSize', 'proverbsTranslationFontSize', 'coktanSecmeliFontSize', 'wordOrderFontSize', 'matchingFontSize', 'imageChoiceFontSize', 'choiceImageFontSize', 'dialogueFontSize', 'settingsTitleFontSize', 'settingsMusicSectionTitleFontSize', 'settingsInfoSectionTitleFontSize', 'settingsMusicItemFontSize', 'settingsInfoItemFontSize', 'settingsSubHeaderFontSize'],
+            'components/questions.ts': ['coktanSecmeliBgColor', 'coktanSecmeliTextColor', 'coktanSecmeliSelectedBgColor', 'coktanSecmeliSelectedBorderColor', 'coktanSecmeliSelectedTextColor', 'wordOrderBgColor', 'wordOrderTextColor', 'wordOrderSelectedBgColor', 'wordOrderSelectedBorderColor', 'wordOrderSelectedTextColor', 'matchingBgColor', 'matchingTextColor', 'matchingSelectedBgColor', 'matchingSelectedBorderColor', 'matchingSelectedTextColor', 'imageChoiceBgColor', 'imageChoiceTextColor', 'imageChoiceSelectedBgColor', 'imageChoiceSelectedBorderColor', 'imageChoiceSelectedTextColor', 'choiceImageBgColor', 'choiceImageTextColor', 'choiceImageSelectedBgColor', 'choiceImageSelectedBorderColor', 'choiceImageSelectedTextColor', 'dialogueBgColor', 'dialogueTextColor', 'dialogueSelectedBgColor', 'dialogueSelectedBorderColor', 'dialogueSelectedTextColor', 'questionOptionBgColor', 'questionOptionTextColor', 'questionOptionSelectedBgColor', 'questionOptionSelectedBorderColor', 'questionOptionSelectedTextColor'],
+            'components/settings.ts': ['settingsHeaderTitle', 'settingsMusicSectionTitle', 'settingsInfoSectionTitle', 'settingsTeamTitle', 'settingsDedicationTitle', 'settingsMusicBadgeTitle', 'settingsMusicVolumeTitle'],
+            'components/header.ts': ['headerTitleText', 'headerSubtitleText', 'headerTitleAlign', 'headerSubtitleAlign'],
+            'components/proverbs.ts': ['proverbsTitleText'],
+            'components/buttons.ts': ['buttonContinueText', 'buttonLogoutText', 'buttonTextAlign']
+        };
+
+        for (const [relativePath, keys] of Object.entries(themeMapping)) {
+            const partData = {};
+            keys.forEach(k => { if (k in theme) partData[k] = theme[k]; });
+            const varName = path.basename(relativePath, '.ts');
+            injectDataIntoTSFile(path.join('theme', relativePath), varName, partData, 
+                `export const ${varName} = {{DATA}};`);
+        }
+
+        // Keep themeConfig.json as fallback source of truth
         const localThemeJSON = path.join(THEME_DIR, 'themeConfig.json');
         fs.writeFileSync(localThemeJSON, JSON.stringify(theme, null, 4), 'utf-8');
         
-        console.log('[Theme] Both theme.ts and themeConfig.json updated.');
+        console.log('[Theme] Modular files and themeConfig.json updated.');
     }
 
     // 5. Save Info (Modular Settings)
