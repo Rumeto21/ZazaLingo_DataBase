@@ -12,6 +12,18 @@ const PROVERBS_DIR = path.join(DATA_DIR, 'proverbs');
 const LOCALES_DIR = path.join(DATA_DIR, 'locales');
 const SETTINGS_DIR = path.join(DATA_DIR, 'settings');
 
+// --- Global Config & Whitelists ---
+const THEME_MAPPING = {
+    'tokens/colors.ts': ['primary', 'primaryDark', 'secondary', 'tertiary', 'background', 'surface', 'textDark', 'textLight', 'textWhite', 'border', 'correct', 'correctShadow', 'incorrect', 'incorrectShadow', 'inactive', 'inactiveText', 'selectedBg', 'selectedBorder', 'progressBarBg', 'progressFill', 'feedbackCorrectBg', 'feedbackIncorrectBg', 'accent', 'accentLight', 'secondaryLight', 'headerTitleColor', 'headerSubtitleColor', 'buttonContinueColor', 'buttonContinueTextColor', 'buttonLogoutColor', 'buttonLogoutTextColor', 'questionTitleColor', 'questionPromptColor', 'questionBtnColor', 'questionBtnTextColor', 'proverbsTitleColor', 'proverbsTextColor', 'proverbsTranslationColor', 'proverbsBgColor', 'proverbsBorderColor'],
+    'tokens/spacing.ts': ['borderRadius', 'buttonPadding', 'buttonBorderRadius', 'buttonHeight', 'buttonVerticalMargin', 'buttonContainerPaddingHorizontal', 'buttonContainerPaddingBottom', 'headerHeight', 'headerTopMargin', 'headerBottomMargin', 'buttonContainerTopMargin', 'mascotHomeTop', 'mascotHomeSize', 'mascotQuestionTop', 'mascotQuestionSize', 'questionPromptMarginTop', 'questionPromptMarginBottom', 'questionPromptMarginLeft', 'questionPromptPaddingHorizontal', 'questionOptionsMarginTop', 'questionOptionsMarginBottom', 'questionOptionsMarginLeft', 'questionOptionsPaddingHorizontal'],
+    'tokens/typography.ts': ['buttonTextSize', 'headerTitleFontSize', 'proverbsTitleFontSize', 'proverbsTextFontSize', 'proverbsTranslationFontSize', 'coktanSecmeliFontSize', 'wordOrderFontSize', 'matchingFontSize', 'imageChoiceFontSize', 'choiceImageFontSize', 'dialogueFontSize', 'settingsTitleFontSize', 'settingsMusicSectionTitleFontSize', 'settingsInfoSectionTitleFontSize', 'settingsMusicItemFontSize', 'settingsInfoItemFontSize', 'settingsSubHeaderFontSize', 'questionPromptFontSize', 'questionOptionFontSize', 'questionBtnTextFontSize'],
+    'components/questions.ts': ['coktanSecmeliBgColor', 'coktanSecmeliTextColor', 'coktanSecmeliSelectedBgColor', 'coktanSecmeliSelectedBorderColor', 'coktanSecmeliSelectedTextColor', 'wordOrderBgColor', 'wordOrderTextColor', 'wordOrderSelectedBgColor', 'wordOrderSelectedBorderColor', 'wordOrderSelectedTextColor', 'matchingBgColor', 'matchingTextColor', 'matchingSelectedBgColor', 'matchingSelectedBorderColor', 'matchingSelectedTextColor', 'imageChoiceBgColor', 'imageChoiceTextColor', 'imageChoiceSelectedBgColor', 'imageChoiceSelectedBorderColor', 'imageChoiceSelectedTextColor', 'choiceImageBgColor', 'choiceImageTextColor', 'choiceImageSelectedBgColor', 'choiceImageSelectedBorderColor', 'choiceImageSelectedTextColor', 'dialogueBgColor', 'dialogueTextColor', 'dialogueSelectedBgColor', 'dialogueSelectedBorderColor', 'dialogueSelectedTextColor', 'questionOptionBgColor', 'questionOptionTextColor', 'questionOptionSelectedBgColor', 'questionOptionSelectedBorderColor', 'questionOptionSelectedTextColor'],
+    'components/settings.ts': ['settingsHeaderTitle', 'settingsMusicSectionTitle', 'settingsInfoSectionTitle', 'settingsTeamTitle', 'settingsDedicationTitle', 'settingsMusicBadgeTitle', 'settingsMusicVolumeTitle'],
+    'components/header.ts': ['headerTitleText', 'headerSubtitleText', 'headerTitleAlign', 'headerSubtitleAlign'],
+    'components/proverbs.ts': ['proverbsTitleText'],
+    'components/buttons.ts': ['buttonContinueText', 'buttonLogoutText', 'buttonTextAlign']
+};
+
 // Ensure directories exist locally
 [DATA_DIR, CURRICULUM_DIR, MAP_DIR, THEME_DIR, PROVERBS_DIR, LOCALES_DIR, SETTINGS_DIR].forEach(dir => {
     if (!fs.existsSync(dir)) {
@@ -163,6 +175,18 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    // ── GET /status ────────────────────────────────────────────────────────
+    if (req.method === 'GET' && req.url === '/status') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ 
+            status: 'ok', 
+            version: '2026.03.31.03',
+            dataDir: DATA_DIR,
+            activeMappingKeys: Object.keys(THEME_MAPPING)
+        }));
+        return;
+    }
+
     // ── GET /health ────────────────────────────────────────────────────────
     if (req.method === 'GET' && req.url === '/health') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -198,7 +222,20 @@ const server = http.createServer((req, res) => {
                 decorations: readTSExport(path.join(MAP_DIR, 'decorations.ts')),
                 mapConfig: readTSExport(path.join(MAP_DIR, 'config.ts')),
                 proverbs: readTSExport(path.join(PROVERBS_DIR, 'proverbs.ts')),
-                theme: readTSExport(path.join(THEME_DIR, 'theme.ts')),
+                theme: (() => {
+                    try {
+                        const jsonPath = path.join(THEME_DIR, 'themeConfig.json');
+                        if (fs.existsSync(jsonPath)) {
+                            console.log('[DataSync] Reading theme from themeConfig.json');
+                            return JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
+                        }
+                        console.log('[DataSync] themeConfig.json not found, falling back to theme.ts');
+                        return readTSExport(path.join(THEME_DIR, 'theme.ts'));
+                    } catch (e) {
+                        console.error('[Error] theme okunamadı:', e.message);
+                        return readTSExport(path.join(THEME_DIR, 'theme.ts'));
+                    }
+                })(),
                 themeSchemes: (() => {
                     try {
                         const p = path.join(THEME_DIR, 'themeSchemes.json');
@@ -345,14 +382,19 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             try {
                 const data = JSON.parse(body);
+                console.log(`\n💾 [SAVE] Request received at ${new Date().toLocaleTimeString()}`);
+                console.log(`   - Keys present in payload: ${Object.keys(data).join(', ')}`);
+                if (data.theme) {
+                    console.log(`   - Theme properties being saved: ${Object.keys(data.theme).length} items`);
+                }
+
                 saveDataToFiles(data);
-                // Also save locales if provided in the same payload
                 if (data.locales) {
                     saveLocalesToFiles(data.locales);
                 }
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: true }));
-                console.log('✅ Dev server: Tüm veriler (locales dahil) başarıyla kaydedildi.');
+                console.log('✅ [SUCCESS] All data written to disk successfully.');
             } catch (err) {
                 console.error('❌ Dev server hatası:', err);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -499,18 +541,7 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
 
     // 4. Save Theme (Modular)
     if (theme) {
-        const themeMapping = {
-            'tokens/colors.ts': ['primary', 'primaryDark', 'secondary', 'tertiary', 'background', 'surface', 'textDark', 'textLight', 'textWhite', 'border', 'correct', 'correctShadow', 'incorrect', 'incorrectShadow', 'inactive', 'inactiveText', 'selectedBg', 'selectedBorder', 'progressBarBg', 'progressFill', 'feedbackCorrectBg', 'feedbackIncorrectBg', 'accent', 'accentLight', 'secondaryLight', 'headerTitleColor', 'headerSubtitleColor', 'buttonContinueColor', 'buttonContinueTextColor', 'buttonLogoutColor', 'buttonLogoutTextColor', 'questionTitleColor', 'questionPromptColor', 'questionBtnColor', 'questionBtnTextColor', 'proverbsTitleColor', 'proverbsTextColor', 'proverbsTranslationColor', 'proverbsBgColor', 'proverbsBorderColor'],
-            'tokens/spacing.ts': ['borderRadius', 'buttonPadding', 'buttonBorderRadius', 'buttonHeight', 'buttonVerticalMargin', 'buttonContainerPaddingHorizontal', 'buttonContainerPaddingBottom', 'headerHeight', 'headerTopMargin', 'headerBottomMargin', 'buttonContainerTopMargin', 'mascotHomeTop', 'mascotHomeSize', 'mascotQuestionTop', 'mascotQuestionSize'],
-            'tokens/typography.ts': ['buttonTextSize', 'headerTitleFontSize', 'proverbsTitleFontSize', 'proverbsTextFontSize', 'proverbsTranslationFontSize', 'coktanSecmeliFontSize', 'wordOrderFontSize', 'matchingFontSize', 'imageChoiceFontSize', 'choiceImageFontSize', 'dialogueFontSize', 'settingsTitleFontSize', 'settingsMusicSectionTitleFontSize', 'settingsInfoSectionTitleFontSize', 'settingsMusicItemFontSize', 'settingsInfoItemFontSize', 'settingsSubHeaderFontSize'],
-            'components/questions.ts': ['coktanSecmeliBgColor', 'coktanSecmeliTextColor', 'coktanSecmeliSelectedBgColor', 'coktanSecmeliSelectedBorderColor', 'coktanSecmeliSelectedTextColor', 'wordOrderBgColor', 'wordOrderTextColor', 'wordOrderSelectedBgColor', 'wordOrderSelectedBorderColor', 'wordOrderSelectedTextColor', 'matchingBgColor', 'matchingTextColor', 'matchingSelectedBgColor', 'matchingSelectedBorderColor', 'matchingSelectedTextColor', 'imageChoiceBgColor', 'imageChoiceTextColor', 'imageChoiceSelectedBgColor', 'imageChoiceSelectedBorderColor', 'imageChoiceSelectedTextColor', 'choiceImageBgColor', 'choiceImageTextColor', 'choiceImageSelectedBgColor', 'choiceImageSelectedBorderColor', 'choiceImageSelectedTextColor', 'dialogueBgColor', 'dialogueTextColor', 'dialogueSelectedBgColor', 'dialogueSelectedBorderColor', 'dialogueSelectedTextColor', 'questionOptionBgColor', 'questionOptionTextColor', 'questionOptionSelectedBgColor', 'questionOptionSelectedBorderColor', 'questionOptionSelectedTextColor'],
-            'components/settings.ts': ['settingsHeaderTitle', 'settingsMusicSectionTitle', 'settingsInfoSectionTitle', 'settingsTeamTitle', 'settingsDedicationTitle', 'settingsMusicBadgeTitle', 'settingsMusicVolumeTitle'],
-            'components/header.ts': ['headerTitleText', 'headerSubtitleText', 'headerTitleAlign', 'headerSubtitleAlign'],
-            'components/proverbs.ts': ['proverbsTitleText'],
-            'components/buttons.ts': ['buttonContinueText', 'buttonLogoutText', 'buttonTextAlign']
-        };
-
-        for (const [relativePath, keys] of Object.entries(themeMapping)) {
+        for (const [relativePath, keys] of Object.entries(THEME_MAPPING)) {
             const partData = {};
             keys.forEach(k => { if (k in theme) partData[k] = theme[k]; });
             const varName = path.basename(relativePath, '.ts');

@@ -10,8 +10,8 @@ export const spacing = {
     "headerTopMargin": 100,
     "headerBottomMargin": 0,
     "buttonContainerTopMargin": 0,
-    "mascotHomeTop": 92,
-    "mascotHomeSize": 186,
+    "mascotHomeTop": 343,
+    "mascotHomeSize": 111,
     "mascotQuestionTop": 10,
     "mascotQuestionSize": 100
 };

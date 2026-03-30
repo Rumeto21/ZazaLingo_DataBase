@@ -59,6 +59,17 @@ export interface AppTheme {
     mascotHomeSize: number;
     mascotQuestionTop: number;
     mascotQuestionSize: number;
+    questionPromptFontSize: number;
+    questionOptionFontSize: number;
+    questionBtnTextFontSize: number;
+    questionPromptMarginTop: number;
+    questionPromptMarginBottom: number;
+    questionPromptMarginLeft: number;
+    questionPromptPaddingHorizontal: number;
+    questionOptionsMarginTop: number;
+    questionOptionsMarginBottom: number;
+    questionOptionsMarginLeft: number;
+    questionOptionsPaddingHorizontal: number;
 }
 
 export const themeConfig: AppTheme = {
