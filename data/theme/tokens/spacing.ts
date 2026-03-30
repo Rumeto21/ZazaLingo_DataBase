@@ -12,6 +12,12 @@ export const spacing = {
     "buttonContainerTopMargin": 0,
     "mascotHomeTop": 343,
     "mascotHomeSize": 111,
-    "mascotQuestionTop": 10,
-    "mascotQuestionSize": 100
+    "mascotQuestionTop": 206,
+    "mascotQuestionSize": 100,
+    "questionPromptMarginTop": -28,
+    "questionPromptMarginBottom": 59,
+    "questionOptionsMarginTop": 13,
+    "questionOptionsMarginBottom": 100,
+    "questionOptionsMarginLeft": 47,
+    "questionOptionsPaddingHorizontal": 47
 };

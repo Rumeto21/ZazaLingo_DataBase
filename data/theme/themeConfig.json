@@ -52,7 +52,7 @@
     "buttonContainerTopMargin": 0,
     "mascotHomeTop": 343,
     "mascotHomeSize": 111,
-    "mascotQuestionTop": 10,
+    "mascotQuestionTop": 206,
     "mascotQuestionSize": 100,
     "buttonTextSize": 18,
     "headerTitleFontSize": 64,
@@ -120,5 +120,15 @@
     "proverbsTitleText": "VATEYÊ VERÊNAN",
     "buttonContinueText": "",
     "buttonLogoutText": "",
-    "buttonTextAlign": "center"
+    "buttonTextAlign": "center",
+    "questionOptionsPaddingHorizontal": 47,
+    "questionOptionsMarginLeft": 47,
+    "mascotQuestionMarginLeft": -125,
+    "questionPromptFontSize": 27,
+    "questionOptionsMarginBottom": 100,
+    "questionOptionsMarginTop": 13,
+    "questionPromptMarginBottom": 59,
+    "questionPromptMarginTop": -28,
+    "questionOptionFontSize": 0,
+    "questionTitleMarginTop": -12
 }

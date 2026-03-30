@@ -15,5 +15,7 @@ export const typography = {
     "settingsInfoSectionTitleFontSize": 20,
     "settingsMusicItemFontSize": 16,
     "settingsInfoItemFontSize": 16,
-    "settingsSubHeaderFontSize": 18
+    "settingsSubHeaderFontSize": 18,
+    "questionPromptFontSize": 27,
+    "questionOptionFontSize": 0
 };
