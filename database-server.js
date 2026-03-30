@@ -12,10 +12,14 @@ const PROVERBS_DIR = path.join(DATA_DIR, 'proverbs');
 const LOCALES_DIR = path.join(DATA_DIR, 'locales');
 const SETTINGS_DIR = path.join(DATA_DIR, 'settings');
 
+// --- Sync with Mobile App ---
+const MOBILE_DATA_DIR = path.join(__dirname, '../ZazaLingo/data');
+console.log(`[Sync] Mobile Data Directory: ${MOBILE_DATA_DIR}`);
+
 // --- Global Config & Whitelists ---
 const THEME_MAPPING = {
     'tokens/colors.ts': ['primary', 'primaryDark', 'secondary', 'tertiary', 'background', 'surface', 'textDark', 'textLight', 'textWhite', 'border', 'correct', 'correctShadow', 'incorrect', 'incorrectShadow', 'inactive', 'inactiveText', 'selectedBg', 'selectedBorder', 'progressBarBg', 'progressFill', 'feedbackCorrectBg', 'feedbackIncorrectBg', 'accent', 'accentLight', 'secondaryLight', 'headerTitleColor', 'headerSubtitleColor', 'buttonContinueColor', 'buttonContinueTextColor', 'buttonLogoutColor', 'buttonLogoutTextColor', 'questionTitleColor', 'questionPromptColor', 'questionBtnColor', 'questionBtnTextColor', 'proverbsTitleColor', 'proverbsTextColor', 'proverbsTranslationColor', 'proverbsBgColor', 'proverbsBorderColor'],
-    'tokens/spacing.ts': ['borderRadius', 'buttonPadding', 'buttonBorderRadius', 'buttonHeight', 'buttonVerticalMargin', 'buttonContainerPaddingHorizontal', 'buttonContainerPaddingBottom', 'headerHeight', 'headerTopMargin', 'headerBottomMargin', 'buttonContainerTopMargin', 'mascotHomeTop', 'mascotHomeSize', 'mascotQuestionTop', 'mascotQuestionSize', 'questionPromptMarginTop', 'questionPromptMarginBottom', 'questionPromptMarginLeft', 'questionPromptPaddingHorizontal', 'questionOptionsMarginTop', 'questionOptionsMarginBottom', 'questionOptionsMarginLeft', 'questionOptionsPaddingHorizontal'],
+    'tokens/spacing.ts': ['borderRadius', 'buttonPadding', 'buttonBorderRadius', 'buttonHeight', 'buttonVerticalMargin', 'buttonContainerPaddingHorizontal', 'buttonContainerPaddingBottom', 'headerHeight', 'headerTopMargin', 'headerBottomMargin', 'buttonContainerTopMargin', 'buttonContainerMarginLeft', 'mascotHomeTop', 'mascotHomeSize', 'mascotQuestionTop', 'mascotQuestionSize', 'questionPromptMarginTop', 'questionPromptMarginBottom', 'questionPromptMarginLeft', 'questionPromptPaddingHorizontal', 'questionOptionsMarginTop', 'questionOptionsMarginBottom', 'questionOptionsMarginLeft', 'questionOptionsPaddingHorizontal'],
     'tokens/typography.ts': ['buttonTextSize', 'headerTitleFontSize', 'proverbsTitleFontSize', 'proverbsTextFontSize', 'proverbsTranslationFontSize', 'coktanSecmeliFontSize', 'wordOrderFontSize', 'matchingFontSize', 'imageChoiceFontSize', 'choiceImageFontSize', 'dialogueFontSize', 'settingsTitleFontSize', 'settingsMusicSectionTitleFontSize', 'settingsInfoSectionTitleFontSize', 'settingsMusicItemFontSize', 'settingsInfoItemFontSize', 'settingsSubHeaderFontSize', 'questionPromptFontSize', 'questionOptionFontSize', 'questionBtnTextFontSize'],
     'components/questions.ts': ['coktanSecmeliBgColor', 'coktanSecmeliTextColor', 'coktanSecmeliSelectedBgColor', 'coktanSecmeliSelectedBorderColor', 'coktanSecmeliSelectedTextColor', 'wordOrderBgColor', 'wordOrderTextColor', 'wordOrderSelectedBgColor', 'wordOrderSelectedBorderColor', 'wordOrderSelectedTextColor', 'matchingBgColor', 'matchingTextColor', 'matchingSelectedBgColor', 'matchingSelectedBorderColor', 'matchingSelectedTextColor', 'imageChoiceBgColor', 'imageChoiceTextColor', 'imageChoiceSelectedBgColor', 'imageChoiceSelectedBorderColor', 'imageChoiceSelectedTextColor', 'choiceImageBgColor', 'choiceImageTextColor', 'choiceImageSelectedBgColor', 'choiceImageSelectedBorderColor', 'choiceImageSelectedTextColor', 'dialogueBgColor', 'dialogueTextColor', 'dialogueSelectedBgColor', 'dialogueSelectedBorderColor', 'dialogueSelectedTextColor', 'questionOptionBgColor', 'questionOptionTextColor', 'questionOptionSelectedBgColor', 'questionOptionSelectedBorderColor', 'questionOptionSelectedTextColor'],
     'components/settings.ts': ['settingsHeaderTitle', 'settingsMusicSectionTitle', 'settingsInfoSectionTitle', 'settingsTeamTitle', 'settingsDedicationTitle', 'settingsMusicBadgeTitle', 'settingsMusicVolumeTitle'],
@@ -35,35 +39,40 @@ const THEME_MAPPING = {
  * Safely injects JSON data into a TypeScript file.
  */
 function injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFound = null) {
-    const filePath = path.join(DATA_DIR, relativePath);
+    const filePaths = [
+        path.join(DATA_DIR, relativePath),
+        path.join(MOBILE_DATA_DIR, relativePath)
+    ];
     
-    // Ensure parent directory exists
-    const dir = path.dirname(filePath);
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-    }
-
-    if (!fs.existsSync(filePath)) {
-        if (templateIfNotFound) {
-            fs.writeFileSync(filePath, templateIfNotFound.replace('{{DATA}}', JSON.stringify(data, null, 4)), 'utf-8');
-            console.log(`[SafeWrite] Created new file: ${path.relative(process.cwd(), filePath)}`);
+    filePaths.forEach(filePath => {
+        // Ensure parent directory exists
+        const dir = path.dirname(filePath);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
         }
-        return;
-    }
 
-    const src = fs.readFileSync(filePath, 'utf-8');
-    const regex = new RegExp(`(export\\s+(const|let|var)\\s+${variableName}(\\s*:\\s*[^=]+)?\\s*=\\s*)([\\s\\S]+?)(;?\\s*$)`);
-    
-    if (regex.test(src)) {
-        const updated = src.replace(regex, `$1${JSON.stringify(data, null, 4)}$5`);
-        fs.writeFileSync(filePath, updated, 'utf-8');
-        console.log(`[SafeWrite] Updated: ${path.relative(process.cwd(), filePath)}`);
-    } else {
-        console.warn(`[SafeWrite] Could not find variable '${variableName}' in ${filePath}. Falling back to overwrite.`);
-        if (templateIfNotFound) {
-            fs.writeFileSync(filePath, templateIfNotFound.replace('{{DATA}}', JSON.stringify(data, null, 4)), 'utf-8');
+        if (!fs.existsSync(filePath)) {
+            if (templateIfNotFound) {
+                fs.writeFileSync(filePath, templateIfNotFound.replace('{{DATA}}', JSON.stringify(data, null, 4)), 'utf-8');
+                console.log(`[SafeWrite] Created new file: ${path.relative(process.cwd(), filePath)}`);
+            }
+            return;
         }
-    }
+
+        const src = fs.readFileSync(filePath, 'utf-8');
+        const regex = new RegExp(`(export\\s+(const|let|var)\\s+${variableName}(\\s*:\\s*[^=]+)?\\s*=\\s*)([\\s\\S]+?)(;?\\s*$)`);
+        
+        if (regex.test(src)) {
+            const updated = src.replace(regex, `$1${JSON.stringify(data, null, 4)}$5`);
+            fs.writeFileSync(filePath, updated, 'utf-8');
+            console.log(`[SafeWrite] Updated: ${path.relative(process.cwd(), filePath)}`);
+        } else {
+            console.warn(`[SafeWrite] Could not find variable '${variableName}' in ${filePath}. Falling back to overwrite.`);
+            if (templateIfNotFound) {
+                fs.writeFileSync(filePath, templateIfNotFound.replace('{{DATA}}', JSON.stringify(data, null, 4)), 'utf-8');
+            }
+        }
+    });
 }
 
 const SESSIONS = new Map(); // token -> user object
@@ -551,16 +560,29 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
 
         // Keep themeConfig.json as fallback source of truth
         const localThemeJSON = path.join(THEME_DIR, 'themeConfig.json');
-        fs.writeFileSync(localThemeJSON, JSON.stringify(theme, null, 4), 'utf-8');
+        const mobileThemeJSON = path.join(MOBILE_DATA_DIR, 'theme', 'themeConfig.json');
         
-        console.log('[Theme] Modular files and themeConfig.json updated.');
+        const themeContent = JSON.stringify(theme, null, 4);
+        fs.writeFileSync(localThemeJSON, themeContent, 'utf-8');
+        
+        // Ensure mobile target dir exists
+        const mobThemeDir = path.dirname(mobileThemeJSON);
+        if (!fs.existsSync(mobThemeDir)) fs.mkdirSync(mobThemeDir, { recursive: true });
+        fs.writeFileSync(mobileThemeJSON, themeContent, 'utf-8');
+        
+        console.log('[Theme] Modular files and themeConfig.json updated in both DB and Mobile.');
     }
 
     // 4b. Save Theme Schemes
     if (themeSchemes) {
         const themeSchemesFile = path.join(THEME_DIR, 'themeSchemes.json');
-        fs.writeFileSync(themeSchemesFile, JSON.stringify(themeSchemes, null, 4), 'utf-8');
-        console.log('[Theme] themeSchemes.json updated.');
+        const mobileSchemesFile = path.join(MOBILE_DATA_DIR, 'theme', 'themeSchemes.json');
+        
+        const schemeContent = JSON.stringify(themeSchemes, null, 4);
+        fs.writeFileSync(themeSchemesFile, schemeContent, 'utf-8');
+        fs.writeFileSync(mobileSchemesFile, schemeContent, 'utf-8');
+        
+        console.log('[Theme] themeSchemes.json updated in both DB and Mobile.');
     }
 
     // 5. Save Info (Modular Settings)

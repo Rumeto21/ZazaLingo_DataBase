@@ -28,7 +28,7 @@ export const colors = {
     "headerSubtitleColor": "#f40101",
     "buttonContinueColor": "#58CC02",
     "buttonContinueTextColor": "#FFFFFF",
-    "buttonLogoutColor": "#FFC800",
+    "buttonLogoutColor": "#ff0505",
     "buttonLogoutTextColor": "#FFFFFF",
     "questionTitleColor": "#4B4B4B",
     "questionPromptColor": "#4B4B4B",
