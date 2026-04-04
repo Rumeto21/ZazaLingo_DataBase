@@ -323,15 +323,27 @@ const server = http.createServer((req, res) => {
         const decodedUrl = decodeURIComponent(req.url);
         const pathname = decodedUrl.split('?')[0]; // Query parametrelerini temizle
         const relativePath = pathname.startsWith('/') ? pathname.slice(1) : pathname;
-        let filePath = path.join(__dirname, relativePath === '' ? 'index.html' : relativePath);
+        // Mascot redirection: serve from ZazaLingo app folder
+        if (relativePath.startsWith('assets/mascot/')) {
+            const mascotFileName = relativePath.replace('assets/mascot/', '');
+            filePath = path.join(__dirname, '../ZazaLingo/assets/mascot', mascotFileName);
+        } else {
+            filePath = path.join(__dirname, relativePath === '' ? 'index.html' : relativePath);
+        }
+
+
         
         // Loglama (dosya varsa logla)
         if (req.url !== '/favicon.ico') {
             console.log(`[Dev Server] Serving: ${relativePath}`);
         }
         
-        // Güvenlik: __dirname dışına çıkılmasını engelle (Case-insensitive check for Windows)
-        if (!filePath.toLowerCase().startsWith(__dirname.toLowerCase())) {
+        // Güvenlik: __dirname dışına çıkılmasını engelle (Mascot assets are allowed in ZazaLingo sibling dir)
+        const allowedPath = path.join(__dirname, '../ZazaLingo/assets/mascot').toLowerCase();
+        const isMascotRequest = filePath.toLowerCase().startsWith(allowedPath);
+        
+        if (!filePath.toLowerCase().startsWith(__dirname.toLowerCase()) && !isMascotRequest) {
+            console.warn(`[Security] Blocked access to: ${filePath}`);
             res.writeHead(403);
             res.end('Forbidden');
             return;
