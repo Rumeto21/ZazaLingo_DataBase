@@ -1,8 +1,8 @@
 export const typography = {
-    "buttonTextSize": 23,
-    "headerTitleFontSize": 64,
-    "proverbsTitleFontSize": 22,
-    "proverbsTextFontSize": 30,
+    "buttonTextSize": 30,
+    "headerTitleFontSize": 60,
+    "proverbsTitleFontSize": 26,
+    "proverbsTextFontSize": 20,
     "proverbsTranslationFontSize": 15,
     "coktanSecmeliFontSize": 18,
     "wordOrderFontSize": 16,
@@ -16,7 +16,6 @@ export const typography = {
     "settingsMusicItemFontSize": 16,
     "settingsInfoItemFontSize": 16,
     "settingsSubHeaderFontSize": 18,
-    "questionPromptFontSize": 27,
-    "questionOptionFontSize": 0,
-    "questionBtnTextFontSize": 18
+    "questionPromptFontSize": 31,
+    "questionOptionFontSize": 0
 };

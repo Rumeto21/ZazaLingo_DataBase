@@ -18,11 +18,108 @@ console.log(`[Sync] Mobile Data Directory: ${MOBILE_DATA_DIR}`);
 
 // --- Global Config & Whitelists ---
 const THEME_MAPPING = {
-    'tokens/colors.ts': ['primary', 'primaryDark', 'secondary', 'tertiary', 'background', 'surface', 'textDark', 'textLight', 'textWhite', 'border', 'correct', 'correctShadow', 'incorrect', 'incorrectShadow', 'inactive', 'inactiveText', 'selectedBg', 'selectedBorder', 'progressBarBg', 'progressFill', 'feedbackCorrectBg', 'feedbackIncorrectBg', 'accent', 'accentLight', 'secondaryLight', 'headerTitleColor', 'headerSubtitleColor', 'buttonContinueColor', 'buttonContinueTextColor', 'buttonLogoutColor', 'buttonLogoutTextColor', 'questionTitleColor', 'questionPromptColor', 'questionBtnColor', 'questionBtnTextColor', 'proverbsTitleColor', 'proverbsTextColor', 'proverbsTranslationColor', 'proverbsBgColor', 'proverbsBorderColor'],
-    'tokens/spacing.ts': ['borderRadius', 'buttonPadding', 'buttonBorderRadius', 'buttonHeight', 'buttonVerticalMargin', 'buttonContainerPaddingHorizontal', 'buttonContainerPaddingBottom', 'headerHeight', 'headerTopMargin', 'headerBottomMargin', 'buttonContainerTopMargin', 'buttonContainerMarginLeft', 'mascotHomeTop', 'mascotHomeSize', 'mascotHomeMarginLeft', 'mascotQuestionTop', 'mascotQuestionSize', 'mascotQuestionMarginLeft', 'questionPromptMarginTop', 'questionPromptMarginBottom', 'questionPromptMarginLeft', 'questionPromptPaddingHorizontal', 'questionOptionsMarginTop', 'questionOptionsMarginBottom', 'questionOptionsMarginLeft', 'questionOptionsPaddingHorizontal'],
-    'tokens/typography.ts': ['buttonTextSize', 'headerTitleFontSize', 'proverbsTitleFontSize', 'proverbsTextFontSize', 'proverbsTranslationFontSize', 'coktanSecmeliFontSize', 'wordOrderFontSize', 'matchingFontSize', 'imageChoiceFontSize', 'choiceImageFontSize', 'dialogueFontSize', 'settingsTitleFontSize', 'settingsMusicSectionTitleFontSize', 'settingsInfoSectionTitleFontSize', 'settingsMusicItemFontSize', 'settingsInfoItemFontSize', 'settingsSubHeaderFontSize', 'questionPromptFontSize', 'questionOptionFontSize', 'questionBtnTextFontSize'],
-    'components/questions.ts': ['coktanSecmeliBgColor', 'coktanSecmeliTextColor', 'coktanSecmeliSelectedBgColor', 'coktanSecmeliSelectedBorderColor', 'coktanSecmeliSelectedTextColor', 'wordOrderBgColor', 'wordOrderTextColor', 'wordOrderSelectedBgColor', 'wordOrderSelectedBorderColor', 'wordOrderSelectedTextColor', 'matchingBgColor', 'matchingTextColor', 'matchingSelectedBgColor', 'matchingSelectedBorderColor', 'matchingSelectedTextColor', 'imageChoiceBgColor', 'imageChoiceTextColor', 'imageChoiceSelectedBgColor', 'imageChoiceSelectedBorderColor', 'imageChoiceSelectedTextColor', 'choiceImageBgColor', 'choiceImageTextColor', 'choiceImageSelectedBgColor', 'choiceImageSelectedBorderColor', 'choiceImageSelectedTextColor', 'dialogueBgColor', 'dialogueTextColor', 'dialogueSelectedBgColor', 'dialogueSelectedBorderColor', 'dialogueSelectedTextColor', 'questionOptionBgColor', 'questionOptionTextColor', 'questionOptionSelectedBgColor', 'questionOptionSelectedBorderColor', 'questionOptionSelectedTextColor'],
-    'components/settings.ts': ['settingsHeaderTitle', 'settingsMusicSectionTitle', 'settingsInfoSectionTitle', 'settingsTeamTitle', 'settingsDedicationTitle', 'settingsMusicBadgeTitle', 'settingsMusicVolumeTitle'],
+    'tokens/colors.ts': [
+        'primary', 'primaryDark', 'secondary', 'tertiary', 'background', 'surface',
+        'textDark', 'textLight', 'textWhite', 'border',
+        'correct', 'correctShadow', 'incorrect', 'incorrectShadow',
+        'inactive', 'inactiveText', 'selectedBg', 'selectedBorder',
+        'progressBarBg', 'progressFill', 'feedbackCorrectBg', 'feedbackIncorrectBg',
+        'accent', 'accentLight', 'secondaryLight',
+        'headerTitleColor', 'headerSubtitleColor',
+        'buttonContinueColor', 'buttonContinueTextColor',
+        'buttonLogoutColor', 'buttonLogoutTextColor',
+        'questionTitleColor', 'questionPromptColor', 'questionBtnColor', 'questionBtnTextColor',
+        'proverbsTitleColor', 'proverbsTextColor', 'proverbsTranslationColor',
+        'proverbsBgColor', 'proverbsBorderColor'
+    ],
+    'tokens/spacing.ts': [
+        // Genel layout
+        'borderRadius', 'buttonPadding', 'buttonBorderRadius', 'buttonHeight',
+        'buttonVerticalMargin', 'buttonContainerPaddingHorizontal', 'buttonContainerPaddingBottom',
+        'headerHeight', 'headerTopMargin', 'headerBottomMargin',
+        'buttonContainerTopMargin', 'buttonContainerMarginLeft',
+        // Buton koordinatları
+        'buttonWidth', 'buttonMarginTop', 'buttonMarginLeft', 'buttonGap',
+        // Header koordinatları
+        'headerTitleMarginTop', 'headerTitleMarginLeft', 'headerTitleWidth', 'headerTitleHeight',
+        'headerSubtitleMarginTop', 'headerSubtitleMarginLeft', 'headerSubtitleWidth', 'headerSubtitleHeight',
+        // Proverbs koordinatları
+        'proverbsMarginTop', 'proverbsMarginLeft', 'proverbsWidth', 'proverbsHeight',
+        // Mascot - Ana ekran
+        'mascotHomeTop', 'mascotHomeMarginLeft', 'mascotHomeSize',
+        // Mascot - Soru ekranı (genel fallback)
+        'mascotQuestionTop', 'mascotQuestionMarginLeft', 'mascotQuestionSize',
+        // Mascot - 9 soru tipinin tamamı
+        'mascotCoktanSecmeliTop', 'mascotCoktanSecmeliMarginLeft', 'mascotCoktanSecmeliSize',
+        'mascotWordOrderTop', 'mascotWordOrderMarginLeft', 'mascotWordOrderSize',
+        'mascotMatchingTop', 'mascotMatchingMarginLeft', 'mascotMatchingSize',
+        'mascotImageChoiceTop', 'mascotImageChoiceMarginLeft', 'mascotImageChoiceSize',
+        'mascotChoiceImageTop', 'mascotChoiceImageMarginLeft', 'mascotChoiceImageSize',
+        'mascotDialogueTop', 'mascotDialogueMarginLeft', 'mascotDialogueSize',
+        'mascotDinlemeTop', 'mascotDinlemeMarginLeft', 'mascotDinlemeSize',
+        'mascotGorselEslesirmeTop', 'mascotGorselEslesirmeMarginLeft', 'mascotGorselEslesirmeSize',
+        'mascotSentenceCompletionTop', 'mascotSentenceCompletionMarginLeft', 'mascotSentenceCompletionSize',
+        // Soru ekranı metin koordinatları
+        'questionTitleMarginTop', 'questionTitleMarginLeft', 'questionTitleWidth', 'questionTitleHeight',
+        'questionPromptMarginTop', 'questionPromptMarginBottom', 'questionPromptMarginLeft',
+        'questionPromptWidth', 'questionPromptHeight', 'questionPromptPaddingHorizontal',
+        'questionOptionsMarginTop', 'questionOptionsMarginBottom', 'questionOptionsMarginLeft',
+        'questionOptionsWidth', 'questionOptionsHeight', 'questionOptionsPaddingHorizontal',
+        // Soru butonu koordinatları
+        'questionBtnMarginTop', 'questionBtnMarginLeft', 'questionBtnWidth', 'questionBtnHeight',
+        'questionBtnBorderRadius',
+        // Ayarlar koordinatları
+        'settingsTitleMarginTop', 'settingsTitleMarginLeft', 'settingsTitleWidth', 'settingsTitleHeight',
+        'settingsBackMarginTop', 'settingsBackMarginLeft', 'settingsBackWidth', 'settingsBackHeight', 'settingsBackFontSize',
+        'settingsMusicSectionMarginTop', 'settingsMusicSectionMarginLeft', 'settingsMusicSectionWidth', 'settingsMusicSectionHeight',
+        'settingsInfoSectionMarginTop', 'settingsInfoSectionMarginLeft', 'settingsInfoSectionWidth', 'settingsInfoSectionHeight',
+        'settingsThemeSectionMarginTop', 'settingsThemeSectionMarginLeft', 'settingsThemeSectionWidth', 'settingsThemeSectionHeight',
+        // Ayarlar tema seçenekleri
+        'settingsThemeItemWidth', 'settingsThemeItemHeight',
+        'settingsThemeItem0MarginTop', 'settingsThemeItem0MarginLeft',
+        'settingsThemeItem1MarginTop', 'settingsThemeItem1MarginLeft',
+        'settingsThemeItem2MarginTop', 'settingsThemeItem2MarginLeft',
+        // Ayarlar müzik öğeleri
+        'settings_music_item_0MarginTop', 'settings_music_item_0MarginLeft', 'settings_music_item_0Width', 'settings_music_item_0Height',
+        'settings_music_item_1MarginTop', 'settings_music_item_1MarginLeft', 'settings_music_item_1Width', 'settings_music_item_1Height',
+        // Ayarlar bilgi menüsü öğeleri
+        'settings_info_menu_0MarginTop', 'settings_info_menu_0MarginLeft', 'settings_info_menu_0Width', 'settings_info_menu_0Height',
+        'settings_info_menu_1MarginTop', 'settings_info_menu_1MarginLeft', 'settings_info_menu_1Width', 'settings_info_menu_1Height',
+        'settings_info_menu_2MarginTop', 'settings_info_menu_2MarginLeft', 'settings_info_menu_2Width', 'settings_info_menu_2Height',
+        // Köşe yuvarlaklıkları
+        'settingsMenuBorderRadius', 'settingsMusicItemBorderRadius', 'settingsThemeItemBorderRadius',
+        'settingsInfoMenuBorderRadius', 'settingsContentBoxBorderRadius', 'settingsMusicToggleBorderRadius',
+        'settingsMusicSliderBorderRadius'
+    ],
+    'tokens/typography.ts': [
+        'buttonTextSize', 'headerTitleFontSize', 'headerSubtitleFontSize',
+        'proverbsTitleFontSize', 'proverbsTextFontSize', 'proverbsTranslationFontSize',
+        'coktanSecmeliFontSize', 'wordOrderFontSize', 'matchingFontSize',
+        'imageChoiceFontSize', 'choiceImageFontSize', 'dialogueFontSize',
+        'settingsTitleFontSize', 'settingsMusicSectionTitleFontSize', 'settingsInfoSectionTitleFontSize',
+        'settingsMusicItemFontSize', 'settingsInfoItemFontSize', 'settingsSubHeaderFontSize',
+        'questionPromptFontSize', 'questionOptionFontSize', 'questionBtnTextFontSize'
+    ],
+    'components/questions.ts': [
+        'coktanSecmeliBgColor', 'coktanSecmeliTextColor', 'coktanSecmeliSelectedBgColor',
+        'coktanSecmeliSelectedBorderColor', 'coktanSecmeliSelectedTextColor',
+        'wordOrderBgColor', 'wordOrderTextColor', 'wordOrderSelectedBgColor',
+        'wordOrderSelectedBorderColor', 'wordOrderSelectedTextColor',
+        'matchingBgColor', 'matchingTextColor', 'matchingSelectedBgColor',
+        'matchingSelectedBorderColor', 'matchingSelectedTextColor',
+        'imageChoiceBgColor', 'imageChoiceTextColor', 'imageChoiceSelectedBgColor',
+        'imageChoiceSelectedBorderColor', 'imageChoiceSelectedTextColor',
+        'choiceImageBgColor', 'choiceImageTextColor', 'choiceImageSelectedBgColor',
+        'choiceImageSelectedBorderColor', 'choiceImageSelectedTextColor',
+        'dialogueBgColor', 'dialogueTextColor', 'dialogueSelectedBgColor',
+        'dialogueSelectedBorderColor', 'dialogueSelectedTextColor',
+        'questionOptionBgColor', 'questionOptionTextColor', 'questionOptionSelectedBgColor',
+        'questionOptionSelectedBorderColor', 'questionOptionSelectedTextColor'
+    ],
+    'components/settings.ts': [
+        'settingsHeaderTitle', 'settingsMusicSectionTitle', 'settingsInfoSectionTitle',
+        'settingsTeamTitle', 'settingsDedicationTitle', 'settingsMusicBadgeTitle', 'settingsMusicVolumeTitle'
+    ],
     'components/header.ts': ['headerTitleText', 'headerSubtitleText', 'headerTitleAlign', 'headerSubtitleAlign'],
     'components/proverbs.ts': ['proverbsTitleText'],
     'components/buttons.ts': ['buttonContinueText', 'buttonLogoutText', 'buttonTextAlign']
@@ -60,7 +157,9 @@ function injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFou
         }
 
         const src = fs.readFileSync(filePath, 'utf-8');
-        const regex = new RegExp(`(export\\s+(const|let|var)\\s+${variableName}(\\s*:\\s*[^=]+)?\\s*=\\s*)([\\s\\S]+?)(;?\\s*$)`);
+        // Improved regex: Ensure we match from the start of the line/export to a definitive semicolon/newline.
+        // It looks for 'export const variableName = [...];' pattern precisely.
+        const regex = new RegExp(`(export\\s+(const|let|var)\\s+${variableName}(\\s*:\\s*[^=]+)?\\s*=\\s*)([\\s\\S]*?)(;?\\s*$)`, 'm');
         
         if (regex.test(src)) {
             const updated = src.replace(regex, `$1${JSON.stringify(data, null, 4)}$5`);
