@@ -110,4 +110,4 @@ export const themeConfig: AppTheme = {
     ...header,
     ...proverbs,
     ...buttons
-} as AppTheme;
+};

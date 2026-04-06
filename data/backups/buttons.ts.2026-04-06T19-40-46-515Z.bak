@@ -1,0 +1,5 @@
+export const buttons = {
+    "buttonContinueText": "DEVAM ET",
+    "buttonLogoutText": "ÇIKIŞ YAP",
+    "buttonTextAlign": "center"
+};

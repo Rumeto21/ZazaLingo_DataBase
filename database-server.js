@@ -125,15 +125,18 @@ const THEME_MAPPING = {
     'components/buttons.ts': ['buttonContinueText', 'buttonLogoutText', 'buttonTextAlign']
 };
 
+const BACKUP_DIR = path.join(DATA_DIR, 'backups');
+const ARCHIVE_DIR = path.join(DATA_DIR, 'archive', 'deleted_files');
+
 // Ensure directories exist locally
-[DATA_DIR, CURRICULUM_DIR, MAP_DIR, THEME_DIR, PROVERBS_DIR, LOCALES_DIR, SETTINGS_DIR].forEach(dir => {
+[DATA_DIR, CURRICULUM_DIR, MAP_DIR, THEME_DIR, PROVERBS_DIR, LOCALES_DIR, SETTINGS_DIR, BACKUP_DIR, ARCHIVE_DIR].forEach(dir => {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
     }
 });
 
 /**
- * Safely injects JSON data into a TypeScript file.
+ * Safely injects JSON data into a TypeScript file using Atomic Writes and Backups.
  */
 function injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFound = null) {
     const filePaths = [
@@ -142,34 +145,69 @@ function injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFou
     ];
     
     filePaths.forEach(filePath => {
-        // Ensure parent directory exists
-        const dir = path.dirname(filePath);
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
-
-        if (!fs.existsSync(filePath)) {
-            if (templateIfNotFound) {
-                fs.writeFileSync(filePath, templateIfNotFound.replace('{{DATA}}', JSON.stringify(data, null, 4)), 'utf-8');
-                console.log(`[SafeWrite] Created new file: ${path.relative(process.cwd(), filePath)}`);
+        try {
+            // Ensure parent directory exists
+            const dir = path.dirname(filePath);
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir, { recursive: true });
             }
-            return;
-        }
 
-        const src = fs.readFileSync(filePath, 'utf-8');
-        // Improved regex: Ensure we match from the start of the line/export to a definitive semicolon/newline.
-        // It looks for 'export const variableName = [...];' pattern precisely.
-        const regex = new RegExp(`(export\\s+(const|let|var)\\s+${variableName}(\\s*:\\s*[^=]+)?\\s*=\\s*)([\\s\\S]*?)(;?\\s*$)`, 'm');
-        
-        if (regex.test(src)) {
-            const updated = src.replace(regex, `$1${JSON.stringify(data, null, 4)}$5`);
-            fs.writeFileSync(filePath, updated, 'utf-8');
-            console.log(`[SafeWrite] Updated: ${path.relative(process.cwd(), filePath)}`);
-        } else {
-            console.warn(`[SafeWrite] Could not find variable '${variableName}' in ${filePath}. Falling back to overwrite.`);
-            if (templateIfNotFound) {
-                fs.writeFileSync(filePath, templateIfNotFound.replace('{{DATA}}', JSON.stringify(data, null, 4)), 'utf-8');
+            const jsonStr = JSON.stringify(data, null, 4);
+            if (!jsonStr || jsonStr === 'null' || jsonStr === 'undefined') {
+                console.error(`[SafeWrite] Blocked attempt to write invalid data to ${filePath}`);
+                return;
             }
+
+            if (!fs.existsSync(filePath)) {
+                if (templateIfNotFound) {
+                    const content = templateIfNotFound.replace('{{DATA}}', jsonStr);
+                    fs.writeFileSync(filePath, content, 'utf-8');
+                    console.log(`[SafeWrite] Created new file: ${path.relative(process.cwd(), filePath)}`);
+                }
+                return;
+            }
+
+            // 1. Create Backup before modification (only for central Data_Base)
+            if (filePath.startsWith(DATA_DIR)) {
+                const fileName = path.basename(filePath);
+                const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+                const backupPath = path.join(BACKUP_DIR, `${fileName}.${timestamp}.bak`);
+                fs.copyFileSync(filePath, backupPath);
+            }
+
+            const src = fs.readFileSync(filePath, 'utf-8');
+            // We find the START of the target export. 
+            // We match only the prefix (everything up to the opening bracket/brace)
+            const prefixRegex = new RegExp(`(export\\s+(const|let|var)\\s+${variableName}(\\s*:\\s*[^=]+)?\\s*=\\s*)([\\s\\S]*)`, 'm');
+            const match = src.match(prefixRegex);
+            
+            let updatedContent;
+            if (match) {
+                const header = src.substring(0, match.index); // Everything BEFORE the export
+                const exportPrefix = match[1]; // The "export const X =" part
+                
+                // We construct the new content by combining the header + new prefix + new data + semicolon
+                // This EFFECTIVELY DISCARDS anything that was in the file after the original export started.
+                updatedContent = `${header}${exportPrefix}${jsonStr};\n`;
+            } else {
+                console.warn(`[IroncladWrite] Could not find variable '${variableName}' in ${filePath}. Falling back to template.`);
+                if (templateIfNotFound) {
+                    updatedContent = templateIfNotFound.replace('{{DATA}}', jsonStr);
+                } else {
+                    return;
+                }
+            }
+
+            // 2. Atomic Write: Write to temp first
+            const tempPath = `${filePath}.tmp`;
+            fs.writeFileSync(tempPath, updatedContent, 'utf-8');
+            
+            // 3. Rename temp to original
+            fs.renameSync(tempPath, filePath);
+            
+            console.log(`[SafeWrite] Successfully updated: ${path.relative(process.cwd(), filePath)}`);
+        } catch (err) {
+            console.error(`[SafeWrite] Critical error writing to ${filePath}:`, err.message);
         }
     });
 }
@@ -208,12 +246,15 @@ const server = http.createServer((req, res) => {
 
     // ── POST /upload ────────────────────────────────────────────────────────
     if (req.method === 'POST' && req.url === '/upload') {
-        const fileName = req.headers['x-filename'];
+        let fileName = req.headers['x-filename'];
         if (!fileName) {
             res.writeHead(400);
             res.end(JSON.stringify({ error: 'Missing X-FileName header' }));
             return;
         }
+
+        // Security: Prevent path traversal by extracting only the base name
+        fileName = path.basename(fileName);
 
         const ext = path.extname(fileName).toLowerCase();
         let targetSubDir = 'Pictures';
@@ -306,23 +347,52 @@ const server = http.createServer((req, res) => {
     if (req.method === 'GET' && req.url === '/data') {
         try {
             // Dynamically require each data module and return as JSON
-            // We read raw TS files by extracting the JSON payload after 'export const X =' 
+            // Robust TS export reader that ignores trailing corruption
             const readTSExport = (filePath) => {
                 if (!fs.existsSync(filePath)) return null;
-                const src = fs.readFileSync(filePath, 'utf-8');
-                // Find last '= ' followed by JSON-like content
-                const match = src.match(/=\s*(\[|\{)[\s\S]*$/m);
-                if (!match) return null;
-                try { return JSON.parse(match[0].replace(/^=\s*/, '').replace(/;\s*$/, '')); } catch { return null; }
+                try {
+                    const src = fs.readFileSync(filePath, 'utf-8');
+                    // Find the start of the data after '='
+                    const startMatch = src.match(/=\s*([\[\{]+)/m);
+                    if (!startMatch) return null;
+
+                    const startSearchPos = startMatch.index + startMatch[0].length;
+                    const brackets = startMatch[1];
+                    let braceCount = brackets.length;
+                    let endPos = -1;
+                    let inString = false;
+                    let escape = false;
+
+                    for (let i = startSearchPos; i < src.length; i++) {
+                        const char = src[i];
+                        if (escape) { escape = false; continue; }
+                        if (char === '\\') { escape = true; continue; }
+                        if (char === '"' || char === "'") {
+                            if (!inString) inString = char;
+                            else if (inString === char) inString = false;
+                            continue;
+                        }
+                        if (inString) continue;
+                        if (char === '{' || char === '[') braceCount++;
+                        if (char === '}' || char === ']') braceCount--;
+                        if (braceCount === 0) {
+                            endPos = i + 1;
+                            break;
+                        }
+                    }
+
+                    if (endPos === -1) return null;
+                    const jsonContent = src.substring(startMatch.index + startMatch[0].length - brackets.length, endPos);
+                    return JSON.parse(jsonContent);
+                } catch (e) {
+                    console.error(`[ReadError] Failed to parse ${filePath}:`, e.message);
+                    return null;
+                }
             };
 
             const readLocale = (lang) => {
                 const p = path.join(LOCALES_DIR, `${lang}.ts`);
-                if (!fs.existsSync(p)) return {};
-                const src = fs.readFileSync(p, 'utf-8');
-                const match = src.match(/=\s*(\{)[\s\S]*$/m);
-                if (!match) return {};
-                try { return JSON.parse(match[0].replace(/^=\s*/, '').replace(/;\s*$/, '')); } catch { return {}; }
+                return readTSExport(p);
             };
 
             const payload = {
@@ -645,8 +715,10 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
                 }
             } else if (file.endsWith('.ts') && file !== 'index.ts') {
                 if (!safeCurrentFiles.has(relativePath.toLowerCase())) {
-                    fs.unlinkSync(fullPath);
-                    console.log(`[Cleanup] Deleted old test file: ${relativePath}`);
+                    // Archive instead of delete
+                    const archivedPath = path.join(ARCHIVE_DIR, `${Date.now()}_${file}`);
+                    fs.renameSync(fullPath, archivedPath);
+                    console.log(`[Archive] Moved old test file to archive: ${relativePath}`);
                 }
             }
         });
@@ -665,6 +737,8 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
             const partData = {};
             keys.forEach(k => { if (k in theme) partData[k] = theme[k]; });
             const varName = path.basename(relativePath, '.ts');
+            // Theme files don't strictly need the interface import since they are tokens, 
+            // but we use a flexible template that matches existing style
             injectDataIntoTSFile(path.join('theme', relativePath), varName, partData, 
                 `export const ${varName} = {{DATA}};`);
         }
@@ -720,7 +794,7 @@ function saveLocalesToFiles(locales) {
     for (const lang of langs) {
         if (locales[lang]) {
             injectDataIntoTSFile(path.join('locales', `${lang}.ts`), lang, locales[lang], 
-                `export const ${lang} = {{DATA}};`);
+                `import { Locale } from '../../types/locales';\n\nexport const ${lang}: Locale = {{DATA}};`);
         }
     }
 }

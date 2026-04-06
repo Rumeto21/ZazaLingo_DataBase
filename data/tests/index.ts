@@ -18,7 +18,3 @@ export const TESTS: Record<string, TestData> = {
     'test_1774209082939': test_1774209082939,
     'test_1774293529313': test_1774293529313,
 };
-
-export const getTestById = (id: string): TestData | null => {
-    return TESTS[id] || null;
-};

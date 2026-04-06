@@ -1,0 +1,21 @@
+export const typography = {
+    "buttonTextSize": 30,
+    "headerTitleFontSize": 60,
+    "proverbsTitleFontSize": 26,
+    "proverbsTextFontSize": 20,
+    "proverbsTranslationFontSize": 15,
+    "coktanSecmeliFontSize": 18,
+    "wordOrderFontSize": 16,
+    "matchingFontSize": 16,
+    "imageChoiceFontSize": 18,
+    "choiceImageFontSize": 16,
+    "dialogueFontSize": 18,
+    "settingsTitleFontSize": 24,
+    "settingsMusicSectionTitleFontSize": 20,
+    "settingsInfoSectionTitleFontSize": 20,
+    "settingsMusicItemFontSize": 16,
+    "settingsInfoItemFontSize": 16,
+    "settingsSubHeaderFontSize": 18,
+    "questionPromptFontSize": 31,
+    "questionOptionFontSize": 0
+};

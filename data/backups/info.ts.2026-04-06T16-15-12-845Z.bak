@@ -1,0 +1,56 @@
+// Bu dosya Dev Server tarafından otomatik güncellenmiştir.
+export interface MusicCredit {
+    title: string;
+    composer: string;
+    performer: string;
+    source: string;
+    license: string;
+    licenseLink: string;
+    changes: string;
+}
+
+export interface Dedication {
+    from: string;
+    to: string;
+}
+
+export interface ZazaLingoInfoData {
+    mainTitle: string;
+    teamTitle: string;
+    dedicationTitle: string;
+    missionTitle: string;
+    mission: string;
+    musicTitle: string;
+    team: string[];
+    dedications: Dedication[];
+    music: MusicCredit[];
+}
+
+export const zazaLingoInfo: ZazaLingoInfoData = {
+    "mainTitle": "ZazaLingo Ayarları",
+    "teamTitle": "ZazaLingo Ekibi",
+    "dedicationTitle": "İthaflar",
+    "missionTitle": "Misyonumuz",
+    "mission": "Bu uygulamadaki amaçlarımız;\nKürtçe'nin Zazakî Lehçesini dijital ortama taşımak\nStandart Zazakî'nin bilinmesini arttırmak\nÇocuklar ve gençlerimize eğlenceli bir şekilde Zazakî'yi öğretmek",
+    "musicTitle": "Müzik Bilgileri",
+    "team": [
+        "Onur Şenoğlu"
+    ],
+    "dedications": [
+        {
+            "from": "Onur Şenoğlu",
+            "to": "Bu uygulamadaki çalışmalarımı başta Dedem İsa Yıldız olmak üzere Bekan ve Saroyan ailelerine ve Değerli arkadaşım Şevîn Roşna Hocaoğlu'na ithaf ediyorum."
+        }
+    ],
+    "music": [
+        {
+            "title": "Piano Sonata No. 10 in C Major, K.330",
+            "composer": "Wolfgang Amadeus Mozart",
+            "performer": "Alessio Averone",
+            "source": "Musopen",
+            "license": "CC BY 3.0",
+            "licenseLink": "https://creativecommons.org/licenses/by/3.0/",
+            "changes": "looped"
+        }
+    ]
+};
