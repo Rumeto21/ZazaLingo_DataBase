@@ -13,7 +13,7 @@ const LOCALES_DIR = path.join(DATA_DIR, 'locales');
 const SETTINGS_DIR = path.join(DATA_DIR, 'settings');
 
 // --- Sync with Mobile App ---
-const MOBILE_DATA_DIR = path.join(__dirname, '../ZazaLingo/data');
+const MOBILE_DATA_DIR = process.env.MOBILE_DATA_DIR || path.join(__dirname, '../ZazaLingo/data');
 console.log(`[Sync] Mobile Data Directory: ${MOBILE_DATA_DIR}`);
 
 // --- Global Config & Whitelists ---
@@ -89,7 +89,10 @@ const THEME_MAPPING = {
         // Köşe yuvarlaklıkları
         'settingsMenuBorderRadius', 'settingsMusicItemBorderRadius', 'settingsThemeItemBorderRadius',
         'settingsInfoMenuBorderRadius', 'settingsContentBoxBorderRadius', 'settingsMusicToggleBorderRadius',
-        'settingsMusicSliderBorderRadius'
+        'settingsMusicSliderBorderRadius',
+        // TopBar koordinatları
+        'topBarPaddingHorizontal', 'topBarPaddingTop', 'topBarPaddingBottom', 'topBarDropdownWidth',
+        'topBarFlagWidth', 'topBarFlagHeight', 'topBarHelperMarginLeft'
     ],
     'tokens/typography.ts': [
         'buttonTextSize', 'headerTitleFontSize', 'headerSubtitleFontSize',
@@ -208,6 +211,41 @@ function injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFou
             console.log(`[SafeWrite] Successfully updated: ${path.relative(process.cwd(), filePath)}`);
         } catch (err) {
             console.error(`[SafeWrite] Critical error writing to ${filePath}:`, err.message);
+        }
+    });
+}
+
+/**
+ * Safely writes JSON data to multiple locations with Atomic Writes and Backups.
+ */
+function injectJSONAtomic(relativePath, data) {
+    const filePaths = [
+        path.join(DATA_DIR, relativePath),
+        path.join(MOBILE_DATA_DIR, relativePath)
+    ];
+
+    filePaths.forEach(filePath => {
+        try {
+            const dir = path.dirname(filePath);
+            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+
+            const jsonStr = JSON.stringify(data, null, 4);
+            if (!jsonStr || jsonStr === 'null') return;
+
+            // 1. Backup (Only for DB directory)
+            if (filePath.startsWith(DATA_DIR) && fs.existsSync(filePath)) {
+                const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+                fs.copyFileSync(filePath, path.join(BACKUP_DIR, `${path.basename(filePath)}.${timestamp}.bak`));
+            }
+
+            // 2. Atomic Write
+            const tempPath = `${filePath}.tmp`;
+            fs.writeFileSync(tempPath, jsonStr, 'utf-8');
+            fs.renameSync(tempPath, filePath);
+
+            console.log(`[SafeWrite] JSON updated: ${path.relative(process.cwd(), filePath)}`);
+        } catch (err) {
+            console.error(`[SafeWrite] JSON error: ${filePath}`, err.message);
         }
     });
 }
@@ -696,7 +734,9 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
     indexContent += `};\n`;
 
     const localIndex = path.join(CURRICULUM_DIR, 'index.ts');
-    fs.writeFileSync(localIndex, indexContent, 'utf-8');
+    const tempIndex = `${localIndex}.tmp`;
+    fs.writeFileSync(tempIndex, indexContent, 'utf-8');
+    fs.renameSync(tempIndex, localIndex);
 
     // Cleanup Tests
     function cleanupTests(dir, baseDir = '') {
@@ -744,29 +784,13 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
         }
 
         // Keep themeConfig.json as fallback source of truth
-        const localThemeJSON = path.join(THEME_DIR, 'themeConfig.json');
-        const mobileThemeJSON = path.join(MOBILE_DATA_DIR, 'theme', 'themeConfig.json');
-        
-        const themeContent = JSON.stringify(theme, null, 4);
-        fs.writeFileSync(localThemeJSON, themeContent, 'utf-8');
-        
-        // Ensure mobile target dir exists
-        const mobThemeDir = path.dirname(mobileThemeJSON);
-        if (!fs.existsSync(mobThemeDir)) fs.mkdirSync(mobThemeDir, { recursive: true });
-        fs.writeFileSync(mobileThemeJSON, themeContent, 'utf-8');
-        
+        injectJSONAtomic(path.join('theme', 'themeConfig.json'), theme);
         console.log('[Theme] Modular files and themeConfig.json updated in both DB and Mobile.');
     }
 
     // 4b. Save Theme Schemes
     if (themeSchemes) {
-        const themeSchemesFile = path.join(THEME_DIR, 'themeSchemes.json');
-        const mobileSchemesFile = path.join(MOBILE_DATA_DIR, 'theme', 'themeSchemes.json');
-        
-        const schemeContent = JSON.stringify(themeSchemes, null, 4);
-        fs.writeFileSync(themeSchemesFile, schemeContent, 'utf-8');
-        fs.writeFileSync(mobileSchemesFile, schemeContent, 'utf-8');
-        
+        injectJSONAtomic(path.join('theme', 'themeSchemes.json'), themeSchemes);
         console.log('[Theme] themeSchemes.json updated in both DB and Mobile.');
     }
 

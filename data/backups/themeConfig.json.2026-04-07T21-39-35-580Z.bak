@@ -157,8 +157,8 @@
     "topBarPaddingHorizontal": 0.042667,
     "topBarPaddingTop": 0.019704,
     "topBarPaddingBottom": 0.009852,
-    "topBarDropdownWidth": 0.05,
-    "topBarFlagWidth": 0.05,
-    "topBarFlagHeight": 0.030788,
-    "topBarHelperMarginLeft": 0.1
+    "topBarDropdownWidth": 0.32,
+    "topBarFlagWidth": 0.08,
+    "topBarFlagHeight": 0.053,
+    "topBarHelperMarginLeft": 0.02
 }
