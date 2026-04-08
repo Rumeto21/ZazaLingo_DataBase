@@ -6,6 +6,7 @@ import { settings } from './components/settings';
 import { header } from './components/header';
 import { proverbs } from './components/proverbs';
 import { buttons } from './components/buttons';
+import { map } from './components/map';
 
 export interface AppTheme {
     primary: string; primaryDark: string; secondary: string; tertiary: string;
@@ -55,50 +56,82 @@ export interface AppTheme {
     settingsTeamTitle: string; settingsDedicationTitle: string;
     settingsMusicBadgeTitle: string;
     settingsMusicVolumeTitle: string;
-    mascotHomeTop: number;
-    mascotHomeMarginLeft: number;
-    mascotHomeSize: number;
-    mascotQuestionTop: number;
-    mascotQuestionMarginLeft: number;
-    mascotQuestionSize: number;
-    mascotCoktanSecmeliTop: number;
-    mascotCoktanSecmeliMarginLeft: number;
-    mascotCoktanSecmeliSize: number;
-    mascotGorselEslesirmeTop: number;
-    mascotGorselEslesirmeMarginLeft: number;
-    mascotGorselEslesirmeSize: number;
-    mascotDinlemeTop: number;
-    mascotDinlemeMarginLeft: number;
-    mascotDinlemeSize: number;
-    mascotWordOrderTop: number;
-    mascotWordOrderMarginLeft: number;
-    mascotWordOrderSize: number;
-    mascotMatchingTop: number;
-    mascotMatchingMarginLeft: number;
-    mascotMatchingSize: number;
-    mascotSentenceCompletionTop: number;
-    mascotSentenceCompletionMarginLeft: number;
-    mascotSentenceCompletionSize: number;
-    mascotImageChoiceTop: number;
-    mascotImageChoiceMarginLeft: number;
-    mascotImageChoiceSize: number;
-    mascotChoiceImageTop: number;
-    mascotChoiceImageMarginLeft: number;
-    mascotChoiceImageSize: number;
-    mascotDialogueTop: number;
-    mascotDialogueMarginLeft: number;
-    mascotDialogueSize: number;
-    questionPromptFontSize: number;
-    questionOptionFontSize: number;
-    questionBtnTextFontSize: number;
-    questionPromptMarginTop: number;
-    questionPromptMarginBottom: number;
-    questionPromptMarginLeft: number;
-    questionPromptPaddingHorizontal: number;
-    questionOptionsMarginTop: number;
-    questionOptionsMarginBottom: number;
-    questionOptionsMarginLeft: number;
-    questionOptionsPaddingHorizontal: number;
+    mascotHomeTop?: number;
+    mascotHomeMarginLeft?: number;
+    mascotHomeSize?: number;
+    mascotQuestionTop?: number;
+    mascotQuestionMarginLeft?: number;
+    mascotQuestionSize?: number;
+    mascotCoktanSecmeliTop?: number;
+    mascotCoktanSecmeliMarginLeft?: number;
+    mascotCoktanSecmeliSize?: number;
+    mascotGorselEslesirmeTop?: number;
+    mascotGorselEslesirmeMarginLeft?: number;
+    mascotGorselEslesirmeSize?: number;
+    mascotDinlemeTop?: number;
+    mascotDinlemeMarginLeft?: number;
+    mascotDinlemeSize?: number;
+    mascotWordOrderTop?: number;
+    mascotWordOrderMarginLeft?: number;
+    mascotWordOrderSize?: number;
+    mascotMatchingTop?: number;
+    mascotMatchingMarginLeft?: number;
+    mascotMatchingSize?: number;
+    mascotSentenceCompletionTop?: number;
+    mascotSentenceCompletionMarginLeft?: number;
+    mascotSentenceCompletionSize?: number;
+    mascotImageChoiceTop?: number;
+    mascotImageChoiceMarginLeft?: number;
+    mascotImageChoiceSize?: number;
+    mascotChoiceImageTop?: number;
+    mascotChoiceImageMarginLeft?: number;
+    mascotChoiceImageSize?: number;
+    mascotDialogueTop?: number;
+    mascotDialogueMarginLeft?: number;
+    mascotDialogueSize?: number;
+    questionPromptFontSize?: number;
+    questionOptionFontSize?: number;
+    questionBtnTextFontSize?: number;
+    questionPromptMarginTop?: number;
+    questionPromptMarginBottom?: number;
+    questionPromptMarginLeft?: number;
+    questionPromptPaddingHorizontal?: number;
+    questionOptionsMarginTop?: number;
+    questionOptionsMarginBottom?: number;
+    questionOptionsMarginLeft?: number;
+    questionOptionsPaddingHorizontal?: number;
+
+    // Map Specific
+    mapBgColor: string;
+    mapGridColor: string;
+    mapRiverColor: string;
+    railSteelColor: string;
+    railActiveColor: string;
+    tieNormalColor: string;
+    tieActiveColor: string;
+    pinLockedBg: string;
+    pinLockedFg: string;
+    pinActiveBg: string;
+    pinActiveFg: string;
+    pinActiveRing: string;
+    pinDoneBg: string;
+    pinDoneFg: string;
+    pinDoneRing: string;
+    labelBgColor: string;
+    labelTextColor: string;
+    labelLockedColor: string;
+    locoColor: string;
+    locoAccentColor: string;
+    locoWindowColor: string;
+    locoLightColor: string;
+    
+    // Map Sizing (Ratios)
+    mapRailWidth: number;
+    mapTieSize: number;
+    mapTieThickness: number;
+    mapTieSpacing: number;
+    mapPinRadius: number;
+    mapTopicPinRadius: number;
 }
 
 export const themeConfig: AppTheme = {
@@ -109,5 +142,6 @@ export const themeConfig: AppTheme = {
     ...settings,
     ...header,
     ...proverbs,
-    ...buttons
+    ...buttons,
+    ...map
 };

@@ -43,12 +43,5 @@ export const spacing = {
     "questionOptionsMarginLeft": 0,
     "questionOptionsWidth": 1,
     "questionOptionsHeight": 0.431034,
-    "questionOptionsPaddingHorizontal": 0,
-    "topBarPaddingHorizontal": 0.042667,
-    "topBarPaddingTop": 0.019704,
-    "topBarPaddingBottom": 0.009852,
-    "topBarDropdownWidth": 0.05,
-    "topBarFlagWidth": 0.05,
-    "topBarFlagHeight": 0.030788,
-    "topBarHelperMarginLeft": 0.1
+    "questionOptionsPaddingHorizontal": 0
 };

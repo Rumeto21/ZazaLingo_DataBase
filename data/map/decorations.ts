@@ -882,9 +882,9 @@ export const decorations: DecorationData[] = [
     {
         "id": "deco_1773737144594",
         "type": "mountain",
-        "x": 501,
+        "x": 443,
         "y": 408,
-        "scale": 6.3,
+        "scale": 2.96,
         "angle": 0,
         "scaleY": 6.85
     },

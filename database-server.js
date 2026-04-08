@@ -32,6 +32,15 @@ const THEME_MAPPING = {
         'proverbsTitleColor', 'proverbsTextColor', 'proverbsTranslationColor',
         'proverbsBgColor', 'proverbsBorderColor'
     ],
+    'components/map.ts': [
+        'mapBgColor', 'mapGridColor', 'mapRiverColor', 'railSteelColor', 'railActiveColor',
+        'tieNormalColor', 'tieActiveColor', 'pinLockedBg', 'pinLockedFg', 'pinActiveBg',
+        'pinActiveFg', 'pinActiveRing', 'pinDoneBg', 'pinDoneFg', 'pinDoneRing',
+        'labelBgColor', 'labelTextColor', 'labelLockedColor', 'locoColor',
+        'locoAccentColor', 'locoWindowColor', 'locoLightColor',
+        'mapRailWidth', 'mapTieSize', 'mapTieThickness', 'mapTieSpacing',
+        'mapPinRadius', 'mapTopicPinRadius'
+    ],
     'tokens/spacing.ts': [
         // Genel layout
         'borderRadius', 'buttonPadding', 'buttonBorderRadius', 'buttonHeight',
@@ -530,6 +539,7 @@ const server = http.createServer((req, res) => {
         const decodedUrl = decodeURIComponent(req.url);
         const pathname = decodedUrl.split('?')[0]; // Query parametrelerini temizle
         const relativePath = pathname.startsWith('/') ? pathname.slice(1) : pathname;
+        let filePath;
         // Mascot redirection: serve from ZazaLingo app folder
         if (relativePath.startsWith('assets/mascot/')) {
             const mascotFileName = relativePath.replace('assets/mascot/', '');
@@ -542,7 +552,8 @@ const server = http.createServer((req, res) => {
         
         // Loglama (dosya varsa logla)
         if (req.url !== '/favicon.ico') {
-            console.log(`[Dev Server] Serving: ${relativePath}`);
+            console.log(`[Dev Server] Requesting: ${relativePath}`);
+            console.log(`[Dev Server] Resolved Path: ${filePath}`);
         }
         
         // Güvenlik: __dirname dışına çıkılmasını engelle (Mascot assets are allowed in ZazaLingo sibling dir)
@@ -590,11 +601,12 @@ const server = http.createServer((req, res) => {
 
             fs.readFile(filePath, (error, content) => {
                 if (error) {
+                    console.error(`[Dev Server] 500 Error reading: ${filePath}`, error.code);
                     res.writeHead(500);
                     res.end('Server Error: ' + error.code);
                 } else {
                     res.writeHead(200, { 'Content-Type': contentType });
-                    res.end(content, 'utf-8');
+                    res.end(content);
                 }
             });
         });
