@@ -5,7 +5,6 @@ export interface MapConfig {
     grassPatternId?: string;
 }
 export const mapConfig: MapConfig = {
-    "railWidth": 13,
-    "tieSize": 25,
-    "tieThickness": 7
+    "railWidth": 5,
+    "tieSize": 25
 };

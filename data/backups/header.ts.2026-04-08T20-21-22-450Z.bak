@@ -3,4 +3,4 @@ export const header = {
     "headerSubtitleText": "",
     "headerTitleAlign": "center",
     "headerSubtitleAlign": "center"
-};
+} as const;
