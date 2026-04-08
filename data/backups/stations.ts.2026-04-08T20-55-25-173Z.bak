@@ -362,7 +362,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l17",
-        "zazaName": "Amed",
+        "zazaName": "Amed_deneme",
         "trName": "Diyarbakır",
         "krmncName": "Amed",
         "x": 458,

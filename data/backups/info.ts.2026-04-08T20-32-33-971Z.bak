@@ -31,7 +31,7 @@ export const zazaLingoInfo: ZazaLingoInfoData = {
     "teamTitle": "ZazaLingo Ekibi",
     "dedicationTitle": "İthaflar",
     "missionTitle": "Misyonumuz",
-    "mission": "Bu uygulamadaki amaçlarımız;\n-Kürtçe'nin Zazakî Lehçesini dijital ortama taşımak\n-Standart Zazakî'nin bilinmesini arttırmak\n-Çocuklar ve gençlerimize eğlenceli bir şekilde                Zazakî'yi öğretmek",
+    "mission": "Bu uygulamadaki amaçlarımız;\nKürtçe'nin Zazakî Lehçesini dijital ortama taşımak\nStandart Zazakî'nin bilinmesini arttırmak\nÇocuklar ve gençlerimize eğlenceli bir şekilde Zazakî'yi öğretmek",
     "musicTitle": "Müzik Bilgileri",
     "team": [
         "Onur Şenoğlu"

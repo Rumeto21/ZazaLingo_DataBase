@@ -366,7 +366,7 @@ export const courseLevels: LevelData[] = [
         "trName": "Diyarbakır",
         "krmncName": "Amed",
         "x": 458,
-        "y": 2115,
+        "y": 2117,
         "type": "station",
         "unitIndex": 17,
         "railX": 538,

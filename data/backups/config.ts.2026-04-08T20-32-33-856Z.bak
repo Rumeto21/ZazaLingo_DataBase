@@ -7,10 +7,5 @@ export interface MapConfig {
 export const mapConfig: MapConfig = {
     "railWidth": 13,
     "tieSize": 25,
-    "tieThickness": 7,
-    "title": {
-        "zzk": "XETA ŞÎYAYÎŞÊ ZAZALÎNGOYÎ",
-        "zaza": "XETA ŞÎYAYÎŞÊ ZAZALÎNGOYÎ",
-        "tr": "ZAZALÎNGO GÜZERGAHI"
-    }
+    "tieThickness": 7
 };
