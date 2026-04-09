@@ -21,10 +21,10 @@ export const map = {
     "locoAccentColor": "#D4A055",
     "locoWindowColor": "#72A4B5",
     "locoLightColor": "#FFD700",
-    "mapRailWidth": 1.333333,
+    "mapRailWidth": 5,
     "mapTieSize": 22,
     "mapTieThickness": 1.5,
-    "mapTieSpacing": 1.066667,
+    "mapTieSpacing": 4,
     "mapPinRadius": 16,
     "mapTopicPinRadius": 10
 };

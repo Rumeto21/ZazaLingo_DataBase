@@ -39,15 +39,9 @@
     "proverbsTranslationColor": "#AFAFAF",
     "proverbsBgColor": "#eeff00",
     "proverbsBorderColor": "#ff0000",
-    "borderRadius": {
-        "val": 20,
-        "unit": "px"
-    },
+    "borderRadius": 0.053333,
     "buttonPadding": 0,
-    "buttonBorderRadius": {
-        "val": 20,
-        "unit": "px"
-    },
+    "buttonBorderRadius": 0.053333,
     "buttonHeight": {
         "val": 50,
         "unit": "px"
@@ -56,30 +50,21 @@
     "buttonContainerPaddingHorizontal": 0,
     "buttonContainerPaddingBottom": 0,
     "headerHeight": 0,
-    "headerTopMargin": -0.080847,
-    "headerBottomMargin": -0.080847,
-    "buttonContainerTopMargin": -0.080847,
-    "buttonContainerMarginLeft": 1.5,
-    "mascotHomeTop": {
-        "val": 45,
-        "unit": "px"
-    },
-    "mascotHomeSize": {
-        "val": 0.35,
-        "unit": "ratio"
-    },
-    "mascotHomeMarginLeft": {
-        "val": 0,
-        "unit": "px"
-    },
-    "mascotQuestionTop": 0,
-    "mascotQuestionSize": 0.45,
-    "mascotQuestionMarginLeft": 1.5,
-    "questionPromptMarginTop": -0.341911,
+    "headerTopMargin": 0.463695,
+    "headerBottomMargin": 0.463695,
+    "buttonContainerTopMargin": 0.463695,
+    "buttonContainerMarginLeft": 1,
+    "mascotHomeTop": -0.458128,
+    "mascotHomeSize": 1.2,
+    "mascotHomeMarginLeft": 0,
+    "mascotQuestionTop": -0.036305,
+    "mascotQuestionSize": 0,
+    "mascotQuestionMarginLeft": 1,
+    "questionPromptMarginTop": 0.174889,
     "questionPromptMarginBottom": 0,
-    "questionOptionsMarginTop": -0.441855,
+    "questionOptionsMarginTop": 0.064324,
     "questionOptionsMarginBottom": 0,
-    "questionOptionsMarginLeft": 1.5,
+    "questionOptionsMarginLeft": 1,
     "questionOptionsPaddingHorizontal": 0,
     "buttonTextSize": 30,
     "headerTitleFontSize": 60,
@@ -150,86 +135,44 @@
     "buttonContinueText": "DEVAM ET",
     "buttonLogoutText": "ÇIKIŞ YAP",
     "buttonTextAlign": "center",
-    "proverbsWidth": {
-        "val": 0.9,
-        "unit": "ratio"
-    },
-    "proverbsHeight": {
-        "val": 150,
-        "unit": "px"
-    },
-    "proverbsMarginTop": {
-        "val": -120,
-        "unit": "px"
-    },
+    "proverbsWidth": 0.9,
+    "proverbsHeight": 0.184729,
+    "proverbsMarginTop": 0.33867,
     "buttonMarginTop": {
-        "val": 250,
+        "val": 40.0,
         "unit": "px"
     },
-    "headerSubtitleMarginTop": {
-        "val": -230,
+    "headerSubtitleMarginTop": 0.20936,
+    "headerTitleMarginTop": 0.135468,
+    "headerTitleWidth": 0.9,
+    "headerTitleHeight": 0.080503,
+    "headerSubtitleWidth": 0.9,
+    "headerSubtitleHeight": 0.050314,
+    "buttonWidth": {
+        "val": 90,
         "unit": "px"
     },
-    "headerTitleMarginTop": {
-        "val": -290,
-        "unit": "px"
-    },
-    "headerTitleWidth": {
-        "val": 0.9,
-        "unit": "ratio"
-    },
-    "headerTitleHeight": {
-        "val": 80,
-        "unit": "px"
-    },
-    "headerSubtitleWidth": {
-        "val": 0.9,
-        "unit": "ratio"
-    },
-    "headerSubtitleHeight": {
-        "val": 50,
-        "unit": "px"
-    },
-    "buttonWidth": 0.9,
     "buttonGap": {
         "val": 15,
         "unit": "px"
     },
     "headerSubtitleFontSize": 40,
-    "mascotCoktanSecmeliSize": 0.028125,
-    "questionOptionsWidth": 0.0375,
-    "questionOptionsHeight": 0.382043,
-    "questionTitleWidth": 0.03375,
-    "questionTitleHeight": 0.045481,
-    "questionTitleMarginTop": -0.385574,
-    "questionPromptWidth": 0.03375,
-    "questionPromptHeight": 0.045481,
-    "mascotCoktanSecmeliTop": 0,
-    "topBarPaddingHorizontal": {
-        "val": 0,
-        "unit": "px"
-    },
-    "topBarPaddingTop": {
-        "val": -0.5,
-        "unit": "ratio"
-    },
+    "mascotCoktanSecmeliSize": 0.75,
+    "questionOptionsWidth": 1.0,
+    "questionOptionsHeight": 0.422642,
+    "questionTitleWidth": 0.9,
+    "questionTitleHeight": 0.050314,
+    "questionTitleMarginTop": 0.126586,
+    "questionPromptWidth": 0.9,
+    "questionPromptHeight": 0.050314,
+    "mascotCoktanSecmeliTop": -0.22247,
+    "topBarPaddingHorizontal": 0.600004,
+    "topBarPaddingTop": 0.049261,
     "topBarPaddingBottom": 0,
-    "topBarDropdownWidth": {
-        "val": 100,
-        "unit": "px"
-    },
-    "topBarFlagWidth": {
-        "val": 0.15,
-        "unit": "ratio"
-    },
-    "topBarFlagHeight": {
-        "val": 20,
-        "unit": "px"
-    },
-    "topBarHelperMarginLeft": {
-        "val": 100,
-        "unit": "px"
-    },
+    "topBarDropdownWidth": 0.703125,
+    "topBarFlagWidth": 0.703125,
+    "topBarFlagHeight": 0.025158,
+    "topBarHelperMarginLeft": 1.1,
     "mapBgColor": "#F5F0E8",
     "mapGridColor": "#D4CCBB",
     "mapRiverColor": "#9AB8CC",
@@ -258,30 +201,14 @@
     "mapTieSpacing": 1.066667,
     "mapPinRadius": 16,
     "mapTopicPinRadius": 10,
-    "mascotWordOrderSize": 0.021094,
-    "mascotWordOrderTop": 0,
-    "mascotMatchingSize": 0.021094,
-    "mascotMatchingTop": 0,
-    "mascotImageChoiceSize": 0.021094,
-    "mascotImageChoiceTop": 0,
-    "mascotChoiceImageSize": 0.021094,
-    "mascotChoiceImageTop": 0,
-    "mascotDialogueSize": 0.021094,
-    "mascotDialogueTop": 0,
-    "headerTitleMarginLeft": {
-        "val": 0,
-        "unit": "ratio"
-    },
-    "headerSubtitleMarginLeft": {
-        "val": 0,
-        "unit": "px"
-    },
-    "proverbsMarginLeft": {
-        "val": 0,
-        "unit": "px"
-    },
-    "buttonMarginLeft": {
-        "val": 0,
-        "unit": "px"
-    }
+    "mascotWordOrderSize": 0.5625,
+    "mascotWordOrderTop": -0.220457,
+    "mascotMatchingSize": 0.5625,
+    "mascotMatchingTop": -0.224482,
+    "mascotImageChoiceSize": 0.5625,
+    "mascotImageChoiceTop": -0.227502,
+    "mascotChoiceImageSize": 0.5625,
+    "mascotChoiceImageTop": -0.239576,
+    "mascotDialogueSize": 0.5625,
+    "mascotDialogueTop": -0.220457
 }
