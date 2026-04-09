@@ -1,0 +1,648 @@
+import { TestData } from '../../../types/question';
+
+export const test_1774209082939: TestData = {
+    "id": "test_1774209082939",
+    "title": {
+        "tr": "Test-1",
+        "en": "Test-1",
+        "zzk": "Test-1",
+        "krmnc": "Test-1"
+    },
+    "questions": [
+        {
+            "id": "q_1774209087719",
+            "type": "Matching",
+            "title": {
+                "tr": "Eşleştirme sorusu",
+                "en": "Matching Question",
+                "zzk": "Eşleştirme sorusu",
+                "krmnc": "Eşleştirme sorusu"
+            },
+            "promptText": {
+                "tr": "Zamirleri eşleştirin",
+                "en": "Match the pronouns",
+                "zzk": "Zamirleri eşleştirin",
+                "krmnc": "Zamirleri eşleştirin"
+            },
+            "matchingPairs": [
+                {
+                    "id": "p1",
+                    "left": {
+                        "tr": "Ez",
+                        "en": "Ez",
+                        "zzk": "Ez",
+                        "krmnc": "Ez"
+                    },
+                    "right": {
+                        "tr": "Ben",
+                        "en": "I",
+                        "krmnc": "Ez"
+                    }
+                },
+                {
+                    "id": "p_1774209132039",
+                    "left": {
+                        "tr": "Ti",
+                        "en": "Ti",
+                        "zzk": "Ti",
+                        "krmnc": "Ti"
+                    },
+                    "right": {
+                        "tr": "Sen",
+                        "en": "You",
+                        "krmnc": "Tu"
+                    }
+                },
+                {
+                    "id": "p_1774209132843",
+                    "left": {
+                        "tr": "O",
+                        "en": "O",
+                        "zzk": "O",
+                        "krmnc": "O"
+                    },
+                    "right": {
+                        "tr": "O(eril)",
+                        "en": "He",
+                        "krmnc": "Ew(nêr)"
+                    }
+                },
+                {
+                    "id": "p_1774209134287",
+                    "left": {
+                        "tr": "A",
+                        "en": "A",
+                        "zzk": "A",
+                        "krmnc": "A"
+                    },
+                    "right": {
+                        "tr": "O(dişil)",
+                        "en": "She",
+                        "krmnc": "Ew(mê)"
+                    }
+                },
+                {
+                    "id": "p_1774209135403",
+                    "left": {
+                        "tr": "Ma",
+                        "en": "Ma",
+                        "zzk": "Ma",
+                        "krmnc": "Ma"
+                    },
+                    "right": {
+                        "tr": "Biz",
+                        "en": "We",
+                        "krmnc": "Em"
+                    }
+                },
+                {
+                    "id": "p_1774209136671",
+                    "left": {
+                        "tr": "Şima",
+                        "en": "Şima",
+                        "zzk": "Şima",
+                        "krmnc": "Şima"
+                    },
+                    "right": {
+                        "tr": "Siz",
+                        "en": "You",
+                        "krmnc": "Hûn"
+                    }
+                },
+                {
+                    "id": "p_1774209196939",
+                    "left": {
+                        "tr": "Ê",
+                        "en": "Ê",
+                        "zzk": "Ê",
+                        "krmnc": "Ê"
+                    },
+                    "right": {
+                        "tr": "Onlar",
+                        "en": "They",
+                        "krmnc": "Ew(pirejmarî)"
+                    }
+                }
+            ],
+            "options": [],
+            "isTranslationEnabled": true
+        },
+        {
+            "id": "q_1774210916825",
+            "type": "ImageQuestion",
+            "title": {
+                "tr": "Cümlenin doğru çevirisini seçin",
+                "en": "Choose correct translation of the sentence",
+                "zzk": "Cümlenin doğru çevirisini seçin",
+                "krmnc": "Cümlenin doğru çevirisini seçin"
+            },
+            "promptText": {
+                "tr": "O(dişil) doktordur",
+                "en": "She is doctor",
+                "zzk": "O(dişil) doktordur",
+                "krmnc": "Ew(mê) nijdar e"
+            },
+            "imageRef": "assets/questions/Pictures/doktore.avif",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "A doktor a",
+                        "en": "A doktor a",
+                        "zzk": "A doktor a",
+                        "krmnc": "A doktor a"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "O doktor o",
+                        "en": "O doktor o",
+                        "zzk": "O doktor o",
+                        "krmnc": "O doktor o"
+                    }
+                },
+                {
+                    "id": "opt_1774210990354",
+                    "text": {
+                        "tr": "Ez doktor a",
+                        "en": "Ez doktor a",
+                        "zzk": "Ez doktor a",
+                        "krmnc": "Ez doktor a"
+                    }
+                },
+                {
+                    "id": "opt_1774211010405",
+                    "text": {
+                        "tr": "Ma doktor ê",
+                        "en": "Ma doktor ê",
+                        "zzk": "Ma doktor ê",
+                        "krmnc": "Ma doktor ê"
+                    }
+                }
+            ],
+            "correctOptionId": "o1",
+            "isTranslationEnabled": true
+        },
+        {
+            "id": "q_1774211032862",
+            "type": "ImageQuestion",
+            "title": {
+                "tr": "Cümlenin doğru çevirisini seçin",
+                "en": "Choose correct translation of the sentence",
+                "zzk": "Cümlenin doğru çevirisini seçin",
+                "krmnc": "Cümlenin doğru çevirisini seçin"
+            },
+            "promptText": {
+                "tr": "Ma embaz ê",
+                "en": "Ma embaz ê",
+                "zzk": "Ma embaz ê",
+                "krmnc": "Ma embaz ê"
+            },
+            "imageRef": "assets/questions/Pictures/embazî.avif",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "Siz arkadaşsınız",
+                        "en": "You are friends",
+                        "zzk": "Siz arkadaşsınız",
+                        "krmnc": "Hûn heval in"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "Onlar arkadaştırlar",
+                        "en": "They are friends",
+                        "zzk": "Onlar arkadaştırlar",
+                        "krmnc": "Ew heval in"
+                    }
+                },
+                {
+                    "id": "opt_1774211110668",
+                    "text": {
+                        "tr": "O(eril) arkadaştır",
+                        "en": "He is friend",
+                        "zzk": "O(eril) arkadaştır",
+                        "krmnc": "Ew(nêr) heval e"
+                    }
+                },
+                {
+                    "id": "opt_1774211123484",
+                    "text": {
+                        "tr": "Biz arkadaşız",
+                        "en": "We are friends",
+                        "zzk": "Biz arkadaşız",
+                        "krmnc": "Em heval in"
+                    }
+                }
+            ],
+            "correctOptionId": "opt_1774211123484",
+            "isTranslationEnabled": true
+        },
+        {
+            "id": "q_1774211662321",
+            "type": "CoktanSecmeli",
+            "title": {
+                "tr": "Cümlenin doğru çevirisini seçin",
+                "en": "Choose correct translation of the sentence",
+                "zzk": "Cümlenin doğru çevirisini seçin",
+                "krmnc": "Cümlenin doğru çevirisini seçin"
+            },
+            "promptText": {
+                "tr": "Siz öğretmensiniz.",
+                "en": "You are teachers.",
+                "zzk": "Siz öğretmensiniz.",
+                "krmnc": "Hûn mamoste ne."
+            },
+            "correctOptionId": "o2",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "Ma mamosta yê",
+                        "en": "Ma mamosta yê",
+                        "zzk": "Ma mamosta yê",
+                        "krmnc": "Ma mamosta yê"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "Şima mamosta yê",
+                        "en": "Şima mamosta yê",
+                        "zzk": "Şima mamosta yê",
+                        "krmnc": "Şima mamosta yê"
+                    }
+                },
+                {
+                    "id": "opt_1774211719650",
+                    "text": {
+                        "tr": "Ê mamosta yê",
+                        "en": "Ê mamosta yê",
+                        "zzk": "Ê mamosta yê",
+                        "krmnc": "Ê mamosta yê"
+                    }
+                },
+                {
+                    "id": "opt_1774211725641",
+                    "text": {
+                        "tr": "Ez mamosta ya",
+                        "en": "Ez mamosta ya",
+                        "zzk": "Ez mamosta ya",
+                        "krmnc": "Ez mamosta ya"
+                    }
+                }
+            ],
+            "isTranslationEnabled": true
+        },
+        {
+            "id": "q_1774211743519",
+            "type": "CoktanSecmeli",
+            "title": {
+                "tr": "Cümlenin doğru çevirisini seçin",
+                "en": "Choose correct translation of the sentence",
+                "zzk": "Cümlenin doğru çevirisini seçin",
+                "krmnc": "Cümlenin doğru çevirisini seçin"
+            },
+            "promptText": {
+                "tr": "Sen(eril) yemek yiyorsun?",
+                "en": "You(male) eating food?",
+                "zzk": "Sen(eril) yemek yiyorsun?",
+                "krmnc": "Sen(eril) yemek yiyorsun?"
+            },
+            "correctOptionId": "opt_1774211865382",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "Ti wer wena?",
+                        "en": "Ti wer wena?",
+                        "zzk": "Ti wer wena?",
+                        "krmnc": "Ti wer wena?"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "A wer wena?",
+                        "en": "A wer wena?",
+                        "zzk": "A wer wena?",
+                        "krmnc": "A wer wena?"
+                    }
+                },
+                {
+                    "id": "opt_1774211857710",
+                    "text": {
+                        "tr": "O wer weno?",
+                        "en": "O wer weno?",
+                        "zzk": "O wer weno?",
+                        "krmnc": "O wer weno?"
+                    }
+                },
+                {
+                    "id": "opt_1774211865382",
+                    "text": {
+                        "tr": "Ti wer wenî?",
+                        "en": "Ti wer wenî?",
+                        "zzk": "Ti wer wenî?",
+                        "krmnc": "Ti wer wenî?"
+                    }
+                }
+            ],
+            "isTranslationEnabled": true
+        },
+        {
+            "id": "q_1774211883008",
+            "type": "ImageQuestion",
+            "title": {
+                "tr": "Cümlenin doğru çevirisini seçin",
+                "en": "Choose correct translation of the sentence",
+                "zzk": "Cümlenin doğru çevirisini seçin",
+                "krmnc": "Cümlenin doğru çevirisini seçin"
+            },
+            "promptText": {
+                "tr": "O(eril) öğrencidir",
+                "en": "He is student",
+                "zzk": "O(eril) öğrencidir",
+                "krmnc": "O(eril) öğrencidir"
+            },
+            "imageRef": "assets/questions/Pictures/Wendekar.avif",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "A wendekar a",
+                        "en": "A wendekar a",
+                        "zzk": "A wendekar a",
+                        "krmnc": "A wendekar a"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "O wendekar o",
+                        "en": "O wendekar o",
+                        "zzk": "O wendekar o",
+                        "krmnc": "O wendekar o"
+                    }
+                },
+                {
+                    "id": "opt_1774211953088",
+                    "text": {
+                        "tr": "Ti wendekar a",
+                        "en": "Ti wendekar a",
+                        "zzk": "Ti wendekar a",
+                        "krmnc": "Ti wendekar a"
+                    }
+                },
+                {
+                    "id": "opt_1774211962670",
+                    "text": {
+                        "tr": "Ez wendekar a",
+                        "en": "Ez wendekar a",
+                        "zzk": "Ez wendekar a",
+                        "krmnc": "Ez wendekar a"
+                    }
+                }
+            ],
+            "correctOptionId": "o2",
+            "isTranslationEnabled": true
+        },
+        {
+            "id": "q_1774211978333",
+            "type": "CoktanSecmeli",
+            "title": {
+                "tr": "Cümlenin doğru çevirisini seçin",
+                "en": "Choose correct translation of the sentence",
+                "zzk": "Cümlenin doğru çevirisini seçin",
+                "krmnc": "Cümlenin doğru çevirisini seçin"
+            },
+            "promptText": {
+                "tr": "Ez citkar a",
+                "en": "Ez citkar a",
+                "zzk": "Ez citkar a",
+                "krmnc": "Ez citkar a"
+            },
+            "correctOptionId": "o1",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "Ben çiftçiyim",
+                        "en": "I am farmer",
+                        "zzk": "Ben çiftçiyim",
+                        "krmnc": "Ben çiftçiyim"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "Sen(eril) çiftçisin",
+                        "en": "You(male) are farmer",
+                        "zzk": "Sen(eril) çiftçisin",
+                        "krmnc": "Sen(eril) çiftçisin"
+                    }
+                },
+                {
+                    "id": "opt_1774212099376",
+                    "text": {
+                        "tr": "Biz çiftçiyiz",
+                        "en": "We are farmers",
+                        "zzk": "Biz çiftçiyiz",
+                        "krmnc": "Biz çiftçiyiz"
+                    }
+                },
+                {
+                    "id": "opt_1774212106592",
+                    "text": {
+                        "tr": "Siz çiftçisiniz",
+                        "en": "You are farmers",
+                        "zzk": "Siz çiftçisiniz",
+                        "krmnc": "Siz çiftçisiniz"
+                    }
+                }
+            ],
+            "audioRef": "assets/audio/lessons/Ez citkar a.wav",
+            "isTranslationEnabled": true
+        },
+        {
+            "id": "q_1774212198837",
+            "type": "CoktanSecmeli",
+            "title": {
+                "tr": "Cümlenin doğru çevirisini seçin",
+                "en": "Choose correct translation of the sentence",
+                "zzk": "Cümlenin doğru çevirisini seçin",
+                "krmnc": "Cümlenin doğru çevirisini seçin"
+            },
+            "promptText": {
+                "tr": "Ê kay kenê",
+                "en": "Ê kay kenê",
+                "zzk": "Ê kay kenê",
+                "krmnc": "Ê kay kenê"
+            },
+            "correctOptionId": "opt_1774212322527",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "Biz oyun oynuyoruz",
+                        "en": "We are playing game",
+                        "zzk": "Biz oyun oynuyoruz",
+                        "krmnc": "Biz oyun oynuyoruz"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "Siz oyun oynuyorsunuz",
+                        "en": "You(single) are playing game",
+                        "zzk": "Siz oyun oynuyorsunuz",
+                        "krmnc": "Siz oyun oynuyorsunuz"
+                    }
+                },
+                {
+                    "id": "opt_1774212320781",
+                    "text": {
+                        "tr": "Ben oyun oynuyorum",
+                        "en": "I am playing game",
+                        "zzk": "Ben oyun oynuyorum",
+                        "krmnc": "Ben oyun oynuyorum"
+                    }
+                },
+                {
+                    "id": "opt_1774212322527",
+                    "text": {
+                        "tr": "Onlar oyun oynuyor",
+                        "en": "You(plural) are playing game",
+                        "zzk": "Onlar oyun oynuyor",
+                        "krmnc": "Onlar oyun oynuyor"
+                    }
+                }
+            ],
+            "isTranslationEnabled": true
+        },
+        {
+            "id": "q_1774212364187",
+            "type": "Dialogue",
+            "title": {
+                "tr": "Diyaloğu dinleyin/okuyun",
+                "en": "Listen/Read the dialog",
+                "zzk": "Diyaloğu dinleyin/okuyun",
+                "krmnc": "Diyaloğu dinleyin/okuyun"
+            },
+            "promptText": {
+                "tr": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin.",
+                "en": "Choose the pronouns needed respectively to fill the blanks.",
+                "zzk": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin.",
+                "krmnc": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin."
+            },
+            "options": [
+                {
+                    "id": "opt_1774212821284",
+                    "text": {
+                        "tr": "Ti / O / Ti / Ma",
+                        "en": "Ti / O / Ti / Ma",
+                        "zzk": "Ti / O / Ti / Ma",
+                        "krmnc": "Ti / O / Ti / Ma"
+                    }
+                },
+                {
+                    "id": "opt_1774212822878",
+                    "text": {
+                        "tr": "O / A / Ez / Şima",
+                        "en": "O / A / Ez / Şima",
+                        "zzk": "O / A / Ez / Şima",
+                        "krmnc": "O / A / Ez / Şima"
+                    }
+                },
+                {
+                    "id": "opt_1774212823881",
+                    "text": {
+                        "tr": "Ez / O / Ez / Ê",
+                        "en": "Ez / O / Ez / Ê",
+                        "zzk": "Ez / O / Ez / Ê",
+                        "krmnc": "Ez / O / Ez / Ê"
+                    }
+                },
+                {
+                    "id": "opt_1774212824926",
+                    "text": {
+                        "tr": "Ti / A / Şima / Ê",
+                        "en": "Ti / A / Şima / Ê",
+                        "zzk": "Ti / A / Şima / Ê",
+                        "krmnc": "Ti / A / Şima / Ê"
+                    }
+                }
+            ],
+            "dialogueItems": [
+                {
+                    "id": "d1",
+                    "text": {
+                        "tr": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?",
+                        "en": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?",
+                        "zzk": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?",
+                        "krmnc": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?"
+                    },
+                    "position": "left",
+                    "imageRef": "assets/questions/Pictures/kênek.avif"
+                },
+                {
+                    "id": "d2",
+                    "text": {
+                        "tr": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê.",
+                        "en": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê.",
+                        "zzk": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê.",
+                        "krmnc": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê."
+                    },
+                    "position": "right",
+                    "imageRef": "assets/questions/Pictures/lajek.avif"
+                }
+            ],
+            "correctOptionId": "opt_1774212823881",
+            "isTranslationEnabled": true
+        },
+        {
+            "id": "q_1774212971303",
+            "type": "WordOrder",
+            "title": {
+                "tr": "Yeni Kelime Sıralama",
+                "en": "Ordering the words",
+                "zzk": "Yeni Kelime Sıralama",
+                "krmnc": "Yeni Kelime Sıralama"
+            },
+            "promptText": {
+                "tr": "Kelimeleri doğru sıraya dizin",
+                "en": "Order the words correctly",
+                "zzk": "Kelimeleri doğru sıraya dizin",
+                "krmnc": "Kelimeleri doğru sıraya dizin"
+            },
+            "correctWords": [
+                "Ti",
+                "pers",
+                "nêkena",
+                "ez",
+                "se",
+                "kena",
+                "senîna"
+            ],
+            "audioRef": "assets/audio/lessons/Ti pers nêkena ez se kena, senîna.wav",
+            "options": [],
+            "poolWords": [
+                "Ti",
+                "pers",
+                "nêkena",
+                "ez",
+                "se",
+                "kena",
+                "senîna",
+                "To",
+                "Şima",
+                "nika",
+                "yena"
+            ],
+            "isTranslationEnabled": true
+        }
+    ]
+};

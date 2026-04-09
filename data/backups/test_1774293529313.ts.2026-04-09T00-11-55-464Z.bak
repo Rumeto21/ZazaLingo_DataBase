@@ -1,0 +1,629 @@
+import { TestData } from '../../../types/question';
+
+export const test_1774293529313: TestData = {
+    "id": "test_1774293529313",
+    "title": {
+        "tr": "Test-1",
+        "en": "Test-1",
+        "zzk": "Test-1",
+        "krmnc": "Test-1"
+    },
+    "questions": [
+        {
+            "id": "q_1774293601150",
+            "type": "Matching",
+            "title": {
+                "tr": "Eşleştirme",
+                "en": "Matching",
+                "zzk": "eynikerdiş",
+                "krmnc": "Eşleştirme"
+            },
+            "promptText": {
+                "tr": "Zamirler ile eklerini eşleştirin",
+                "en": "Match the pronouns with the corresponding forms of the verb ‘to be’ in Zazakî",
+                "zzk": "Zamirler ile eklerini eşleştirin",
+                "krmnc": "Zamirler ile eklerini eşleştirin"
+            },
+            "matchingPairs": [
+                {
+                    "id": "p1",
+                    "left": {
+                        "tr": "Ez",
+                        "en": "Ez",
+                        "zzk": "Ez",
+                        "krmnc": "Ez"
+                    },
+                    "right": {
+                        "tr": "a/ya",
+                        "en": "a/ya",
+                        "zzk": "a/ya",
+                        "krmnc": "a/ya"
+                    }
+                },
+                {
+                    "id": "p_1774293636209",
+                    "left": {
+                        "tr": "Ti(nêrî)",
+                        "en": "Ti(nêrî)",
+                        "zzk": "Ti(nêrî)",
+                        "krmnc": "Ti(nêrî)"
+                    },
+                    "right": {
+                        "tr": "î/yî",
+                        "en": "î/yî",
+                        "zzk": "î/yî",
+                        "krmnc": "î/yî"
+                    }
+                },
+                {
+                    "id": "p_1774293677329",
+                    "left": {
+                        "tr": "Ti(makî)",
+                        "en": "Ti(makî)",
+                        "zzk": "Ti(makî)",
+                        "krmnc": "Ti(makî)"
+                    },
+                    "right": {
+                        "tr": "a/ya",
+                        "en": "a/ya",
+                        "zzk": "a/ya",
+                        "krmnc": "a/ya"
+                    }
+                },
+                {
+                    "id": "p_1774293697878",
+                    "left": {
+                        "tr": "O",
+                        "en": "O",
+                        "zzk": "O",
+                        "krmnc": "O"
+                    },
+                    "right": {
+                        "tr": "o/yo",
+                        "en": "o/yo",
+                        "zzk": "o/yo",
+                        "krmnc": "o/yo"
+                    }
+                },
+                {
+                    "id": "p_1774293711609",
+                    "left": {
+                        "tr": "A",
+                        "en": "A",
+                        "zzk": "A",
+                        "krmnc": "A"
+                    },
+                    "right": {
+                        "tr": "a/ya",
+                        "en": "a/ya",
+                        "zzk": "a/ya",
+                        "krmnc": "a/ya"
+                    }
+                },
+                {
+                    "id": "p_1774293720121",
+                    "left": {
+                        "tr": "Ma",
+                        "en": "Ma",
+                        "zzk": "Ma",
+                        "krmnc": "Ma"
+                    },
+                    "right": {
+                        "tr": "ê/yê",
+                        "en": "ê/yê",
+                        "zzk": "ê/yê",
+                        "krmnc": "ê/yê"
+                    }
+                },
+                {
+                    "id": "p_1774293730947",
+                    "left": {
+                        "tr": "Şima",
+                        "en": "Şima",
+                        "zzk": "Şima",
+                        "krmnc": "Şima"
+                    },
+                    "right": {
+                        "tr": "ê/yê",
+                        "en": "ê/yê",
+                        "zzk": "ê/yê",
+                        "krmnc": "ê/yê"
+                    }
+                },
+                {
+                    "id": "p_1774293746203",
+                    "left": {
+                        "tr": "Ê",
+                        "en": "Ê",
+                        "zzk": "Ê",
+                        "krmnc": "Ê"
+                    },
+                    "right": {
+                        "tr": "ê/yê",
+                        "en": "ê/yê",
+                        "zzk": "ê/yê",
+                        "krmnc": "ê/yê"
+                    }
+                }
+            ],
+            "options": []
+        },
+        {
+            "id": "q_1774294068995",
+            "type": "ImageQuestion",
+            "title": {
+                "tr": "Doğru kopulayı seçin",
+                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "zzk": "Doğru kopulayı seçin",
+                "krmnc": "Doğru kopulayı seçin"
+            },
+            "promptText": {
+                "tr": "Ez van_",
+                "en": "Ez van_",
+                "zzk": "Ez van_",
+                "krmnc": "Ez van_"
+            },
+            "imageRef": "assets/questions/Pictures/terraqe.avif",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "a",
+                        "en": "a",
+                        "zzk": "a",
+                        "krmnc": "a"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "ê",
+                        "en": "ê",
+                        "zzk": "ê",
+                        "krmnc": "ê"
+                    }
+                },
+                {
+                    "id": "opt_1774294360968",
+                    "text": {
+                        "tr": "o",
+                        "en": "o",
+                        "zzk": "o",
+                        "krmnc": "o"
+                    }
+                },
+                {
+                    "id": "opt_1774294363862",
+                    "text": {
+                        "tr": "î",
+                        "en": "î",
+                        "zzk": "î",
+                        "krmnc": "î"
+                    }
+                }
+            ],
+            "correctOptionId": "o1"
+        },
+        {
+            "id": "q_1774294384220",
+            "type": "ImageQuestion",
+            "title": {
+                "tr": "Doğru kopulayı seçin",
+                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "zzk": "Yeni Resimli Soru",
+                "krmnc": "Yeni Resimli Soru"
+            },
+            "promptText": {
+                "tr": "Ti(makî) şin_",
+                "en": "Ti(makî) şin_",
+                "zzk": "Ti(makî) şin_",
+                "krmnc": "Ti(makî) şin_"
+            },
+            "imageRef": "assets/questions/Pictures/şîyayîş.avif",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "a",
+                        "en": "a",
+                        "zzk": "a",
+                        "krmnc": "a"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "ê",
+                        "en": "ê",
+                        "zzk": "ê",
+                        "krmnc": "ê"
+                    }
+                },
+                {
+                    "id": "opt_1774294438713",
+                    "text": {
+                        "tr": "o",
+                        "en": "o",
+                        "zzk": "o",
+                        "krmnc": "o"
+                    }
+                },
+                {
+                    "id": "opt_1774294443324",
+                    "text": {
+                        "tr": "î",
+                        "en": "î",
+                        "zzk": "î",
+                        "krmnc": "î"
+                    }
+                }
+            ],
+            "correctOptionId": "o1"
+        },
+        {
+            "id": "q_1774294509005",
+            "type": "ImageQuestion",
+            "title": {
+                "tr": "Doğru kopulayı seçin",
+                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "zzk": "Doğru kopulayı seçin",
+                "krmnc": "Doğru kopulayı seçin"
+            },
+            "promptText": {
+                "tr": "A şimen_",
+                "en": "A şimen_",
+                "zzk": "A şimen_",
+                "krmnc": "A şimen_"
+            },
+            "imageRef": "assets/questions/Pictures/Şimitene.avif",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "o",
+                        "en": "o",
+                        "zzk": "o",
+                        "krmnc": "o"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "a",
+                        "en": "a",
+                        "zzk": "a",
+                        "krmnc": "a"
+                    }
+                },
+                {
+                    "id": "opt_1774294585099",
+                    "text": {
+                        "tr": "ê",
+                        "en": "ê",
+                        "zzk": "ê",
+                        "krmnc": "ê"
+                    }
+                },
+                {
+                    "id": "opt_1774294588539",
+                    "text": {
+                        "tr": "î",
+                        "en": "î",
+                        "zzk": "î",
+                        "krmnc": "î"
+                    }
+                }
+            ],
+            "correctOptionId": "o2"
+        },
+        {
+            "id": "q_1774294606335",
+            "type": "ImageQuestion",
+            "title": {
+                "tr": "Doğru kopulayı seçin",
+                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "zzk": "Yeni Resimli Soru",
+                "krmnc": "Yeni Resimli Soru"
+            },
+            "promptText": {
+                "tr": "O vazdan_",
+                "en": "O vazdan_",
+                "zzk": "O vazdan_",
+                "krmnc": "O vazdan_"
+            },
+            "imageRef": "assets/questions/Pictures/vazdayene.avif",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "o",
+                        "en": "o",
+                        "zzk": "o",
+                        "krmnc": "o"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "a",
+                        "en": "a",
+                        "zzk": "a",
+                        "krmnc": "a"
+                    }
+                },
+                {
+                    "id": "opt_1774294681140",
+                    "text": {
+                        "tr": "ê",
+                        "en": "ê",
+                        "zzk": "ê",
+                        "krmnc": "ê"
+                    }
+                },
+                {
+                    "id": "opt_1774294685534",
+                    "text": {
+                        "tr": "î",
+                        "en": "î",
+                        "zzk": "î",
+                        "krmnc": "î"
+                    }
+                }
+            ],
+            "correctOptionId": "o1"
+        },
+        {
+            "id": "q_1774294699031",
+            "type": "ImageQuestion",
+            "title": {
+                "tr": "Doğru kopulayı seçin",
+                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "zzk": "Doğru kopulayı seçin",
+                "krmnc": "Doğru kopulayı seçin"
+            },
+            "promptText": {
+                "tr": "Ti(nêrî) mamosta __",
+                "en": "Ti(nêrî) mamosta __",
+                "zzk": "Ti(nêrî) mamosta __",
+                "krmnc": "Ti(nêrî) mamosta __"
+            },
+            "imageRef": "assets/questions/Pictures/Mamosta.avif",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "ya",
+                        "en": "ya",
+                        "zzk": "ya",
+                        "krmnc": "ya"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "yo",
+                        "en": "yo",
+                        "zzk": "yo",
+                        "krmnc": "yo"
+                    }
+                },
+                {
+                    "id": "opt_1774294866465",
+                    "text": {
+                        "tr": "yê",
+                        "en": "yê",
+                        "zzk": "yê",
+                        "krmnc": "yê"
+                    }
+                },
+                {
+                    "id": "opt_1774294871727",
+                    "text": {
+                        "tr": "yî",
+                        "en": "yî",
+                        "zzk": "yî",
+                        "krmnc": "yî"
+                    }
+                }
+            ],
+            "correctOptionId": "opt_1774294871727"
+        },
+        {
+            "id": "q_1774294941845",
+            "type": "CoktanSecmeli",
+            "title": {
+                "tr": "Doğru kopulayı seçin",
+                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "zzk": "Doğru kopulayı seçin",
+                "krmnc": "Doğru kopulayı seçin"
+            },
+            "promptText": {
+                "tr": "Ma şêr _",
+                "en": "Ma şêr _",
+                "zzk": "Ma şêr _",
+                "krmnc": "Ma şêr _"
+            },
+            "correctOptionId": "opt_1774294977819",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "a",
+                        "en": "a",
+                        "zzk": "a",
+                        "krmnc": "a"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "o",
+                        "en": "o",
+                        "zzk": "o",
+                        "krmnc": "o"
+                    }
+                },
+                {
+                    "id": "opt_1774294977819",
+                    "text": {
+                        "tr": "ê",
+                        "en": "ê",
+                        "zzk": "ê",
+                        "krmnc": "ê"
+                    }
+                },
+                {
+                    "id": "opt_1774294981918",
+                    "text": {
+                        "tr": "e",
+                        "en": "e",
+                        "zzk": "e",
+                        "krmnc": "e"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "q_1774295033187",
+            "type": "WordOrder",
+            "title": {
+                "tr": "Yeni Kelime Sıralama",
+                "en": "Word ordering",
+                "zzk": "Yeni Kelime Sıralama",
+                "krmnc": "Yeni Kelime Sıralama"
+            },
+            "promptText": {
+                "tr": "Kelimeleri doğru sıraya dizin",
+                "en": "Order the words correctly",
+                "zzk": "Kelimeleri doğru sıraya dizin",
+                "krmnc": "Kelimeleri doğru sıraya dizin"
+            },
+            "correctWords": [
+                "Şima",
+                "xeyr",
+                "ameyê"
+            ],
+            "audioRef": "assets/audio/lessons/Şima xeyr ameyê.wav",
+            "options": [],
+            "poolWords": [
+                "Şima",
+                "xeyr",
+                "ameyê",
+                "Ma",
+                "Ez",
+                "şinê",
+                "awe"
+            ]
+        },
+        {
+            "id": "q_1774295328300",
+            "type": "CoktanSecmeli",
+            "title": {
+                "tr": "Doğru kopulayı seçin",
+                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "zzk": "Doğru kopulayı seçin",
+                "krmnc": "Doğru kopulayı seçin"
+            },
+            "promptText": {
+                "tr": "Ê meyman _",
+                "en": "Ê meyman _",
+                "zzk": "Ê meyman _",
+                "krmnc": "Ê meyman _"
+            },
+            "correctOptionId": "opt_1774295374463",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "a",
+                        "en": "a",
+                        "zzk": "a",
+                        "krmnc": "a"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "o",
+                        "en": "o",
+                        "zzk": "o",
+                        "krmnc": "o"
+                    }
+                },
+                {
+                    "id": "opt_1774295367350",
+                    "text": {
+                        "tr": "e",
+                        "en": "e",
+                        "zzk": "e",
+                        "krmnc": "e"
+                    }
+                },
+                {
+                    "id": "opt_1774295374463",
+                    "text": {
+                        "tr": "ê",
+                        "en": "ê",
+                        "zzk": "ê",
+                        "krmnc": "ê"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "q_1774295444173",
+            "type": "CoktanSecmeli",
+            "title": {
+                "tr": "Doğru kopulayı seçin",
+                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "zzk": "Doğru kopulayı seçin",
+                "krmnc": "Doğru kopulayı seçin"
+            },
+            "promptText": {
+                "tr": "Şima se ken_",
+                "en": "Şima se ken_",
+                "zzk": "Şima se ken_",
+                "krmnc": "Şima se ken_"
+            },
+            "correctOptionId": "o1",
+            "options": [
+                {
+                    "id": "o1",
+                    "text": {
+                        "tr": "ê",
+                        "en": "ê",
+                        "zzk": "ê",
+                        "krmnc": "ê"
+                    }
+                },
+                {
+                    "id": "o2",
+                    "text": {
+                        "tr": "a",
+                        "en": "a",
+                        "zzk": "a",
+                        "krmnc": "a"
+                    }
+                },
+                {
+                    "id": "opt_1774295467481",
+                    "text": {
+                        "tr": "o",
+                        "en": "o",
+                        "zzk": "o",
+                        "krmnc": "o"
+                    }
+                },
+                {
+                    "id": "opt_1774295468417",
+                    "text": {
+                        "tr": "e",
+                        "en": "e",
+                        "zzk": "e",
+                        "krmnc": "e"
+                    }
+                }
+            ]
+        }
+    ]
+};

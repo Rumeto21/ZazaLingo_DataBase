@@ -1,0 +1,6 @@
+export const header = {
+    "headerTitleText": "ZazaLîngo",
+    "headerSubtitleText": "",
+    "headerTitleAlign": "center" as const,
+    "headerSubtitleAlign": "center" as const
+};

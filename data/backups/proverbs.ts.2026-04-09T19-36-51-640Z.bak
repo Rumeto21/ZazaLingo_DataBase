@@ -1,0 +1,39 @@
+// Bu dosya Dev Server tarafından otomatik güncellenmiştir.
+export interface Proverb {
+    id: string;
+    text: string;
+    translation: {
+        tr: string;
+        en: string;
+        krmnc?: string;
+    };
+}
+export const proverbs: Proverb[] = [
+    {
+        "id": "prv_1",
+        "text": "Dar bi pelê xo yeno şinasnayîş.",
+        "translation": {
+            "tr": "Ağaç yaprağıyla tanınır/bilinir.",
+            "en": "A tree is known by its leaves.",
+            "krmnc": "Dar bi pelên xwe tê naskirin."
+        }
+    },
+    {
+        "id": "prv_2",
+        "text": "Mase awa lîmî de tepşîyena.",
+        "translation": {
+            "tr": "Bulanık suda balık avlanır.",
+            "en": "Fish are caught in muddy waters.",
+            "krmnc": "Masî di ava gemarî de tên girtin."
+        }
+    },
+    {
+        "id": "prv_3",
+        "text": "Zonê xo vîra mekerê.",
+        "translation": {
+            "tr": "Dilinizi unutmayın.",
+            "en": "Do not forget your language.",
+            "krmnc": "Zimanê xwe ji bîr nekin."
+        }
+    }
+];
