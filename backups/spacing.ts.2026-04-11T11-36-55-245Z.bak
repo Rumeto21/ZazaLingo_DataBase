@@ -125,7 +125,7 @@ export const spacing = {
         "unit": "px"
     },
     "topBarHelperMarginLeft": {
-        "val": 50,
+        "val": 200,
         "unit": "px"
     }
 };
