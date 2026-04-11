@@ -1,8 +1,5 @@
 export const typography = {
-    "buttonTextSize": {
-        "val": 40,
-        "unit": "px"
-    },
+    "buttonTextSize": 30,
     "headerTitleFontSize": 60,
     "headerSubtitleFontSize": 40,
     "proverbsTitleFontSize": 26,

@@ -1,0 +1,3 @@
+export const en = {
+    "test_key_tc002": "success"
+};

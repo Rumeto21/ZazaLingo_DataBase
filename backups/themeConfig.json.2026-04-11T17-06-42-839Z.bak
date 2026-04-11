@@ -39,19 +39,10 @@
     "proverbsTranslationColor": "#AFAFAF",
     "proverbsBgColor": "#eeff00",
     "proverbsBorderColor": "#ff0000",
-    "borderRadius": {
-        "val": 20,
-        "unit": "px"
-    },
+    "borderRadius": 0.053333,
     "buttonPadding": 0,
-    "buttonBorderRadius": {
-        "val": 20,
-        "unit": "px"
-    },
-    "buttonHeight": {
-        "val": 50,
-        "unit": "px"
-    },
+    "buttonBorderRadius": 0.053333,
+    "buttonHeight": 0.061576,
     "buttonVerticalMargin": 0,
     "buttonContainerPaddingHorizontal": 0,
     "buttonContainerPaddingBottom": 0,
@@ -61,11 +52,11 @@
     "buttonContainerTopMargin": 0.495424,
     "buttonContainerMarginLeft": 1.504,
     "mascotHomeTop": {
-        "val": 50,
+        "val": 20,
         "unit": "px"
     },
     "mascotHomeSize": {
-        "val": 0.8,
+        "val": 0.35,
         "unit": "ratio"
     },
     "mascotHomeMarginLeft": {
@@ -81,10 +72,7 @@
     "questionOptionsMarginBottom": 0,
     "questionOptionsMarginLeft": 1.504,
     "questionOptionsPaddingHorizontal": 0,
-    "buttonTextSize": {
-        "val": 40,
-        "unit": "px"
-    },
+    "buttonTextSize": 30,
     "headerTitleFontSize": 60,
     "proverbsTitleFontSize": 26,
     "proverbsTextFontSize": 19,
@@ -157,12 +145,9 @@
         "val": 0.9,
         "unit": "ratio"
     },
-    "proverbsHeight": {
-        "val": 150,
-        "unit": "px"
-    },
+    "proverbsHeight": 0.184729,
     "proverbsMarginTop": {
-        "val": -210,
+        "val": -140,
         "unit": "px"
     },
     "buttonMarginTop": {
@@ -170,35 +155,29 @@
         "unit": "px"
     },
     "headerSubtitleMarginTop": {
-        "val": -260,
+        "val": -240,
         "unit": "px"
     },
     "headerTitleMarginTop": {
-        "val": -335,
+        "val": -300,
         "unit": "px"
     },
     "headerTitleWidth": {
         "val": 0.9,
         "unit": "ratio"
     },
-    "headerTitleHeight": {
-        "val": 80,
-        "unit": "px"
-    },
+    "headerTitleHeight": 0.098522,
     "headerSubtitleWidth": {
         "val": 0.9,
         "unit": "ratio"
     },
-    "headerSubtitleHeight": {
-        "val": 45,
-        "unit": "px"
-    },
+    "headerSubtitleHeight": 0.050314,
     "buttonWidth": {
         "val": 0.9,
         "unit": "ratio"
     },
     "buttonGap": {
-        "val": 5,
+        "val": -15,
         "unit": "px"
     },
     "headerSubtitleFontSize": 40,
