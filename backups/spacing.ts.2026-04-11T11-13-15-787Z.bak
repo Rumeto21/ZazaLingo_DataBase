@@ -1,0 +1,125 @@
+export const spacing = {
+    "borderRadius": 0.053333,
+    "buttonPadding": 0,
+    "buttonBorderRadius": 0.053333,
+    "buttonHeight": 0.061576,
+    "buttonVerticalMargin": 0,
+    "buttonContainerPaddingHorizontal": 0,
+    "buttonContainerPaddingBottom": 0,
+    "headerHeight": 0,
+    "headerTopMargin": -0.073081,
+    "headerBottomMargin": -0.073081,
+    "buttonContainerTopMargin": -0.073081,
+    "buttonContainerMarginLeft": 0.504,
+    "buttonWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "buttonMarginTop": {
+        "val": 652,
+        "unit": "px"
+    },
+    "buttonMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "buttonGap": 0.018473,
+    "headerTitleMarginTop": {
+        "val": 110,
+        "unit": "px"
+    },
+    "headerTitleMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "headerTitleWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "headerTitleHeight": 0.098522,
+    "headerSubtitleMarginTop": {
+        "val": 178,
+        "unit": "px"
+    },
+    "headerSubtitleMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "headerSubtitleWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "headerSubtitleHeight": 0.061576,
+    "proverbsMarginTop": {
+        "val": 287,
+        "unit": "px"
+    },
+    "proverbsMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "proverbsWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "proverbsHeight": 0.184729,
+    "mascotHomeTop": {
+        "val": 40,
+        "unit": "px"
+    },
+    "mascotHomeMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "mascotHomeSize": 1.3125,
+    "mascotQuestionTop": 0.506158,
+    "mascotQuestionMarginLeft": 0.504,
+    "mascotQuestionSize": 1.6875,
+    "mascotCoktanSecmeliTop": 0.506158,
+    "mascotCoktanSecmeliSize": 0.105469,
+    "mascotWordOrderTop": 0.506158,
+    "mascotWordOrderSize": 0.079103,
+    "mascotMatchingTop": 0.506158,
+    "mascotMatchingSize": 0.079103,
+    "mascotImageChoiceTop": 0.506158,
+    "mascotImageChoiceSize": 0.079103,
+    "mascotChoiceImageTop": 0.506158,
+    "mascotChoiceImageSize": 0.079103,
+    "mascotDialogueTop": 0.506158,
+    "mascotDialogueSize": 0.079103,
+    "questionTitleMarginTop": -0.348536,
+    "questionTitleWidth": 0.126563,
+    "questionTitleHeight": 0.041112,
+    "questionPromptMarginTop": -0.309067,
+    "questionPromptMarginBottom": 0,
+    "questionPromptWidth": 0.126563,
+    "questionPromptHeight": 0.041112,
+    "questionOptionsMarginTop": -0.399411,
+    "questionOptionsMarginBottom": 0,
+    "questionOptionsMarginLeft": 0.504,
+    "questionOptionsWidth": 0.140625,
+    "questionOptionsHeight": 0.345344,
+    "questionOptionsPaddingHorizontal": 0,
+    "topBarPaddingHorizontal": {
+        "val": 0,
+        "unit": "px"
+    },
+    "topBarPaddingTop": {
+        "val": 47,
+        "unit": "px"
+    },
+    "topBarPaddingBottom": 0,
+    "topBarDropdownWidth": {
+        "val": 50,
+        "unit": "px"
+    },
+    "topBarFlagWidth": {
+        "val": 50,
+        "unit": "px"
+    },
+    "topBarFlagHeight": 0.024631,
+    "topBarHelperMarginLeft": {
+        "val": 200,
+        "unit": "px"
+    }
+};

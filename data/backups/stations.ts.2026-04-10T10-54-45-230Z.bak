@@ -1,0 +1,36 @@
+// Bu dosya Dev Server tarafından otomatik güncellenmiştir.
+export interface LevelData {
+    id: string;
+    zazaName: string;
+    trName: string;
+    enName?: string;
+    krmncName?: string;
+    x: number;
+    y: number;
+    testIds?: string[];
+    type: 'station' | 'topic';
+    unitIndex?: number;
+    topicIndex?: number;
+    unitZazaName?: string;
+    unitTrName?: string;
+    unitEnName?: string;
+    unitKrmncName?: string;
+    railX?: number;
+    railY?: number;
+    tagX?: number;
+    tagY?: number;
+    signX?: number;
+    signY?: number;
+    nameWidth?: number;
+    railAngle?: number;
+}
+export const courseLevels: LevelData[] = [
+    {
+        "id": "test_station_1",
+        "zazaName": "Test",
+        "trName": "Test",
+        "x": 10,
+        "y": 20,
+        "type": "station"
+    }
+];

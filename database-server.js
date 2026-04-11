@@ -1,6 +1,12 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const morgan = require('morgan');
+const logger = require('./logger');
+const syncManager = require('./SyncManager');
+
+// Setup Morgan to use Winston for writing logs
+const httpLogger = morgan('combined', { stream: { write: message => logger.info(message.trim()) } });
 
 const PORT = 4000;
 // Paths for central storage
@@ -11,10 +17,67 @@ const THEME_DIR = path.join(DATA_DIR, 'theme');
 const PROVERBS_DIR = path.join(DATA_DIR, 'proverbs');
 const LOCALES_DIR = path.join(DATA_DIR, 'locales');
 const SETTINGS_DIR = path.join(DATA_DIR, 'settings');
+const BACKUP_DIR = path.join(__dirname, 'backups');
+const ARCHIVE_DIR = path.join(__dirname, 'archive');
+
+// Initialize SyncManager
+syncManager.setBackupDir(BACKUP_DIR);
+syncManager.addTarget(DATA_DIR, true); // Primary DB target with backups
 
 // --- Sync with Mobile App ---
 const MOBILE_DATA_DIR = process.env.MOBILE_DATA_DIR || path.join(__dirname, '../ZazaLingo/data');
-console.log(`[Sync] Mobile Data Directory: ${MOBILE_DATA_DIR}`);
+
+// Optional Mobile Sync Target
+if (fs.existsSync(MOBILE_DATA_DIR)) {
+    syncManager.addTarget(MOBILE_DATA_DIR, false); 
+    logger.info(`[Sync] Mobile Data Sync ENABLED: ${MOBILE_DATA_DIR}`);
+} else {
+    logger.warn(`[Sync] Mobile Data Directory NOT FOUND: ${MOBILE_DATA_DIR}. Mirror sync disabled.`);
+}
+
+// Startup Operations
+logger.info('[Startup] Running integrity checks...');
+syncManager.cleanupOrphanTempFiles(0); // Clean all old .tmp files on start
+
+// Initial Mirror Sync (Fix BUG-007 on start)
+if (fs.existsSync(MOBILE_DATA_DIR)) {
+    logger.info('[Startup] Performing initial mirror sync...');
+    try {
+        const syncDirRecursive = (relPath) => {
+            const fullSourcePath = path.join(DATA_DIR, relPath);
+            if (!fs.existsSync(fullSourcePath)) return;
+            
+            const items = fs.readdirSync(fullSourcePath);
+            items.forEach(item => {
+                const itemRelPath = path.join(relPath, item).replace(/\\/g, '/');
+                const stats = fs.statSync(path.join(DATA_DIR, itemRelPath));
+                
+                if (stats.isDirectory()) {
+                    if (item !== 'backups' && item !== 'archive') {
+                        syncDirRecursive(itemRelPath);
+                    }
+                } else if (stats.isFile()) {
+                    // Force sync from Primary to Mirrors
+                    syncManager.syncFile(itemRelPath);
+                }
+            });
+        };
+        syncDirRecursive('');
+        logger.info('[Startup] Initial mirror sync (Copy) complete.');
+
+        // Prune Mirror (Fix BUG-008 on start)
+        logger.info('[Startup] Pruning Mirror directory...');
+        syncManager.pruneMirrors();
+        logger.info('[Startup] Mirror pruning complete.');
+    } catch (err) {
+        logger.error(`[Startup] Initial sync failed: ${err.message}`);
+    }
+}
+
+// Periodic cleanup of orphan .tmp files (every hour)
+setInterval(() => {
+    syncManager.cleanupOrphanTempFiles(30); // Clean files older than 30 mins
+}, 60 * 60 * 1000);
 
 // --- Global Config & Whitelists ---
 const THEME_MAPPING = {
@@ -137,8 +200,7 @@ const THEME_MAPPING = {
     'components/buttons.ts': ['buttonContinueText', 'buttonLogoutText', 'buttonTextAlign']
 };
 
-const BACKUP_DIR = path.join(DATA_DIR, 'backups');
-const ARCHIVE_DIR = path.join(DATA_DIR, 'archive', 'deleted_files');
+
 
 // Ensure directories exist locally
 [DATA_DIR, CURRICULUM_DIR, MAP_DIR, THEME_DIR, PROVERBS_DIR, LOCALES_DIR, SETTINGS_DIR, BACKUP_DIR, ARCHIVE_DIR].forEach(dir => {
@@ -147,121 +209,13 @@ const ARCHIVE_DIR = path.join(DATA_DIR, 'archive', 'deleted_files');
     }
 });
 
-/**
- * Safely injects JSON data into a TypeScript file using Atomic Writes and Backups.
- */
-function injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFound = null) {
-    const filePaths = [
-        path.join(DATA_DIR, relativePath),
-        path.join(MOBILE_DATA_DIR, relativePath)
-    ];
-    
-    filePaths.forEach(filePath => {
-        try {
-            // Ensure parent directory exists
-            const dir = path.dirname(filePath);
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir, { recursive: true });
-            }
 
-            const jsonStr = JSON.stringify(data, null, 4);
-            if (!jsonStr || jsonStr === 'null' || jsonStr === 'undefined') {
-                console.error(`[SafeWrite] Blocked attempt to write invalid data to ${filePath}`);
-                return;
-            }
-
-            if (!fs.existsSync(filePath)) {
-                if (templateIfNotFound) {
-                    const content = templateIfNotFound.replace('{{DATA}}', jsonStr);
-                    fs.writeFileSync(filePath, content, 'utf-8');
-                    console.log(`[SafeWrite] Created new file: ${path.relative(process.cwd(), filePath)}`);
-                }
-                return;
-            }
-
-            // 1. Create Backup before modification (only for central Data_Base)
-            if (filePath.startsWith(DATA_DIR)) {
-                const fileName = path.basename(filePath);
-                const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-                const backupPath = path.join(BACKUP_DIR, `${fileName}.${timestamp}.bak`);
-                fs.copyFileSync(filePath, backupPath);
-            }
-
-            const src = fs.readFileSync(filePath, 'utf-8');
-            // We find the START of the target export. 
-            // We match only the prefix (everything up to the opening bracket/brace)
-            const prefixRegex = new RegExp(`(export\\s+(const|let|var)\\s+${variableName}(\\s*:\\s*[^=]+)?\\s*=\\s*)([\\s\\S]*)`, 'm');
-            const match = src.match(prefixRegex);
-            
-            let updatedContent;
-            if (match) {
-                const header = src.substring(0, match.index); // Everything BEFORE the export
-                const exportPrefix = match[1]; // The "export const X =" part
-                
-                // We construct the new content by combining the header + new prefix + new data + semicolon
-                // This EFFECTIVELY DISCARDS anything that was in the file after the original export started.
-                updatedContent = `${header}${exportPrefix}${jsonStr};\n`;
-            } else {
-                console.warn(`[IroncladWrite] Could not find variable '${variableName}' in ${filePath}. Falling back to template.`);
-                if (templateIfNotFound) {
-                    updatedContent = templateIfNotFound.replace('{{DATA}}', jsonStr);
-                } else {
-                    return;
-                }
-            }
-
-            // 2. Atomic Write: Write to temp first
-            const tempPath = `${filePath}.tmp`;
-            fs.writeFileSync(tempPath, updatedContent, 'utf-8');
-            
-            // 3. Rename temp to original
-            fs.renameSync(tempPath, filePath);
-            
-            console.log(`[SafeWrite] Successfully updated: ${path.relative(process.cwd(), filePath)}`);
-        } catch (err) {
-            console.error(`[SafeWrite] Critical error writing to ${filePath}:`, err.message);
-        }
-    });
-}
-
-/**
- * Safely writes JSON data to multiple locations with Atomic Writes and Backups.
- */
-function injectJSONAtomic(relativePath, data) {
-    const filePaths = [
-        path.join(DATA_DIR, relativePath),
-        path.join(MOBILE_DATA_DIR, relativePath)
-    ];
-
-    filePaths.forEach(filePath => {
-        try {
-            const dir = path.dirname(filePath);
-            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-
-            const jsonStr = JSON.stringify(data, null, 4);
-            if (!jsonStr || jsonStr === 'null') return;
-
-            // 1. Backup (Only for DB directory)
-            if (filePath.startsWith(DATA_DIR) && fs.existsSync(filePath)) {
-                const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-                fs.copyFileSync(filePath, path.join(BACKUP_DIR, `${path.basename(filePath)}.${timestamp}.bak`));
-            }
-
-            // 2. Atomic Write
-            const tempPath = `${filePath}.tmp`;
-            fs.writeFileSync(tempPath, jsonStr, 'utf-8');
-            fs.renameSync(tempPath, filePath);
-
-            console.log(`[SafeWrite] JSON updated: ${path.relative(process.cwd(), filePath)}`);
-        } catch (err) {
-            console.error(`[SafeWrite] JSON error: ${filePath}`, err.message);
-        }
-    });
-}
 
 const SESSIONS = new Map(); // token -> user object
 
 const server = http.createServer((req, res) => {
+    // 1. Run Morgan Logger
+    httpLogger(req, res, () => {
     // CORS headers — allow Vite dev server (5173) and Expo web (8081)
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -284,7 +238,7 @@ const server = http.createServer((req, res) => {
     // Protected endpoints (Write operations)
     if (req.method === 'POST' && req.url !== '/login') {
         if (!isAuthenticated) {
-            console.warn(`[Security] Blocked unauthorized POST attempt to ${req.url} from ${req.socket.remoteAddress}`);
+            logger.warn(`[Security] Blocked unauthorized POST attempt to ${req.url} from ${req.socket.remoteAddress}`);
             res.writeHead(401, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: 'Unauthorized: Valid X-API-KEY or Authorization header required' }));
             return;
@@ -320,7 +274,7 @@ const server = http.createServer((req, res) => {
         req.pipe(fileStream);
 
         fileStream.on('finish', () => {
-            console.log(`[Upload] Received and saved: ${fileName} -> ${targetSubDir}`);
+            logger.info(`[Upload] Received and saved: ${fileName} -> ${targetSubDir}`);
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ 
                 success: true, 
@@ -329,7 +283,7 @@ const server = http.createServer((req, res) => {
         });
 
         fileStream.on('error', (err) => {
-            console.error('[Upload] Error saving file:', err);
+            logger.error('[Upload] Error saving file:', err);
             res.writeHead(500);
             res.end(JSON.stringify({ error: 'Failed to save file' }));
         });
@@ -358,7 +312,7 @@ const server = http.createServer((req, res) => {
                         token, 
                         user: { username: user.username, role: user.role } 
                     }));
-                    console.log(`[Auth] User logged in: ${username}`);
+                    logger.info(`[Auth] User logged in: ${username}`);
                 } else {
                     res.writeHead(401, { 'Content-Type': 'application/json' });
                     res.end(JSON.stringify({ success: false, error: 'Invalid username or password' }));
@@ -432,7 +386,7 @@ const server = http.createServer((req, res) => {
                     const jsonContent = src.substring(startMatch.index + startMatch[0].length - brackets.length, endPos);
                     return JSON.parse(jsonContent);
                 } catch (e) {
-                    console.error(`[ReadError] Failed to parse ${filePath}:`, e.message);
+                    logger.error(`[ReadError] Failed to parse ${filePath}:`, e.message);
                     return null;
                 }
             };
@@ -451,13 +405,13 @@ const server = http.createServer((req, res) => {
                     try {
                         const jsonPath = path.join(THEME_DIR, 'themeConfig.json');
                         if (fs.existsSync(jsonPath)) {
-                            console.log('[DataSync] Reading theme from themeConfig.json');
+                            logger.info('[DataSync] Reading theme from themeConfig.json');
                             return JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
                         }
-                        console.log('[DataSync] themeConfig.json not found, falling back to theme.ts');
+                        logger.info('[DataSync] themeConfig.json not found, falling back to theme.ts');
                         return readTSExport(path.join(THEME_DIR, 'theme.ts'));
                     } catch (e) {
-                        console.error('[Error] theme okunamadı:', e.message);
+                        logger.error('[Error] theme okunamadı:', e.message);
                         return readTSExport(path.join(THEME_DIR, 'theme.ts'));
                     }
                 })(),
@@ -466,7 +420,7 @@ const server = http.createServer((req, res) => {
                         const p = path.join(THEME_DIR, 'themeSchemes.json');
                         return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf-8') || '{}') : {};
                     } catch (e) {
-                        console.error('[Error] themeSchemes.json okunamadı:', e.message);
+                        logger.error('[Error] themeSchemes.json okunamadı:', e.message);
                         return {};
                     }
                 })(),
@@ -488,11 +442,21 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    // ── GET /api/v1/sync ──────────────────────────────────────────────────
+    if (req.method === 'GET' && req.url === '/api/v1/sync') {
+        // Redirection to /data for now as both return full state
+        // but this allows for future divergence (e.g. diff-based sync)
+        req.url = '/data';
+        // We'll jump to the next handler if we were using a middleware stack,
+        // but here we just re-run the /data logic or redirect.
+        // For simplicity, we'll just handle it here by calling a helper or similar.
+    }
+
     // ── GET /assets ───────────────────────────────────────────────────────
     if (req.method === 'GET' && req.url === '/assets') {
         try {
             const assetsDir = path.join(__dirname, 'assets');
-            console.log('Scanning assets in:', assetsDir);
+            logger.info('Scanning assets in:', assetsDir);
 
             if (!fs.existsSync(assetsDir)) {
                res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -516,7 +480,7 @@ const server = http.createServer((req, res) => {
                         }
                     });
                 } catch (e) {
-                    console.error('Error reading dir:', dir, e.message);
+                    logger.error('Error reading dir:', dir, e.message);
                 }
                 return results;
             };
@@ -525,7 +489,7 @@ const server = http.createServer((req, res) => {
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ assets: allFiles }));
         } catch (err) {
-            console.error('Fatal Assets Error:', err);
+            logger.error('Fatal Assets Error:', err);
             res.writeHead(500, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: err.message }));
         }
@@ -552,8 +516,8 @@ const server = http.createServer((req, res) => {
         
         // Loglama (dosya varsa logla)
         if (req.url !== '/favicon.ico') {
-            console.log(`[Dev Server] Requesting: ${relativePath}`);
-            console.log(`[Dev Server] Resolved Path: ${filePath}`);
+            logger.info(`[Dev Server] Requesting: ${relativePath}`);
+            logger.info(`[Dev Server] Resolved Path: ${filePath}`);
         }
         
         // Güvenlik: __dirname dışına çıkılmasını engelle (Mascot assets are allowed in ZazaLingo sibling dir)
@@ -561,7 +525,7 @@ const server = http.createServer((req, res) => {
         const isMascotRequest = filePath.toLowerCase().startsWith(allowedPath);
         
         if (!filePath.toLowerCase().startsWith(__dirname.toLowerCase()) && !isMascotRequest) {
-            console.warn(`[Security] Blocked access to: ${filePath}`);
+            logger.warn(`[Security] Blocked access to: ${filePath}`);
             res.writeHead(403);
             res.end('Forbidden');
             return;
@@ -601,7 +565,7 @@ const server = http.createServer((req, res) => {
 
             fs.readFile(filePath, (error, content) => {
                 if (error) {
-                    console.error(`[Dev Server] 500 Error reading: ${filePath}`, error.code);
+                    logger.error(`[Dev Server] 500 Error reading: ${filePath}`, error.code);
                     res.writeHead(500);
                     res.end('Server Error: ' + error.code);
                 } else {
@@ -622,10 +586,10 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             try {
                 const data = JSON.parse(body);
-                console.log(`\n💾 [SAVE] Request received at ${new Date().toLocaleTimeString()}`);
-                console.log(`   - Keys present in payload: ${Object.keys(data).join(', ')}`);
+                logger.info(`\n💾 [SAVE] Request received at ${new Date().toLocaleTimeString()}`);
+                logger.info(`   - Keys present in payload: ${Object.keys(data).join(', ')}`);
                 if (data.theme) {
-                    console.log(`   - Theme properties being saved: ${Object.keys(data.theme).length} items`);
+                    logger.info(`   - Theme properties being saved: ${Object.keys(data.theme).length} items`);
                 }
 
                 saveDataToFiles(data);
@@ -634,9 +598,9 @@ const server = http.createServer((req, res) => {
                 }
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: true }));
-                console.log('✅ [SUCCESS] All data written to disk successfully.');
+                logger.info('✅ [SUCCESS] All data written to disk successfully.');
             } catch (err) {
-                console.error('❌ Dev server hatası:', err);
+                logger.error('❌ Dev server hatası:', err);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: false, error: err.message }));
             }
@@ -650,9 +614,9 @@ const server = http.createServer((req, res) => {
                 saveLocalesToFiles(data);
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: true }));
-                console.log('✅ Dev server: Dil dosyaları başarıyla güncellendi.');
+                logger.info('✅ Dev server: Dil dosyaları başarıyla güncellendi.');
             } catch (err) {
-                console.error('❌ Dev server locale hatası:', err);
+                logger.error('❌ Dev server locale hatası:', err);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: false, error: err.message }));
             }
@@ -661,24 +625,24 @@ const server = http.createServer((req, res) => {
         res.writeHead(404);
         res.end();
     }
+    }); // End of httpLogger
 });
 
 function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, theme, themeSchemes, info, zazaConstants }) {
     // 1. Save Map Content (stations, decorations, config)
-    if (stations) {
-        injectDataIntoTSFile(path.join('map', 'stations.ts'), 'courseLevels', stations, 
+        syncManager.injectDataIntoTSFile(path.join('map', 'stations.ts'), 'courseLevels', stations, 
             `export const courseLevels = {{DATA}};`);
-    }
 
-    if (decorations) {
-        injectDataIntoTSFile(path.join('map', 'decorations.ts'), 'decorations', decorations, 
+        syncManager.injectDataIntoTSFile(path.join('map', 'decorations.ts'), 'decorations', decorations, 
             `export const decorations = {{DATA}};`);
-    }
 
-    if (mapConfig) {
-        injectDataIntoTSFile(path.join('map', 'config.ts'), 'mapConfig', mapConfig, 
+        syncManager.injectDataIntoTSFile(path.join('map', 'config.ts'), 'mapConfig', mapConfig, 
             `export const mapConfig = {{DATA}};`);
-    }
+
+        // JSON parity sync for BUG-007
+        syncManager.injectJSONAtomic(path.join('map', 'stations.json'), stations);
+        syncManager.injectJSONAtomic(path.join('map', 'decorations.json'), decorations);
+        syncManager.injectJSONAtomic(path.join('map', 'config.json'), mapConfig);
 
     // 2. Save Tests (Hierarchical: curriculum/Unit/Topic/testId.ts)
     if (!fs.existsSync(CURRICULUM_DIR)) {
@@ -732,7 +696,7 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
         currentTestFiles.add(posixPath.toLowerCase());
 
         // Use safe injection for individual test files
-        injectDataIntoTSFile(path.join('curriculum', posixPath), testExportName, test, 
+        syncManager.injectDataIntoTSFile(path.join('curriculum', posixPath), testExportName, test, 
             `import { TestData } from '../../../types/question';\n\nexport const ${testExportName}: TestData = {{DATA}};\n`);
         
         indexContent += `import { ${testExportName} } from './${posixPath.replace('.ts', '')}';\n`;
@@ -770,7 +734,7 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
                     // Archive instead of delete
                     const archivedPath = path.join(ARCHIVE_DIR, `${Date.now()}_${file}`);
                     fs.renameSync(fullPath, archivedPath);
-                    console.log(`[Archive] Moved old test file to archive: ${relativePath}`);
+                    logger.info(`[Archive] Moved old test file to archive: ${relativePath}`);
                 }
             }
         });
@@ -779,8 +743,9 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
 
     // 3. Save Proverbs
     if (proverbs) {
-        injectDataIntoTSFile(path.join('proverbs', 'proverbs.ts'), 'proverbs', proverbs, 
+        syncManager.injectDataIntoTSFile(path.join('proverbs', 'proverbs.ts'), 'proverbs', proverbs, 
             `export const proverbs = {{DATA}};`);
+        syncManager.injectJSONAtomic(path.join('proverbs', 'proverbs.json'), proverbs);
     }
 
     // 4. Save Theme (Modular)
@@ -791,34 +756,37 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
             const varName = path.basename(relativePath, '.ts');
             // Theme files don't strictly need the interface import since they are tokens, 
             // but we use a flexible template that matches existing style
-            injectDataIntoTSFile(path.join('theme', relativePath), varName, partData, 
+            syncManager.injectDataIntoTSFile(path.join('theme', relativePath), varName, partData, 
                 `export const ${varName} = {{DATA}};`);
         }
 
         // Keep themeConfig.json as fallback source of truth
-        injectJSONAtomic(path.join('theme', 'themeConfig.json'), theme);
-        console.log('[Theme] Modular files and themeConfig.json updated in both DB and Mobile.');
+        syncManager.injectJSONAtomic(path.join('theme', 'themeConfig.json'), theme);
+        logger.info('[Theme] Modular files and themeConfig.json updated in both DB and Mobile.');
     }
 
     // 4b. Save Theme Schemes
     if (themeSchemes) {
-        injectJSONAtomic(path.join('theme', 'themeSchemes.json'), themeSchemes);
-        console.log('[Theme] themeSchemes.json updated in both DB and Mobile.');
+        syncManager.injectJSONAtomic(path.join('theme', 'themeSchemes.json'), themeSchemes);
+        logger.info('[Theme] themeSchemes.json updated in both DB and Mobile.');
     }
 
     // 5. Save Info (Modular Settings)
     if (info) {
-        injectDataIntoTSFile(path.join('settings', 'info.ts'), 'zazaLingoInfo', info, 
+        syncManager.injectDataIntoTSFile(path.join('settings', 'info.ts'), 'zazaLingoInfo', info, 
             `export const zazaLingoInfo = {{DATA}};`);
     }
 
     // 6. Save ZazaConstants (Modular Settings)
     if (zazaConstants) {
-        injectDataIntoTSFile(path.join('settings', 'zazaConstants.ts'), 'zazaConstants', zazaConstants, 
+        syncManager.injectDataIntoTSFile(path.join('settings', 'zazaConstants.ts'), 'zazaConstants', zazaConstants, 
             `export const zazaConstants = {{DATA}};`);
     }
     
-    // Cleanup legacy files logic remains same but we can keep it for safety
+    // 7. Sync users.json for hash parity
+    if (fs.existsSync(path.join(DATA_DIR, 'users.json'))) {
+        syncManager.syncFile('users.json');
+    }
 }
 
 function saveLocalesToFiles(locales) {
@@ -829,8 +797,9 @@ function saveLocalesToFiles(locales) {
     const langs = ['tr', 'en', 'zzk', 'krmnc'];
     for (const lang of langs) {
         if (locales[lang]) {
-            injectDataIntoTSFile(path.join('locales', `${lang}.ts`), lang, locales[lang], 
+            syncManager.injectDataIntoTSFile(path.join('locales', `${lang}.ts`), lang, locales[lang], 
                 `import { Locale } from '../../types/locales';\n\nexport const ${lang}: Locale = {{DATA}};`);
+            syncManager.injectJSONAtomic(path.join('locales', `${lang}.json`), locales[lang]);
         }
     }
 }
@@ -843,13 +812,13 @@ function saveLocalesToFiles(locales) {
 
 server.on('error', (err) => {
     if (err.code === 'EADDRINUSE') {
-        console.log(`⚠️ Port ${PORT} is already in use. Dev server may already be running.`);
+        logger.info(`⚠️ Port ${PORT} is already in use. Dev server may already be running.`);
     } else {
-        console.error('❌ Server error:', err);
+        logger.error('❌ Server error:', err);
     }
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-    console.log(`[Dev Tools] Save server running at http://localhost:${PORT}`);
-    console.log('You can now save changes directly from the ZazaLingo Admin Panel.');
+    logger.info(`[Dev Tools] Save server running at http://localhost:${PORT}`);
+    logger.info('You can now save changes directly from the ZazaLingo Admin Panel.');
 });

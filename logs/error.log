@@ -1,0 +1,6 @@
+{"level":"error","message":"[SyncManager] Blocked invalid data for C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-10 19:29:39"}
+{"level":"error","message":"[SyncManager] Blocked invalid data for C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-10 19:29:39"}
+{"level":"error","message":"[SyncManager] Blocked invalid data for C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-10 19:29:39"}
+{"level":"error","message":"[SyncManager] Blocked invalid data for C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-10 19:29:39"}
+{"level":"error","message":"[SyncManager] Blocked invalid data for C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-10 19:29:39"}
+{"level":"error","message":"[SyncManager] Blocked invalid data for C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-10 19:29:39"}
