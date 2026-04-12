@@ -1,8 +1,6 @@
 {
     "synced": [
-        "info.ts",
         "users.json",
-        "zazaConstants.ts",
         "curriculum\\index.ts",
         "locales\\en.json",
         "locales\\en.ts",

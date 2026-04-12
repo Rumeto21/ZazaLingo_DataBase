@@ -1,4 +1,3 @@
-// Bu dosya Dev Server tarafından otomatik güncellenmiştir.
 export interface MusicCredit {
     title: string;
     composer: string;
@@ -9,11 +8,18 @@ export interface MusicCredit {
     changes: string;
 }
 
+export interface Dedication {
+    from: string;
+    to: string;
+}
+
 export interface ZazaLingoInfoData {
     mainTitle: string;
     teamTitle: string;
     dedicationTitle: string;
     musicTitle: string;
+    missionTitle: string;
+    mission: string;
     team: string[];
     dedications: Dedication[];
     music: MusicCredit[];
@@ -24,7 +30,7 @@ export const zazaLingoInfo: ZazaLingoInfoData = {
     "teamTitle": "ZazaLingo Ekibi",
     "dedicationTitle": "İthaflar",
     "missionTitle": "Misyonumuz",
-    "mission": "Bu uygulamadaki amaçlarımız;\nKürtçe'nin Zazakî Lehçesini dijital ortama taşımak\nStandart Zazakî'nin bilinmesini arttırmak\nÇocuklar ve gençlerimize eğlenceli bir şekilde Zazakî'yi öğretmek",
+    "mission": "Bu uygulamadaki amaçlarımız;\n-Kürtçe'nin Zazakî Lehçesini dijital ortama taşımak\n-Standart Zazakî'nin bilinmesini arttırmak\n-Çocuklar ve gençlerimize eğlenceli bir şekilde                Zazakî'yi öğretmek",
     "musicTitle": "Müzik Bilgileri",
     "team": [
         "Onur Şenoğlu"

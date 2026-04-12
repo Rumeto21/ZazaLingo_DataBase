@@ -1,4 +1,3 @@
-// Bu dosya Dev Server tarafından otomatik güncellenmiştir.
 import { TestData } from '../../types/question';
 
 

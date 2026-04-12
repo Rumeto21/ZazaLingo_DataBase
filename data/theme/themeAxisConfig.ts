@@ -10,124 +10,130 @@
  *   X  -> screenWidth    (yatay merkez kaymasi)
  *   Y  -> screenHeight   (dikey merkez kaymasi)
  *   W  -> screenWidth    (genislik)
- *   H  -> screenHeight   (yukseklik)
+ *   V  -> screenHeight   (dikey buyukluk - Magnitude)
+ *   H  -> screenHeight   (yukseklik - Legacy/Mixed)
  *   R  -> screenWidth    (kose yuvarligi - genellikle genislik bazli)
  */
 
-export type ThemeAxis = 'X' | 'Y' | 'W' | 'H' | 'R';
+export type ThemeAxis = 'X' | 'Y' | 'W' | 'H' | 'R' | 'V';
 
 export const THEME_AXIS_MAP: Record<string, ThemeAxis> = {
     // ── Maskot: Ana ekran ─────────────────────────────────────────────
     mascotHomeMarginLeft:               'X',
     mascotHomeTop:                      'Y',
-    mascotHomeSize:                     'W',
+    mascotHomeSize:                     'V',
 
     // ── Maskot: Genel soru fallback ──────────────────────────────────
     mascotQuestionMarginLeft:           'X',
     mascotQuestionTop:                  'Y',
-    mascotQuestionSize:                 'W',
+    mascotQuestionSize:                 'V',
 
     // ── Maskot: Coktan Secmeli ────────────────────────────────────────
     mascotCoktanSecmeliMarginLeft:      'X',
     mascotCoktanSecmeliTop:             'Y',
-    mascotCoktanSecmeliSize:            'W',
+    mascotCoktanSecmeliSize:            'V',
 
     // ── Maskot: Kelime Siralama ───────────────────────────────────────
     mascotWordOrderMarginLeft:          'X',
     mascotWordOrderTop:                 'Y',
-    mascotWordOrderSize:                'W',
+    mascotWordOrderSize:                'V',
 
     // ── Maskot: Eslestirme ────────────────────────────────────────────
     mascotMatchingMarginLeft:           'X',
     mascotMatchingTop:                  'Y',
-    mascotMatchingSize:                 'W',
+    mascotMatchingSize:                 'V',
 
     // ── Maskot: Resim Secme ───────────────────────────────────────────
     mascotImageChoiceMarginLeft:        'X',
     mascotImageChoiceTop:               'Y',
-    mascotImageChoiceSize:              'W',
+    mascotImageChoiceSize:              'V',
 
     // ── Maskot: Secim Resim ───────────────────────────────────────────
     mascotChoiceImageMarginLeft:        'X',
     mascotChoiceImageTop:               'Y',
-    mascotChoiceImageSize:              'W',
+    mascotChoiceImageSize:              'V',
 
     // ── Maskot: Diyalog ──────────────────────────────────────────────
     mascotDialogueMarginLeft:           'X',
     mascotDialogueTop:                  'Y',
-    mascotDialogueSize:                 'W',
+    mascotDialogueSize:                 'V',
 
     // ── Maskot: Dinleme ──────────────────────────────────────────────
     mascotDinlemeMarginLeft:            'X',
     mascotDinlemeTop:                   'Y',
-    mascotDinlemeSize:                  'W',
+    mascotDinlemeSize:                  'V',
 
     // ── Maskot: Gorsel Eslesirme ─────────────────────────────────────
     mascotGorselEslesirmeMarginLeft:    'X',
     mascotGorselEslesirmeTop:           'Y',
-    mascotGorselEslesirmeSize:          'W',
+    mascotGorselEslesirmeSize:          'V',
 
     // ── Maskot: Cumle Tamamlama ───────────────────────────────────────
     mascotSentenceCompletionMarginLeft: 'X',
     mascotSentenceCompletionTop:        'Y',
-    mascotSentenceCompletionSize:       'W',
+    mascotSentenceCompletionSize:       'V',
+
+    // ── Maskot: Image Question (v7.1) ─────────────────────────────────
+    mascotImageQuestionMarginLeft:      'X',
+    mascotImageQuestionTop:             'Y',
+    mascotImageQuestionSize:            'V',
 
     // ── Header ───────────────────────────────────────────────────────
     headerTitleMarginTop:               'Y',
     headerTitleMarginLeft:              'X',
     headerTitleWidth:                   'W',
-    headerTitleHeight:                  'H',
+    headerTitleHeight:                  'V',
     headerSubtitleMarginTop:            'Y',
     headerSubtitleMarginLeft:           'X',
     headerSubtitleWidth:                'W',
-    headerSubtitleHeight:               'H',
-    headerHeight:                       'H',
+    headerSubtitleHeight:               'V',
+    headerHeight:                       'V',
     headerTopMargin:                    'Y',
     headerBottomMargin:                 'Y',
 
     // ── Butonlar ─────────────────────────────────────────────────────
     buttonWidth:                        'W',
-    buttonHeight:                       'H',
+    buttonHeight:                       'V',
     buttonMarginTop:                    'Y',
     buttonMarginLeft:                   'X',
-    buttonGap:                          'H',
+    buttonGap:                          'V',
     buttonBorderRadius:                 'R',
     buttonContainerTopMargin:           'Y',
     buttonContainerMarginLeft:          'X',
     buttonContainerPaddingHorizontal:   'W',
-    buttonContainerPaddingBottom:       'H',
-    buttonVerticalMargin:               'H',
+    buttonContainerPaddingBottom:       'V',
+    buttonVerticalMargin:               'V',
 
     // ── Proverbs ─────────────────────────────────────────────────────
     // ── Proverbs ─────────────────────────────────────────────────────
     proverbsMarginTop:                  'Y',
     proverbsMarginLeft:                 'X',
     proverbsWidth:                      'W',
-    proverbsHeight:                     'H',
+    proverbsHeight:                     'V',
 
     // ── Soru ekrani: metin kutulari ───────────────────────────────────
     questionTitleMarginTop:             'Y',
     questionTitleMarginLeft:            'X',
     questionTitleWidth:                 'W',
-    questionTitleHeight:                'H',
+    questionTitleHeight:                'V',
     questionPromptMarginTop:            'Y',
-    questionPromptMarginBottom:         'H',
+    questionPromptMarginBottom:         'V',
     questionPromptMarginLeft:           'X',
     questionPromptWidth:                'W',
-    questionPromptHeight:               'H',
+    questionPromptHeight:               'V',
     questionPromptPaddingHorizontal:    'W',
     questionOptionsMarginTop:           'Y',
-    questionOptionsMarginBottom:        'H',
+    questionOptionsMarginBottom:        'V',
     questionOptionsMarginLeft:          'X',
     questionOptionsWidth:               'W',
-    questionOptionsHeight:              'H',
+    questionOptionsHeight:              'V',
     questionOptionsPaddingHorizontal:   'W',
 
     // ── Soru butonu ───────────────────────────────────────────────────
     questionBtnMarginTop:               'Y',
     questionBtnMarginLeft:              'X',
     questionBtnWidth:                   'W',
-    questionBtnHeight:                  'H',
+    questionBtnHeight:                  'V',
     questionBtnBorderRadius:            'R',
 
     // ── Genel bordur / padding ────────────────────────────────────────
@@ -139,25 +145,25 @@ export const THEME_AXIS_MAP: Record<string, ThemeAxis> = {
     settingsTitleMarginTop:             'Y',
     settingsTitleMarginLeft:            'X',
     settingsTitleWidth:                 'W',
-    settingsTitleHeight:                'H',
+    settingsTitleHeight:                'V',
     settingsBackMarginTop:              'Y',
     settingsBackMarginLeft:             'X',
     settingsBackWidth:                  'W',
-    settingsBackHeight:                 'H',
+    settingsBackHeight:                 'V',
     settingsMusicSectionMarginTop:      'Y',
     settingsMusicSectionMarginLeft:     'X',
     settingsMusicSectionWidth:          'W',
-    settingsMusicSectionHeight:         'H',
+    settingsMusicSectionHeight:         'V',
     settingsInfoSectionMarginTop:       'Y',
     settingsInfoSectionMarginLeft:      'X',
     settingsInfoSectionWidth:           'W',
-    settingsInfoSectionHeight:          'H',
+    settingsInfoSectionHeight:          'V',
     settingsThemeSectionMarginTop:      'Y',
     settingsThemeSectionMarginLeft:     'X',
     settingsThemeSectionWidth:          'W',
-    settingsThemeSectionHeight:         'H',
+    settingsThemeSectionHeight:         'V',
     settingsThemeItemWidth:             'W',
-    settingsThemeItemHeight:            'H',
+    settingsThemeItemHeight:            'V',
     settingsThemeItem0MarginTop:        'Y',
     settingsThemeItem0MarginLeft:       'X',
     settingsThemeItem1MarginTop:        'Y',
@@ -167,23 +173,23 @@ export const THEME_AXIS_MAP: Record<string, ThemeAxis> = {
     settings_music_item_0MarginTop:     'Y',
     settings_music_item_0MarginLeft:    'X',
     settings_music_item_0Width:         'W',
-    settings_music_item_0Height:        'H',
+    settings_music_item_0Height:        'V',
     settings_music_item_1MarginTop:     'Y',
     settings_music_item_1MarginLeft:    'X',
     settings_music_item_1Width:         'W',
-    settings_music_item_1Height:        'H',
+    settings_music_item_1Height:        'V',
     settings_info_menu_0MarginTop:      'Y',
     settings_info_menu_0MarginLeft:     'X',
     settings_info_menu_0Width:          'W',
-    settings_info_menu_0Height:         'H',
+    settings_info_menu_0Height:         'V',
     settings_info_menu_1MarginTop:      'Y',
     settings_info_menu_1MarginLeft:     'X',
     settings_info_menu_1Width:          'W',
-    settings_info_menu_1Height:         'H',
+    settings_info_menu_1Height:         'V',
     settings_info_menu_2MarginTop:      'Y',
     settings_info_menu_2MarginLeft:     'X',
     settings_info_menu_2Width:          'W',
-    settings_info_menu_2Height:         'H',
+    settings_info_menu_2Height:         'V',
     settingsMenuBorderRadius:           'R',
     settingsMusicItemBorderRadius:      'R',
     settingsThemeItemBorderRadius:      'R',
@@ -194,10 +200,10 @@ export const THEME_AXIS_MAP: Record<string, ThemeAxis> = {
     // ── TopBar ────────────────────────────────────────────────────────
     topBarPaddingHorizontal:            'W',
     topBarPaddingTop:                   'Y',
-    topBarPaddingBottom:                'H',
+    topBarPaddingBottom:                'V',
     topBarDropdownWidth:                'W',
     topBarFlagWidth:                    'W',
-    topBarFlagHeight:                   'H',
+    topBarFlagHeight:                   'V',
     topBarHelperMarginLeft:             'W',
 };
 

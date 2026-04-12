@@ -131,6 +131,8 @@ const THEME_MAPPING = {
         'mascotDinlemeTop', 'mascotDinlemeMarginLeft', 'mascotDinlemeSize',
         'mascotGorselEslesirmeTop', 'mascotGorselEslesirmeMarginLeft', 'mascotGorselEslesirmeSize',
         'mascotSentenceCompletionTop', 'mascotSentenceCompletionMarginLeft', 'mascotSentenceCompletionSize',
+        // Mascot - Image Question (v7.1)
+        'mascotImageQuestionTop', 'mascotImageQuestionMarginLeft', 'mascotImageQuestionSize',
         // Soru ekranı metin koordinatları
         'questionTitleMarginTop', 'questionTitleMarginLeft', 'questionTitleWidth', 'questionTitleHeight',
         'questionPromptMarginTop', 'questionPromptMarginBottom', 'questionPromptMarginLeft',
@@ -678,7 +680,7 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
         }
     });
 
-    let indexContent = `// Bu dosya Dev Server tarafından otomatik güncellenmiştir.\nimport { TestData } from '../../types/question';\n\n`;
+    let indexContent = `import { TestData } from '../../types/question';\n\n`;
 
     for (const testId of testIds) {
         const test = tests[testId];

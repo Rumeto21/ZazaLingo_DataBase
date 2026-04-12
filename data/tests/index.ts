@@ -1,4 +1,3 @@
-// Bu dosya Dev Server tarafından otomatik güncellenmiştir.
 import { TestData } from '../../types/question';
 
 import { word_order_example } from './diger/word_order_example';

@@ -25,7 +25,7 @@ export const spacing = {
         "unit": "ratio"
     },
     "buttonMarginTop": {
-        "val": 250,
+        "val": 245,
         "unit": "px"
     },
     "buttonMarginLeft": {
@@ -33,11 +33,11 @@ export const spacing = {
         "unit": "px"
     },
     "buttonGap": {
-        "val": 5,
+        "val": 10,
         "unit": "px"
     },
     "headerTitleMarginTop": {
-        "val": -335,
+        "val": -340,
         "unit": "px"
     },
     "headerTitleMarginLeft": {
@@ -53,7 +53,7 @@ export const spacing = {
         "unit": "px"
     },
     "headerSubtitleMarginTop": {
-        "val": -260,
+        "val": -270,
         "unit": "px"
     },
     "headerSubtitleMarginLeft": {
@@ -69,7 +69,7 @@ export const spacing = {
         "unit": "px"
     },
     "proverbsMarginTop": {
-        "val": -210,
+        "val": -220,
         "unit": "px"
     },
     "proverbsMarginLeft": {
@@ -85,7 +85,7 @@ export const spacing = {
         "unit": "px"
     },
     "mascotHomeTop": {
-        "val": 50,
+        "val": 40,
         "unit": "px"
     },
     "mascotHomeMarginLeft": {
@@ -93,7 +93,7 @@ export const spacing = {
         "unit": "px"
     },
     "mascotHomeSize": {
-        "val": 0.8,
+        "val": 0.37,
         "unit": "ratio"
     },
     "mascotQuestionTop": 1.377281,
@@ -124,7 +124,10 @@ export const spacing = {
     "questionOptionsWidth": 1.97754,
     "questionOptionsHeight": 0.282184,
     "questionOptionsPaddingHorizontal": 0,
-    "topBarPaddingHorizontal": 0,
+    "topBarPaddingHorizontal": {
+        "val": 0,
+        "unit": "px"
+    },
     "topBarPaddingTop": {
         "val": -362,
         "unit": "px"
@@ -135,15 +138,15 @@ export const spacing = {
         "unit": "px"
     },
     "topBarFlagWidth": {
-        "val": 100,
+        "val": 10,
         "unit": "px"
     },
     "topBarFlagHeight": {
-        "val": 20,
+        "val": 10,
         "unit": "px"
     },
     "topBarHelperMarginLeft": {
-        "val": 50,
+        "val": 10,
         "unit": "px"
     }
 };
