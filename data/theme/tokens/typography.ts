@@ -1,6 +1,6 @@
 export const typography = {
     "buttonTextSize": {
-        "val": 40,
+        "val": 35,
         "unit": "px"
     },
     "headerTitleFontSize": 60,

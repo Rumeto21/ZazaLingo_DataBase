@@ -94,7 +94,7 @@
         "unit": "ratio"
     },
     "buttonTextSize": {
-        "val": 40,
+        "val": 35,
         "unit": "px"
     },
     "headerTitleFontSize": 60,
@@ -269,7 +269,7 @@
         "unit": "px"
     },
     "topBarDropdownWidth": {
-        "val": 50,
+        "val": 110,
         "unit": "px"
     },
     "topBarFlagWidth": {
