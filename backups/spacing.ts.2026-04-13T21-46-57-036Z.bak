@@ -184,15 +184,15 @@ export const spacing = {
         "unit": "px"
     },
     "topBarDropdownWidth": {
-        "val": 50,
+        "val": 0,
         "unit": "px"
     },
     "topBarFlagWidth": {
-        "val": 50,
+        "val": 10,
         "unit": "px"
     },
     "topBarFlagHeight": {
-        "val": 20,
+        "val": 10,
         "unit": "px"
     },
     "topBarHelperMarginLeft": {
