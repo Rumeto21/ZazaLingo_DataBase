@@ -20,12 +20,6 @@ export const typography = {
     "settingsMusicItemFontSize": 16,
     "settingsInfoItemFontSize": 16,
     "settingsSubHeaderFontSize": 18,
-    "questionPromptFontSize": {
-        "val": 50,
-        "unit": "px"
-    },
-    "questionOptionFontSize": {
-        "val": 0.32,
-        "unit": "ratio"
-    }
+    "questionPromptFontSize": 28,
+    "questionOptionFontSize": 0
 };

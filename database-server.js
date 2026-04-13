@@ -715,6 +715,9 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
     const tempIndex = `${localIndex}.tmp`;
     fs.writeFileSync(tempIndex, indexContent, 'utf-8');
     fs.renameSync(tempIndex, localIndex);
+    
+    // Isolated Sync: Ensure the generated index is mirrored to the App
+    syncManager.syncFile(path.join('curriculum', 'index.ts'));
 
     // Cleanup Tests
     function cleanupTests(dir, baseDir = '') {

@@ -75,24 +75,12 @@
     "mascotQuestionTop": 1.377281,
     "mascotQuestionSize": 0.063281,
     "mascotQuestionMarginLeft": 1.504,
-    "questionPromptMarginTop": {
-        "val": -312,
-        "unit": "px"
-    },
+    "questionPromptMarginTop": 0.302598,
     "questionPromptMarginBottom": 0,
-    "questionOptionsMarginTop": {
-        "val": -0.15,
-        "unit": "ratio"
-    },
+    "questionOptionsMarginTop": 0.228777,
     "questionOptionsMarginBottom": 0,
-    "questionOptionsMarginLeft": {
-        "val": 0,
-        "unit": "px"
-    },
-    "questionOptionsPaddingHorizontal": {
-        "val": 0,
-        "unit": "ratio"
-    },
+    "questionOptionsMarginLeft": 1.504,
+    "questionOptionsPaddingHorizontal": 0,
     "buttonTextSize": {
         "val": 40,
         "unit": "px"
@@ -113,14 +101,8 @@
     "settingsMusicItemFontSize": 16,
     "settingsInfoItemFontSize": 16,
     "settingsSubHeaderFontSize": 18,
-    "questionPromptFontSize": {
-        "val": 50,
-        "unit": "px"
-    },
-    "questionOptionFontSize": {
-        "val": 0.32,
-        "unit": "ratio"
-    },
+    "questionPromptFontSize": 28,
+    "questionOptionFontSize": 0,
     "coktanSecmeliBgColor": "#FFFFFF",
     "coktanSecmeliTextColor": "#4B4B4B",
     "coktanSecmeliSelectedBgColor": "#DDF4FF",
@@ -220,42 +202,15 @@
         "unit": "px"
     },
     "headerSubtitleFontSize": 40,
-    "mascotCoktanSecmeliSize": {
-        "val": 0.2,
-        "unit": "ratio"
-    },
-    "questionOptionsWidth": {
-        "val": 0.9,
-        "unit": "ratio"
-    },
-    "questionOptionsHeight": {
-        "val": 400,
-        "unit": "px"
-    },
-    "questionTitleWidth": {
-        "val": 0.9,
-        "unit": "ratio"
-    },
-    "questionTitleHeight": {
-        "val": 100,
-        "unit": "px"
-    },
-    "questionTitleMarginTop": {
-        "val": -382,
-        "unit": "px"
-    },
-    "questionPromptWidth": {
-        "val": 0.9,
-        "unit": "ratio"
-    },
-    "questionPromptHeight": {
-        "val": 50,
-        "unit": "px"
-    },
-    "mascotCoktanSecmeliTop": {
-        "val": -200,
-        "unit": "px"
-    },
+    "mascotCoktanSecmeliSize": 1.483159,
+    "questionOptionsWidth": 1.97754,
+    "questionOptionsHeight": 0.282184,
+    "questionTitleWidth": 1.779791,
+    "questionTitleHeight": 0.033593,
+    "questionTitleMarginTop": 0.270348,
+    "questionPromptWidth": 1.779791,
+    "questionPromptHeight": 0.033593,
+    "mascotCoktanSecmeliTop": 1.377281,
     "topBarPaddingHorizontal": {
         "val": 0,
         "unit": "px"
@@ -264,12 +219,9 @@
         "val": -362,
         "unit": "px"
     },
-    "topBarPaddingBottom": {
-        "val": 0,
-        "unit": "px"
-    },
+    "topBarPaddingBottom": 0,
     "topBarDropdownWidth": {
-        "val": 0,
+        "val": 50,
         "unit": "px"
     },
     "topBarFlagWidth": {
@@ -281,7 +233,7 @@
         "unit": "px"
     },
     "topBarHelperMarginLeft": {
-        "val": 0,
+        "val": 10,
         "unit": "px"
     },
     "mapBgColor": "#F5F0E8",
@@ -335,18 +287,6 @@
         "unit": "px"
     },
     "buttonMarginLeft": {
-        "val": 0,
-        "unit": "px"
-    },
-    "questionTitleFontSize": {
-        "val": 25,
-        "unit": "px"
-    },
-    "questionTitleMarginLeft": {
-        "val": 0,
-        "unit": "ratio"
-    },
-    "questionPromptPaddingHorizontal": {
         "val": 0,
         "unit": "px"
     }
