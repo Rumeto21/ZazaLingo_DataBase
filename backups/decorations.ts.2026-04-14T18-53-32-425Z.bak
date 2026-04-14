@@ -1,4 +1,19 @@
-[
+export type DecorationType = 'tree' | 'grass' | 'mountain' | 'river' | 'tree1' | 'tree2';
+export interface DecorationData {
+    id: string;
+    type: DecorationType;
+    x: number;
+    y: number;
+    scale: number;
+    scaleX?: number;
+    scaleY?: number;
+    angle: number;
+    nodes?: { x: number, y: number }[];
+    thickness?: number;
+    x2?: number;
+    y2?: number;
+}
+export const decorations: DecorationData[] = [
     {
         "id": "deco_1773674279728",
         "type": "tree1",
@@ -42,8 +57,8 @@
     {
         "id": "deco_1773675215274",
         "type": "tree1",
-        "x": 2,
-        "y": 448,
+        "x": 44,
+        "y": 430,
         "scale": 1,
         "angle": 0
     },
@@ -866,18 +881,17 @@
     {
         "id": "deco_1773737144594",
         "type": "mountain",
-        "x": 454,
-        "y": 368,
-        "scale": 4.19,
+        "x": 443,
+        "y": 408,
+        "scale": 2.96,
         "angle": 0,
-        "scaleY": 6.85,
-        "scaleX": 8.29
+        "scaleY": 6.85
     },
     {
         "id": "deco_1773741252798",
         "type": "river",
-        "x": 360,
-        "y": 249,
+        "x": 345,
+        "y": 226,
         "x2": 758,
         "y2": 450,
         "nodes": [
@@ -890,8 +904,8 @@
                 "y": 221
             },
             {
-                "x": -114,
-                "y": 673
+                "x": -127,
+                "y": 695
             }
         ],
         "scale": 1,
@@ -901,7 +915,7 @@
     {
         "id": "deco_1773741487841",
         "type": "river",
-        "x": 172,
+        "x": 174,
         "y": 1018,
         "x2": 420,
         "y2": 915,
@@ -921,7 +935,7 @@
         ],
         "scale": 1,
         "angle": 0,
-        "thickness": 20
+        "thickness": 5
     },
     {
         "id": "deco_1773741643156",
@@ -998,4 +1012,4 @@
         "angle": 0,
         "thickness": 40
     }
-]
+];

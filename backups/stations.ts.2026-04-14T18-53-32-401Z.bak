@@ -88,8 +88,8 @@ export const courseLevels: LevelData[] = [
         "unitIndex": 2,
         "signX": -2,
         "signY": -36,
-        "tagX": -95,
-        "tagY": 31,
+        "tagX": -70,
+        "tagY": -14,
         "railAngle": 85,
         "railX": 138,
         "railY": 492
@@ -118,8 +118,8 @@ export const courseLevels: LevelData[] = [
         "unitIndex": 3,
         "railX": 160,
         "railY": 900,
-        "tagX": -88,
-        "tagY": 49,
+        "tagX": -63,
+        "tagY": -29,
         "signX": 19,
         "signY": -42,
         "railAngle": 58
@@ -168,8 +168,8 @@ export const courseLevels: LevelData[] = [
         "signY": -33,
         "railX": 750,
         "railY": 725,
-        "tagX": -26,
-        "tagY": -141,
+        "tagX": -66,
+        "tagY": -41,
         "railAngle": 263
     },
     {
@@ -183,8 +183,8 @@ export const courseLevels: LevelData[] = [
         "unitIndex": 6,
         "railX": 1076,
         "railY": 700,
-        "tagX": -151,
-        "tagY": -11,
+        "tagX": -79,
+        "tagY": -26,
         "signX": -4,
         "signY": -35,
         "railAngle": 44
@@ -200,7 +200,7 @@ export const courseLevels: LevelData[] = [
         "unitIndex": 7,
         "railX": 1400,
         "railY": 330,
-        "tagX": -187,
+        "tagX": -57,
         "tagY": -34,
         "railAngle": -98,
         "signX": -12,
@@ -354,8 +354,8 @@ export const courseLevels: LevelData[] = [
         "railX": 323,
         "railY": 1574,
         "railAngle": 129,
-        "tagX": -154,
-        "tagY": -3,
+        "tagX": -74,
+        "tagY": -46,
         "signX": -9,
         "signY": -23
     },

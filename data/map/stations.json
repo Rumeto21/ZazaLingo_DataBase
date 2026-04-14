@@ -63,8 +63,8 @@
         "unitIndex": 2,
         "signX": -2,
         "signY": -36,
-        "tagX": -70,
-        "tagY": -14,
+        "tagX": -95,
+        "tagY": 31,
         "railAngle": 85,
         "railX": 138,
         "railY": 492
@@ -93,8 +93,8 @@
         "unitIndex": 3,
         "railX": 160,
         "railY": 900,
-        "tagX": -63,
-        "tagY": -29,
+        "tagX": -88,
+        "tagY": 49,
         "signX": 19,
         "signY": -42,
         "railAngle": 58
@@ -143,8 +143,8 @@
         "signY": -33,
         "railX": 750,
         "railY": 725,
-        "tagX": -66,
-        "tagY": -41,
+        "tagX": -26,
+        "tagY": -141,
         "railAngle": 263
     },
     {
@@ -158,8 +158,8 @@
         "unitIndex": 6,
         "railX": 1076,
         "railY": 700,
-        "tagX": -79,
-        "tagY": -26,
+        "tagX": -151,
+        "tagY": -11,
         "signX": -4,
         "signY": -35,
         "railAngle": 44
@@ -175,7 +175,7 @@
         "unitIndex": 7,
         "railX": 1400,
         "railY": 330,
-        "tagX": -57,
+        "tagX": -187,
         "tagY": -34,
         "railAngle": -98,
         "signX": -12,
@@ -329,8 +329,8 @@
         "railX": 323,
         "railY": 1574,
         "railAngle": 129,
-        "tagX": -74,
-        "tagY": -46,
+        "tagX": -154,
+        "tagY": -3,
         "signX": -9,
         "signY": -23
     },

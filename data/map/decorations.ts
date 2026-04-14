@@ -57,8 +57,8 @@ export const decorations: DecorationData[] = [
     {
         "id": "deco_1773675215274",
         "type": "tree1",
-        "x": 44,
-        "y": 430,
+        "x": 2,
+        "y": 448,
         "scale": 1,
         "angle": 0
     },
@@ -881,17 +881,18 @@ export const decorations: DecorationData[] = [
     {
         "id": "deco_1773737144594",
         "type": "mountain",
-        "x": 443,
-        "y": 408,
-        "scale": 2.96,
+        "x": 454,
+        "y": 368,
+        "scale": 4.19,
         "angle": 0,
-        "scaleY": 6.85
+        "scaleY": 6.85,
+        "scaleX": 8.29
     },
     {
         "id": "deco_1773741252798",
         "type": "river",
-        "x": 345,
-        "y": 226,
+        "x": 360,
+        "y": 249,
         "x2": 758,
         "y2": 450,
         "nodes": [
@@ -904,8 +905,8 @@ export const decorations: DecorationData[] = [
                 "y": 221
             },
             {
-                "x": -127,
-                "y": 695
+                "x": -114,
+                "y": 673
             }
         ],
         "scale": 1,
@@ -915,7 +916,7 @@ export const decorations: DecorationData[] = [
     {
         "id": "deco_1773741487841",
         "type": "river",
-        "x": 174,
+        "x": 172,
         "y": 1018,
         "x2": 420,
         "y2": 915,
@@ -935,7 +936,7 @@ export const decorations: DecorationData[] = [
         ],
         "scale": 1,
         "angle": 0,
-        "thickness": 5
+        "thickness": 20
     },
     {
         "id": "deco_1773741643156",
