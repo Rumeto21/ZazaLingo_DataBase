@@ -2,6 +2,13 @@
     "synced": [
         "users.json",
         "curriculum\\index.ts",
+        "curriculum\\diger\\matching_example.ts",
+        "curriculum\\diger\\sentence_completion_example.ts",
+        "curriculum\\diger\\word_order_example.ts",
+        "curriculum\\diger\\Canamey_\\test_1774209082939.ts",
+        "curriculum\\diger\\Kopula\\test_1774293529313.ts",
+        "curriculum\\diger\\l02_t1\\test_1773946534141.ts",
+        "curriculum\\diger\\l03_t1\\test_1773946563942.ts",
         "locales\\en.json",
         "locales\\en.ts",
         "locales\\krmnc.json",

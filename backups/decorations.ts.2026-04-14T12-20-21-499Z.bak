@@ -1,4 +1,19 @@
-[
+export type DecorationType = 'tree' | 'grass' | 'mountain' | 'river' | 'tree1' | 'tree2';
+export interface DecorationData {
+    id: string;
+    type: DecorationType;
+    x: number;
+    y: number;
+    scale: number;
+    scaleX?: number;
+    scaleY?: number;
+    angle: number;
+    nodes?: { x: number, y: number }[];
+    thickness?: number;
+    x2?: number;
+    y2?: number;
+}
+export const decorations: DecorationData[] = [
     {
         "id": "deco_1773674279728",
         "type": "tree1",
@@ -895,7 +910,7 @@
         ],
         "scale": 1,
         "angle": 0,
-        "thickness": 20
+        "thickness": 5
     },
     {
         "id": "deco_1773741487841",
@@ -945,7 +960,7 @@
         ],
         "scale": 1,
         "angle": 0,
-        "thickness": 20
+        "thickness": 5
     },
     {
         "id": "deco_1773741669717",
@@ -970,7 +985,7 @@
         ],
         "scale": 1,
         "angle": 0,
-        "thickness": 20
+        "thickness": 5
     },
     {
         "id": "deco_1773741707468",
@@ -995,6 +1010,6 @@
         ],
         "scale": 1,
         "angle": 0,
-        "thickness": 40
+        "thickness": 10
     }
-]
+];

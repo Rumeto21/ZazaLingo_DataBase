@@ -910,7 +910,7 @@ export const decorations: DecorationData[] = [
         ],
         "scale": 1,
         "angle": 0,
-        "thickness": 5
+        "thickness": 20
     },
     {
         "id": "deco_1773741487841",
@@ -960,7 +960,7 @@ export const decorations: DecorationData[] = [
         ],
         "scale": 1,
         "angle": 0,
-        "thickness": 5
+        "thickness": 20
     },
     {
         "id": "deco_1773741669717",
@@ -985,7 +985,7 @@ export const decorations: DecorationData[] = [
         ],
         "scale": 1,
         "angle": 0,
-        "thickness": 5
+        "thickness": 20
     },
     {
         "id": "deco_1773741707468",
@@ -1010,6 +1010,6 @@ export const decorations: DecorationData[] = [
         ],
         "scale": 1,
         "angle": 0,
-        "thickness": 10
+        "thickness": 40
     }
 ];
