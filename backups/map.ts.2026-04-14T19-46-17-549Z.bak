@@ -1,7 +1,7 @@
 export const map = {
     "mapBgColor": "#F5F0E8",
     "mapGridColor": "#D4CCBB",
-    "mapRiverColor": "#42B0D5",
+    "mapRiverColor": "#9AB8CC",
     "railSteelColor": "#7A7A7A",
     "railActiveColor": "#FFC800",
     "tieNormalColor": "#53565D",

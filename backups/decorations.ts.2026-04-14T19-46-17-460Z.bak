@@ -161,8 +161,8 @@ export const decorations: DecorationData[] = [
     {
         "id": "deco_1773685200286",
         "type": "tree2",
-        "x": 908,
-        "y": 228,
+        "x": 593,
+        "y": 135,
         "scale": 1,
         "angle": 0
     },
@@ -769,8 +769,8 @@ export const decorations: DecorationData[] = [
     {
         "id": "deco_1773685749268",
         "type": "tree2",
-        "x": 863,
-        "y": 287,
+        "x": 570,
+        "y": 222,
         "scale": 1,
         "angle": 0
     },
@@ -881,8 +881,8 @@ export const decorations: DecorationData[] = [
     {
         "id": "deco_1773737144594",
         "type": "mountain",
-        "x": 442,
-        "y": 393,
+        "x": 454,
+        "y": 368,
         "scale": 4.19,
         "angle": 0,
         "scaleY": 6.85,

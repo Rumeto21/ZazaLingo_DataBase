@@ -1,4 +1,29 @@
-[
+export interface LevelData {
+    id: string;
+    zazaName: string;
+    trName: string;
+    enName?: string;
+    krmncName?: string;
+    x: number;
+    y: number;
+    testIds?: string[];
+    type: 'station' | 'topic';
+    unitIndex?: number;
+    topicIndex?: number;
+    unitZazaName?: string;
+    unitTrName?: string;
+    unitEnName?: string;
+    unitKrmncName?: string;
+    railX?: number;
+    railY?: number;
+    tagX?: number;
+    tagY?: number;
+    signX?: number;
+    signY?: number;
+    nameWidth?: number;
+    railAngle?: number;
+}
+export const courseLevels: LevelData[] = [
     {
         "id": "l01",
         "zazaName": "Pilemurîye",
@@ -12,8 +37,8 @@
         "unitIndex": 1,
         "signX": 5,
         "signY": -35,
-        "tagX": 54,
-        "tagY": 15,
+        "tagX": 59,
+        "tagY": -30,
         "railX": 362,
         "railY": 82,
         "railAngle": -187
@@ -351,4 +376,4 @@
         "tagX": -112,
         "tagY": -36
     }
-]
+];

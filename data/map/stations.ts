@@ -37,8 +37,8 @@ export const courseLevels: LevelData[] = [
         "unitIndex": 1,
         "signX": 5,
         "signY": -35,
-        "tagX": 59,
-        "tagY": -30,
+        "tagX": 54,
+        "tagY": 15,
         "railX": 362,
         "railY": 82,
         "railAngle": -187
