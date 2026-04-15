@@ -398,11 +398,30 @@ const server = http.createServer((req, res) => {
                 return readTSExport(p);
             };
 
+            const scanCurriculum = (dir, results = {}) => {
+                const items = fs.readdirSync(dir);
+                items.forEach(item => {
+                    const fullPath = path.join(dir, item);
+                    if (fs.statSync(fullPath).isDirectory()) {
+                        scanCurriculum(fullPath, results);
+                    } else if (item.endsWith('.ts') && item !== 'index.ts') {
+                        const data = readTSExport(fullPath);
+                        if (data) {
+                            // Use ID if available, else filename
+                            const key = (data.id || item.replace('.ts', '')).trim();
+                            results[key] = data;
+                        }
+                    }
+                });
+                return results;
+            };
+
             const payload = {
                 stations: readTSExport(path.join(MAP_DIR, 'stations.ts')),
                 decorations: readTSExport(path.join(MAP_DIR, 'decorations.ts')),
                 mapConfig: readTSExport(path.join(MAP_DIR, 'config.ts')),
                 proverbs: readTSExport(path.join(PROVERBS_DIR, 'proverbs.ts')),
+                tests: scanCurriculum(CURRICULUM_DIR),
                 theme: (() => {
                     try {
                         const jsonPath = path.join(THEME_DIR, 'themeConfig.json');
