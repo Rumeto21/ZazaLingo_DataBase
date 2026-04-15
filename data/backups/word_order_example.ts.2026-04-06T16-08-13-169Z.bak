@@ -28,7 +28,7 @@ export const word_order_example: TestData = {
                     "text": {
                         "tr": "Homa",
                         "en": "Homa",
-                        "zzk": "Homa"
+                        "Zz": "Homa"
                     }
                 },
                 {
@@ -36,7 +36,7 @@ export const word_order_example: TestData = {
                     "text": {
                         "tr": "Şima",
                         "en": "Şima",
-                        "zzk": "Şima"
+                        "Zz": "Şima"
                     }
                 },
                 {
@@ -44,7 +44,7 @@ export const word_order_example: TestData = {
                     "text": {
                         "tr": "ra",
                         "en": "ra",
-                        "zzk": "ra"
+                        "Zz": "ra"
                     }
                 },
                 {
@@ -52,7 +52,7 @@ export const word_order_example: TestData = {
                     "text": {
                         "tr": "razî",
                         "en": "razî",
-                        "zzk": "razî"
+                        "Zz": "razî"
                     }
                 },
                 {
@@ -60,7 +60,7 @@ export const word_order_example: TestData = {
                     "text": {
                         "tr": "bo",
                         "en": "bo",
-                        "zzk": "bo"
+                        "Zz": "bo"
                     }
                 },
                 {
@@ -68,7 +68,7 @@ export const word_order_example: TestData = {
                     "text": {
                         "tr": "be",
                         "en": "be",
-                        "zzk": "be"
+                        "Zz": "be"
                     }
                 },
                 {
@@ -76,7 +76,7 @@ export const word_order_example: TestData = {
                     "text": {
                         "tr": "Ma",
                         "en": "Ma",
-                        "zzk": "Ma"
+                        "Zz": "Ma"
                     }
                 },
                 {
@@ -84,7 +84,7 @@ export const word_order_example: TestData = {
                     "text": {
                         "tr": "Ez",
                         "en": "Ez",
-                        "zzk": "Ez"
+                        "Zz": "Ez"
                     }
                 },
                 {
@@ -92,7 +92,7 @@ export const word_order_example: TestData = {
                     "text": {
                         "tr": "awe",
                         "en": "awe",
-                        "zzk": "awe"
+                        "Zz": "awe"
                     }
                 }
             ]

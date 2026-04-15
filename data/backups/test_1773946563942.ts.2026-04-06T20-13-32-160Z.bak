@@ -25,7 +25,7 @@ export const test_1773946563942: TestData = {
                     "text": {
                         "tr": "deneme",
                         "en": "",
-                        "zzk": ""
+                        "Zz": ""
                     }
                 },
                 {
@@ -33,7 +33,7 @@ export const test_1773946563942: TestData = {
                     "text": {
                         "tr": "deneme",
                         "en": "",
-                        "zzk": ""
+                        "Zz": ""
                     }
                 }
             ],

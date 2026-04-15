@@ -5,8 +5,8 @@ export const test_1774209082939: TestData = {
     "title": {
         "tr": "Test-1",
         "en": "Test-1",
-        "zzk": "Test-1",
-        "krmnc": "Test-1"
+        "Zz": "Test-1",
+        "Kr": "Test-1"
     },
     "questions": [
         {
@@ -15,14 +15,14 @@ export const test_1774209082939: TestData = {
             "title": {
                 "tr": "Eşleştirme sorusu",
                 "en": "Matching Question",
-                "zzk": "Eşleştirme sorusu",
-                "krmnc": "Eşleştirme sorusu"
+                "Zz": "Eşleştirme sorusu",
+                "Kr": "Eşleştirme sorusu"
             },
             "promptText": {
                 "tr": "Zamirleri eşleştirin",
                 "en": "Match the pronouns",
-                "zzk": "Zamirleri eşleştirin",
-                "krmnc": "Zamirleri eşleştirin"
+                "Zz": "Zamirleri eşleştirin",
+                "Kr": "Zamirleri eşleştirin"
             },
             "matchingPairs": [
                 {
@@ -30,13 +30,13 @@ export const test_1774209082939: TestData = {
                     "left": {
                         "tr": "Ez",
                         "en": "Ez",
-                        "zzk": "Ez",
-                        "krmnc": "Ez"
+                        "Zz": "Ez",
+                        "Kr": "Ez"
                     },
                     "right": {
                         "tr": "Ben",
                         "en": "I",
-                        "krmnc": "Ez"
+                        "Kr": "Ez"
                     }
                 },
                 {
@@ -44,13 +44,13 @@ export const test_1774209082939: TestData = {
                     "left": {
                         "tr": "Ti",
                         "en": "Ti",
-                        "zzk": "Ti",
-                        "krmnc": "Ti"
+                        "Zz": "Ti",
+                        "Kr": "Ti"
                     },
                     "right": {
                         "tr": "Sen",
                         "en": "You",
-                        "krmnc": "Tu"
+                        "Kr": "Tu"
                     }
                 },
                 {
@@ -58,13 +58,13 @@ export const test_1774209082939: TestData = {
                     "left": {
                         "tr": "O",
                         "en": "O",
-                        "zzk": "O",
-                        "krmnc": "O"
+                        "Zz": "O",
+                        "Kr": "O"
                     },
                     "right": {
                         "tr": "O(eril)",
                         "en": "He",
-                        "krmnc": "Ew(nêr)"
+                        "Kr": "Ew(nêr)"
                     }
                 },
                 {
@@ -72,13 +72,13 @@ export const test_1774209082939: TestData = {
                     "left": {
                         "tr": "A",
                         "en": "A",
-                        "zzk": "A",
-                        "krmnc": "A"
+                        "Zz": "A",
+                        "Kr": "A"
                     },
                     "right": {
                         "tr": "O(dişil)",
                         "en": "She",
-                        "krmnc": "Ew(mê)"
+                        "Kr": "Ew(mê)"
                     }
                 },
                 {
@@ -86,13 +86,13 @@ export const test_1774209082939: TestData = {
                     "left": {
                         "tr": "Ma",
                         "en": "Ma",
-                        "zzk": "Ma",
-                        "krmnc": "Ma"
+                        "Zz": "Ma",
+                        "Kr": "Ma"
                     },
                     "right": {
                         "tr": "Biz",
                         "en": "We",
-                        "krmnc": "Em"
+                        "Kr": "Em"
                     }
                 },
                 {
@@ -100,13 +100,13 @@ export const test_1774209082939: TestData = {
                     "left": {
                         "tr": "Şima",
                         "en": "Şima",
-                        "zzk": "Şima",
-                        "krmnc": "Şima"
+                        "Zz": "Şima",
+                        "Kr": "Şima"
                     },
                     "right": {
                         "tr": "Siz",
                         "en": "You",
-                        "krmnc": "Hûn"
+                        "Kr": "Hûn"
                     }
                 },
                 {
@@ -114,13 +114,13 @@ export const test_1774209082939: TestData = {
                     "left": {
                         "tr": "Ê",
                         "en": "Ê",
-                        "zzk": "Ê",
-                        "krmnc": "Ê"
+                        "Zz": "Ê",
+                        "Kr": "Ê"
                     },
                     "right": {
                         "tr": "Onlar",
                         "en": "They",
-                        "krmnc": "Ew(pirejmarî)"
+                        "Kr": "Ew(pirejmarî)"
                     }
                 }
             ],
@@ -133,14 +133,14 @@ export const test_1774209082939: TestData = {
             "title": {
                 "tr": "Cümlenin doğru çevirisini seçin",
                 "en": "Choose correct translation of the sentence",
-                "zzk": "Cümlenin doğru çevirisini seçin",
-                "krmnc": "Cümlenin doğru çevirisini seçin"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
                 "tr": "O(dişil) doktordur",
                 "en": "She is doctor",
-                "zzk": "O(dişil) doktordur",
-                "krmnc": "Ew(mê) nijdar e"
+                "Zz": "O(dişil) doktordur",
+                "Kr": "Ew(mê) nijdar e"
             },
             "imageRef": "assets/questions/Pictures/doktore.avif",
             "options": [
@@ -149,8 +149,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "A doktor a",
                         "en": "A doktor a",
-                        "zzk": "A doktor a",
-                        "krmnc": "A doktor a"
+                        "Zz": "A doktor a",
+                        "Kr": "A doktor a"
                     }
                 },
                 {
@@ -158,8 +158,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "O doktor o",
                         "en": "O doktor o",
-                        "zzk": "O doktor o",
-                        "krmnc": "O doktor o"
+                        "Zz": "O doktor o",
+                        "Kr": "O doktor o"
                     }
                 },
                 {
@@ -167,8 +167,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ez doktor a",
                         "en": "Ez doktor a",
-                        "zzk": "Ez doktor a",
-                        "krmnc": "Ez doktor a"
+                        "Zz": "Ez doktor a",
+                        "Kr": "Ez doktor a"
                     }
                 },
                 {
@@ -176,8 +176,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ma doktor ê",
                         "en": "Ma doktor ê",
-                        "zzk": "Ma doktor ê",
-                        "krmnc": "Ma doktor ê"
+                        "Zz": "Ma doktor ê",
+                        "Kr": "Ma doktor ê"
                     }
                 }
             ],
@@ -190,14 +190,14 @@ export const test_1774209082939: TestData = {
             "title": {
                 "tr": "Cümlenin doğru çevirisini seçin",
                 "en": "Choose correct translation of the sentence",
-                "zzk": "Cümlenin doğru çevirisini seçin",
-                "krmnc": "Cümlenin doğru çevirisini seçin"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
                 "tr": "Ma embaz ê",
                 "en": "Ma embaz ê",
-                "zzk": "Ma embaz ê",
-                "krmnc": "Ma embaz ê"
+                "Zz": "Ma embaz ê",
+                "Kr": "Ma embaz ê"
             },
             "imageRef": "assets/questions/Pictures/embazî.avif",
             "options": [
@@ -206,8 +206,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Siz arkadaşsınız",
                         "en": "You are friends",
-                        "zzk": "Siz arkadaşsınız",
-                        "krmnc": "Hûn heval in"
+                        "Zz": "Siz arkadaşsınız",
+                        "Kr": "Hûn heval in"
                     }
                 },
                 {
@@ -215,8 +215,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Onlar arkadaştırlar",
                         "en": "They are friends",
-                        "zzk": "Onlar arkadaştırlar",
-                        "krmnc": "Ew heval in"
+                        "Zz": "Onlar arkadaştırlar",
+                        "Kr": "Ew heval in"
                     }
                 },
                 {
@@ -224,8 +224,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "O(eril) arkadaştır",
                         "en": "He is friend",
-                        "zzk": "O(eril) arkadaştır",
-                        "krmnc": "Ew(nêr) heval e"
+                        "Zz": "O(eril) arkadaştır",
+                        "Kr": "Ew(nêr) heval e"
                     }
                 },
                 {
@@ -233,8 +233,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Biz arkadaşız",
                         "en": "We are friends",
-                        "zzk": "Biz arkadaşız",
-                        "krmnc": "Em heval in"
+                        "Zz": "Biz arkadaşız",
+                        "Kr": "Em heval in"
                     }
                 }
             ],
@@ -247,14 +247,14 @@ export const test_1774209082939: TestData = {
             "title": {
                 "tr": "Cümlenin doğru çevirisini seçin",
                 "en": "Choose correct translation of the sentence",
-                "zzk": "Cümlenin doğru çevirisini seçin",
-                "krmnc": "Cümlenin doğru çevirisini seçin"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
                 "tr": "Siz öğretmensiniz.",
                 "en": "You are teachers.",
-                "zzk": "Siz öğretmensiniz.",
-                "krmnc": "Hûn mamoste ne."
+                "Zz": "Siz öğretmensiniz.",
+                "Kr": "Hûn mamoste ne."
             },
             "correctOptionId": "o2",
             "options": [
@@ -263,8 +263,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ma mamosta yê",
                         "en": "Ma mamosta yê",
-                        "zzk": "Ma mamosta yê",
-                        "krmnc": "Ma mamosta yê"
+                        "Zz": "Ma mamosta yê",
+                        "Kr": "Ma mamosta yê"
                     }
                 },
                 {
@@ -272,8 +272,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Şima mamosta yê",
                         "en": "Şima mamosta yê",
-                        "zzk": "Şima mamosta yê",
-                        "krmnc": "Şima mamosta yê"
+                        "Zz": "Şima mamosta yê",
+                        "Kr": "Şima mamosta yê"
                     }
                 },
                 {
@@ -281,8 +281,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ê mamosta yê",
                         "en": "Ê mamosta yê",
-                        "zzk": "Ê mamosta yê",
-                        "krmnc": "Ê mamosta yê"
+                        "Zz": "Ê mamosta yê",
+                        "Kr": "Ê mamosta yê"
                     }
                 },
                 {
@@ -290,8 +290,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ez mamosta ya",
                         "en": "Ez mamosta ya",
-                        "zzk": "Ez mamosta ya",
-                        "krmnc": "Ez mamosta ya"
+                        "Zz": "Ez mamosta ya",
+                        "Kr": "Ez mamosta ya"
                     }
                 }
             ],
@@ -303,14 +303,14 @@ export const test_1774209082939: TestData = {
             "title": {
                 "tr": "Cümlenin doğru çevirisini seçin",
                 "en": "Choose correct translation of the sentence",
-                "zzk": "Cümlenin doğru çevirisini seçin",
-                "krmnc": "Cümlenin doğru çevirisini seçin"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
                 "tr": "Sen(eril) yemek yiyorsun?",
                 "en": "You(male) eating food?",
-                "zzk": "Sen(eril) yemek yiyorsun?",
-                "krmnc": "Sen(eril) yemek yiyorsun?"
+                "Zz": "Sen(eril) yemek yiyorsun?",
+                "Kr": "Sen(eril) yemek yiyorsun?"
             },
             "correctOptionId": "opt_1774211865382",
             "options": [
@@ -319,8 +319,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ti wer wena?",
                         "en": "Ti wer wena?",
-                        "zzk": "Ti wer wena?",
-                        "krmnc": "Ti wer wena?"
+                        "Zz": "Ti wer wena?",
+                        "Kr": "Ti wer wena?"
                     }
                 },
                 {
@@ -328,8 +328,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "A wer wena?",
                         "en": "A wer wena?",
-                        "zzk": "A wer wena?",
-                        "krmnc": "A wer wena?"
+                        "Zz": "A wer wena?",
+                        "Kr": "A wer wena?"
                     }
                 },
                 {
@@ -337,8 +337,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "O wer weno?",
                         "en": "O wer weno?",
-                        "zzk": "O wer weno?",
-                        "krmnc": "O wer weno?"
+                        "Zz": "O wer weno?",
+                        "Kr": "O wer weno?"
                     }
                 },
                 {
@@ -346,8 +346,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ti wer wenî?",
                         "en": "Ti wer wenî?",
-                        "zzk": "Ti wer wenî?",
-                        "krmnc": "Ti wer wenî?"
+                        "Zz": "Ti wer wenî?",
+                        "Kr": "Ti wer wenî?"
                     }
                 }
             ],
@@ -359,14 +359,14 @@ export const test_1774209082939: TestData = {
             "title": {
                 "tr": "Cümlenin doğru çevirisini seçin",
                 "en": "Choose correct translation of the sentence",
-                "zzk": "Cümlenin doğru çevirisini seçin",
-                "krmnc": "Cümlenin doğru çevirisini seçin"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
                 "tr": "O(eril) öğrencidir",
                 "en": "He is student",
-                "zzk": "O(eril) öğrencidir",
-                "krmnc": "O(eril) öğrencidir"
+                "Zz": "O(eril) öğrencidir",
+                "Kr": "O(eril) öğrencidir"
             },
             "imageRef": "assets/questions/Pictures/Wendekar.avif",
             "options": [
@@ -375,8 +375,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "A wendekar a",
                         "en": "A wendekar a",
-                        "zzk": "A wendekar a",
-                        "krmnc": "A wendekar a"
+                        "Zz": "A wendekar a",
+                        "Kr": "A wendekar a"
                     }
                 },
                 {
@@ -384,8 +384,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "O wendekar o",
                         "en": "O wendekar o",
-                        "zzk": "O wendekar o",
-                        "krmnc": "O wendekar o"
+                        "Zz": "O wendekar o",
+                        "Kr": "O wendekar o"
                     }
                 },
                 {
@@ -393,8 +393,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ti wendekar a",
                         "en": "Ti wendekar a",
-                        "zzk": "Ti wendekar a",
-                        "krmnc": "Ti wendekar a"
+                        "Zz": "Ti wendekar a",
+                        "Kr": "Ti wendekar a"
                     }
                 },
                 {
@@ -402,8 +402,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ez wendekar a",
                         "en": "Ez wendekar a",
-                        "zzk": "Ez wendekar a",
-                        "krmnc": "Ez wendekar a"
+                        "Zz": "Ez wendekar a",
+                        "Kr": "Ez wendekar a"
                     }
                 }
             ],
@@ -416,14 +416,14 @@ export const test_1774209082939: TestData = {
             "title": {
                 "tr": "Cümlenin doğru çevirisini seçin",
                 "en": "Choose correct translation of the sentence",
-                "zzk": "Cümlenin doğru çevirisini seçin",
-                "krmnc": "Cümlenin doğru çevirisini seçin"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
                 "tr": "Ez citkar a",
                 "en": "Ez citkar a",
-                "zzk": "Ez citkar a",
-                "krmnc": "Ez citkar a"
+                "Zz": "Ez citkar a",
+                "Kr": "Ez citkar a"
             },
             "correctOptionId": "o1",
             "options": [
@@ -432,8 +432,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ben çiftçiyim",
                         "en": "I am farmer",
-                        "zzk": "Ben çiftçiyim",
-                        "krmnc": "Ben çiftçiyim"
+                        "Zz": "Ben çiftçiyim",
+                        "Kr": "Ben çiftçiyim"
                     }
                 },
                 {
@@ -441,8 +441,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Sen(eril) çiftçisin",
                         "en": "You(male) are farmer",
-                        "zzk": "Sen(eril) çiftçisin",
-                        "krmnc": "Sen(eril) çiftçisin"
+                        "Zz": "Sen(eril) çiftçisin",
+                        "Kr": "Sen(eril) çiftçisin"
                     }
                 },
                 {
@@ -450,8 +450,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Biz çiftçiyiz",
                         "en": "We are farmers",
-                        "zzk": "Biz çiftçiyiz",
-                        "krmnc": "Biz çiftçiyiz"
+                        "Zz": "Biz çiftçiyiz",
+                        "Kr": "Biz çiftçiyiz"
                     }
                 },
                 {
@@ -459,8 +459,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Siz çiftçisiniz",
                         "en": "You are farmers",
-                        "zzk": "Siz çiftçisiniz",
-                        "krmnc": "Siz çiftçisiniz"
+                        "Zz": "Siz çiftçisiniz",
+                        "Kr": "Siz çiftçisiniz"
                     }
                 }
             ],
@@ -473,14 +473,14 @@ export const test_1774209082939: TestData = {
             "title": {
                 "tr": "Cümlenin doğru çevirisini seçin",
                 "en": "Choose correct translation of the sentence",
-                "zzk": "Cümlenin doğru çevirisini seçin",
-                "krmnc": "Cümlenin doğru çevirisini seçin"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
                 "tr": "Ê kay kenê",
                 "en": "Ê kay kenê",
-                "zzk": "Ê kay kenê",
-                "krmnc": "Ê kay kenê"
+                "Zz": "Ê kay kenê",
+                "Kr": "Ê kay kenê"
             },
             "correctOptionId": "opt_1774212322527",
             "options": [
@@ -489,8 +489,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Biz oyun oynuyoruz",
                         "en": "We are playing game",
-                        "zzk": "Biz oyun oynuyoruz",
-                        "krmnc": "Biz oyun oynuyoruz"
+                        "Zz": "Biz oyun oynuyoruz",
+                        "Kr": "Biz oyun oynuyoruz"
                     }
                 },
                 {
@@ -498,8 +498,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Siz oyun oynuyorsunuz",
                         "en": "You(single) are playing game",
-                        "zzk": "Siz oyun oynuyorsunuz",
-                        "krmnc": "Siz oyun oynuyorsunuz"
+                        "Zz": "Siz oyun oynuyorsunuz",
+                        "Kr": "Siz oyun oynuyorsunuz"
                     }
                 },
                 {
@@ -507,8 +507,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ben oyun oynuyorum",
                         "en": "I am playing game",
-                        "zzk": "Ben oyun oynuyorum",
-                        "krmnc": "Ben oyun oynuyorum"
+                        "Zz": "Ben oyun oynuyorum",
+                        "Kr": "Ben oyun oynuyorum"
                     }
                 },
                 {
@@ -516,8 +516,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Onlar oyun oynuyor",
                         "en": "You(plural) are playing game",
-                        "zzk": "Onlar oyun oynuyor",
-                        "krmnc": "Onlar oyun oynuyor"
+                        "Zz": "Onlar oyun oynuyor",
+                        "Kr": "Onlar oyun oynuyor"
                     }
                 }
             ],
@@ -529,14 +529,14 @@ export const test_1774209082939: TestData = {
             "title": {
                 "tr": "Diyaloğu dinleyin/okuyun",
                 "en": "Listen/Read the dialog",
-                "zzk": "Diyaloğu dinleyin/okuyun",
-                "krmnc": "Diyaloğu dinleyin/okuyun"
+                "Zz": "Diyaloğu dinleyin/okuyun",
+                "Kr": "Diyaloğu dinleyin/okuyun"
             },
             "promptText": {
                 "tr": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin.",
                 "en": "Choose the pronouns needed respectively to fill the blanks.",
-                "zzk": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin.",
-                "krmnc": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin."
+                "Zz": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin.",
+                "Kr": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin."
             },
             "options": [
                 {
@@ -544,8 +544,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ti / O / Ti / Ma",
                         "en": "Ti / O / Ti / Ma",
-                        "zzk": "Ti / O / Ti / Ma",
-                        "krmnc": "Ti / O / Ti / Ma"
+                        "Zz": "Ti / O / Ti / Ma",
+                        "Kr": "Ti / O / Ti / Ma"
                     }
                 },
                 {
@@ -553,8 +553,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "O / A / Ez / Şima",
                         "en": "O / A / Ez / Şima",
-                        "zzk": "O / A / Ez / Şima",
-                        "krmnc": "O / A / Ez / Şima"
+                        "Zz": "O / A / Ez / Şima",
+                        "Kr": "O / A / Ez / Şima"
                     }
                 },
                 {
@@ -562,8 +562,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ez / O / Ez / Ê",
                         "en": "Ez / O / Ez / Ê",
-                        "zzk": "Ez / O / Ez / Ê",
-                        "krmnc": "Ez / O / Ez / Ê"
+                        "Zz": "Ez / O / Ez / Ê",
+                        "Kr": "Ez / O / Ez / Ê"
                     }
                 },
                 {
@@ -571,8 +571,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Ti / A / Şima / Ê",
                         "en": "Ti / A / Şima / Ê",
-                        "zzk": "Ti / A / Şima / Ê",
-                        "krmnc": "Ti / A / Şima / Ê"
+                        "Zz": "Ti / A / Şima / Ê",
+                        "Kr": "Ti / A / Şima / Ê"
                     }
                 }
             ],
@@ -582,8 +582,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?",
                         "en": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?",
-                        "zzk": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?",
-                        "krmnc": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?"
+                        "Zz": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?",
+                        "Kr": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?"
                     },
                     "position": "left",
                     "imageRef": "assets/questions/Pictures/kênek.avif"
@@ -593,8 +593,8 @@ export const test_1774209082939: TestData = {
                     "text": {
                         "tr": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê.",
                         "en": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê.",
-                        "zzk": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê.",
-                        "krmnc": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê."
+                        "Zz": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê.",
+                        "Kr": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê."
                     },
                     "position": "right",
                     "imageRef": "assets/questions/Pictures/lajek.avif"
@@ -609,14 +609,14 @@ export const test_1774209082939: TestData = {
             "title": {
                 "tr": "Yeni Kelime Sıralama",
                 "en": "Ordering the words",
-                "zzk": "Yeni Kelime Sıralama",
-                "krmnc": "Yeni Kelime Sıralama"
+                "Zz": "Yeni Kelime Sıralama",
+                "Kr": "Yeni Kelime Sıralama"
             },
             "promptText": {
                 "tr": "Kelimeleri doğru sıraya dizin",
                 "en": "Order the words correctly",
-                "zzk": "Kelimeleri doğru sıraya dizin",
-                "krmnc": "Kelimeleri doğru sıraya dizin"
+                "Zz": "Kelimeleri doğru sıraya dizin",
+                "Kr": "Kelimeleri doğru sıraya dizin"
             },
             "correctWords": [
                 "Ti",

@@ -22,12 +22,12 @@ export const test_1773946534141: TestData = {
                 {
                     "id": "p1",
                     "left": {
-                        "zzk": "Ez ...",
+                        "Zz": "Ez ...",
                         "tr": "Kitab",
                         "en": "Book"
                     },
                     "right": {
-                        "zzk": "on",
+                        "Zz": "on",
                         "tr": "Kitap",
                         "en": "on"
                     }

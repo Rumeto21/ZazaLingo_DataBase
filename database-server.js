@@ -448,10 +448,10 @@ const server = http.createServer((req, res) => {
                 info: readTSExport(path.join(SETTINGS_DIR, 'info.ts')),
                 zazaConstants: readTSExport(path.join(SETTINGS_DIR, 'zazaConstants.ts')),
                 locales: {
-                    tr: readLocale('tr'),
-                    en: readLocale('en'),
-                    zzk: readLocale('zzk'),
-                    krmnc: readLocale('krmnc'),
+                    Tr: readLocale('Tr'),
+                    En: readLocale('En'),
+                    Zz: readLocale('Zz'),
+                    Kr: readLocale('Kr'),
                 }
             };
             res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -818,7 +818,7 @@ function saveLocalesToFiles(locales) {
         fs.mkdirSync(LOCALES_DIR, { recursive: true });
     }
 
-    const langs = ['tr', 'en', 'zzk', 'krmnc'];
+    const langs = ['Tr', 'En', 'Zz', 'Kr'];
     for (const lang of langs) {
         if (locales[lang]) {
             syncManager.injectDataIntoTSFile(path.join('locales', `${lang}.ts`), lang, locales[lang], 

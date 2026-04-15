@@ -5,8 +5,8 @@ export const test_1774293529313: TestData = {
     "title": {
         "tr": "Test-1",
         "en": "Test-1",
-        "zzk": "Test-1",
-        "krmnc": "Test-1"
+        "Zz": "Test-1",
+        "Kr": "Test-1"
     },
     "questions": [
         {
@@ -15,14 +15,14 @@ export const test_1774293529313: TestData = {
             "title": {
                 "tr": "Eşleştirme",
                 "en": "Matching",
-                "zzk": "eynikerdiş",
-                "krmnc": "Eşleştirme"
+                "Zz": "eynikerdiş",
+                "Kr": "Eşleştirme"
             },
             "promptText": {
                 "tr": "Zamirler ile eklerini eşleştirin",
                 "en": "Match the pronouns with the corresponding forms of the verb ‘to be’ in Zazakî",
-                "zzk": "Zamirler ile eklerini eşleştirin",
-                "krmnc": "Zamirler ile eklerini eşleştirin"
+                "Zz": "Zamirler ile eklerini eşleştirin",
+                "Kr": "Zamirler ile eklerini eşleştirin"
             },
             "matchingPairs": [
                 {
@@ -30,14 +30,14 @@ export const test_1774293529313: TestData = {
                     "left": {
                         "tr": "Ez",
                         "en": "Ez",
-                        "zzk": "Ez",
-                        "krmnc": "Ez"
+                        "Zz": "Ez",
+                        "Kr": "Ez"
                     },
                     "right": {
                         "tr": "a/ya",
                         "en": "a/ya",
-                        "zzk": "a/ya",
-                        "krmnc": "a/ya"
+                        "Zz": "a/ya",
+                        "Kr": "a/ya"
                     }
                 },
                 {
@@ -45,14 +45,14 @@ export const test_1774293529313: TestData = {
                     "left": {
                         "tr": "Ti(nêrî)",
                         "en": "Ti(nêrî)",
-                        "zzk": "Ti(nêrî)",
-                        "krmnc": "Ti(nêrî)"
+                        "Zz": "Ti(nêrî)",
+                        "Kr": "Ti(nêrî)"
                     },
                     "right": {
                         "tr": "î/yî",
                         "en": "î/yî",
-                        "zzk": "î/yî",
-                        "krmnc": "î/yî"
+                        "Zz": "î/yî",
+                        "Kr": "î/yî"
                     }
                 },
                 {
@@ -60,14 +60,14 @@ export const test_1774293529313: TestData = {
                     "left": {
                         "tr": "Ti(makî)",
                         "en": "Ti(makî)",
-                        "zzk": "Ti(makî)",
-                        "krmnc": "Ti(makî)"
+                        "Zz": "Ti(makî)",
+                        "Kr": "Ti(makî)"
                     },
                     "right": {
                         "tr": "a/ya",
                         "en": "a/ya",
-                        "zzk": "a/ya",
-                        "krmnc": "a/ya"
+                        "Zz": "a/ya",
+                        "Kr": "a/ya"
                     }
                 },
                 {
@@ -75,14 +75,14 @@ export const test_1774293529313: TestData = {
                     "left": {
                         "tr": "O",
                         "en": "O",
-                        "zzk": "O",
-                        "krmnc": "O"
+                        "Zz": "O",
+                        "Kr": "O"
                     },
                     "right": {
                         "tr": "o/yo",
                         "en": "o/yo",
-                        "zzk": "o/yo",
-                        "krmnc": "o/yo"
+                        "Zz": "o/yo",
+                        "Kr": "o/yo"
                     }
                 },
                 {
@@ -90,14 +90,14 @@ export const test_1774293529313: TestData = {
                     "left": {
                         "tr": "A",
                         "en": "A",
-                        "zzk": "A",
-                        "krmnc": "A"
+                        "Zz": "A",
+                        "Kr": "A"
                     },
                     "right": {
                         "tr": "a/ya",
                         "en": "a/ya",
-                        "zzk": "a/ya",
-                        "krmnc": "a/ya"
+                        "Zz": "a/ya",
+                        "Kr": "a/ya"
                     }
                 },
                 {
@@ -105,14 +105,14 @@ export const test_1774293529313: TestData = {
                     "left": {
                         "tr": "Ma",
                         "en": "Ma",
-                        "zzk": "Ma",
-                        "krmnc": "Ma"
+                        "Zz": "Ma",
+                        "Kr": "Ma"
                     },
                     "right": {
                         "tr": "ê/yê",
                         "en": "ê/yê",
-                        "zzk": "ê/yê",
-                        "krmnc": "ê/yê"
+                        "Zz": "ê/yê",
+                        "Kr": "ê/yê"
                     }
                 },
                 {
@@ -120,14 +120,14 @@ export const test_1774293529313: TestData = {
                     "left": {
                         "tr": "Şima",
                         "en": "Şima",
-                        "zzk": "Şima",
-                        "krmnc": "Şima"
+                        "Zz": "Şima",
+                        "Kr": "Şima"
                     },
                     "right": {
                         "tr": "ê/yê",
                         "en": "ê/yê",
-                        "zzk": "ê/yê",
-                        "krmnc": "ê/yê"
+                        "Zz": "ê/yê",
+                        "Kr": "ê/yê"
                     }
                 },
                 {
@@ -135,14 +135,14 @@ export const test_1774293529313: TestData = {
                     "left": {
                         "tr": "Ê",
                         "en": "Ê",
-                        "zzk": "Ê",
-                        "krmnc": "Ê"
+                        "Zz": "Ê",
+                        "Kr": "Ê"
                     },
                     "right": {
                         "tr": "ê/yê",
                         "en": "ê/yê",
-                        "zzk": "ê/yê",
-                        "krmnc": "ê/yê"
+                        "Zz": "ê/yê",
+                        "Kr": "ê/yê"
                     }
                 }
             ],
@@ -154,14 +154,14 @@ export const test_1774293529313: TestData = {
             "title": {
                 "tr": "Doğru kopulayı seçin",
                 "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "zzk": "Doğru kopulayı seçin",
-                "krmnc": "Doğru kopulayı seçin"
+                "Zz": "Doğru kopulayı seçin",
+                "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
                 "tr": "Ez van_",
                 "en": "Ez van_",
-                "zzk": "Ez van_",
-                "krmnc": "Ez van_"
+                "Zz": "Ez van_",
+                "Kr": "Ez van_"
             },
             "imageRef": "assets/questions/Pictures/terraqe.avif",
             "options": [
@@ -170,8 +170,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "a",
                         "en": "a",
-                        "zzk": "a",
-                        "krmnc": "a"
+                        "Zz": "a",
+                        "Kr": "a"
                     }
                 },
                 {
@@ -179,8 +179,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "ê",
                         "en": "ê",
-                        "zzk": "ê",
-                        "krmnc": "ê"
+                        "Zz": "ê",
+                        "Kr": "ê"
                     }
                 },
                 {
@@ -188,8 +188,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "o",
                         "en": "o",
-                        "zzk": "o",
-                        "krmnc": "o"
+                        "Zz": "o",
+                        "Kr": "o"
                     }
                 },
                 {
@@ -197,8 +197,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "î",
                         "en": "î",
-                        "zzk": "î",
-                        "krmnc": "î"
+                        "Zz": "î",
+                        "Kr": "î"
                     }
                 }
             ],
@@ -210,14 +210,14 @@ export const test_1774293529313: TestData = {
             "title": {
                 "tr": "Doğru kopulayı seçin",
                 "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "zzk": "Yeni Resimli Soru",
-                "krmnc": "Yeni Resimli Soru"
+                "Zz": "Yeni Resimli Soru",
+                "Kr": "Yeni Resimli Soru"
             },
             "promptText": {
                 "tr": "Ti(makî) şin_",
                 "en": "Ti(makî) şin_",
-                "zzk": "Ti(makî) şin_",
-                "krmnc": "Ti(makî) şin_"
+                "Zz": "Ti(makî) şin_",
+                "Kr": "Ti(makî) şin_"
             },
             "imageRef": "assets/questions/Pictures/şîyayîş.avif",
             "options": [
@@ -226,8 +226,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "a",
                         "en": "a",
-                        "zzk": "a",
-                        "krmnc": "a"
+                        "Zz": "a",
+                        "Kr": "a"
                     }
                 },
                 {
@@ -235,8 +235,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "ê",
                         "en": "ê",
-                        "zzk": "ê",
-                        "krmnc": "ê"
+                        "Zz": "ê",
+                        "Kr": "ê"
                     }
                 },
                 {
@@ -244,8 +244,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "o",
                         "en": "o",
-                        "zzk": "o",
-                        "krmnc": "o"
+                        "Zz": "o",
+                        "Kr": "o"
                     }
                 },
                 {
@@ -253,8 +253,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "î",
                         "en": "î",
-                        "zzk": "î",
-                        "krmnc": "î"
+                        "Zz": "î",
+                        "Kr": "î"
                     }
                 }
             ],
@@ -266,14 +266,14 @@ export const test_1774293529313: TestData = {
             "title": {
                 "tr": "Doğru kopulayı seçin",
                 "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "zzk": "Doğru kopulayı seçin",
-                "krmnc": "Doğru kopulayı seçin"
+                "Zz": "Doğru kopulayı seçin",
+                "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
                 "tr": "A şimen_",
                 "en": "A şimen_",
-                "zzk": "A şimen_",
-                "krmnc": "A şimen_"
+                "Zz": "A şimen_",
+                "Kr": "A şimen_"
             },
             "imageRef": "assets/questions/Pictures/Şimitene.avif",
             "options": [
@@ -282,8 +282,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "o",
                         "en": "o",
-                        "zzk": "o",
-                        "krmnc": "o"
+                        "Zz": "o",
+                        "Kr": "o"
                     }
                 },
                 {
@@ -291,8 +291,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "a",
                         "en": "a",
-                        "zzk": "a",
-                        "krmnc": "a"
+                        "Zz": "a",
+                        "Kr": "a"
                     }
                 },
                 {
@@ -300,8 +300,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "ê",
                         "en": "ê",
-                        "zzk": "ê",
-                        "krmnc": "ê"
+                        "Zz": "ê",
+                        "Kr": "ê"
                     }
                 },
                 {
@@ -309,8 +309,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "î",
                         "en": "î",
-                        "zzk": "î",
-                        "krmnc": "î"
+                        "Zz": "î",
+                        "Kr": "î"
                     }
                 }
             ],
@@ -322,14 +322,14 @@ export const test_1774293529313: TestData = {
             "title": {
                 "tr": "Doğru kopulayı seçin",
                 "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "zzk": "Yeni Resimli Soru",
-                "krmnc": "Yeni Resimli Soru"
+                "Zz": "Yeni Resimli Soru",
+                "Kr": "Yeni Resimli Soru"
             },
             "promptText": {
                 "tr": "O vazdan_",
                 "en": "O vazdan_",
-                "zzk": "O vazdan_",
-                "krmnc": "O vazdan_"
+                "Zz": "O vazdan_",
+                "Kr": "O vazdan_"
             },
             "imageRef": "assets/questions/Pictures/vazdayene.avif",
             "options": [
@@ -338,8 +338,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "o",
                         "en": "o",
-                        "zzk": "o",
-                        "krmnc": "o"
+                        "Zz": "o",
+                        "Kr": "o"
                     }
                 },
                 {
@@ -347,8 +347,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "a",
                         "en": "a",
-                        "zzk": "a",
-                        "krmnc": "a"
+                        "Zz": "a",
+                        "Kr": "a"
                     }
                 },
                 {
@@ -356,8 +356,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "ê",
                         "en": "ê",
-                        "zzk": "ê",
-                        "krmnc": "ê"
+                        "Zz": "ê",
+                        "Kr": "ê"
                     }
                 },
                 {
@@ -365,8 +365,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "î",
                         "en": "î",
-                        "zzk": "î",
-                        "krmnc": "î"
+                        "Zz": "î",
+                        "Kr": "î"
                     }
                 }
             ],
@@ -378,14 +378,14 @@ export const test_1774293529313: TestData = {
             "title": {
                 "tr": "Doğru kopulayı seçin",
                 "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "zzk": "Doğru kopulayı seçin",
-                "krmnc": "Doğru kopulayı seçin"
+                "Zz": "Doğru kopulayı seçin",
+                "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
                 "tr": "Ti(nêrî) mamosta __",
                 "en": "Ti(nêrî) mamosta __",
-                "zzk": "Ti(nêrî) mamosta __",
-                "krmnc": "Ti(nêrî) mamosta __"
+                "Zz": "Ti(nêrî) mamosta __",
+                "Kr": "Ti(nêrî) mamosta __"
             },
             "imageRef": "assets/questions/Pictures/Mamosta.avif",
             "options": [
@@ -394,8 +394,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "ya",
                         "en": "ya",
-                        "zzk": "ya",
-                        "krmnc": "ya"
+                        "Zz": "ya",
+                        "Kr": "ya"
                     }
                 },
                 {
@@ -403,8 +403,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "yo",
                         "en": "yo",
-                        "zzk": "yo",
-                        "krmnc": "yo"
+                        "Zz": "yo",
+                        "Kr": "yo"
                     }
                 },
                 {
@@ -412,8 +412,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "yê",
                         "en": "yê",
-                        "zzk": "yê",
-                        "krmnc": "yê"
+                        "Zz": "yê",
+                        "Kr": "yê"
                     }
                 },
                 {
@@ -421,8 +421,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "yî",
                         "en": "yî",
-                        "zzk": "yî",
-                        "krmnc": "yî"
+                        "Zz": "yî",
+                        "Kr": "yî"
                     }
                 }
             ],
@@ -434,14 +434,14 @@ export const test_1774293529313: TestData = {
             "title": {
                 "tr": "Doğru kopulayı seçin",
                 "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "zzk": "Doğru kopulayı seçin",
-                "krmnc": "Doğru kopulayı seçin"
+                "Zz": "Doğru kopulayı seçin",
+                "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
                 "tr": "Ma şêr _",
                 "en": "Ma şêr _",
-                "zzk": "Ma şêr _",
-                "krmnc": "Ma şêr _"
+                "Zz": "Ma şêr _",
+                "Kr": "Ma şêr _"
             },
             "correctOptionId": "opt_1774294977819",
             "options": [
@@ -450,8 +450,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "a",
                         "en": "a",
-                        "zzk": "a",
-                        "krmnc": "a"
+                        "Zz": "a",
+                        "Kr": "a"
                     }
                 },
                 {
@@ -459,8 +459,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "o",
                         "en": "o",
-                        "zzk": "o",
-                        "krmnc": "o"
+                        "Zz": "o",
+                        "Kr": "o"
                     }
                 },
                 {
@@ -468,8 +468,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "ê",
                         "en": "ê",
-                        "zzk": "ê",
-                        "krmnc": "ê"
+                        "Zz": "ê",
+                        "Kr": "ê"
                     }
                 },
                 {
@@ -477,8 +477,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "e",
                         "en": "e",
-                        "zzk": "e",
-                        "krmnc": "e"
+                        "Zz": "e",
+                        "Kr": "e"
                     }
                 }
             ]
@@ -489,14 +489,14 @@ export const test_1774293529313: TestData = {
             "title": {
                 "tr": "Yeni Kelime Sıralama",
                 "en": "Word ordering",
-                "zzk": "Yeni Kelime Sıralama",
-                "krmnc": "Yeni Kelime Sıralama"
+                "Zz": "Yeni Kelime Sıralama",
+                "Kr": "Yeni Kelime Sıralama"
             },
             "promptText": {
                 "tr": "Kelimeleri doğru sıraya dizin",
                 "en": "Order the words correctly",
-                "zzk": "Kelimeleri doğru sıraya dizin",
-                "krmnc": "Kelimeleri doğru sıraya dizin"
+                "Zz": "Kelimeleri doğru sıraya dizin",
+                "Kr": "Kelimeleri doğru sıraya dizin"
             },
             "correctWords": [
                 "Şima",
@@ -521,14 +521,14 @@ export const test_1774293529313: TestData = {
             "title": {
                 "tr": "Doğru kopulayı seçin",
                 "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "zzk": "Doğru kopulayı seçin",
-                "krmnc": "Doğru kopulayı seçin"
+                "Zz": "Doğru kopulayı seçin",
+                "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
                 "tr": "Ê meyman _",
                 "en": "Ê meyman _",
-                "zzk": "Ê meyman _",
-                "krmnc": "Ê meyman _"
+                "Zz": "Ê meyman _",
+                "Kr": "Ê meyman _"
             },
             "correctOptionId": "opt_1774295374463",
             "options": [
@@ -537,8 +537,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "a",
                         "en": "a",
-                        "zzk": "a",
-                        "krmnc": "a"
+                        "Zz": "a",
+                        "Kr": "a"
                     }
                 },
                 {
@@ -546,8 +546,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "o",
                         "en": "o",
-                        "zzk": "o",
-                        "krmnc": "o"
+                        "Zz": "o",
+                        "Kr": "o"
                     }
                 },
                 {
@@ -555,8 +555,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "e",
                         "en": "e",
-                        "zzk": "e",
-                        "krmnc": "e"
+                        "Zz": "e",
+                        "Kr": "e"
                     }
                 },
                 {
@@ -564,8 +564,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "ê",
                         "en": "ê",
-                        "zzk": "ê",
-                        "krmnc": "ê"
+                        "Zz": "ê",
+                        "Kr": "ê"
                     }
                 }
             ]
@@ -576,14 +576,14 @@ export const test_1774293529313: TestData = {
             "title": {
                 "tr": "Doğru kopulayı seçin",
                 "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "zzk": "Doğru kopulayı seçin",
-                "krmnc": "Doğru kopulayı seçin"
+                "Zz": "Doğru kopulayı seçin",
+                "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
                 "tr": "Şima se ken_",
                 "en": "Şima se ken_",
-                "zzk": "Şima se ken_",
-                "krmnc": "Şima se ken_"
+                "Zz": "Şima se ken_",
+                "Kr": "Şima se ken_"
             },
             "correctOptionId": "o1",
             "options": [
@@ -592,8 +592,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "ê",
                         "en": "ê",
-                        "zzk": "ê",
-                        "krmnc": "ê"
+                        "Zz": "ê",
+                        "Kr": "ê"
                     }
                 },
                 {
@@ -601,8 +601,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "a",
                         "en": "a",
-                        "zzk": "a",
-                        "krmnc": "a"
+                        "Zz": "a",
+                        "Kr": "a"
                     }
                 },
                 {
@@ -610,8 +610,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "o",
                         "en": "o",
-                        "zzk": "o",
-                        "krmnc": "o"
+                        "Zz": "o",
+                        "Kr": "o"
                     }
                 },
                 {
@@ -619,8 +619,8 @@ export const test_1774293529313: TestData = {
                     "text": {
                         "tr": "e",
                         "en": "e",
-                        "zzk": "e",
-                        "krmnc": "e"
+                        "Zz": "e",
+                        "Kr": "e"
                     }
                 }
             ]

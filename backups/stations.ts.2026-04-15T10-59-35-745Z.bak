@@ -1,0 +1,379 @@
+export interface LevelData {
+    id: string;
+    zazaName: string;
+    trName: string;
+    enName?: string;
+    krmncName?: string;
+    x: number;
+    y: number;
+    testIds?: string[];
+    type: 'station' | 'topic';
+    unitIndex?: number;
+    topicIndex?: number;
+    unitZazaName?: string;
+    unitTrName?: string;
+    unitEnName?: string;
+    unitKrmncName?: string;
+    railX?: number;
+    railY?: number;
+    tagX?: number;
+    tagY?: number;
+    signX?: number;
+    signY?: number;
+    nameWidth?: number;
+    railAngle?: number;
+}
+export const courseLevels: LevelData[] = [
+    {
+        "id": "l01",
+        "zazaName": "Pilemurîye",
+        "trName": "Pülümür",
+        "enName": "Pülümür",
+        "krmncName": "Pilemuriye",
+        "x": 414,
+        "y": 95,
+        "testIds": [],
+        "type": "station",
+        "unitIndex": 1,
+        "signX": 5,
+        "signY": -35,
+        "tagX": 54,
+        "tagY": 15,
+        "railX": 362,
+        "railY": 82,
+        "railAngle": -187
+    },
+    {
+        "id": "l01_t2",
+        "zazaName": "Canameyî",
+        "trName": "Zamirler",
+        "x": 266,
+        "y": 269,
+        "testIds": [
+            "test_1774209082939"
+        ],
+        "type": "topic",
+        "topicIndex": 2,
+        "enName": "Pronouns",
+        "krmncName": "Cînavk",
+        "railX": 194,
+        "railY": 233
+    },
+    {
+        "id": "l01_t3",
+        "zazaName": "Kopula",
+        "trName": "Kopula",
+        "x": 221,
+        "y": 415,
+        "testIds": [
+            "test_1774293529313"
+        ],
+        "type": "topic",
+        "topicIndex": 3,
+        "enName": "Kopula",
+        "krmncName": "Kopula",
+        "railX": 147,
+        "railY": 404
+    },
+    {
+        "id": "l02",
+        "zazaName": "Dêrsim",
+        "trName": "Tunceli",
+        "krmncName": "Dêrsim",
+        "enName": "Tunceli",
+        "x": 44,
+        "y": 531,
+        "testIds": [],
+        "type": "station",
+        "unitIndex": 2,
+        "signX": -2,
+        "signY": -36,
+        "tagX": -95,
+        "tagY": 31,
+        "railAngle": 85,
+        "railX": 138,
+        "railY": 492
+    },
+    {
+        "id": "l02_t1",
+        "zazaName": "",
+        "trName": "",
+        "x": 61,
+        "y": 740.5,
+        "testIds": [
+            "test_1773946534141"
+        ],
+        "type": "topic",
+        "topicIndex": 1
+    },
+    {
+        "id": "l03",
+        "zazaName": "Qowancîyan",
+        "trName": "Kovancılar",
+        "krmncName": "Qowanciyan",
+        "x": 78,
+        "y": 950,
+        "testIds": [],
+        "type": "station",
+        "unitIndex": 3,
+        "railX": 160,
+        "railY": 900,
+        "tagX": -88,
+        "tagY": 49,
+        "signX": 19,
+        "signY": -42,
+        "railAngle": 58
+    },
+    {
+        "id": "l03_t1",
+        "zazaName": "",
+        "trName": "",
+        "x": 271,
+        "y": 1041.5,
+        "testIds": [
+            "test_1773946563942"
+        ],
+        "type": "topic",
+        "topicIndex": 1
+    },
+    {
+        "id": "l04",
+        "zazaName": "Pali",
+        "trName": "Palu",
+        "krmncName": "Palu",
+        "x": 464,
+        "y": 1133,
+        "testIds": [],
+        "type": "station",
+        "unitIndex": 4,
+        "railX": 472,
+        "railY": 1073,
+        "tagX": 42,
+        "tagY": -27,
+        "signX": -13,
+        "signY": -37,
+        "railAngle": -2
+    },
+    {
+        "id": "l05",
+        "zazaName": "Depe",
+        "trName": "Karakoçan",
+        "krmncName": "Dep",
+        "x": 666,
+        "y": 720,
+        "testIds": [],
+        "type": "station",
+        "unitIndex": 5,
+        "signX": 9,
+        "signY": -33,
+        "railX": 750,
+        "railY": 725,
+        "tagX": -26,
+        "tagY": -141,
+        "railAngle": 263
+    },
+    {
+        "id": "l06",
+        "zazaName": "Çolig",
+        "trName": "Bingöl",
+        "krmncName": "Çewlîg",
+        "x": 1108,
+        "y": 752,
+        "type": "station",
+        "unitIndex": 6,
+        "railX": 1076,
+        "railY": 700,
+        "tagX": -151,
+        "tagY": -11,
+        "signX": -4,
+        "signY": -35,
+        "railAngle": 44
+    },
+    {
+        "id": "l07",
+        "zazaName": "Kanîreş",
+        "trName": "Karlıova",
+        "krmncName": "Kanîreş",
+        "x": 1341,
+        "y": 313,
+        "type": "station",
+        "unitIndex": 7,
+        "railX": 1400,
+        "railY": 330,
+        "tagX": -187,
+        "tagY": -34,
+        "railAngle": -98,
+        "signX": -12,
+        "signY": -35
+    },
+    {
+        "id": "l08",
+        "zazaName": "Xinûs",
+        "trName": "Hınıs",
+        "krmncName": "Xinûs",
+        "x": 2069,
+        "y": 159,
+        "type": "station",
+        "unitIndex": 8,
+        "railX": 2000,
+        "railY": 160,
+        "signX": 1,
+        "signY": -42,
+        "tagX": 42,
+        "tagY": -59,
+        "railAngle": 91
+    },
+    {
+        "id": "l09",
+        "zazaName": "Gimgim",
+        "trName": "Varto",
+        "krmncName": "Gimgim",
+        "x": 1995,
+        "y": 643,
+        "type": "station",
+        "unitIndex": 9,
+        "railX": 1880,
+        "railY": 620,
+        "railAngle": 123,
+        "tagX": 67,
+        "tagY": -36,
+        "signX": -10,
+        "signY": -34
+    },
+    {
+        "id": "l10",
+        "zazaName": "Bongilan",
+        "trName": "Solhan",
+        "krmncName": "Bongilan",
+        "x": 1455,
+        "y": 907,
+        "type": "station",
+        "unitIndex": 10,
+        "railX": 1400,
+        "railY": 860,
+        "railAngle": 149,
+        "tagX": 65,
+        "tagY": -29,
+        "signX": -10,
+        "signY": -35
+    },
+    {
+        "id": "l11",
+        "zazaName": "Dara Hênî",
+        "trName": "Genç",
+        "krmncName": "Dara Hênî",
+        "x": 1134,
+        "y": 1185,
+        "type": "station",
+        "unitIndex": 11,
+        "railX": 1206,
+        "railY": 1160,
+        "railAngle": 83,
+        "tagX": -66,
+        "tagY": -37,
+        "signX": -6,
+        "signY": -41
+    },
+    {
+        "id": "l12",
+        "zazaName": "Pasûr",
+        "trName": "Kulp",
+        "krmncName": "Pasûr",
+        "x": 1670,
+        "y": 1396,
+        "type": "station",
+        "unitIndex": 12,
+        "railX": 1600,
+        "railY": 1400,
+        "signX": 2,
+        "signY": -32,
+        "tagX": 62,
+        "tagY": -38,
+        "railAngle": 70
+    },
+    {
+        "id": "l13",
+        "zazaName": "Licê",
+        "trName": "Lice",
+        "krmncName": "Lice",
+        "x": 1264,
+        "y": 1451,
+        "type": "station",
+        "unitIndex": 13,
+        "tagX": 63,
+        "tagY": -37,
+        "signX": -16,
+        "signY": -37,
+        "railX": 1300,
+        "railY": 1540,
+        "railAngle": 174
+    },
+    {
+        "id": "l14",
+        "zazaName": "Hênî",
+        "trName": "Hani",
+        "krmncName": "Hênî",
+        "x": 997,
+        "y": 1470,
+        "type": "station",
+        "unitIndex": 14,
+        "railX": 990,
+        "railY": 1562,
+        "railAngle": 184,
+        "tagX": 62,
+        "tagY": -41,
+        "signX": -7,
+        "signY": -31
+    },
+    {
+        "id": "l15",
+        "zazaName": "Pîran",
+        "trName": "Dicle",
+        "krmncName": "Pîran",
+        "x": 669,
+        "y": 1439,
+        "type": "station",
+        "unitIndex": 15,
+        "railX": 663,
+        "railY": 1535,
+        "tagX": 62,
+        "tagY": -43,
+        "signX": 5,
+        "signY": -32,
+        "railAngle": 183
+    },
+    {
+        "id": "l16",
+        "zazaName": "Erxenî",
+        "trName": "Ergani",
+        "krmncName": "Erganî",
+        "x": 216,
+        "y": 1537,
+        "type": "station",
+        "unitIndex": 16,
+        "railX": 323,
+        "railY": 1574,
+        "railAngle": 129,
+        "tagX": -154,
+        "tagY": -3,
+        "signX": -9,
+        "signY": -23
+    },
+    {
+        "id": "l17",
+        "zazaName": "Amed",
+        "trName": "Diyarbakır",
+        "krmncName": "Amed",
+        "x": 458,
+        "y": 2115,
+        "type": "station",
+        "unitIndex": 17,
+        "railX": 538,
+        "railY": 2112,
+        "railAngle": 101,
+        "signX": -4,
+        "signY": -33,
+        "tagX": -112,
+        "tagY": -36
+    }
+];

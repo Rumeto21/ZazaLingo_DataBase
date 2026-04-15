@@ -9,7 +9,7 @@ export const mapConfig: MapConfig = {
     "tieSize": 25,
     "tieThickness": 7,
     "title": {
-        "zzk": "XETA ŞÎYAYÎŞÊ ZAZALÎNGOYÎ",
+        "Zz": "XETA ŞÎYAYÎŞÊ ZAZALÎNGOYÎ",
         "zaza": "XETA ŞÎYAYÎŞÊ ZAZALÎNGOYÎ",
         "tr": "ZAZALÎNGO GÜZERGAHI"
     }

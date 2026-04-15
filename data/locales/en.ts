@@ -1,4 +1,6 @@
-export const en = {
+export const En = {
+    "languageName": "En",
+    "label": "En",
     "continueCourse": "Continue",
     "logout": "Logout",
     "languageTarget": "ENGLISH",

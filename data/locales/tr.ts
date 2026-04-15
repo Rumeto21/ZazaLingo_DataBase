@@ -1,4 +1,6 @@
-export const tr = {
+export const Tr = {
+    "languageName": "Tr",
+    "label": "Tr",
     "continueCourse": "Devam Et",
     "logout": "Çıkış",
     "languageTarget": "TÜRKÇE",

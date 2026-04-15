@@ -23,12 +23,12 @@ export const sentence_completion_example: TestData = {
                 {
                     "id": "p1",
                     "left": {
-                        "zzk": "Awa ...",
+                        "Zz": "Awa ...",
                         "tr": "Awa ...",
                         "en": "Awa ..."
                     },
                     "right": {
-                        "zzk": "ya",
+                        "Zz": "ya",
                         "tr": "ya",
                         "en": "ya"
                     }
@@ -36,12 +36,12 @@ export const sentence_completion_example: TestData = {
                 {
                     "id": "p2",
                     "left": {
-                        "zzk": "Nan ...",
+                        "Zz": "Nan ...",
                         "tr": "Nan ...",
                         "en": "Nan ..."
                     },
                     "right": {
-                        "zzk": "ya",
+                        "Zz": "ya",
                         "tr": "ya",
                         "en": "ya"
                     }
@@ -49,12 +49,12 @@ export const sentence_completion_example: TestData = {
                 {
                     "id": "p3",
                     "left": {
-                        "zzk": "Ez",
+                        "Zz": "Ez",
                         "tr": "Ez",
                         "en": "Ez"
                     },
                     "right": {
-                        "zzk": "on",
+                        "Zz": "on",
                         "tr": "on",
                         "en": "on"
                     }

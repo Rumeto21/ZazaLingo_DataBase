@@ -25,7 +25,7 @@ export const matching_example: TestData = {
                     "left": {
                         "tr": "Rovî",
                         "en": "Fox",
-                        "zzk": "Rovî"
+                        "Zz": "Rovî"
                     },
                     "right": {
                         "tr": "Tilki",
@@ -37,7 +37,7 @@ export const matching_example: TestData = {
                     "left": {
                         "tr": "Kerg",
                         "en": "Chicken",
-                        "zzk": "Kerg"
+                        "Zz": "Kerg"
                     },
                     "right": {
                         "tr": "Tavuk",
@@ -49,7 +49,7 @@ export const matching_example: TestData = {
                     "left": {
                         "tr": "Astor",
                         "en": "Horse",
-                        "zzk": "Astor"
+                        "Zz": "Astor"
                     },
                     "right": {
                         "tr": "At",
@@ -61,7 +61,7 @@ export const matching_example: TestData = {
                     "left": {
                         "tr": "Maran",
                         "en": "Snake",
-                        "zzk": "Maran"
+                        "Zz": "Maran"
                     },
                     "right": {
                         "tr": "Yılan",

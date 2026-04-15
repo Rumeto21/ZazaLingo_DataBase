@@ -15,7 +15,7 @@ export const proverbs: Proverb[] = [
         "translation": {
             "tr": "Ağaç yaprağıyla tanınır/bilinir.",
             "en": "A tree is known by its leaves.",
-            "krmnc": "Dar bi pelên xwe tê naskirin."
+            "Kr": "Dar bi pelên xwe tê naskirin."
         }
     },
     {
@@ -24,7 +24,7 @@ export const proverbs: Proverb[] = [
         "translation": {
             "tr": "Bulanık suda balık avlanır.",
             "en": "Fish are caught in muddy waters.",
-            "krmnc": "Masî di ava gemarî de tên girtin."
+            "Kr": "Masî di ava gemarî de tên girtin."
         }
     },
     {
@@ -33,7 +33,7 @@ export const proverbs: Proverb[] = [
         "translation": {
             "tr": "Dilinizi unutmayın.",
             "en": "Do not forget your language.",
-            "krmnc": "Zimanê xwe ji bîr nekin."
+            "Kr": "Zimanê xwe ji bîr nekin."
         }
     }
 ];
