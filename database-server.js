@@ -4,6 +4,16 @@ const path = require('path');
 const morgan = require('morgan');
 const logger = require('./logger');
 const syncManager = require('./SyncManager');
+const aggregationManager = require('./AggregationManager');
+const curriculumManager = require('./CurriculumManager');
+
+// --- Security Check (CRITICAL: Fatal Exit if missing) ---
+if (!process.env.DATABASE_API_KEY) {
+    logger.error('[Security] FATAL: DATABASE_API_KEY is not defined in environment variables.');
+    logger.error('[Security] Server terminating with exit code 1 to prevent unauthorized access.');
+    process.exit(1);
+}
+
 
 // Setup Morgan to use Winston for writing logs
 const httpLogger = morgan('combined', { stream: { write: message => logger.info(message.trim()) } });
@@ -230,7 +240,10 @@ const server = http.createServer((req, res) => {
     }
 
     // --- Authentication & Security Middleware ---
-    const AUTH_KEY = process.env.DATABASE_API_KEY || 'zaza_dev_secret_2026';
+    const AUTH_KEY = process.env.DATABASE_API_KEY;
+    // Note: Fatal check already performed at startup at line 11.
+
+    
     const clientKey = req.headers['x-api-key'];
     const authHeader = req.headers['authorization'];
     const bearerToken = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
@@ -349,114 +362,20 @@ const server = http.createServer((req, res) => {
     // ── GET /data ──────────────────────────────────────────────────────────
     if (req.method === 'GET' && req.url === '/data') {
         try {
-            // Dynamically require each data module and return as JSON
-            // Robust TS export reader that ignores trailing corruption
-            const readTSExport = (filePath) => {
-                if (!fs.existsSync(filePath)) return null;
-                try {
-                    const src = fs.readFileSync(filePath, 'utf-8');
-                    // Find the start of the data after '='
-                    const startMatch = src.match(/=\s*([\[\{]+)/m);
-                    if (!startMatch) return null;
-
-                    const startSearchPos = startMatch.index + startMatch[0].length;
-                    const brackets = startMatch[1];
-                    let braceCount = brackets.length;
-                    let endPos = -1;
-                    let inString = false;
-                    let escape = false;
-
-                    for (let i = startSearchPos; i < src.length; i++) {
-                        const char = src[i];
-                        if (escape) { escape = false; continue; }
-                        if (char === '\\') { escape = true; continue; }
-                        if (char === '"' || char === "'") {
-                            if (!inString) inString = char;
-                            else if (inString === char) inString = false;
-                            continue;
-                        }
-                        if (inString) continue;
-                        if (char === '{' || char === '[') braceCount++;
-                        if (char === '}' || char === ']') braceCount--;
-                        if (braceCount === 0) {
-                            endPos = i + 1;
-                            break;
-                        }
-                    }
-
-                    if (endPos === -1) return null;
-                    const jsonContent = src.substring(startMatch.index + startMatch[0].length - brackets.length, endPos);
-                    return JSON.parse(jsonContent);
-                } catch (e) {
-                    logger.error(`[ReadError] Failed to parse ${filePath}:`, e.message);
-                    return null;
-                }
+            const dirs = { 
+                mapDir: MAP_DIR, 
+                curriculumDir: CURRICULUM_DIR, 
+                themeDir: THEME_DIR, 
+                proverbsDir: PROVERBS_DIR, 
+                localesDir: LOCALES_DIR, 
+                settingsDir: SETTINGS_DIR 
             };
-
-            const readLocale = (lang) => {
-                const p = path.join(LOCALES_DIR, `${lang}.ts`);
-                return readTSExport(p);
-            };
-
-            const scanCurriculum = (dir, results = {}) => {
-                const items = fs.readdirSync(dir);
-                items.forEach(item => {
-                    const fullPath = path.join(dir, item);
-                    if (fs.statSync(fullPath).isDirectory()) {
-                        scanCurriculum(fullPath, results);
-                    } else if (item.endsWith('.ts') && item !== 'index.ts') {
-                        const data = readTSExport(fullPath);
-                        if (data) {
-                            // Use ID if available, else filename
-                            const key = (data.id || item.replace('.ts', '')).trim();
-                            results[key] = data;
-                        }
-                    }
-                });
-                return results;
-            };
-
-            const payload = {
-                stations: readTSExport(path.join(MAP_DIR, 'stations.ts')),
-                decorations: readTSExport(path.join(MAP_DIR, 'decorations.ts')),
-                mapConfig: readTSExport(path.join(MAP_DIR, 'config.ts')),
-                proverbs: readTSExport(path.join(PROVERBS_DIR, 'proverbs.ts')),
-                tests: scanCurriculum(CURRICULUM_DIR),
-                theme: (() => {
-                    try {
-                        const jsonPath = path.join(THEME_DIR, 'themeConfig.json');
-                        if (fs.existsSync(jsonPath)) {
-                            logger.info('[DataSync] Reading theme from themeConfig.json');
-                            return JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
-                        }
-                        logger.info('[DataSync] themeConfig.json not found, falling back to theme.ts');
-                        return readTSExport(path.join(THEME_DIR, 'theme.ts'));
-                    } catch (e) {
-                        logger.error('[Error] theme okunamadı:', e.message);
-                        return readTSExport(path.join(THEME_DIR, 'theme.ts'));
-                    }
-                })(),
-                themeSchemes: (() => {
-                    try {
-                        const p = path.join(THEME_DIR, 'themeSchemes.json');
-                        return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf-8') || '{}') : {};
-                    } catch (e) {
-                        logger.error('[Error] themeSchemes.json okunamadı:', e.message);
-                        return {};
-                    }
-                })(),
-                info: readTSExport(path.join(SETTINGS_DIR, 'info.ts')),
-                zazaConstants: readTSExport(path.join(SETTINGS_DIR, 'zazaConstants.ts')),
-                locales: {
-                    Tr: readLocale('Tr'),
-                    En: readLocale('En'),
-                    Zz: readLocale('Zz'),
-                    Kr: readLocale('Kr'),
-                }
-            };
+            const payload = aggregationManager.buildFullPayload(dirs);
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify(payload));
         } catch (err) {
+            logger.error(`[GET /data] Fatal Error: ${err.message}`);
+            logger.error(err.stack);
             res.writeHead(500, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: err.message }));
         }
@@ -621,7 +540,8 @@ const server = http.createServer((req, res) => {
                 res.end(JSON.stringify({ success: true }));
                 logger.info('✅ [SUCCESS] All data written to disk successfully.');
             } catch (err) {
-                logger.error('❌ Dev server hatası:', err);
+                logger.error(`[POST /save] Fatal Error: ${err.message}`);
+                logger.error(err.stack);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: false, error: err.message }));
             }
@@ -637,7 +557,8 @@ const server = http.createServer((req, res) => {
                 res.end(JSON.stringify({ success: true }));
                 logger.info('✅ Dev server: Dil dosyaları başarıyla güncellendi.');
             } catch (err) {
-                logger.error('❌ Dev server locale hatası:', err);
+                logger.error(`[POST /saveLocales] Fatal Error: ${err.message}`);
+                logger.error(err.stack);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: false, error: err.message }));
             }
@@ -673,31 +594,8 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
     const testIds = Object.keys(tests || {});
     const currentTestFiles = new Set(['index.ts']);
 
-    // Map testIds to Unit/Topic hierarchy
-    const testToPathMap = {};
-    const unitMap = {};
-    
-    // First pass: map units
-    (stations || []).forEach(s => {
-        if (s.type === 'station') {
-            unitMap[s.id] = `Unite_${s.unitIndex || s.id}`;
-        }
-    });
-
-    // Second pass: map topics to units and tests to topics
-    (stations || []).forEach(s => {
-        if (s.type === 'topic') {
-            const unitFolder = unitMap[s.parentUnitId] || 'diger';
-            const topicFolder = (s.zazaName || s.trName || s.id).replace(/[^a-zA-Z0-9]/g, '_');
-            const targetPath = path.join(unitFolder, topicFolder);
-            
-            if (s.testIds) {
-                s.testIds.forEach(tid => {
-                    testToPathMap[tid] = targetPath;
-                });
-            }
-        }
-    });
+    // Use CurriculumManager to resolve tests to Unit/Topic hierarchy
+    const testToPathMap = curriculumManager.resolveTestPaths(stations);
 
     let indexContent = `import { TestData } from '../../types/question';\n\n`;
 
@@ -711,7 +609,7 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
         }
 
         const fileName = `${testId.toLowerCase()}.ts`;
-        const testExportName = testId.replace(/[^a-zA-Z0-9]/g, '_');
+        const testExportName = curriculumManager.getSafeExportName(testId);
         const posixPath = path.join(relativeFolderPath, fileName).replace(/\\/g, '/');
         
         currentTestFiles.add(posixPath.toLowerCase());
@@ -725,45 +623,10 @@ function saveDataToFiles({ stations, tests, proverbs, decorations, mapConfig, th
 
     indexContent += `\nexport const TESTS: Record<string, TestData> = {\n`;
     testIds.forEach(tid => {
-        const testExportName = tid.replace(/[^a-zA-Z0-9]/g, '_');
+        const testExportName = curriculumManager.getSafeExportName(tid);
         indexContent += `    ${tid}: ${testExportName},\n`;
     });
     indexContent += `};\n`;
-
-    const localIndex = path.join(CURRICULUM_DIR, 'index.ts');
-    const tempIndex = `${localIndex}.tmp`;
-    fs.writeFileSync(tempIndex, indexContent, 'utf-8');
-    fs.renameSync(tempIndex, localIndex);
-    
-    // Isolated Sync: Ensure the generated index is mirrored to the App
-    syncManager.syncFile(path.join('curriculum', 'index.ts'));
-
-    // Cleanup Tests
-    function cleanupTests(dir, baseDir = '') {
-        if (!fs.existsSync(dir)) return;
-        const files = fs.readdirSync(dir);
-        const safeCurrentFiles = currentTestFiles;
-
-        files.forEach(file => {
-            const fullPath = path.join(dir, file);
-            const relativePath = path.join(baseDir, file).replace(/\\/g, '/');
-            
-            if (fs.statSync(fullPath).isDirectory()) {
-                cleanupTests(fullPath, relativePath);
-                if (fs.existsSync(fullPath) && fs.readdirSync(fullPath).length === 0) {
-                    fs.rmdirSync(fullPath);
-                }
-            } else if (file.endsWith('.ts') && file !== 'index.ts') {
-                if (!safeCurrentFiles.has(relativePath.toLowerCase())) {
-                    // Archive instead of delete
-                    const archivedPath = path.join(ARCHIVE_DIR, `${Date.now()}_${file}`);
-                    fs.renameSync(fullPath, archivedPath);
-                    logger.info(`[Archive] Moved old test file to archive: ${relativePath}`);
-                }
-            }
-        });
-    }
-    cleanupTests(CURRICULUM_DIR);
 
     // 3. Save Proverbs
     if (proverbs) {

@@ -1,10 +1,10 @@
-import { TestData } from '../../../types/question';
+import { TestData } from '../../../../types/question';
 
 export const test_1774293529313: TestData = {
     "id": "test_1774293529313",
     "title": {
-        "tr": "Test-1",
-        "en": "Test-1",
+        "Tr": "Test-1",
+        "En": "Test-1",
         "Zz": "Test-1",
         "Kr": "Test-1"
     },
@@ -13,14 +13,14 @@ export const test_1774293529313: TestData = {
             "id": "q_1774293601150",
             "type": "Matching",
             "title": {
-                "tr": "Eşleştirme",
-                "en": "Matching",
+                "Tr": "Eşleştirme",
+                "En": "Matching",
                 "Zz": "eynikerdiş",
                 "Kr": "Eşleştirme"
             },
             "promptText": {
-                "tr": "Zamirler ile eklerini eşleştirin",
-                "en": "Match the pronouns with the corresponding forms of the verb ‘to be’ in Zazakî",
+                "Tr": "Zamirler ile eklerini eşleştirin",
+                "En": "Match the pronouns with the corresponding forms of the verb ‘to be’ in Zazakî",
                 "Zz": "Zamirler ile eklerini eşleştirin",
                 "Kr": "Zamirler ile eklerini eşleştirin"
             },
@@ -28,14 +28,14 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "p1",
                     "left": {
-                        "tr": "Ez",
-                        "en": "Ez",
+                        "Tr": "Ez",
+                        "En": "Ez",
                         "Zz": "Ez",
                         "Kr": "Ez"
                     },
                     "right": {
-                        "tr": "a/ya",
-                        "en": "a/ya",
+                        "Tr": "a/ya",
+                        "En": "a/ya",
                         "Zz": "a/ya",
                         "Kr": "a/ya"
                     }
@@ -43,14 +43,14 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "p_1774293636209",
                     "left": {
-                        "tr": "Ti(nêrî)",
-                        "en": "Ti(nêrî)",
+                        "Tr": "Ti(nêrî)",
+                        "En": "Ti(nêrî)",
                         "Zz": "Ti(nêrî)",
                         "Kr": "Ti(nêrî)"
                     },
                     "right": {
-                        "tr": "î/yî",
-                        "en": "î/yî",
+                        "Tr": "î/yî",
+                        "En": "î/yî",
                         "Zz": "î/yî",
                         "Kr": "î/yî"
                     }
@@ -58,14 +58,14 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "p_1774293677329",
                     "left": {
-                        "tr": "Ti(makî)",
-                        "en": "Ti(makî)",
+                        "Tr": "Ti(makî)",
+                        "En": "Ti(makî)",
                         "Zz": "Ti(makî)",
                         "Kr": "Ti(makî)"
                     },
                     "right": {
-                        "tr": "a/ya",
-                        "en": "a/ya",
+                        "Tr": "a/ya",
+                        "En": "a/ya",
                         "Zz": "a/ya",
                         "Kr": "a/ya"
                     }
@@ -73,14 +73,14 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "p_1774293697878",
                     "left": {
-                        "tr": "O",
-                        "en": "O",
+                        "Tr": "O",
+                        "En": "O",
                         "Zz": "O",
                         "Kr": "O"
                     },
                     "right": {
-                        "tr": "o/yo",
-                        "en": "o/yo",
+                        "Tr": "o/yo",
+                        "En": "o/yo",
                         "Zz": "o/yo",
                         "Kr": "o/yo"
                     }
@@ -88,14 +88,14 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "p_1774293711609",
                     "left": {
-                        "tr": "A",
-                        "en": "A",
+                        "Tr": "A",
+                        "En": "A",
                         "Zz": "A",
                         "Kr": "A"
                     },
                     "right": {
-                        "tr": "a/ya",
-                        "en": "a/ya",
+                        "Tr": "a/ya",
+                        "En": "a/ya",
                         "Zz": "a/ya",
                         "Kr": "a/ya"
                     }
@@ -103,14 +103,14 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "p_1774293720121",
                     "left": {
-                        "tr": "Ma",
-                        "en": "Ma",
+                        "Tr": "Ma",
+                        "En": "Ma",
                         "Zz": "Ma",
                         "Kr": "Ma"
                     },
                     "right": {
-                        "tr": "ê/yê",
-                        "en": "ê/yê",
+                        "Tr": "ê/yê",
+                        "En": "ê/yê",
                         "Zz": "ê/yê",
                         "Kr": "ê/yê"
                     }
@@ -118,14 +118,14 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "p_1774293730947",
                     "left": {
-                        "tr": "Şima",
-                        "en": "Şima",
+                        "Tr": "Şima",
+                        "En": "Şima",
                         "Zz": "Şima",
                         "Kr": "Şima"
                     },
                     "right": {
-                        "tr": "ê/yê",
-                        "en": "ê/yê",
+                        "Tr": "ê/yê",
+                        "En": "ê/yê",
                         "Zz": "ê/yê",
                         "Kr": "ê/yê"
                     }
@@ -133,14 +133,14 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "p_1774293746203",
                     "left": {
-                        "tr": "Ê",
-                        "en": "Ê",
+                        "Tr": "Ê",
+                        "En": "Ê",
                         "Zz": "Ê",
                         "Kr": "Ê"
                     },
                     "right": {
-                        "tr": "ê/yê",
-                        "en": "ê/yê",
+                        "Tr": "ê/yê",
+                        "En": "ê/yê",
                         "Zz": "ê/yê",
                         "Kr": "ê/yê"
                     }
@@ -152,14 +152,14 @@ export const test_1774293529313: TestData = {
             "id": "q_1774294068995",
             "type": "ImageChoice",
             "title": {
-                "tr": "Doğru kopulayı seçin",
-                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "Tr": "Doğru kopulayı seçin",
+                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
                 "Zz": "Doğru kopulayı seçin",
                 "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
-                "tr": "Ez van_",
-                "en": "Ez van_",
+                "Tr": "Ez van_",
+                "En": "Ez van_",
                 "Zz": "Ez van_",
                 "Kr": "Ez van_"
             },
@@ -168,8 +168,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o1",
                     "text": {
-                        "tr": "a",
-                        "en": "a",
+                        "Tr": "a",
+                        "En": "a",
                         "Zz": "a",
                         "Kr": "a"
                     }
@@ -177,8 +177,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o2",
                     "text": {
-                        "tr": "ê",
-                        "en": "ê",
+                        "Tr": "ê",
+                        "En": "ê",
                         "Zz": "ê",
                         "Kr": "ê"
                     }
@@ -186,8 +186,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294360968",
                     "text": {
-                        "tr": "o",
-                        "en": "o",
+                        "Tr": "o",
+                        "En": "o",
                         "Zz": "o",
                         "Kr": "o"
                     }
@@ -195,8 +195,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294363862",
                     "text": {
-                        "tr": "î",
-                        "en": "î",
+                        "Tr": "î",
+                        "En": "î",
                         "Zz": "î",
                         "Kr": "î"
                     }
@@ -208,14 +208,14 @@ export const test_1774293529313: TestData = {
             "id": "q_1774294384220",
             "type": "ImageChoice",
             "title": {
-                "tr": "Doğru kopulayı seçin",
-                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "Tr": "Doğru kopulayı seçin",
+                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
                 "Zz": "Yeni Resimli Soru",
                 "Kr": "Yeni Resimli Soru"
             },
             "promptText": {
-                "tr": "Ti(makî) şin_",
-                "en": "Ti(makî) şin_",
+                "Tr": "Ti(makî) şin_",
+                "En": "Ti(makî) şin_",
                 "Zz": "Ti(makî) şin_",
                 "Kr": "Ti(makî) şin_"
             },
@@ -224,8 +224,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o1",
                     "text": {
-                        "tr": "a",
-                        "en": "a",
+                        "Tr": "a",
+                        "En": "a",
                         "Zz": "a",
                         "Kr": "a"
                     }
@@ -233,8 +233,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o2",
                     "text": {
-                        "tr": "ê",
-                        "en": "ê",
+                        "Tr": "ê",
+                        "En": "ê",
                         "Zz": "ê",
                         "Kr": "ê"
                     }
@@ -242,8 +242,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294438713",
                     "text": {
-                        "tr": "o",
-                        "en": "o",
+                        "Tr": "o",
+                        "En": "o",
                         "Zz": "o",
                         "Kr": "o"
                     }
@@ -251,8 +251,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294443324",
                     "text": {
-                        "tr": "î",
-                        "en": "î",
+                        "Tr": "î",
+                        "En": "î",
                         "Zz": "î",
                         "Kr": "î"
                     }
@@ -264,14 +264,14 @@ export const test_1774293529313: TestData = {
             "id": "q_1774294509005",
             "type": "ImageChoice",
             "title": {
-                "tr": "Doğru kopulayı seçin",
-                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "Tr": "Doğru kopulayı seçin",
+                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
                 "Zz": "Doğru kopulayı seçin",
                 "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
-                "tr": "A şimen_",
-                "en": "A şimen_",
+                "Tr": "A şimen_",
+                "En": "A şimen_",
                 "Zz": "A şimen_",
                 "Kr": "A şimen_"
             },
@@ -280,8 +280,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o1",
                     "text": {
-                        "tr": "o",
-                        "en": "o",
+                        "Tr": "o",
+                        "En": "o",
                         "Zz": "o",
                         "Kr": "o"
                     }
@@ -289,8 +289,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o2",
                     "text": {
-                        "tr": "a",
-                        "en": "a",
+                        "Tr": "a",
+                        "En": "a",
                         "Zz": "a",
                         "Kr": "a"
                     }
@@ -298,8 +298,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294585099",
                     "text": {
-                        "tr": "ê",
-                        "en": "ê",
+                        "Tr": "ê",
+                        "En": "ê",
                         "Zz": "ê",
                         "Kr": "ê"
                     }
@@ -307,8 +307,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294588539",
                     "text": {
-                        "tr": "î",
-                        "en": "î",
+                        "Tr": "î",
+                        "En": "î",
                         "Zz": "î",
                         "Kr": "î"
                     }
@@ -320,14 +320,14 @@ export const test_1774293529313: TestData = {
             "id": "q_1774294606335",
             "type": "ImageChoice",
             "title": {
-                "tr": "Doğru kopulayı seçin",
-                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "Tr": "Doğru kopulayı seçin",
+                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
                 "Zz": "Yeni Resimli Soru",
                 "Kr": "Yeni Resimli Soru"
             },
             "promptText": {
-                "tr": "O vazdan_",
-                "en": "O vazdan_",
+                "Tr": "O vazdan_",
+                "En": "O vazdan_",
                 "Zz": "O vazdan_",
                 "Kr": "O vazdan_"
             },
@@ -336,8 +336,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o1",
                     "text": {
-                        "tr": "o",
-                        "en": "o",
+                        "Tr": "o",
+                        "En": "o",
                         "Zz": "o",
                         "Kr": "o"
                     }
@@ -345,8 +345,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o2",
                     "text": {
-                        "tr": "a",
-                        "en": "a",
+                        "Tr": "a",
+                        "En": "a",
                         "Zz": "a",
                         "Kr": "a"
                     }
@@ -354,8 +354,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294681140",
                     "text": {
-                        "tr": "ê",
-                        "en": "ê",
+                        "Tr": "ê",
+                        "En": "ê",
                         "Zz": "ê",
                         "Kr": "ê"
                     }
@@ -363,8 +363,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294685534",
                     "text": {
-                        "tr": "î",
-                        "en": "î",
+                        "Tr": "î",
+                        "En": "î",
                         "Zz": "î",
                         "Kr": "î"
                     }
@@ -376,14 +376,14 @@ export const test_1774293529313: TestData = {
             "id": "q_1774294699031",
             "type": "ImageChoice",
             "title": {
-                "tr": "Doğru kopulayı seçin",
-                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "Tr": "Doğru kopulayı seçin",
+                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
                 "Zz": "Doğru kopulayı seçin",
                 "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
-                "tr": "Ti(nêrî) mamosta __",
-                "en": "Ti(nêrî) mamosta __",
+                "Tr": "Ti(nêrî) mamosta __",
+                "En": "Ti(nêrî) mamosta __",
                 "Zz": "Ti(nêrî) mamosta __",
                 "Kr": "Ti(nêrî) mamosta __"
             },
@@ -392,8 +392,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o1",
                     "text": {
-                        "tr": "ya",
-                        "en": "ya",
+                        "Tr": "ya",
+                        "En": "ya",
                         "Zz": "ya",
                         "Kr": "ya"
                     }
@@ -401,8 +401,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o2",
                     "text": {
-                        "tr": "yo",
-                        "en": "yo",
+                        "Tr": "yo",
+                        "En": "yo",
                         "Zz": "yo",
                         "Kr": "yo"
                     }
@@ -410,8 +410,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294866465",
                     "text": {
-                        "tr": "yê",
-                        "en": "yê",
+                        "Tr": "yê",
+                        "En": "yê",
                         "Zz": "yê",
                         "Kr": "yê"
                     }
@@ -419,8 +419,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294871727",
                     "text": {
-                        "tr": "yî",
-                        "en": "yî",
+                        "Tr": "yî",
+                        "En": "yî",
                         "Zz": "yî",
                         "Kr": "yî"
                     }
@@ -432,14 +432,14 @@ export const test_1774293529313: TestData = {
             "id": "q_1774294941845",
             "type": "CoktanSecmeli",
             "title": {
-                "tr": "Doğru kopulayı seçin",
-                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "Tr": "Doğru kopulayı seçin",
+                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
                 "Zz": "Doğru kopulayı seçin",
                 "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
-                "tr": "Ma şêr _",
-                "en": "Ma şêr _",
+                "Tr": "Ma şêr _",
+                "En": "Ma şêr _",
                 "Zz": "Ma şêr _",
                 "Kr": "Ma şêr _"
             },
@@ -448,8 +448,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o1",
                     "text": {
-                        "tr": "a",
-                        "en": "a",
+                        "Tr": "a",
+                        "En": "a",
                         "Zz": "a",
                         "Kr": "a"
                     }
@@ -457,8 +457,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o2",
                     "text": {
-                        "tr": "o",
-                        "en": "o",
+                        "Tr": "o",
+                        "En": "o",
                         "Zz": "o",
                         "Kr": "o"
                     }
@@ -466,8 +466,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294977819",
                     "text": {
-                        "tr": "ê",
-                        "en": "ê",
+                        "Tr": "ê",
+                        "En": "ê",
                         "Zz": "ê",
                         "Kr": "ê"
                     }
@@ -475,8 +475,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294981918",
                     "text": {
-                        "tr": "e",
-                        "en": "e",
+                        "Tr": "e",
+                        "En": "e",
                         "Zz": "e",
                         "Kr": "e"
                     }
@@ -487,14 +487,14 @@ export const test_1774293529313: TestData = {
             "id": "q_1774295033187",
             "type": "WordOrder",
             "title": {
-                "tr": "Yeni Kelime Sıralama",
-                "en": "Word ordering",
+                "Tr": "Yeni Kelime Sıralama",
+                "En": "Word ordering",
                 "Zz": "Yeni Kelime Sıralama",
                 "Kr": "Yeni Kelime Sıralama"
             },
             "promptText": {
-                "tr": "Kelimeleri doğru sıraya dizin",
-                "en": "Order the words correctly",
+                "Tr": "Kelimeleri doğru sıraya dizin",
+                "En": "Order the words correctly",
                 "Zz": "Kelimeleri doğru sıraya dizin",
                 "Kr": "Kelimeleri doğru sıraya dizin"
             },
@@ -519,14 +519,14 @@ export const test_1774293529313: TestData = {
             "id": "q_1774295328300",
             "type": "CoktanSecmeli",
             "title": {
-                "tr": "Doğru kopulayı seçin",
-                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "Tr": "Doğru kopulayı seçin",
+                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
                 "Zz": "Doğru kopulayı seçin",
                 "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
-                "tr": "Ê meyman _",
-                "en": "Ê meyman _",
+                "Tr": "Ê meyman _",
+                "En": "Ê meyman _",
                 "Zz": "Ê meyman _",
                 "Kr": "Ê meyman _"
             },
@@ -535,8 +535,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o1",
                     "text": {
-                        "tr": "a",
-                        "en": "a",
+                        "Tr": "a",
+                        "En": "a",
                         "Zz": "a",
                         "Kr": "a"
                     }
@@ -544,8 +544,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o2",
                     "text": {
-                        "tr": "o",
-                        "en": "o",
+                        "Tr": "o",
+                        "En": "o",
                         "Zz": "o",
                         "Kr": "o"
                     }
@@ -553,8 +553,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774295367350",
                     "text": {
-                        "tr": "e",
-                        "en": "e",
+                        "Tr": "e",
+                        "En": "e",
                         "Zz": "e",
                         "Kr": "e"
                     }
@@ -562,8 +562,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774295374463",
                     "text": {
-                        "tr": "ê",
-                        "en": "ê",
+                        "Tr": "ê",
+                        "En": "ê",
                         "Zz": "ê",
                         "Kr": "ê"
                     }
@@ -574,14 +574,14 @@ export const test_1774293529313: TestData = {
             "id": "q_1774295444173",
             "type": "CoktanSecmeli",
             "title": {
-                "tr": "Doğru kopulayı seçin",
-                "en": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "Tr": "Doğru kopulayı seçin",
+                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
                 "Zz": "Doğru kopulayı seçin",
                 "Kr": "Doğru kopulayı seçin"
             },
             "promptText": {
-                "tr": "Şima se ken_",
-                "en": "Şima se ken_",
+                "Tr": "Şima se ken_",
+                "En": "Şima se ken_",
                 "Zz": "Şima se ken_",
                 "Kr": "Şima se ken_"
             },
@@ -590,8 +590,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o1",
                     "text": {
-                        "tr": "ê",
-                        "en": "ê",
+                        "Tr": "ê",
+                        "En": "ê",
                         "Zz": "ê",
                         "Kr": "ê"
                     }
@@ -599,8 +599,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "o2",
                     "text": {
-                        "tr": "a",
-                        "en": "a",
+                        "Tr": "a",
+                        "En": "a",
                         "Zz": "a",
                         "Kr": "a"
                     }
@@ -608,8 +608,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774295467481",
                     "text": {
-                        "tr": "o",
-                        "en": "o",
+                        "Tr": "o",
+                        "En": "o",
                         "Zz": "o",
                         "Kr": "o"
                     }
@@ -617,8 +617,8 @@ export const test_1774293529313: TestData = {
                 {
                     "id": "opt_1774295468417",
                     "text": {
-                        "tr": "e",
-                        "en": "e",
+                        "Tr": "e",
+                        "En": "e",
                         "Zz": "e",
                         "Kr": "e"
                     }

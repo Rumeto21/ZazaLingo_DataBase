@@ -69,8 +69,7 @@ class SyncManager {
      */
     injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFound = null) {
         if (this.targets.length === 0) {
-            logger.error('[SyncManager] No targets registered');
-            return;
+            throw new Error('[SyncManager] No targets registered');
         }
 
         const primaryTarget = this.targets[0];
@@ -82,13 +81,14 @@ class SyncManager {
 
             const jsonStr = JSON.stringify(data, null, 4);
             if (!jsonStr || jsonStr === 'null' || jsonStr === 'undefined') {
-                logger.error(`[SyncManager] Blocked invalid data for ${filePath}`);
-                return;
+                throw new Error(`[SyncManager] Blocked invalid data for ${filePath}`);
             }
 
             const tempPath = `${filePath}.tmp`;
             if (fs.existsSync(tempPath)) {
-                if (Date.now() - fs.statSync(tempPath).mtimeMs < 30000) return;
+                if (Date.now() - fs.statSync(tempPath).mtimeMs < 30000) {
+                    throw new Error(`[SyncManager] Locked: TS .tmp file recently modified for ${filePath}`);
+                }
                 fs.unlinkSync(tempPath);
             }
 
@@ -98,8 +98,7 @@ class SyncManager {
                     fs.writeFileSync(filePath, content, 'utf-8');
                     logger.info(`[SyncManager] Created Primary: ${filePath}`);
                 } else {
-                    logger.error(`[SyncManager] Cannot create missing file without template: ${filePath}`);
-                    return;
+                    throw new Error(`[SyncManager] Cannot create missing file without template: ${filePath}`);
                 }
             } else {
                 if (primaryTarget.backup && this.backupDir) {
@@ -138,8 +137,7 @@ class SyncManager {
                 } else if (templateIfNotFound) {
                     updatedContent = templateIfNotFound.replace('{{DATA}}', jsonStr);
                 } else {
-                    logger.error(`[SyncManager] Var ${variableName} not found and no template for ${filePath}`);
-                    return;
+                    throw new Error(`[SyncManager] Var ${variableName} not found and no template for ${filePath}`);
                 }
 
                 fs.writeFileSync(tempPath, updatedContent, 'utf-8');
@@ -152,6 +150,7 @@ class SyncManager {
 
         } catch (err) {
             logger.error(`[SyncManager] Error in injectDataIntoTSFile for ${filePath}: ${err.message}`);
+            throw err;
         }
     }
 
@@ -160,7 +159,9 @@ class SyncManager {
      * Updates primary then clones to mirrors.
      */
     injectJSONAtomic(relativePath, data) {
-        if (this.targets.length === 0) return;
+        if (this.targets.length === 0) {
+            throw new Error('[SyncManager] No targets registered for JSON write');
+        }
 
         const primaryTarget = this.targets[0];
         const filePath = path.join(primaryTarget.path, relativePath);
@@ -170,11 +171,15 @@ class SyncManager {
             if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
             const jsonStr = JSON.stringify(data, null, 4);
-            if (!jsonStr || jsonStr === 'null') return;
+            if (!jsonStr || jsonStr === 'null') {
+                throw new Error(`[SyncManager] JSON error: Invalid or null data for ${filePath}`);
+            }
 
             const tempPath = `${filePath}.tmp`;
             if (fs.existsSync(tempPath)) {
-                if (Date.now() - fs.statSync(tempPath).mtimeMs < 30000) return;
+                if (Date.now() - fs.statSync(tempPath).mtimeMs < 30000) {
+                    throw new Error(`[SyncManager] Locked: JSON .tmp file recently modified for ${filePath}`);
+                }
                 fs.unlinkSync(tempPath);
             }
 
@@ -191,6 +196,7 @@ class SyncManager {
 
         } catch (err) {
             logger.error(`[SyncManager] JSON error for ${filePath}: ${err.message}`);
+            throw err;
         }
     }
 
