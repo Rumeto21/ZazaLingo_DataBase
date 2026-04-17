@@ -1,0 +1,65 @@
+import { TestData } from '../../../types/question';
+
+export const sentence_completion_1: TestData = {
+    "id": "sentence_completion_1",
+    "title": {
+        "tr": "Cümle Tamamlama Alıştırması",
+        "en": "Sentence Completion Exercise"
+    },
+    "questions": [
+        {
+            "id": "sc1",
+            "type": "SentenceCompletion",
+            "title": {
+                "tr": "Cümleleri Tamamlayın",
+                "en": "Complete the Sentences"
+            },
+            "promptText": {
+                "tr": "Doğru ekleri 'ya' seçerek cümleleri tamamlayın (Interchangeable test)",
+                "en": "Choose the correct 'ya' suffix to complete the sentences"
+            },
+            "options": [],
+            "matchingPairs": [
+                {
+                    "id": "p1",
+                    "left": {
+                        "Zz": "Awa ...",
+                        "tr": "Awa ...",
+                        "en": "Awa ..."
+                    },
+                    "right": {
+                        "Zz": "ya",
+                        "tr": "ya",
+                        "en": "ya"
+                    }
+                },
+                {
+                    "id": "p2",
+                    "left": {
+                        "Zz": "Nan ...",
+                        "tr": "Nan ...",
+                        "en": "Nan ..."
+                    },
+                    "right": {
+                        "Zz": "ya",
+                        "tr": "ya",
+                        "en": "ya"
+                    }
+                },
+                {
+                    "id": "p3",
+                    "left": {
+                        "Zz": "Ez",
+                        "tr": "Ez",
+                        "en": "Ez"
+                    },
+                    "right": {
+                        "Zz": "on",
+                        "tr": "on",
+                        "en": "on"
+                    }
+                }
+            ]
+        }
+    ]
+};

@@ -8,11 +8,11 @@ const syncManager = require('./SyncManager');
  * Handles hierarchical test storage, indexing, and cleanup.
  */
 class CurriculumManager {
-    getTestToPathMap(stations) {
+    resolveTestPaths(stations) {
         const testToPathMap = {};
         const unitMap = {};
         
-        // Map units
+        // Map units (e.g., 'l01' -> 'Unite_1')
         (stations || []).forEach(s => {
             if (s.type === 'station') {
                 unitMap[s.id] = `Unite_${s.unitIndex || s.id}`;
@@ -22,9 +22,11 @@ class CurriculumManager {
         // Map topics to units and tests to topics
         (stations || []).forEach(s => {
             if (s.type === 'topic') {
-                const unitFolder = unitMap[s.parentUnitId] || 'diger';
+                // Infer parentUnitId from ID convention (e.g., 'l01_t2' -> 'l01') if missing
+                const parentId = s.parentUnitId || (s.id && s.id.includes('_') ? s.id.split('_')[0] : null);
+                const unitFolder = unitMap[parentId] || 'diger';
                 const topicFolder = (s.ZzName || s.TrName || s.id).replace(/[^a-zA-Z0-9]/g, '_');
-                const targetPath = path.join(unitFolder, topicFolder);
+                const targetPath = path.join(unitFolder, topicFolder).replace(/\\/g, '/');
                 
                 if (s.testIds) {
                     s.testIds.forEach(tid => {
@@ -34,6 +36,10 @@ class CurriculumManager {
             }
         });
         return testToPathMap;
+    }
+
+    getSafeExportName(testId) {
+        return testId.replace(/[^a-zA-Z0-9]/g, '_');
     }
 
     saveTests(curriculumDir, tests, testToPathMap, archiveDir) {
@@ -47,7 +53,7 @@ class CurriculumManager {
 
         for (const testId of testIds) {
             const test = tests[testId];
-            const relativeFolderPath = testToPathMap[testId] || 'diger';
+            const relativeFolderPath = testToPathMap[testId.toLowerCase()] || 'diger';
             const folderPath = path.join(curriculumDir, relativeFolderPath);
             
             if (!fs.existsSync(folderPath)) {

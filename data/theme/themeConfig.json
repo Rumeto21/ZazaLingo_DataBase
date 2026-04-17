@@ -72,17 +72,26 @@
         "val": 0,
         "unit": "px"
     },
-    "mascotQuestionTop": 1.377281,
-    "mascotQuestionSize": 0.063281,
-    "mascotQuestionMarginLeft": 1.504,
+    "mascotQuestionTop": {
+        "val": 180,
+        "unit": "px"
+    },
+    "mascotQuestionSize": {
+        "val": 0.4,
+        "unit": "ratio"
+    },
+    "mascotQuestionMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
     "questionPromptMarginTop": {
-        "val": -312,
+        "val": 80,
         "unit": "px"
     },
     "questionPromptMarginBottom": 0,
     "questionOptionsMarginTop": {
-        "val": -0.15,
-        "unit": "ratio"
+        "val": 400,
+        "unit": "px"
     },
     "questionOptionsMarginBottom": 0,
     "questionOptionsMarginLeft": {
@@ -114,12 +123,12 @@
     "settingsInfoItemFontSize": 16,
     "settingsSubHeaderFontSize": 18,
     "questionPromptFontSize": {
-        "val": 50,
+        "val": 30,
         "unit": "px"
     },
     "questionOptionFontSize": {
-        "val": 0.32,
-        "unit": "ratio"
+        "val": 30,
+        "unit": "px"
     },
     "coktanSecmeliBgColor": "#FFFFFF",
     "coktanSecmeliTextColor": "#4B4B4B",
@@ -220,16 +229,12 @@
         "unit": "px"
     },
     "headerSubtitleFontSize": 40,
-    "mascotCoktanSecmeliSize": {
-        "val": 0.2,
-        "unit": "ratio"
-    },
     "questionOptionsWidth": {
         "val": 0.9,
         "unit": "ratio"
     },
     "questionOptionsHeight": {
-        "val": 400,
+        "val": 404,
         "unit": "px"
     },
     "questionTitleWidth": {
@@ -237,11 +242,11 @@
         "unit": "ratio"
     },
     "questionTitleHeight": {
-        "val": 100,
+        "val": 45,
         "unit": "px"
     },
     "questionTitleMarginTop": {
-        "val": -382,
+        "val": 20,
         "unit": "px"
     },
     "questionPromptWidth": {
@@ -249,11 +254,7 @@
         "unit": "ratio"
     },
     "questionPromptHeight": {
-        "val": 50,
-        "unit": "px"
-    },
-    "mascotCoktanSecmeliTop": {
-        "val": -200,
+        "val": 45,
         "unit": "px"
     },
     "topBarPaddingHorizontal": {
@@ -314,10 +315,22 @@
     "mapTopicPinRadius": 10,
     "mascotWordOrderSize": 1.112385,
     "mascotWordOrderTop": 1.377281,
-    "mascotMatchingSize": 1.112385,
-    "mascotMatchingTop": 1.377281,
-    "mascotImageChoiceSize": 1.112385,
-    "mascotImageChoiceTop": 1.377281,
+    "mascotMatchingSize": {
+        "val": 0.4,
+        "unit": "ratio"
+    },
+    "mascotMatchingTop": {
+        "val": 180,
+        "unit": "px"
+    },
+    "mascotImageChoiceSize": {
+        "val": 0.4,
+        "unit": "ratio"
+    },
+    "mascotImageChoiceTop": {
+        "val": 180,
+        "unit": "px"
+    },
     "mascotChoiceImageSize": 1.112385,
     "mascotChoiceImageTop": 1.377281,
     "mascotDialogueSize": 1.112385,
@@ -339,7 +352,7 @@
         "unit": "px"
     },
     "questionTitleFontSize": {
-        "val": 25,
+        "val": 24,
         "unit": "px"
     },
     "questionTitleMarginLeft": {
@@ -349,5 +362,9 @@
     "questionPromptPaddingHorizontal": {
         "val": 0,
         "unit": "px"
+    },
+    "questionPromptMarginLeft": {
+        "val": 0,
+        "unit": "ratio"
     }
 }

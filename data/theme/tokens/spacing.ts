@@ -96,31 +96,32 @@ export const spacing = {
         "val": 0.37,
         "unit": "ratio"
     },
-    "mascotQuestionTop": 1.377281,
-    "mascotQuestionMarginLeft": 1.504,
-    "mascotQuestionSize": 0.063281,
-    "mascotCoktanSecmeliTop": {
-        "val": -200,
+    "mascotQuestionTop": 180,
+    "mascotQuestionMarginLeft": {
+        "val": 0,
         "unit": "px"
     },
-    "mascotCoktanSecmeliSize": {
-        "val": 0.2,
+    "mascotQuestionSize": {
+        "val": 0.4,
         "unit": "ratio"
     },
     "mascotWordOrderTop": 1.377281,
     "mascotWordOrderSize": 1.112385,
-    "mascotMatchingTop": 1.377281,
-    "mascotMatchingSize": 1.112385,
-    "mascotImageChoiceTop": 1.377281,
-    "mascotImageChoiceSize": 1.112385,
+    "mascotMatchingTop": 180,
+    "mascotMatchingSize": {
+        "val": 0.4,
+        "unit": "ratio"
+    },
+    "mascotImageChoiceTop": 180,
+    "mascotImageChoiceSize": {
+        "val": 0.4,
+        "unit": "ratio"
+    },
     "mascotChoiceImageTop": 1.377281,
     "mascotChoiceImageSize": 1.112385,
     "mascotDialogueTop": 1.377281,
     "mascotDialogueSize": 1.112385,
-    "questionTitleMarginTop": {
-        "val": -382,
-        "unit": "px"
-    },
+    "questionTitleMarginTop": 20,
     "questionTitleMarginLeft": {
         "val": 0,
         "unit": "ratio"
@@ -130,30 +131,28 @@ export const spacing = {
         "unit": "ratio"
     },
     "questionTitleHeight": {
-        "val": 100,
+        "val": 45,
         "unit": "px"
     },
-    "questionPromptMarginTop": {
-        "val": -312,
-        "unit": "px"
-    },
+    "questionPromptMarginTop": 80,
     "questionPromptMarginBottom": 0,
+    "questionPromptMarginLeft": {
+        "val": 0,
+        "unit": "ratio"
+    },
     "questionPromptWidth": {
         "val": 0.9,
         "unit": "ratio"
     },
     "questionPromptHeight": {
-        "val": 50,
+        "val": 45,
         "unit": "px"
     },
     "questionPromptPaddingHorizontal": {
         "val": 0,
         "unit": "px"
     },
-    "questionOptionsMarginTop": {
-        "val": -0.15,
-        "unit": "ratio"
-    },
+    "questionOptionsMarginTop": 400,
     "questionOptionsMarginBottom": 0,
     "questionOptionsMarginLeft": {
         "val": 0,
@@ -164,7 +163,7 @@ export const spacing = {
         "unit": "ratio"
     },
     "questionOptionsHeight": {
-        "val": 400,
+        "val": 404,
         "unit": "px"
     },
     "questionOptionsPaddingHorizontal": {

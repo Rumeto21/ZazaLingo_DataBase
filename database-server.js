@@ -132,7 +132,7 @@ const THEME_MAPPING = {
         // Mascot - Soru ekranı (genel fallback)
         'mascotQuestionTop', 'mascotQuestionMarginLeft', 'mascotQuestionSize',
         // Mascot - 9 soru tipinin tamamı
-        'mascotCoktanSecmeliTop', 'mascotCoktanSecmeliMarginLeft', 'mascotCoktanSecmeliSize',
+        'mascotQuestionTop', 'mascotQuestionMarginLeft', 'mascotQuestionSize',
         'mascotWordOrderTop', 'mascotWordOrderMarginLeft', 'mascotWordOrderSize',
         'mascotMatchingTop', 'mascotMatchingMarginLeft', 'mascotMatchingSize',
         'mascotImageChoiceTop', 'mascotImageChoiceMarginLeft', 'mascotImageChoiceSize',
@@ -180,12 +180,11 @@ const THEME_MAPPING = {
     ],
     'tokens/typography.ts': [
         'buttonTextSize', 'headerTitleFontSize', 'headerSubtitleFontSize',
-        'proverbsTitleFontSize', 'proverbsTextFontSize', 'proverbsTranslationFontSize',
-        'coktanSecmeliFontSize', 'wordOrderFontSize', 'matchingFontSize',
-        'imageChoiceFontSize', 'choiceImageFontSize', 'dialogueFontSize',
-        'settingsTitleFontSize', 'settingsMusicSectionTitleFontSize', 'settingsInfoSectionTitleFontSize',
-        'settingsMusicItemFontSize', 'settingsInfoItemFontSize', 'settingsSubHeaderFontSize',
-        'questionPromptFontSize', 'questionOptionFontSize', 'questionBtnTextFontSize'
+        'questionPromptFontSize', 'questionOptionFontSize', 'questionBtnTextFontSize',
+        'questionTitleFontSize', 'proverbsTitleFontSize', 'proverbsTextFontSize', 
+        'proverbsTranslationFontSize', 'settingsTitleFontSize', 'settingsMusicSectionTitleFontSize',
+        'settingsInfoSectionTitleFontSize', 'settingsMusicItemFontSize', 'settingsInfoItemFontSize',
+        'settingsSubHeaderFontSize', 'settingsBackFontSize'
     ],
     'components/questions.ts': [
         'coktanSecmeliBgColor', 'coktanSecmeliTextColor', 'coktanSecmeliSelectedBgColor',

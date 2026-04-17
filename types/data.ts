@@ -214,9 +214,6 @@ export interface AppTheme {
     mascotQuestionTop: number;
     mascotQuestionMarginLeft: number;
     mascotQuestionSize: number;
-    mascotCoktanSecmeliTop: number;
-    mascotCoktanSecmeliMarginLeft: number;
-    mascotCoktanSecmeliSize: number;
     mascotGorselEslesirmeTop: number;
     mascotGorselEslesirmeMarginLeft: number;
     mascotGorselEslesirmeSize: number;

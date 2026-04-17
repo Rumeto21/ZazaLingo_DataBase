@@ -28,11 +28,6 @@ export const THEME_AXIS_MAP: Record<string, ThemeAxis> = {
     mascotQuestionTop:                  'Y',
     mascotQuestionSize:                 'V',
 
-    // ── Maskot: Coktan Secmeli ────────────────────────────────────────
-    mascotCoktanSecmeliMarginLeft:      'X',
-    mascotCoktanSecmeliTop:             'Y',
-    mascotCoktanSecmeliSize:            'V',
-
     // ── Maskot: Kelime Siralama ───────────────────────────────────────
     mascotWordOrderMarginLeft:          'X',
     mascotWordOrderTop:                 'Y',
@@ -205,6 +200,30 @@ export const THEME_AXIS_MAP: Record<string, ThemeAxis> = {
     topBarFlagWidth:                    'W',
     topBarFlagHeight:                   'V',
     topBarHelperMarginLeft:             'W',
+
+    // ── Font Sizes ────────────────────────────────────────────────────
+    headerTitleFontSize:                'V',
+    headerSubtitleFontSize:             'V',
+    questionTitleFontSize:              'V',
+    questionPromptFontSize:             'V',
+    questionBtnTextFontSize:            'V',
+    questionOptionFontSize:             'V',
+    proverbsTitleFontSize:              'V',
+    proverbsTextFontSize:               'V',
+    proverbsTranslationFontSize:        'V',
+    settingsTitleFontSize:              'V',
+    settingsMusicSectionTitleFontSize:  'V',
+    settingsInfoSectionTitleFontSize:   'V',
+    settingsMusicItemFontSize:          'V',
+    settingsInfoItemFontSize:           'V',
+    settingsSubHeaderFontSize:          'V',
+    settingsBackFontSize:               'V',
+    coktanSecmeliFontSize:              'V',
+    wordOrderFontSize:                  'V',
+    matchingFontSize:                   'V',
+    imageChoiceFontSize:                'V',
+    choiceImageFontSize:                'V',
+    dialogueFontSize:                   'V',
 };
 
 /**
