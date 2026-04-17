@@ -1,13 +1,16 @@
-const fs = require('fs');
 const path = require('path');
 const logger = require('./logger');
-const syncManager = require('./SyncManager');
+const fsAdapter = require('./FileSystemAdapter');
 
 /**
  * CurriculumManager
  * Handles hierarchical test storage, indexing, and cleanup.
  */
 class CurriculumManager {
+    constructor(adapter = fsAdapter) {
+        this.fs = adapter;
+    }
+
     resolveTestPaths(stations) {
         const testToPathMap = {};
         const unitMap = {};
@@ -20,35 +23,43 @@ class CurriculumManager {
         });
 
         // Map topics to units and tests to topics
-        (stations || []).forEach(s => {
-            if (s.type === 'topic') {
-                // Infer parentUnitId from ID convention (e.g., 'l01_t2' -> 'l01') if missing
-                const parentId = s.parentUnitId || (s.id && s.id.includes('_') ? s.id.split('_')[0] : null);
-                const unitFolder = unitMap[parentId] || 'diger';
-                const topicFolder = (s.ZzName || s.TrName || s.id).replace(/[^a-zA-Z0-9]/g, '_');
-                const targetPath = path.join(unitFolder, topicFolder).replace(/\\/g, '/');
-                
-                if (s.testIds) {
-                    s.testIds.forEach(tid => {
-                        testToPathMap[tid] = targetPath;
-                    });
-                }
+        if (!Array.isArray(stations)) return testToPathMap;
+
+        stations.forEach(unit => {
+            const unitFolder = unit.id || 'UnknownUnit';
+            if (unit.topics && Array.isArray(unit.topics)) {
+                unit.topics.forEach(topic => {
+                    const topicFolder = topic.id || 'UnknownTopic';
+                    if (topic.tests && Array.isArray(topic.tests)) {
+                        topic.tests.forEach(test => {
+                            const testId = typeof test === 'string' ? test : test.id;
+                            if (testId) {
+                                testToPathMap[testId.toLowerCase()] = path.join(unitFolder, topicFolder);
+                            }
+                        });
+                    }
+                });
             }
         });
         return testToPathMap;
     }
 
-    getSafeExportName(testId) {
-        return testId.replace(/[^a-zA-Z0-9]/g, '_');
+    /**
+     * Sanitizes export names for TypeScript compatibility.
+     */
+    getSafeExportName(id) {
+        return 'test_' + id.replace(/[^a-zA-Z0-9]/g, '_');
     }
 
-    saveTests(curriculumDir, tests, testToPathMap, archiveDir) {
-        if (!fs.existsSync(curriculumDir)) {
-            fs.mkdirSync(curriculumDir, { recursive: true });
-        }
-
+    /**
+     * Centralized saving logic for tests.
+     */
+    saveTests(curriculumDir, stations, tests, archiveDir) {
+        this.fs.mkdir(curriculumDir);
         const testIds = Object.keys(tests || {});
         const currentTestFiles = new Set(['index.ts']);
+        const testToPathMap = this.resolveTestPaths(stations);
+
         let indexContent = `import { TestData } from '../../types/question';\n\n`;
 
         for (const testId of testIds) {
@@ -56,66 +67,55 @@ class CurriculumManager {
             const relativeFolderPath = testToPathMap[testId.toLowerCase()] || 'diger';
             const folderPath = path.join(curriculumDir, relativeFolderPath);
             
-            if (!fs.existsSync(folderPath)) {
-                fs.mkdirSync(folderPath, { recursive: true });
-            }
+            this.fs.mkdir(folderPath);
 
             const fileName = `${testId.toLowerCase()}.ts`;
-            const testExportName = testId.replace(/[^a-zA-Z0-9]/g, '_');
+            const testExportName = this.getSafeExportName(testId);
             const posixPath = path.join(relativeFolderPath, fileName).replace(/\\/g, '/');
             
             currentTestFiles.add(posixPath.toLowerCase());
 
-            // Safe injection into the curriculum file
-            syncManager.injectDataIntoTSFile(
-                path.join('curriculum', posixPath), 
-                testExportName, 
-                test, 
-                `import { TestData } from '../../../types/question';\n\nexport const ${testExportName}: TestData = {{DATA}};\n`
-            );
+            // Use adapter injection for individual test files
+            this.fs.injectData(path.join('curriculum', posixPath), testExportName, test, 
+                `import { TestData } from '../../../types/question';\n\nexport const ${testExportName}: TestData = {{DATA}};\n`);
             
             indexContent += `import { ${testExportName} } from './${posixPath.replace('.ts', '')}';\n`;
         }
 
         indexContent += `\nexport const TESTS: Record<string, TestData> = {\n`;
         testIds.forEach(tid => {
-            const testExportName = tid.replace(/[^a-zA-Z0-9]/g, '_');
+            const testExportName = this.getSafeExportName(tid);
             indexContent += `    ${tid}: ${testExportName},\n`;
         });
         indexContent += `};\n`;
 
-        const localIndex = path.join(curriculumDir, 'index.ts');
-        fs.writeFileSync(localIndex, indexContent, 'utf-8');
-        
-        // Sync the index file
-        syncManager.syncFile(path.join('curriculum', 'index.ts'));
+        this.fs.writeFile(path.join(curriculumDir, 'index.ts'), indexContent);
+        this.fs.syncFile(path.join('curriculum', 'index.ts'));
 
-        // Cleanup
         this.archiveOldTests(curriculumDir, currentTestFiles, archiveDir);
     }
 
-    archiveOldTests(dir, currentTestFiles, archiveDir, baseDir = '') {
-        if (!fs.existsSync(dir)) return;
-        const files = fs.readdirSync(dir);
-
-        files.forEach(file => {
-            const fullPath = path.join(dir, file);
-            const relativePath = path.join(baseDir, file).replace(/\\/g, '/');
-            
-            if (fs.statSync(fullPath).isDirectory()) {
-                this.archiveOldTests(fullPath, currentTestFiles, archiveDir, relativePath);
-                if (fs.existsSync(fullPath) && fs.readdirSync(fullPath).length === 0) {
-                    fs.rmdirSync(fullPath);
+    /**
+     * Archives files that are no longer in the curriculum metadata.
+     */
+    archiveOldTests(curriculumDir, currentFiles, archiveDir) {
+        const scan = (dir, rel = '') => {
+            const items = this.fs.readdir(dir);
+            items.forEach(item => {
+                const fullPath = path.join(dir, item);
+                const relPath = path.join(rel, item).replace(/\\/g, '/');
+                if (this.fs.stat(fullPath).isDirectory()) {
+                    scan(fullPath, relPath);
+                } else if (!currentFiles.has(relPath.toLowerCase())) {
+                    const archivePath = path.join(archiveDir, 'curriculum', relPath);
+                    this.fs.mkdir(path.dirname(archivePath));
+                    this.fs.rename(fullPath, archivePath);
+                    logger.info(`[CurriculumManager] Archived orphaned test: ${relPath}`);
                 }
-            } else if (file.endsWith('.ts') && file !== 'index.ts') {
-                if (!currentTestFiles.has(relativePath.toLowerCase())) {
-                    const archivedPath = path.join(archiveDir, `${Date.now()}_${file}`);
-                    fs.renameSync(fullPath, archivedPath);
-                    logger.info(`[CurriculumManager] Archived old test: ${relativePath}`);
-                }
-            }
-        });
+            });
+        };
+        scan(curriculumDir);
     }
 }
 
-module.exports = new CurriculumManager();
+module.exports = CurriculumManager;
