@@ -12889,3 +12889,50 @@
 {"level":"info","message":"127.0.0.1 - - [17/Apr/2026:14:58:55 +0000] \"GET /data HTTP/1.1\" 200 - \"http://localhost:5173/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","service":"data-base-server","timestamp":"2026-04-17 17:58:55"}
 {"0":"C","1":":","10":"c","11":"\\","12":"D","13":"o","14":"c","15":"u","16":"m","17":"e","18":"n","19":"t","2":"\\","20":"s","21":"\\","22":"Z","23":"a","24":"z","25":"a","26":"L","27":"i","28":"n","29":"g","3":"U","30":"o","31":"\\","32":"D","33":"a","34":"t","35":"a","36":"_","37":"B","38":"a","39":"s","4":"s","40":"e","41":"\\","42":"a","43":"s","44":"s","45":"e","46":"t","47":"s","5":"e","6":"r","7":"s","8":"\\","9":"p","level":"info","message":"Scanning assets in:","service":"data-base-server","timestamp":"2026-04-17 17:58:55"}
 {"level":"info","message":"127.0.0.1 - - [17/Apr/2026:14:58:55 +0000] \"GET /assets HTTP/1.1\" 200 - \"http://localhost:5173/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","service":"data-base-server","timestamp":"2026-04-17 17:58:55"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 18:34:25"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-18 18:34:25"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 18:39:00"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4014","service":"data-base-server","timestamp":"2026-04-18 18:39:00"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 18:39:18"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4015","service":"data-base-server","timestamp":"2026-04-18 18:39:18"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 18:41:28"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4017","service":"data-base-server","timestamp":"2026-04-18 18:41:28"}
+{"level":"warn","message":"[SaveRegistry] No handler registered for key: 'custom_field'","service":"data-base-server","timestamp":"2026-04-18 18:41:31"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-18 18:41:31"}
+{"level":"warn","message":"[SaveRegistry] No handler registered for key: 'CustomField'","service":"data-base-server","timestamp":"2026-04-18 18:41:31"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-18 18:41:31"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-18 18:41:32"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-18 18:41:32"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-18 18:41:32"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 19:21:46"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4020","service":"data-base-server","timestamp":"2026-04-18 19:21:46"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"custom_field\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-18 19:21:50"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save","service":"data-base-server","timestamp":"2026-04-18 19:21:50"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"mapConfig.railWidth\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-18 19:21:51"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save","service":"data-base-server","timestamp":"2026-04-18 19:21:51"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 19:22:33"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4021","service":"data-base-server","timestamp":"2026-04-18 19:22:33"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"proverbs.value\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-18 19:22:37"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save","service":"data-base-server","timestamp":"2026-04-18 19:22:37"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 19:23:12"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4022","service":"data-base-server","timestamp":"2026-04-18 19:23:12"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"proverbs.0\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-18 19:23:16"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save","service":"data-base-server","timestamp":"2026-04-18 19:23:16"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 19:31:41"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4030","service":"data-base-server","timestamp":"2026-04-18 19:31:41"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-18 19:31:45"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-18 19:31:45"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-18 19:31:45"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 19:42:01"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4031","service":"data-base-server","timestamp":"2026-04-18 19:42:01"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 19:42:23"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4032","service":"data-base-server","timestamp":"2026-04-18 19:42:23"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 19:42:44"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4033","service":"data-base-server","timestamp":"2026-04-18 19:42:44"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 19:53:02"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4040","service":"data-base-server","timestamp":"2026-04-18 19:53:02"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-18 19:53:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-18 19:53:06"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-18 19:53:06"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 20:02:09"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-18 20:02:09"}

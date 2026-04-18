@@ -1,4 +1,4 @@
-import { TestData } from '../../types/question';
+import { TestData } from '@zazalingo/shared';
 
 import { test_1774209082939 } from './diger/Canamey_/test_1774209082939';
 import { test_1774293529313 } from './diger/Kopula/test_1774293529313';

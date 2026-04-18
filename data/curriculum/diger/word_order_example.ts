@@ -1,4 +1,4 @@
-import { TestData } from '../../../types/question';
+import { TestData } from '@zazalingo/shared';
 
 export const word_order_example: TestData = {
     "id": "word_order_example",

@@ -1,4 +1,4 @@
-import { Locale } from '../../types/locales';
+import { Locale } from '@zazalingo/shared';
 
 export const Zz: Locale = {
     "languageName": "Zz",

@@ -23,7 +23,7 @@ class LocalesHandler {
         for (const lang of langs) {
             if (locales[lang]) {
                 adapter.injectData(path.join('locales', `${lang}.ts`), lang, locales[lang], 
-                    `import { Locale } from '../../types/locales';\n\nexport const ${lang}: Locale = {{DATA}};`);
+                    `import { Locale } from '@zazalingo/shared';\n\nexport const ${lang}: Locale = {{DATA}};`);
                 adapter.injectJSON(path.join('locales', `${lang}.json`), locales[lang]);
             }
         }

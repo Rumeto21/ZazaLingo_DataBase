@@ -1,4 +1,4 @@
-import { TestData } from '../../../types/question';
+import { TestData } from '@zazalingo/shared';
 
 export const matching_test_1: TestData = {
     "id": "matching_test_1",

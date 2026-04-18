@@ -4,6 +4,7 @@ const path = require('path');
 const morgan = require('morgan');
 const logger = require('./logger');
 const syncManager = require('./SyncManager');
+const httpLogger = morgan('dev');
 
 // Classes (DIP)
 const FileSystemAdapter = require('./FileSystemAdapter');
@@ -12,6 +13,7 @@ const AggregationAssembler = require('./AggregationAssembler');
 const AggregationManager = require('./AggregationManager');
 const CurriculumManager = require('./CurriculumManager');
 const SaveRegistry = require('./SaveRegistry');
+const SchemaValidator = require('./SchemaValidator');
 
 // Handlers (OCP)
 const { StationsHandler, DecorationsHandler, MapConfigHandler } = require('./handlers/MapHandler');
@@ -60,11 +62,14 @@ saveRegistry.register('locales', new LocalesHandler());
 // SyncManager Setup
 syncManager.setBackupDir(BACKUP_DIR);
 syncManager.addTarget(DATA_DIR, true);
+// --- v8.0 SSoT Migration: Tight Coupling disabled ---
+/* 
 const MOBILE_DATA_DIR = process.env.MOBILE_DATA_DIR || path.join(__dirname, '../ZazaLingo/data');
 if (fs.existsSync(MOBILE_DATA_DIR)) {
     syncManager.addTarget(MOBILE_DATA_DIR, false);
     logger.info(`[Sync] Mobile Data Sync ENABLED: ${MOBILE_DATA_DIR}`);
 }
+*/
 
 
 
@@ -201,6 +206,71 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    // ── GET /data/:filename (v8.0 SSoT Incremental) ─────────────────────────
+    if (req.method === 'GET' && req.url.startsWith('/data/')) {
+        try {
+            const requestedFile = path.basename(req.url);
+            
+            // v8.0 Case 1: Locales Aggregation
+            if (requestedFile === 'locales.json') {
+                const results = {};
+                ['Tr', 'En', 'Zz', 'Kr'].forEach(lang => {
+                    const data = aggReader.readLocale(LOCALES_DIR, lang);
+                    if (data) results[lang] = data;
+                });
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify(results));
+                return;
+            }
+
+            // v8.0 Case 2: Theme Aliasing
+            if (requestedFile === 'theme.json') {
+                const themePath = path.join(THEME_DIR, 'themeConfig.json');
+                if (fs.existsSync(themePath)) {
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    fs.createReadStream(themePath).pipe(res);
+                } else {
+                    // Fallback to theme.ts if json doesn't exist
+                    const themeTS = aggReader.readTSExport(path.join(THEME_DIR, 'theme.ts'));
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify(themeTS || {}));
+                }
+                return;
+            }
+
+            // v8.0 Case 3: Standard Smart Mapping
+            const subDirs = ['', 'map', 'theme', 'locales', 'settings', 'proverbs'];
+            let foundPath = null;
+            
+            for (const sub of subDirs) {
+                const checkPath = path.join(DATA_DIR, sub, requestedFile);
+                if (fs.existsSync(checkPath) && fs.statSync(checkPath).isFile()) {
+                    foundPath = checkPath;
+                    break;
+                }
+            }
+
+            if (foundPath) {
+                // If it's a .ts file, parse it; if it's .json, serve directly
+                if (foundPath.endsWith('.ts')) {
+                    const data = aggReader.readTSExport(foundPath);
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify(data));
+                } else {
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    fs.createReadStream(foundPath).pipe(res);
+                }
+            } else {
+                res.writeHead(404);
+                res.end(JSON.stringify({ error: `Data file ${requestedFile} not found in any standard directory.` }));
+            }
+        } catch (err) {
+            res.writeHead(500);
+            res.end(JSON.stringify({ error: err.message }));
+        }
+        return;
+    }
+
     // ── POST /save ─────────────────────────────────────────────────────────
     if (req.method === 'POST' && (req.url === '/save' || req.url === '/saveLocales')) {
         let body = '';
@@ -208,6 +278,15 @@ const server = http.createServer((req, res) => {
         req.on('end', async () => {
             try {
                 const payload = JSON.parse(body);
+                
+                // v8.0 Schema Validation Middleware
+                if (!SchemaValidator.validatePascalCaseKeys(payload)) {
+                    logger.error(`[SchemaValidator] Validation failed for ${req.url}`);
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: 'Schema Validation Failed: Use PascalCase for custom data fields.' }));
+                    return;
+                }
+
                 const context = { adapter: fsAdapter, stations: payload.stations, curriculumDir: CURRICULUM_DIR, archiveDir: ARCHIVE_DIR, localesDir: LOCALES_DIR };
                 await saveRegistry.process(payload, context);
                 if (fs.existsSync(path.join(DATA_DIR, 'users.json'))) syncManager.syncFile('users.json');

@@ -60,7 +60,7 @@ class CurriculumManager {
         const currentTestFiles = new Set(['index.ts']);
         const testToPathMap = this.resolveTestPaths(stations);
 
-        let indexContent = `import { TestData } from '../../types/question';\n\n`;
+        let indexContent = `import { TestData } from '@zazalingo/shared';\n\n`;
 
         for (const testId of testIds) {
             const test = tests[testId];
@@ -77,7 +77,7 @@ class CurriculumManager {
 
             // Use adapter injection for individual test files
             this.fs.injectData(path.join('curriculum', posixPath), testExportName, test, 
-                `import { TestData } from '../../../types/question';\n\nexport const ${testExportName}: TestData = {{DATA}};\n`);
+                `import { TestData } from '@zazalingo/shared';\n\nexport const ${testExportName}: TestData = {{DATA}};\n`);
             
             indexContent += `import { ${testExportName} } from './${posixPath.replace('.ts', '')}';\n`;
         }

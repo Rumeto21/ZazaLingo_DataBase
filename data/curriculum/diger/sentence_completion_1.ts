@@ -1,4 +1,4 @@
-import { TestData } from '../../../types/question';
+import { TestData } from '@zazalingo/shared';
 
 export const sentence_completion_1: TestData = {
     "id": "sentence_completion_1",
