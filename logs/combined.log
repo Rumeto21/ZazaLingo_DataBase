@@ -13602,3 +13602,26 @@
 {"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 17:33:52"}
 {"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 17:33:52"}
 {"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 17:33:52"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 18:37:49"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 18:37:49"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 18:37:49"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 18:38:10"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 18:38:10"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 18:38:10"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 18:38:43"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 18:38:44"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 18:38:44"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 19:45:31"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 19:45:31"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 19:45:31"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 19:45:43"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 19:45:43"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 19:45:44"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 22:31:29"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 22:31:29"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 22:31:29"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 22:36:37"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 22:36:37"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 22:36:37"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 22:37:25"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 22:37:25"}

@@ -342,13 +342,28 @@ const server = http.createServer((req, res) => {
         
         let filePath;
 
-        // v8.0 Shield: Backward Compatibility Aliases
+        // v8.0 Shield: Smart Routing with Fallback
         if (relativePath.startsWith('assets/questions/Pictures/')) {
             const fileName = relativePath.replace('assets/questions/Pictures/', '');
-            filePath = path.join(__dirname, 'assets', 'Pictures', fileName);
+            const originalPath = path.join(__dirname, 'assets', 'questions', 'Pictures', fileName);
+            const fallbackPath = path.join(__dirname, 'assets', 'Pictures', fileName);
+            
+            // Smart Routing: Check original path existence before aliasing
+            if (fs.existsSync(originalPath) && !fs.statSync(originalPath).isDirectory()) {
+                filePath = originalPath;
+            } else {
+                filePath = fallbackPath;
+            }
         } else if (relativePath.startsWith('assets/questions/Audio/')) {
             const fileName = relativePath.replace('assets/questions/Audio/', '');
-            filePath = path.join(__dirname, 'assets', 'Audio', fileName);
+            const originalPath = path.join(__dirname, 'assets', 'questions', 'Audio', fileName);
+            const fallbackPath = path.join(__dirname, 'assets', 'Audio', fileName);
+            
+            if (fs.existsSync(originalPath) && !fs.statSync(originalPath).isDirectory()) {
+                filePath = originalPath;
+            } else {
+                filePath = fallbackPath;
+            }
         } else if (relativePath.startsWith('assets/mascot/')) {
             const mascotFileName = relativePath.replace('assets/mascot/', '');
             filePath = path.join(__dirname, '../ZazaLingo/assets/mascot', mascotFileName);
@@ -363,7 +378,22 @@ const server = http.createServer((req, res) => {
                 return;
             }
             const ext = path.extname(filePath).toLowerCase();
-            const mimeTypes = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpg', '.svg': 'image/svg+xml', '.wav': 'audio/wav', '.mp4': 'video/mp4' };
+            const mimeTypes = { 
+                '.html': 'text/html', 
+                '.js': 'text/javascript', 
+                '.css': 'text/css', 
+                '.json': 'application/json', 
+                '.png': 'image/png', 
+                '.jpg': 'image/jpg', 
+                '.jpeg': 'image/jpeg',
+                '.svg': 'image/svg+xml', 
+                '.avif': 'image/avif',
+                '.webp': 'image/webp',
+                '.wav': 'audio/wav', 
+                '.mp3': 'audio/mpeg',
+                '.ogg': 'audio/ogg',
+                '.mp4': 'video/mp4' 
+            };
             res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' });
             fs.createReadStream(filePath).pipe(res);
         });

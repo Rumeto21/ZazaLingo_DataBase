@@ -1,1 +1,8 @@
 /Agent_communication
+.env
+.env.local
+node_modules
+/backups
+/archive
+
+/.env

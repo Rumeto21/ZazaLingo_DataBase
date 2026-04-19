@@ -1,20 +1,15 @@
 # DataBase Developer Board
-## Active Task: [FIXED] - Full Domain-Aware Validation
+## Active Task: [HOTFIX] - Refine Asset Shield Logic
 - **Assigned By:** TeamLeader (Antigravity)
 - **Status:** [x] COMPLETED
 - **Priority:** CRITICAL
 
-### ✅ Full Domain Awareness Applied:
-1. **Config Domain Expansion:** `SchemaValidator` artık `theme`, `themeSchemes`, `info` ve `zazaConstants` alanlarını tam olarak tanıyor. Bu alanlar altındaki `tieNormalColor`, `mainTitle`, `welcome` gibi yasal camelCase anahtarlar artık bloklanmıyor.
-2. **True Unknown Rejection:** Sistem artık sadece şemada tanımlı olmayan ve bilinen bir domaine (locales, theme, info, tests vb.) ait olmayan rastgele anahtarları reddediyor.
-3. **Verification:** Tüm sistem konfigürasyonu ve veritabanı içeriği `/save` endpoint'inden `200 OK` alacak şekilde stabilize edildi.
-
-### 📊 System Status:
-- **Server:** ✅ RUNNING
-- **Validation:** ✅ FULLY DOMAIN-AWARE (All Core Schemas Safe)
-- **Save Integrity:** ✅ 100% SUCCESS RATE
+### ✅ Actions Taken:
+1. **Smart Routing Implementation:** Refined the asset serving logic in `database-server.js` to explicitly check for the existence of files in the original path (`assets/questions/...`) before falling back to the generic `assets/` directory. Added `!fs.statSync().isDirectory()` check to prevent directory paths from being incorrectly identified as files.
+2. **MIME Type Support:** Added support for `.avif`, `.webp`, `.mp3`, `.ogg`, and `.jpeg` to ensure correct content-type headers are served, preventing browser/client interpretation issues.
+3. **Verification:** Logic now correctly prioritizes `doktore.avif` in its original location while still allowing fallback for map assets like `grass.jpg`.
 
 ---
 ## 📜 Task History
-- [x] [DOMAIN-AWARE-VALIDATION] - COMPLETED
-- [x] [FULL-DOMAIN-AWARENESS] - COMPLETED (2026-04-19)
+- [x] [FULL-DOMAIN-AWARENESS] - COMPLETED
+- [x] [REFINE-ASSET-SHIELD] - COMPLETED
