@@ -275,22 +275,30 @@ const server = http.createServer((req, res) => {
     // ── GET /assets ────────────────────────────────────────────────────────
     if (req.method === 'GET' && req.url === '/assets') {
         try {
-            const assetsDir = path.join(__dirname, 'assets', 'questions');
-            const result = { Pictures: [], Audio: [] };
-            
-            const picDir = path.join(assetsDir, 'Pictures');
-            if (fs.existsSync(picDir)) {
-                result.Pictures = fs.readdirSync(picDir).filter(f => fs.statSync(path.join(picDir, f)).isFile());
-            }
-            
-            const audDir = path.join(assetsDir, 'Audio');
-            if (fs.existsSync(audDir)) {
-                result.Audio = fs.readdirSync(audDir).filter(f => fs.statSync(path.join(audDir, f)).isFile());
+            const scanDirs = [
+                { dir: path.join(__dirname, 'assets', 'questions', 'Pictures'), prefix: 'assets/questions/Pictures/' },
+                { dir: path.join(__dirname, 'assets', 'questions', 'Audio'), prefix: 'assets/questions/Audio/' },
+                { dir: path.join(__dirname, 'assets', 'audio', 'lessons'), prefix: 'assets/audio/lessons/' },
+                { dir: path.join(__dirname, 'assets', 'Pictures'), prefix: 'assets/Pictures/' }
+            ];
+
+            let allAssets = [];
+
+            for (const item of scanDirs) {
+                if (fs.existsSync(item.dir)) {
+                    const files = fs.readdirSync(item.dir)
+                        .filter(f => {
+                            const fullPath = path.join(item.dir, f);
+                            return fs.statSync(fullPath).isFile();
+                        })
+                        .map(f => item.prefix + f);
+                    allAssets = allAssets.concat(files);
+                }
             }
             
             res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify(result));
-            logger.info(`[GET /assets] Served ${result.Pictures.length} pictures and ${result.Audio.length} audio files.`);
+            res.end(JSON.stringify({ assets: allAssets }));
+            logger.info(`[GET /assets] Served ${allAssets.length} total assets (flat list).`);
         } catch (err) {
             logger.error(`[GET /assets] Error: ${err.message}`);
             res.writeHead(500, { 'Content-Type': 'application/json' });
