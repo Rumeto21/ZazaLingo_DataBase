@@ -12936,3 +12936,669 @@
 {"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-18 19:53:06"}
 {"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 20:02:09"}
 {"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-18 20:02:09"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-18 23:29:19"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-18 23:29:19"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-18 23:29:19"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"stations\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-18 23:36:30"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save","service":"data-base-server","timestamp":"2026-04-18 23:36:30"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 00:02:10"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 00:02:10"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 00:02:10"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 00:02:46"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 00:02:46"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4050","service":"data-base-server","timestamp":"2026-04-19 00:02:46"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"stations\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 00:21:39"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save","service":"data-base-server","timestamp":"2026-04-19 00:21:39"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 15:24:17"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 15:24:17"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 15:24:17"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 15:27:44"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 15:27:44"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 15:28:18"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 15:28:18"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 15:28:18"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 15:29:25"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 15:29:25"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 15:29:25"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"stations\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 15:30:05"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save","service":"data-base-server","timestamp":"2026-04-19 15:30:05"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 15:35:07"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 15:35:07"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 15:35:07"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 15:35:10"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"stations[0].signX\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 15:35:19"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: stations[0].signX","service":"data-base-server","timestamp":"2026-04-19 15:35:19"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 15:52:21"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"stations[0].signX\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 15:52:31"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: stations[0].signX","service":"data-base-server","timestamp":"2026-04-19 15:52:31"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 15:52:41"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 15:52:41"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 15:52:41"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 15:52:45"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"stations[0].tagX\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 15:52:53"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: stations[0].tagX","service":"data-base-server","timestamp":"2026-04-19 15:52:53"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 15:53:30"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"stations[0].tagX\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 15:53:35"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: stations[0].tagX","service":"data-base-server","timestamp":"2026-04-19 15:53:35"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 15:53:46"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 15:53:46"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 15:53:46"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 15:53:49"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.test_1774209082939\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 15:53:51"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.test_1774209082939","service":"data-base-server","timestamp":"2026-04-19 15:53:51"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 15:55:34"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 15:55:34"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 15:55:43"}
+{"level":"warn","message":"[Security] Blocked unauthorized POST attempt to /save from 127.0.0.1","service":"data-base-server","timestamp":"2026-04-19 15:55:46"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 15:55:46"}
+{"level":"info","message":"[Auth] User logged in: admin","service":"data-base-server","timestamp":"2026-04-19 15:55:53"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.test_1774209082939\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 15:56:02"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.test_1774209082939","service":"data-base-server","timestamp":"2026-04-19 15:56:02"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 15:56:32"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 15:56:32"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 15:56:36"}
+{"level":"warn","message":"[Security] Blocked unauthorized POST attempt to /save from 127.0.0.1","service":"data-base-server","timestamp":"2026-04-19 15:56:39"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 15:56:39"}
+{"level":"info","message":"[Auth] User logged in: admin","service":"data-base-server","timestamp":"2026-04-19 15:56:45"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.test_1774209082939\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 15:56:49"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.test_1774209082939","service":"data-base-server","timestamp":"2026-04-19 15:56:49"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:02:19"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.test_1774209082939\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:02:21"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.test_1774209082939","service":"data-base-server","timestamp":"2026-04-19 16:02:21"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:02:33"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.test_1774209082939\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:02:40"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.test_1774209082939","service":"data-base-server","timestamp":"2026-04-19 16:02:40"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 16:02:48"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 16:02:48"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 16:02:48"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 16:03:09"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 16:03:09"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 16:03:09"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:16:59"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.test_1774209082939\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:17:01"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.test_1774209082939","service":"data-base-server","timestamp":"2026-04-19 16:17:01"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 16:17:08"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 16:17:08"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 16:17:08"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:17:11"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:17:26"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:17:27"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.test_1774209082939\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:17:32"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.test_1774209082939","service":"data-base-server","timestamp":"2026-04-19 16:17:32"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:33:13"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.test_1774209082939\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:33:17"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.test_1774209082939","service":"data-base-server","timestamp":"2026-04-19 16:33:17"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 16:33:37"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 16:33:37"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 16:33:37"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:34:32"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.matching_test_1.title.tr\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:34:41"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.matching_test_1.title.tr","service":"data-base-server","timestamp":"2026-04-19 16:34:41"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:34:55"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:35:00"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.matching_test_1.title.tr\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:35:06"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.matching_test_1.title.tr","service":"data-base-server","timestamp":"2026-04-19 16:35:06"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 16:35:15"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 16:35:15"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 16:35:18"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.matching_test_1.title.tr\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:35:24"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.matching_test_1.title.tr","service":"data-base-server","timestamp":"2026-04-19 16:35:24"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 16:51:05"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 16:51:05"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 16:51:05"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"theme.tieNormalColor\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:53:50"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 16:54:22"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4060","service":"data-base-server","timestamp":"2026-04-19 16:54:22"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"theme.tieNormalColor\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:54:25"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: theme.tieNormalColor","service":"data-base-server","timestamp":"2026-04-19 16:54:25"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"theme.tieNormalColor\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:54:26"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: theme.tieNormalColor","service":"data-base-server","timestamp":"2026-04-19 16:54:26"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"theme.tieNormalColor\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 16:54:56"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 16:57:43"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 16:57:43"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4000","service":"data-base-server","timestamp":"2026-04-19 16:57:43"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 17:24:00"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4072","service":"data-base-server","timestamp":"2026-04-19 17:24:00"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/Canamey_/test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/Kopula/test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/l02_t1/test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/l03_t1/test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_1/Canamey_/test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_1/Kopula/test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_2/l02_t1/test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_3/l03_t1/test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"Xxx_Unknown_Field\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: Xxx_Unknown_Field","service":"data-base-server","timestamp":"2026-04-19 17:24:03"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 17:25:16"}
+{"level":"info","message":"[Dev Tools] Registry-based Server running at http://localhost:4073","service":"data-base-server","timestamp":"2026-04-19 17:25:16"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/Canamey_/test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/Kopula/test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/l02_t1/test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/l03_t1/test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_1/Canamey_/test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_1/Kopula/test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_2/l02_t1/test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_3/l03_t1/test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\scratch\\final-validator-seal\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:25:19"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"Xxx_Unknown_Field\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-19 17:25:22"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: Xxx_Unknown_Field","service":"data-base-server","timestamp":"2026-04-19 17:25:22"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 17:26:32"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 17:26:32"}
+{"level":"info","message":"[GET /assets] Served 33 pictures and 0 audio files.","service":"data-base-server","timestamp":"2026-04-19 17:26:45"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:52"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:26:52"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:52"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:52"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:52"}
+{"level":"info","message":"[SyncManager] Created Primary: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:52"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:52"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/Canamey_/test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/Kopula/test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/l02_t1/test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: diger/l03_t1/test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_1/Canamey_/test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_1/Kopula/test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_2/l02_t1/test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[CurriculumManager] Archived orphaned test: Unite_3/l03_t1/test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:26:53"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:27:06"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:29:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:29:39"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:30:14"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:34"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:30:35"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:31:15"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:32:11"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:32:33"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:33:21"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\stations.json","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774209082939.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1774293529313.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946534141.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\test_1773946563942.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\matching_test_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\sentence_completion_1.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\curriculum\\diger\\word_order_example.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\proverbs\\proverbs.json","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\decorations.json","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\map\\config.json","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\colors.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\map.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\spacing.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\tokens\\typography.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\questions.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\settings.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\header.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\proverbs.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\components\\buttons.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeConfig.json","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[ThemeHandler] Modular files and themeConfig.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\info.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\settings\\zazaConstants.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Tr.json","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\En.json","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Zz.json","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.ts","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-19 17:33:37"}
+{"level":"warn","message":"[Security] DATABASE_API_KEY not found in environment. Using default DEV key: zaza_dev_secret_2026","service":"data-base-server","timestamp":"2026-04-19 17:33:52"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-19 17:33:52"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-19 17:33:52"}

@@ -208,7 +208,11 @@ export interface QuestionTheme {
     questionBtnHeight?: ThemeCoordinate;
     questionBtnBorderRadius?: ThemeCoordinate;
     questionTitleWidth?: ThemeCoordinate;
+    questionTitleHeight?: ThemeCoordinate;
+    questionTitleMarginTop?: ThemeCoordinate;
+    questionTitleMarginLeft?: ThemeCoordinate;
     questionPromptWidth?: ThemeCoordinate;
+    questionPromptHeight?: ThemeCoordinate;
     questionPageMarginLeft?: ThemeCoordinate;
 
     // Visual Texts & Colors

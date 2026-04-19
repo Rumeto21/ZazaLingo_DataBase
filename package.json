@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Rumeto21/ZazaLingo_DataBase#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "morgan": "^1.10.1",
     "winston": "^3.19.0"
   }

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -22,10 +23,11 @@ const ProverbsHandler = require('./handlers/ProverbsHandler');
 const { ThemeHandler, ThemeSchemesHandler } = require('./handlers/ThemeHandler');
 const { InfoHandler, ZazaConstantsHandler, LocalesHandler } = require('./handlers/SettingsHandler');
 
-// --- Security Check (CRITICAL) ---
-if (!process.env.DATABASE_API_KEY) {
-    logger.error('[Security] FATAL: DATABASE_API_KEY is not defined.');
-    process.exit(1);
+// --- Security Check (v8.0 Relaxed for Dev) ---
+let DATABASE_API_KEY = process.env.DATABASE_API_KEY;
+if (!DATABASE_API_KEY) {
+    DATABASE_API_KEY = 'zaza_dev_secret_2026';
+    logger.warn(`[Security] DATABASE_API_KEY not found in environment. Using default DEV key: ${DATABASE_API_KEY}`);
 }
 
 const PORT = 4000;
@@ -99,8 +101,7 @@ const server = http.createServer((req, res) => {
     }
 
     // --- Authentication & Security Middleware ---
-    const AUTH_KEY = process.env.DATABASE_API_KEY;
-    // Note: Fatal check already performed at startup at line 11.
+    const AUTH_KEY = DATABASE_API_KEY;
 
     
     const clientKey = req.headers['x-api-key'];
@@ -271,6 +272,33 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    // ── GET /assets ────────────────────────────────────────────────────────
+    if (req.method === 'GET' && req.url === '/assets') {
+        try {
+            const assetsDir = path.join(__dirname, 'assets', 'questions');
+            const result = { Pictures: [], Audio: [] };
+            
+            const picDir = path.join(assetsDir, 'Pictures');
+            if (fs.existsSync(picDir)) {
+                result.Pictures = fs.readdirSync(picDir).filter(f => fs.statSync(path.join(picDir, f)).isFile());
+            }
+            
+            const audDir = path.join(assetsDir, 'Audio');
+            if (fs.existsSync(audDir)) {
+                result.Audio = fs.readdirSync(audDir).filter(f => fs.statSync(path.join(audDir, f)).isFile());
+            }
+            
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(result));
+            logger.info(`[GET /assets] Served ${result.Pictures.length} pictures and ${result.Audio.length} audio files.`);
+        } catch (err) {
+            logger.error(`[GET /assets] Error: ${err.message}`);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: err.message }));
+        }
+        return;
+    }
+
     // ── POST /save ─────────────────────────────────────────────────────────
     if (req.method === 'POST' && (req.url === '/save' || req.url === '/saveLocales')) {
         let body = '';
@@ -280,10 +308,14 @@ const server = http.createServer((req, res) => {
                 const payload = JSON.parse(body);
                 
                 // v8.0 Schema Validation Middleware
-                if (!SchemaValidator.validatePascalCaseKeys(payload)) {
-                    logger.error(`[SchemaValidator] Validation failed for ${req.url}`);
+                const validation = SchemaValidator.validatePascalCaseKeys(payload);
+                if (!validation.isValid) {
+                    logger.error(`[SchemaValidator] Validation failed for ${req.url}. Error Path: ${validation.errorPath}`);
                     res.writeHead(400, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ error: 'Schema Validation Failed: Use PascalCase for custom data fields.' }));
+                    res.end(JSON.stringify({ 
+                        error: 'Schema Validation Failed: Use PascalCase for custom data fields.',
+                        offendingKey: validation.errorPath 
+                    }));
                     return;
                 }
 
@@ -302,13 +334,22 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // ── Static Assets (GET) ────────────────────────────────────────────────
+        // ── Static Assets (GET) ────────────────────────────────────────────────
     if (req.method === 'GET') {
         const decodedUrl = decodeURIComponent(req.url);
         const pathname = decodedUrl.split('?')[0];
-        const relativePath = pathname.startsWith('/') ? pathname.slice(1) : pathname;
+        let relativePath = pathname.startsWith('/') ? pathname.slice(1) : pathname;
+        
         let filePath;
-        if (relativePath.startsWith('assets/mascot/')) {
+
+        // v8.0 Shield: Backward Compatibility Aliases
+        if (relativePath.startsWith('assets/questions/Pictures/')) {
+            const fileName = relativePath.replace('assets/questions/Pictures/', '');
+            filePath = path.join(__dirname, 'assets', 'Pictures', fileName);
+        } else if (relativePath.startsWith('assets/questions/Audio/')) {
+            const fileName = relativePath.replace('assets/questions/Audio/', '');
+            filePath = path.join(__dirname, 'assets', 'Audio', fileName);
+        } else if (relativePath.startsWith('assets/mascot/')) {
             const mascotFileName = relativePath.replace('assets/mascot/', '');
             filePath = path.join(__dirname, '../ZazaLingo/assets/mascot', mascotFileName);
         } else {

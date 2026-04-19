@@ -73,11 +73,11 @@
         "unit": "px"
     },
     "mascotQuestionTop": {
-        "val": 180,
+        "val": -225,
         "unit": "px"
     },
     "mascotQuestionSize": {
-        "val": 0.4,
+        "val": 0.15,
         "unit": "ratio"
     },
     "mascotQuestionMarginLeft": {
@@ -85,12 +85,12 @@
         "unit": "px"
     },
     "questionPromptMarginTop": {
-        "val": 80,
+        "val": -300,
         "unit": "px"
     },
     "questionPromptMarginBottom": 0,
     "questionOptionsMarginTop": {
-        "val": 400,
+        "val": 60,
         "unit": "px"
     },
     "questionOptionsMarginBottom": 0,
@@ -100,7 +100,7 @@
     },
     "questionOptionsPaddingHorizontal": {
         "val": 0,
-        "unit": "ratio"
+        "unit": "px"
     },
     "buttonTextSize": {
         "val": 35,
@@ -127,7 +127,7 @@
         "unit": "px"
     },
     "questionOptionFontSize": {
-        "val": 30,
+        "val": 20,
         "unit": "px"
     },
     "coktanSecmeliBgColor": "#FFFFFF",
@@ -242,11 +242,11 @@
         "unit": "ratio"
     },
     "questionTitleHeight": {
-        "val": 45,
+        "val": 80,
         "unit": "px"
     },
     "questionTitleMarginTop": {
-        "val": 20,
+        "val": -335,
         "unit": "px"
     },
     "questionPromptWidth": {
@@ -270,7 +270,7 @@
         "unit": "px"
     },
     "topBarDropdownWidth": {
-        "val": 150,
+        "val": 100,
         "unit": "px"
     },
     "topBarFlagWidth": {
@@ -313,28 +313,46 @@
     "mapTieSpacing": 1.066667,
     "mapPinRadius": 16,
     "mapTopicPinRadius": 10,
-    "mascotWordOrderSize": 1.112385,
-    "mascotWordOrderTop": 1.377281,
+    "mascotWordOrderSize": {
+        "val": 0.15,
+        "unit": "ratio"
+    },
+    "mascotWordOrderTop": {
+        "val": -225,
+        "unit": "px"
+    },
     "mascotMatchingSize": {
-        "val": 0.4,
+        "val": 0.15,
         "unit": "ratio"
     },
     "mascotMatchingTop": {
-        "val": 180,
+        "val": -225,
         "unit": "px"
     },
     "mascotImageChoiceSize": {
-        "val": 0.4,
+        "val": 0.15,
         "unit": "ratio"
     },
     "mascotImageChoiceTop": {
-        "val": 180,
+        "val": -225,
         "unit": "px"
     },
-    "mascotChoiceImageSize": 1.112385,
-    "mascotChoiceImageTop": 1.377281,
-    "mascotDialogueSize": 1.112385,
-    "mascotDialogueTop": 1.377281,
+    "mascotChoiceImageSize": {
+        "val": 0.15,
+        "unit": "ratio"
+    },
+    "mascotChoiceImageTop": {
+        "val": -225,
+        "unit": "px"
+    },
+    "mascotDialogueSize": {
+        "val": 0.15,
+        "unit": "ratio"
+    },
+    "mascotDialogueTop": {
+        "val": -225,
+        "unit": "px"
+    },
     "headerTitleMarginLeft": {
         "val": 0,
         "unit": "px"
@@ -357,7 +375,7 @@
     },
     "questionTitleMarginLeft": {
         "val": 0,
-        "unit": "ratio"
+        "unit": "px"
     },
     "questionPromptPaddingHorizontal": {
         "val": 0,
@@ -366,5 +384,53 @@
     "questionPromptMarginLeft": {
         "val": 0,
         "unit": "ratio"
+    },
+    "questionBtnWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "questionBtnHeight": {
+        "val": 50,
+        "unit": "px"
+    },
+    "questionBtnMarginTop": {
+        "val": 330,
+        "unit": "px"
+    },
+    "questionBtnMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "questionBtnTextFontSize": {
+        "val": 40,
+        "unit": "px"
+    },
+    "mascotWordOrderMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "mascotImageChoiceMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "mascotChoiceImageMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "mascotDinlemeSize": {
+        "val": 0.15,
+        "unit": "ratio"
+    },
+    "mascotDinlemeTop": {
+        "val": -225,
+        "unit": "px"
+    },
+    "mascotSentenceCompletionSize": {
+        "val": 0.15,
+        "unit": "ratio"
+    },
+    "mascotSentenceCompletionTop": {
+        "val": -225,
+        "unit": "px"
     }
 }
