@@ -129,7 +129,7 @@ export const test_test_1774209082939: TestData = {
         },
         {
             "id": "q_1774210916825",
-            "type": "ImageChoice",
+            "type": "CoktanSecmeli",
             "title": {
                 "Tr": "Cümlenin doğru çevirisini seçin",
                 "En": "Choose correct translation of the sentence",
@@ -186,7 +186,7 @@ export const test_test_1774209082939: TestData = {
         },
         {
             "id": "q_1774211032862",
-            "type": "ImageChoice",
+            "type": "CoktanSecmeli",
             "title": {
                 "Tr": "Cümlenin doğru çevirisini seçin",
                 "En": "Choose correct translation of the sentence",
@@ -355,7 +355,7 @@ export const test_test_1774209082939: TestData = {
         },
         {
             "id": "q_1774211883008",
-            "type": "ImageChoice",
+            "type": "CoktanSecmeli",
             "title": {
                 "Tr": "Cümlenin doğru çevirisini seçin",
                 "En": "Choose correct translation of the sentence",

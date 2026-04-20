@@ -54,7 +54,7 @@ class CurriculumManager {
     /**
      * Centralized saving logic for tests.
      */
-    saveTests(curriculumDir, stations, tests, archiveDir) {
+    async saveTests(curriculumDir, stations, tests, archiveDir) {
         this.fs.mkdir(curriculumDir);
         const testIds = Object.keys(tests || {});
         const currentTestFiles = new Set(['index.ts']);
@@ -76,7 +76,7 @@ class CurriculumManager {
             currentTestFiles.add(posixPath.toLowerCase());
 
             // Use adapter injection for individual test files
-            this.fs.injectData(path.join('curriculum', posixPath), testExportName, test, 
+            await this.fs.injectData(path.join('curriculum', posixPath), testExportName, test, 
                 `import { TestData } from '@zazalingo/shared';\n\nexport const ${testExportName}: TestData = {{DATA}};\n`);
             
             indexContent += `import { ${testExportName} } from './${posixPath.replace('.ts', '')}';\n`;
@@ -89,32 +89,32 @@ class CurriculumManager {
         });
         indexContent += `};\n`;
 
-        this.fs.writeFile(path.join(curriculumDir, 'index.ts'), indexContent);
-        this.fs.syncFile(path.join('curriculum', 'index.ts'));
+        await this.fs.writeFile(path.join(curriculumDir, 'index.ts'), indexContent);
+        await this.fs.syncFile(path.join('curriculum', 'index.ts'));
 
-        this.archiveOldTests(curriculumDir, currentTestFiles, archiveDir);
+        await this.archiveOldTests(curriculumDir, currentTestFiles, archiveDir);
     }
 
     /**
      * Archives files that are no longer in the curriculum metadata.
      */
-    archiveOldTests(curriculumDir, currentFiles, archiveDir) {
-        const scan = (dir, rel = '') => {
+    async archiveOldTests(curriculumDir, currentFiles, archiveDir) {
+        const scan = async (dir, rel = '') => {
             const items = this.fs.readdir(dir);
-            items.forEach(item => {
+            for (const item of items) {
                 const fullPath = path.join(dir, item);
                 const relPath = path.join(rel, item).replace(/\\/g, '/');
                 if (this.fs.stat(fullPath).isDirectory()) {
-                    scan(fullPath, relPath);
+                    await scan(fullPath, relPath);
                 } else if (!currentFiles.has(relPath.toLowerCase())) {
                     const archivePath = path.join(archiveDir, 'curriculum', relPath);
                     this.fs.mkdir(path.dirname(archivePath));
-                    this.fs.rename(fullPath, archivePath);
+                    await this.fs.rename(fullPath, archivePath);
                     logger.info(`[CurriculumManager] Archived orphaned test: ${relPath}`);
                 }
-            });
+            }
         };
-        scan(curriculumDir);
+        await scan(curriculumDir);
     }
 }
 

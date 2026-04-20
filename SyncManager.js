@@ -35,9 +35,30 @@ class SyncManager {
     }
 
     /**
+     * Internal helper for retryable file operations (Async)
+     */
+    async _retry(operation, args, maxRetries = 5, delay = 150) {
+        let lastError;
+        for (let i = 0; i < maxRetries; i++) {
+            try {
+                return operation(...args);
+            } catch (err) {
+                lastError = err;
+                if (err.code === 'EPERM' || err.code === 'EBUSY') {
+                    logger.warn(`[SyncManager] Retrying ${operation.name} due to ${err.code} (${i + 1}/${maxRetries}): ${args[0]}`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    continue;
+                }
+                throw err;
+            }
+        }
+        throw lastError;
+    }
+
+    /**
      * Internal helper to clone a file from primary to all mirrors
      */
-    _cloneToMirrors(relativePath) {
+    async _cloneToMirrors(relativePath) {
         if (this.targets.length < 2) return;
         
         const primaryTarget = this.targets[0];
@@ -55,7 +76,7 @@ class SyncManager {
                 const dir = path.dirname(mirrorFile);
                 if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
                 
-                fs.copyFileSync(primaryFile, mirrorFile);
+                await this._retry(fs.copyFileSync, [primaryFile, mirrorFile]);
                 logger.info(`[SyncManager] Cloned to mirror: ${mirrorFile}`);
             } catch (err) {
                 logger.error(`[SyncManager] Failed to clone to ${mirrorFile}: ${err.message}`);
@@ -67,7 +88,7 @@ class SyncManager {
      * Safely writes data to a TS file across all registered targets.
      * Performs injection ONLY on Primary, then clones results to mirrors.
      */
-    injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFound = null) {
+    async injectDataIntoTSFile(relativePath, variableName, data, templateIfNotFound = null) {
         if (this.targets.length === 0) {
             throw new Error('[SyncManager] No targets registered');
         }
@@ -89,13 +110,13 @@ class SyncManager {
                 if (Date.now() - fs.statSync(tempPath).mtimeMs < 30000) {
                     throw new Error(`[SyncManager] Locked: TS .tmp file recently modified for ${filePath}`);
                 }
-                fs.unlinkSync(tempPath);
+                await this._retry(fs.unlinkSync, [tempPath]);
             }
 
             if (!fs.existsSync(filePath)) {
                 if (templateIfNotFound) {
                     const content = templateIfNotFound.replace('{{DATA}}', jsonStr);
-                    fs.writeFileSync(filePath, content, 'utf-8');
+                    await this._retry(fs.writeFileSync, [filePath, content, 'utf-8']);
                     logger.info(`[SyncManager] Created Primary: ${filePath}`);
                 } else {
                     throw new Error(`[SyncManager] Cannot create missing file without template: ${filePath}`);
@@ -103,7 +124,7 @@ class SyncManager {
             } else {
                 if (primaryTarget.backup && this.backupDir) {
                     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-                    fs.copyFileSync(filePath, path.join(this.backupDir, `${path.basename(filePath)}.${timestamp}.bak`));
+                    await this._retry(fs.copyFileSync, [filePath, path.join(this.backupDir, `${path.basename(filePath)}.${timestamp}.bak`)]);
                 }
 
                 let src = fs.readFileSync(filePath, 'utf-8');
@@ -140,13 +161,18 @@ class SyncManager {
                     throw new Error(`[SyncManager] Var ${variableName} not found and no template for ${filePath}`);
                 }
 
-                fs.writeFileSync(tempPath, updatedContent, 'utf-8');
-                fs.renameSync(tempPath, filePath);
+                await this._retry(fs.writeFileSync, [tempPath, updatedContent, 'utf-8']);
+                await this._retry(fs.renameSync, [tempPath, filePath]);
                 logger.info(`[SyncManager] Primary updated: ${filePath}`);
             }
 
+            // Lock Awareness: Small delay for Windows to release file handles before mirroring
+            if (process.platform === 'win32') {
+                await new Promise(r => setTimeout(r, 50));
+            }
+
             // Sync resulting file to all mirrors
-            this._cloneToMirrors(relativePath);
+            await this._cloneToMirrors(relativePath);
 
         } catch (err) {
             logger.error(`[SyncManager] Error in injectDataIntoTSFile for ${filePath}: ${err.message}`);
@@ -158,7 +184,7 @@ class SyncManager {
      * Safely writes JSON data across all registered targets.
      * Updates primary then clones to mirrors.
      */
-    injectJSONAtomic(relativePath, data) {
+    async injectJSONAtomic(relativePath, data) {
         if (this.targets.length === 0) {
             throw new Error('[SyncManager] No targets registered for JSON write');
         }
@@ -180,19 +206,24 @@ class SyncManager {
                 if (Date.now() - fs.statSync(tempPath).mtimeMs < 30000) {
                     throw new Error(`[SyncManager] Locked: JSON .tmp file recently modified for ${filePath}`);
                 }
-                fs.unlinkSync(tempPath);
+                await this._retry(fs.unlinkSync, [tempPath]);
             }
 
             if (primaryTarget.backup && this.backupDir && fs.existsSync(filePath)) {
                 const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-                fs.copyFileSync(filePath, path.join(this.backupDir, `${path.basename(filePath)}.${timestamp}.bak`));
+                await this._retry(fs.copyFileSync, [filePath, path.join(this.backupDir, `${path.basename(filePath)}.${timestamp}.bak`)]);
             }
 
-            fs.writeFileSync(tempPath, jsonStr, 'utf-8');
-            fs.renameSync(tempPath, filePath);
+            await this._retry(fs.writeFileSync, [tempPath, jsonStr, 'utf-8']);
+            await this._retry(fs.renameSync, [tempPath, filePath]);
             logger.info(`[SyncManager] Primary JSON updated: ${filePath}`);
 
-            this._cloneToMirrors(relativePath);
+            // Lock Awareness: Small delay for Windows to release file handles before mirroring
+            if (process.platform === 'win32') {
+                await new Promise(r => setTimeout(r, 50));
+            }
+
+            await this._cloneToMirrors(relativePath);
 
         } catch (err) {
             logger.error(`[SyncManager] JSON error for ${filePath}: ${err.message}`);
@@ -203,8 +234,8 @@ class SyncManager {
     /**
      * Forced sync of any file from primary to mirrors.
      */
-    syncFile(relativePath) {
-        this._cloneToMirrors(relativePath);
+    async syncFile(relativePath) {
+        await this._cloneToMirrors(relativePath);
     }
 
     /**

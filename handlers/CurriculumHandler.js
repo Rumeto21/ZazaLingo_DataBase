@@ -4,7 +4,7 @@ class CurriculumHandler {
     }
 
     async save(tests, { stations, curriculumDir, archiveDir }) {
-        this.manager.saveTests(curriculumDir, stations, tests, archiveDir);
+        await this.manager.saveTests(curriculumDir, stations, tests, archiveDir);
     }
 }
 

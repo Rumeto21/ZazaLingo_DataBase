@@ -126,18 +126,6 @@ export const courseLevels: LevelData[] = [
         "railAngle": 58
     },
     {
-        "id": "l03_t1",
-        "ZzName": "",
-        "TrName": "",
-        "x": 271,
-        "y": 1041.5,
-        "testIds": [
-            "test_1773946563942"
-        ],
-        "type": "topic",
-        "topicIndex": 1
-    },
-    {
         "id": "l04",
         "ZzName": "Pali",
         "TrName": "Palu",
@@ -188,7 +176,8 @@ export const courseLevels: LevelData[] = [
         "tagY": -11,
         "signX": -4,
         "signY": -35,
-        "railAngle": 44
+        "railAngle": 44,
+        "testIds": []
     },
     {
         "id": "l07",
@@ -205,7 +194,8 @@ export const courseLevels: LevelData[] = [
         "tagY": -34,
         "railAngle": -98,
         "signX": -12,
-        "signY": -35
+        "signY": -35,
+        "testIds": []
     },
     {
         "id": "l08",
@@ -222,7 +212,8 @@ export const courseLevels: LevelData[] = [
         "signY": -42,
         "tagX": 42,
         "tagY": -59,
-        "railAngle": 91
+        "railAngle": 91,
+        "testIds": []
     },
     {
         "id": "l09",
@@ -239,7 +230,8 @@ export const courseLevels: LevelData[] = [
         "tagX": 67,
         "tagY": -36,
         "signX": -10,
-        "signY": -34
+        "signY": -34,
+        "testIds": []
     },
     {
         "id": "l10",
@@ -256,7 +248,8 @@ export const courseLevels: LevelData[] = [
         "tagX": 65,
         "tagY": -29,
         "signX": -10,
-        "signY": -35
+        "signY": -35,
+        "testIds": []
     },
     {
         "id": "l11",
@@ -273,7 +266,8 @@ export const courseLevels: LevelData[] = [
         "tagX": -66,
         "tagY": -37,
         "signX": -6,
-        "signY": -41
+        "signY": -41,
+        "testIds": []
     },
     {
         "id": "l12",
@@ -290,7 +284,8 @@ export const courseLevels: LevelData[] = [
         "signY": -32,
         "tagX": 62,
         "tagY": -38,
-        "railAngle": 70
+        "railAngle": 70,
+        "testIds": []
     },
     {
         "id": "l13",
@@ -307,7 +302,8 @@ export const courseLevels: LevelData[] = [
         "signY": -37,
         "railX": 1300,
         "railY": 1540,
-        "railAngle": 174
+        "railAngle": 174,
+        "testIds": []
     },
     {
         "id": "l14",
@@ -324,7 +320,8 @@ export const courseLevels: LevelData[] = [
         "tagX": 62,
         "tagY": -41,
         "signX": -7,
-        "signY": -31
+        "signY": -31,
+        "testIds": []
     },
     {
         "id": "l15",
@@ -341,7 +338,8 @@ export const courseLevels: LevelData[] = [
         "tagY": -43,
         "signX": 5,
         "signY": -32,
-        "railAngle": 183
+        "railAngle": 183,
+        "testIds": []
     },
     {
         "id": "l16",
@@ -358,7 +356,8 @@ export const courseLevels: LevelData[] = [
         "tagX": -154,
         "tagY": -3,
         "signX": -9,
-        "signY": -23
+        "signY": -23,
+        "testIds": []
     },
     {
         "id": "l17",
@@ -375,6 +374,20 @@ export const courseLevels: LevelData[] = [
         "signX": -4,
         "signY": -33,
         "tagX": -112,
-        "tagY": -36
+        "tagY": -36,
+        "testIds": []
+    },
+    {
+        "id": "l03_t1_964aec42-0921-47d8-b234-41bf336661bb",
+        "parentUnitId": "l03",
+        "ZzName": "Deneme",
+        "TrName": "Deneme",
+        "type": "topic",
+        "topicIndex": 1,
+        "testIds": [
+            "test_c05ef35b-badd-4a04-b06e-80b8c0c84e74"
+        ],
+        "x": 198,
+        "y": 1070
     }
 ];

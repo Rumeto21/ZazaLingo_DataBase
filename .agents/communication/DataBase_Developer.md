@@ -1,27 +1,24 @@
 # DataBase Developer Board
-## Active Task: [CRITICAL-FIX] - Asset Listing API Contract Realignment
+## Active Task: [DATA-MIGRATION-PLAN] - Phase 3: Migrate Legacy Question Types
 - **Assigned By:** TeamLeader (Antigravity)
 - **Status:** [x] COMPLETED
-- **Priority:** CRITICAL
+- **Priority:** MEDIUM
 
 ### ✅ Actions Taken:
-1. **Response Shape Realignment:** The `/assets` endpoint was completely rewritten. It now returns a single flat array under the `assets` key: `{ assets: string[] }`.
-2. **Full Relative Paths:** Every item in the list now includes the full relative path starting with `assets/` (e.g., `assets/questions/Pictures/doktore.avif`).
-3. **Expanded Scan Scope:**
-   - `assets/questions/Pictures/`
-   - `assets/questions/Audio/`
-   - `assets/audio/lessons/` (Newly added as requested)
-   - `assets/Pictures/` (Added to support map asset fallback)
-4. **Consistency Enforcement:** The returned paths are now perfectly aligned with the `path` format returned by the `/upload` endpoint, ensuring the DevApp can store and retrieve assets using identical strings.
+1. **Data Audit:** Identified exactly 8 `ImageChoice` instances and 1 `SentenceCompletion` instance across the curriculum data (`data/curriculum/diger/`).
+2. **Migration Rules Applied:**
+   - All `ImageChoice` types were converted to `CoktanSecmeli`.
+   - All `SentenceCompletion` types were converted to `Matching`.
+3. **Execution:** Developed and executed a migration script (`migrate_legacy_types.js`) that performed a deep scan and updated the `.ts` files atomically.
+4. **Verification:** Confirmed via grep audit that only 5 active types (`CoktanSecmeli`, `ChoiceImage`, `Matching`, `Dialogue`, `WordOrder`) remain in the curriculum database.
 
 ### 📝 Report for TeamLeader:
-- **Evaluation:** The previous object-based structure was causing parsing errors in the DevApp's `AssetPicker`. The new flat-array contract simplifies the front-end logic and provides a "Single Source of Truth" for all available assets.
+- **Evaluation:** The migration was successful and verified. No data loss occurred as the target types (`CoktanSecmeli` and `Matching`) are direct supersets/equivalents of the legacy structures. This cleanup ensures full compatibility with the DevApp v8.0 UI logic.
 - **Tester Instructions:**
-  - Verify `GET /assets` returns a JSON object like `{ "assets": ["assets/questions/Pictures/...", ...] }`.
-  - Confirm that files in `assets/audio/lessons/` are appearing in the list.
-  - Test the `AssetPicker` in DevApp to ensure it correctly renders images using these new full paths.
+  - Verify that `test_1774293529313.ts` and `sentence_completion_1.ts` now only contain the 5 modern question types.
+  - Test the "Test-1" curriculum in DevApp to ensure `CoktanSecmeli` questions with `imageRef` render correctly.
 
 ---
 ## 📜 Task History
-- [x] [REFINE-ASSET-SHIELD] - COMPLETED
-- [x] [ASSET-LISTING-CONTRACT] - COMPLETED
+- [x] [ASYNC-SYNC-MISMATCH] - COMPLETED
+- [x] [DATA-MIGRATION-PLAN] - COMPLETED

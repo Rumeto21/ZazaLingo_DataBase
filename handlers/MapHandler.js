@@ -14,25 +14,25 @@ class MapHandler {
  */
 class StationsHandler {
     async save(stations, { adapter }) {
-        adapter.injectData(path.join('map', 'stations.ts'), 'courseLevels', stations, 
+        await adapter.injectData(path.join('map', 'stations.ts'), 'courseLevels', stations, 
             `export const courseLevels = {{DATA}};`);
-        adapter.injectJSON(path.join('map', 'stations.json'), stations);
+        await adapter.injectJSON(path.join('map', 'stations.json'), stations);
     }
 }
 
 class DecorationsHandler {
     async save(decorations, { adapter }) {
-        adapter.injectData(path.join('map', 'decorations.ts'), 'decorations', decorations, 
+        await adapter.injectData(path.join('map', 'decorations.ts'), 'decorations', decorations, 
             `export const decorations = {{DATA}};`);
-        adapter.injectJSON(path.join('map', 'decorations.json'), decorations);
+        await adapter.injectJSON(path.join('map', 'decorations.json'), decorations);
     }
 }
 
 class MapConfigHandler {
     async save(mapConfig, { adapter }) {
-        adapter.injectData(path.join('map', 'config.ts'), 'mapConfig', mapConfig, 
+        await adapter.injectData(path.join('map', 'config.ts'), 'mapConfig', mapConfig, 
             `export const mapConfig = {{DATA}};`);
-        adapter.injectJSON(path.join('map', 'config.json'), mapConfig);
+        await adapter.injectJSON(path.join('map', 'config.json'), mapConfig);
     }
 }
 

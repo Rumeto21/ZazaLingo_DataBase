@@ -29,8 +29,12 @@ class FileSystemAdapter {
         return fs.readFileSync(filePath, encoding);
     }
 
-    writeFile(filePath, content, encoding = 'utf-8') {
-        fs.writeFileSync(filePath, content, encoding);
+    async writeFile(filePath, content, encoding = 'utf-8') {
+        if (this.syncer && this.syncer._retry) {
+            await this.syncer._retry(fs.writeFileSync, [filePath, content, encoding]);
+        } else {
+            fs.writeFileSync(filePath, content, encoding);
+        }
     }
 
     readdir(dirPath) {
@@ -41,20 +45,28 @@ class FileSystemAdapter {
         return fs.statSync(filePath);
     }
 
-    rename(oldPath, newPath) {
-        fs.renameSync(oldPath, newPath);
+    async rename(oldPath, newPath) {
+        if (this.syncer && this.syncer._retry) {
+            await this.syncer._retry(fs.renameSync, [oldPath, newPath]);
+        } else {
+            fs.renameSync(oldPath, newPath);
+        }
     }
 
-    rmdir(dirPath) {
-        fs.rmdirSync(dirPath);
+    async rmdir(dirPath) {
+        if (this.syncer && this.syncer._retry) {
+            await this.syncer._retry(fs.rmSync, [dirPath, { recursive: true, force: true }]);
+        } else {
+            fs.rmSync(dirPath, { recursive: true, force: true });
+        }
     }
 
     /**
      * Specialized method for TS data injection via injected syncer.
      */
-    injectData(filePath, exportName, data, template) {
+    async injectData(filePath, exportName, data, template) {
         if (this.syncer) {
-            this.syncer.injectDataIntoTSFile(filePath, exportName, data, template);
+            await this.syncer.injectDataIntoTSFile(filePath, exportName, data, template);
         } else {
             logger.warn(`[FileSystemAdapter] No syncer provided. injection failed for ${filePath}`);
         }
@@ -63,9 +75,9 @@ class FileSystemAdapter {
     /**
      * Specialized method for atomic JSON writing via injected syncer.
      */
-    injectJSON(filePath, data) {
+    async injectJSON(filePath, data) {
         if (this.syncer) {
-            this.syncer.injectJSONAtomic(filePath, data);
+            await this.syncer.injectJSONAtomic(filePath, data);
         } else {
             logger.warn(`[FileSystemAdapter] No syncer provided. JSON injection failed for ${filePath}`);
         }
@@ -74,9 +86,9 @@ class FileSystemAdapter {
     /**
      * Specialized method for triggering a file sync via injected syncer.
      */
-    syncFile(relativeInternalPath) {
+    async syncFile(relativeInternalPath) {
         if (this.syncer) {
-            this.syncer.syncFile(relativeInternalPath);
+            await this.syncer.syncFile(relativeInternalPath);
         }
     }
 }

@@ -150,7 +150,7 @@ export const test_test_1774293529313: TestData = {
         },
         {
             "id": "q_1774294068995",
-            "type": "ImageChoice",
+            "type": "CoktanSecmeli",
             "title": {
                 "Tr": "Doğru kopulayı seçin",
                 "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
@@ -206,7 +206,7 @@ export const test_test_1774293529313: TestData = {
         },
         {
             "id": "q_1774294384220",
-            "type": "ImageChoice",
+            "type": "CoktanSecmeli",
             "title": {
                 "Tr": "Doğru kopulayı seçin",
                 "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
@@ -262,7 +262,7 @@ export const test_test_1774293529313: TestData = {
         },
         {
             "id": "q_1774294509005",
-            "type": "ImageChoice",
+            "type": "CoktanSecmeli",
             "title": {
                 "Tr": "Doğru kopulayı seçin",
                 "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
@@ -318,7 +318,7 @@ export const test_test_1774293529313: TestData = {
         },
         {
             "id": "q_1774294606335",
-            "type": "ImageChoice",
+            "type": "CoktanSecmeli",
             "title": {
                 "Tr": "Doğru kopulayı seçin",
                 "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
@@ -374,7 +374,7 @@ export const test_test_1774293529313: TestData = {
         },
         {
             "id": "q_1774294699031",
-            "type": "ImageChoice",
+            "type": "CoktanSecmeli",
             "title": {
                 "Tr": "Doğru kopulayı seçin",
                 "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",

@@ -114,10 +114,10 @@ class ThemeHandler {
             const partData = {};
             keys.forEach(k => { if (k in theme) partData[k] = theme[k]; });
             const varName = path.basename(relativePath, '.ts');
-            adapter.injectData(path.join('theme', relativePath), varName, partData, 
+            await adapter.injectData(path.join('theme', relativePath), varName, partData, 
                 `export const ${varName} = {{DATA}};`);
         }
-        adapter.injectJSON(path.join('theme', 'themeConfig.json'), theme);
+        await adapter.injectJSON(path.join('theme', 'themeConfig.json'), theme);
         logger.info('[ThemeHandler] Modular files and themeConfig.json updated.');
     }
 }
@@ -125,7 +125,7 @@ class ThemeHandler {
 class ThemeSchemesHandler {
     async save(themeSchemes, { adapter }) {
         if (!themeSchemes) return;
-        adapter.injectJSON(path.join('theme', 'themeSchemes.json'), themeSchemes);
+        await adapter.injectJSON(path.join('theme', 'themeSchemes.json'), themeSchemes);
         logger.info('[ThemeHandler] themeSchemes.json updated.');
     }
 }

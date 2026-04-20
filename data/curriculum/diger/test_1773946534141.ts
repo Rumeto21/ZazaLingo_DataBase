@@ -34,6 +34,37 @@ export const test_test_1773946534141: TestData = {
                 }
             ],
             "options": []
+        },
+        {
+            "id": "q_1",
+            "type": "CoktanSecmeli",
+            "title": {
+                "Tr": "Yeni Soru",
+                "Zz": "Yeni Soru",
+                "Kr": "Yeni Soru",
+                "En": "Yeni Soru"
+            },
+            "promptText": {
+                "Tr": "Lütfen soruyu cevaplayın.",
+                "Zz": "Lütfen soruyu cevaplayın.",
+                "Kr": "Lütfen soruyu cevaplayın.",
+                "En": "Lütfen soruyu cevaplayın."
+            },
+            "options": [
+                {
+                    "id": "opt_57971b92-4e9c-4e93-8cb5-5b6b0dd5fb7b",
+                    "text": {
+                        "Tr": "Yeni Seçenek"
+                    }
+                },
+                {
+                    "id": "opt_16f87e09-24a5-46b2-add9-466eeabb271f",
+                    "text": {
+                        "Tr": "Yeni Seçenek3"
+                    }
+                }
+            ],
+            "correctOptionId": "opt_57971b92-4e9c-4e93-8cb5-5b6b0dd5fb7b"
         }
     ]
 };

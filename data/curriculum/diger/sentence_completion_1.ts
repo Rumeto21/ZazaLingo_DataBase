@@ -9,7 +9,7 @@ export const test_sentence_completion_1: TestData = {
     "questions": [
         {
             "id": "sc1",
-            "type": "SentenceCompletion",
+            "type": "Matching",
             "title": {
                 "tr": "Cümleleri Tamamlayın",
                 "en": "Complete the Sentences"
