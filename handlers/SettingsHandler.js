@@ -3,6 +3,30 @@ const path = require('path');
 class InfoHandler {
     async save(info, { adapter }) {
         if (!info) return;
+
+        // Normalization for Backward Compatibility
+        const translatable = ['mainTitle', 'teamTitle', 'dedicationTitle', 'musicTitle', 'missionTitle', 'mission'];
+        translatable.forEach(key => {
+            if (info[key] && typeof info[key] === 'string') {
+                info[key] = { Tr: info[key] };
+            }
+        });
+
+        // Nested Normalization (dedications[].to, music[].title, music[].changes)
+        if (Array.isArray(info.dedications)) {
+            info.dedications.forEach(d => {
+                if (d && typeof d.to === 'string') d.to = { Tr: d.to };
+            });
+        }
+        if (Array.isArray(info.music)) {
+            info.music.forEach(m => {
+                if (m) {
+                    if (typeof m.title === 'string') m.title = { Tr: m.title };
+                    if (typeof m.changes === 'string') m.changes = { Tr: m.changes };
+                }
+            });
+        }
+
         await adapter.injectData(path.join('settings', 'info.ts'), 'zazaLingoInfo', info, 
             `export const zazaLingoInfo = {{DATA}};`);
     }

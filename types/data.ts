@@ -1,3 +1,11 @@
+export type LocalizedString = {
+    Tr: string;
+    En?: string;
+    Zz?: string;
+    Kr?: string;
+    [key: string]: string | undefined;
+};
+
 export interface LevelData {
     id: string;
     zazaName: string;
@@ -238,4 +246,32 @@ export interface AppTheme {
     mascotDialogueTop: number;
     mascotDialogueMarginLeft: number;
     mascotDialogueSize: number;
+}
+
+export interface MusicCredit {
+    title: LocalizedString;
+    composer: string;
+    performer: string;
+    source: string;
+    link?: string;
+    license: string;
+    licenseLink: string;
+    changes: LocalizedString;
+}
+
+export interface Dedication {
+    from: string;
+    to: LocalizedString;
+}
+
+export interface ZazaLingoInfoData {
+    mainTitle: LocalizedString;
+    teamTitle: LocalizedString;
+    dedicationTitle: LocalizedString;
+    musicTitle: LocalizedString;
+    missionTitle: LocalizedString;
+    mission: LocalizedString;
+    team: string[];
+    dedications: Dedication[];
+    music: MusicCredit[];
 }

@@ -1,6 +1,14 @@
 import { Locale } from './locales';
 
 export type LanguageType = 'Tr' | 'En' | 'Zz' | 'Kr';
+export type LocalizedString = {
+    Tr: string;
+    En?: string;
+    Zz?: string;
+    Kr?: string;
+    [key: string]: string | undefined;
+};
+
 
 export type ThemeUnit = string;
 
@@ -507,28 +515,28 @@ export type ScaledAppTheme = {
 };
 
 export interface MusicCredit {
-    title: string;
+    title: LocalizedString;
     composer: string;
     performer: string;
     source: string;
     link?: string;
     license: string;
     licenseLink: string;
-    changes: string;
+    changes: LocalizedString;
 }
 
 export interface Dedication {
     from: string;
-    to: string;
+    to: LocalizedString;
 }
 
 export interface ZazaLingoInfoData {
-    mainTitle: string;
-    teamTitle: string;
-    dedicationTitle: string;
-    musicTitle: string;
-    missionTitle: string;
-    mission: string;
+    mainTitle: LocalizedString;
+    teamTitle: LocalizedString;
+    dedicationTitle: LocalizedString;
+    musicTitle: LocalizedString;
+    missionTitle: LocalizedString;
+    mission: LocalizedString;
     team: string[];
     dedications: Dedication[];
     music: MusicCredit[];
