@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const logger = require('../logger');
 
 class ThemeHandler {
@@ -71,6 +72,10 @@ class ThemeHandler {
                 'settingsMenuBorderRadius', 'settingsMusicItemBorderRadius', 'settingsThemeItemBorderRadius',
                 'settingsInfoMenuBorderRadius', 'settingsContentBoxBorderRadius', 'settingsMusicToggleBorderRadius',
                 'settingsMusicSliderBorderRadius',
+                'settingsContentBoxWidth', 'settingsContentBoxHeight', 'settingsContentBoxMarginLeft', 'settingsContentBoxMarginTop',
+                'settings_music_toggleWidth', 'settings_music_toggleHeight', 'settings_music_toggleMarginTop', 'settings_music_toggleMarginLeft',
+                'settings_music_slider_generalWidth', 'settings_music_slider_generalHeight', 'settings_music_slider_generalMarginTop', 'settings_music_slider_generalMarginLeft',
+                'settings_music_slider_testWidth', 'settings_music_slider_testHeight', 'settings_music_slider_testMarginTop', 'settings_music_slider_testMarginLeft',
                 'topBarPaddingHorizontal', 'topBarPaddingTop', 'topBarPaddingBottom', 'topBarDropdownWidth',
                 'topBarFlagWidth', 'topBarFlagHeight', 'topBarHelperMarginLeft'
             ],
@@ -108,17 +113,63 @@ class ThemeHandler {
         };
     }
 
-    async save(theme, { adapter }) {
-        if (!theme) return;
+    async save(theme, { adapter, themeDir }) {
+        if (!theme) {
+            logger.warn('[ThemeHandler] No theme data in payload, skipping save.');
+            return;
+        }
+
+        // --- SSoT Protection: Use themeDir from context or fallback to relative path ---
+        const themeConfigPath = themeDir 
+            ? path.join(themeDir, 'themeConfig.json')
+            : path.join(__dirname, '../data/theme/themeConfig.json');
+
+        let mergedTheme = { ...theme };
+        try {
+            if (fs.existsSync(themeConfigPath)) {
+                const raw = fs.readFileSync(themeConfigPath, 'utf-8');
+                const currentConfig = JSON.parse(raw);
+                
+                // Only merge if currentConfig is a valid object with keys
+                if (currentConfig && typeof currentConfig === 'object' && Object.keys(currentConfig).length > 0) {
+                    // Pre-merge check: If incoming theme is very small compared to existing, log it
+                    if (Object.keys(theme).length < Object.keys(currentConfig).length / 2) {
+                        logger.warn(`[ThemeHandler] Partial update detected (${Object.keys(theme).length} vs ${Object.keys(currentConfig).length}). Merging to protect data.`);
+                    }
+                    mergedTheme = { ...currentConfig, ...theme };
+                }
+            } else {
+                logger.warn(`[ThemeHandler] themeConfig.json not found at ${themeConfigPath}. Proceeding with payload.`);
+            }
+        } catch (err) {
+            logger.error(`[ThemeHandler] Merge failed at ${themeConfigPath}: ${err.message}`);
+            // If it's a parse error, we definitely don't want to overwrite with possibly bad data
+            // unless the user intended to start fresh. But for safety, we fallback to payload.
+        }
+
+        logger.info(`[ThemeHandler] Final theme contains ${Object.keys(mergedTheme).length} keys.`);
+        
         for (const [relativePath, keys] of Object.entries(this.mapping)) {
             const partData = {};
-            keys.forEach(k => { if (k in theme) partData[k] = theme[k]; });
-            const varName = path.basename(relativePath, '.ts');
-            await adapter.injectData(path.join('theme', relativePath), varName, partData, 
-                `export const ${varName} = {{DATA}};`);
+            let matchCount = 0;
+            keys.forEach(k => { 
+                if (k in mergedTheme) {
+                    partData[k] = mergedTheme[k]; 
+                    matchCount++;
+                }
+            });
+            
+            if (matchCount > 0) {
+                const varName = path.basename(relativePath, '.ts');
+                await adapter.injectData(path.join('theme', relativePath), varName, partData, 
+                    `export const ${varName} = {{DATA}};`);
+            } else {
+                logger.debug(`[ThemeHandler] No keys found for ${relativePath}, skipping.`);
+            }
         }
-        await adapter.injectJSON(path.join('theme', 'themeConfig.json'), theme);
-        logger.info('[ThemeHandler] Modular files and themeConfig.json updated.');
+
+        await adapter.injectJSON(path.join('theme', 'themeConfig.json'), mergedTheme);
+        logger.info('[ThemeHandler] Modular files and themeConfig.json updated (Fail-Safe Merged).');
     }
 }
 

@@ -1,4 +1,6 @@
-export const Tr = {
+import { Locale } from '../../types/locales';
+
+export const Tr: Locale = {
     "languageName": "Tr",
     "label": "Tr",
     "continueCourse": "Devam Et",
@@ -97,5 +99,22 @@ export const Tr = {
     "testVolumeLabel": "Test Sırasındaki Müzik Seviyesi",
     "contributorsSection": "Katkıda Bulunanlar",
     "back": "Geri",
-    "test_key_tc002": "başarı"
+    "settingsHeaderTitle": "Ayarlar",
+    "settingsMusicSectionTitle": "Müzik",
+    "settingsMusicVolumeTitle": "Ses Seviyesi",
+    "settingsMusicBadgeTitle": "Lisanslar",
+    "settingsInfoSectionTitle": "ZazaLingo Bilgi",
+    "settingsTeamTitle": "ZazaLingo Ekibi",
+    "settingsDedicationTitle": "İthaflar",
+    "settingsThemeTitle": "Tema / Görünüm",
+    "themeLight": "Açık Tema",
+    "themeDark": "Koyu Tema",
+    "themeSolarized": "Solarize Tema",
+    "labelMusic": "Müzik:",
+    "labelComposer": "Besteci:",
+    "labelPerformer": "Yorumcu:",
+    "labelSource": "Kaynak:",
+    "labelLicense": "Lisans:",
+    "labelLink": "SSOT_LOG_CAPTURE_MARKER",
+    "labelChanges": "Değişiklikler:"
 };

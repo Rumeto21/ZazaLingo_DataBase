@@ -128,22 +128,45 @@ class SyncManager {
                 }
 
                 let src = fs.readFileSync(filePath, 'utf-8');
-                const prefixRegex = new RegExp(`(export\\s+(const|let|var)\\s+${variableName}(\\s*:\\s*[^=]+)?\\s*=\\s*)`, 'm');
+                const prefixRegex = new RegExp(`(export\\s+(const|let|var)\\s+${variableName}\\s*(\\s*:\\s*[^=]+)?\\s*=\\s*)`, 'm');
                 const match = src.match(prefixRegex);
                 
                 let updatedContent;
                 if (match) {
-                    const prefix = match[1];
-                    const startPos = match.index + prefix.length;
-                    
+                    const startPos = match.index + match[0].length;
                     let braceCount = 0;
                     let endPos = -1;
                     let started = false;
+                    let inString = false;
+                    let stringChar = '';
+
                     for (let i = startPos; i < src.length; i++) {
                         const char = src[i];
-                        if (char === '{' || char === '[') { braceCount++; started = true; }
-                        if (char === '}' || char === ']') { braceCount--; started = true; }
+                        const prevChar = src[i - 1];
+
+                        // Handle strings to ignore braces inside them
+                        if ((char === '"' || char === "'") && prevChar !== '\\') {
+                            if (!inString) {
+                                inString = true;
+                                stringChar = char;
+                            } else if (char === stringChar) {
+                                inString = false;
+                            }
+                        }
+
+                        if (!inString) {
+                            if (char === '{' || char === '[') { 
+                                braceCount++; 
+                                started = true; 
+                            }
+                            if (char === '}' || char === ']') { 
+                                braceCount--; 
+                                started = true; 
+                            }
+                        }
+
                         if (started && braceCount === 0) {
+                            // Find next semicolon or newline to determine exact end
                             const nextSemicolon = src.indexOf(';', i);
                             endPos = (nextSemicolon !== -1 && nextSemicolon < i + 5) ? nextSemicolon + 1 : i + 1;
                             break;
@@ -153,7 +176,9 @@ class SyncManager {
                     if (endPos !== -1) {
                         updatedContent = src.substring(0, startPos) + jsonStr + (src[endPos - 1] === ';' ? ';' : '') + src.substring(endPos);
                     } else {
-                        updatedContent = src.substring(0, startPos) + jsonStr + ';\n';
+                        // Fallback: If we can't find the end, we append or log error
+                        logger.error(`[SyncManager] Could not find end of variable ${variableName} in ${relativePath}`);
+                        return;
                     }
                 } else if (templateIfNotFound) {
                     updatedContent = templateIfNotFound.replace('{{DATA}}', jsonStr);

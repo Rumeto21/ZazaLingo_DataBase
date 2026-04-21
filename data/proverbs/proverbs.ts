@@ -11,29 +11,29 @@ export interface Proverb {
 export const proverbs: Proverb[] = [
     {
         "id": "prv_1",
-        "text": "Dar bi pelê xo yeno şinasnayîş.",
+        "text": "Dar bi pelÃª xo yeno ��inasnayÃ®��.",
         "translation": {
-            "Tr": "Ağaç yaprağıyla tanınır/bilinir.",
+            "Tr": "AÄaÃ§ yapraÄÄ±yla tanÄ±nÄ±r/bilinir.",
             "En": "A tree is known by its leaves.",
-            "Kr": "Dar bi pelên xwe tê naskirin."
+            "Kr": "Dar bi pelÃªn xwe tÃª naskirin."
         }
     },
     {
         "id": "prv_2",
-        "text": "Mase awa lîmî de tepşîyena.",
+        "text": "Mase awa lÃ®mÃ® de tep��Ã®yena.",
         "translation": {
-            "Tr": "Bulanık suda balık avlanır.",
+            "Tr": "BulanÄ±k suda balÄ±k avlanÄ±r.",
             "En": "Fish are caught in muddy waters.",
-            "Kr": "Masî di ava gemarî de tên girtin."
+            "Kr": "MasÃ® di ava gemarÃ® de tÃªn girtin."
         }
     },
     {
         "id": "prv_3",
-        "text": "Zonê xo vîra mekerê.",
+        "text": "ZonÃª xo vÃ®ra mekerÃª.",
         "translation": {
-            "Tr": "Dilinizi unutmayın.",
+            "Tr": "Dilinizi unutmayÄ±n.",
             "En": "Do not forget your language.",
-            "Kr": "Zimanê xwe ji bîr nekin."
+            "Kr": "ZimanÃª xwe ji bÃ®r nekin."
         }
     }
 ];

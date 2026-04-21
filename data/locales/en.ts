@@ -1,4 +1,6 @@
-export const En = {
+import { Locale } from '../../types/locales';
+
+export const En: Locale = {
     "languageName": "En",
     "label": "En",
     "continueCourse": "Continue",
@@ -97,5 +99,22 @@ export const En = {
     "testVolumeLabel": "Music Volume During Tests",
     "contributorsSection": "Contributors",
     "back": "Back",
-    "test_key_tc002": "success"
+    "settingsHeaderTitle": "Settings",
+    "settingsMusicSectionTitle": "Music",
+    "settingsMusicVolumeTitle": "Volume Level",
+    "settingsMusicBadgeTitle": "Licenses",
+    "settingsInfoSectionTitle": "ZazaLingo Info",
+    "settingsTeamTitle": "ZazaLingo Team",
+    "settingsDedicationTitle": "Dedications",
+    "settingsThemeTitle": "Theme / Appearance",
+    "themeLight": "Light Theme",
+    "themeDark": "Dark Theme",
+    "themeSolarized": "Solarized Theme",
+    "labelMusic": "Music:",
+    "labelComposer": "Composer:",
+    "labelPerformer": "Performer:",
+    "labelSource": "Source:",
+    "labelLicense": "License:",
+    "labelLink": "Link:",
+    "labelChanges": "Changes:"
 };

@@ -1,4 +1,4 @@
-import { Locale } from '@zazalingo/shared';
+import { Locale } from '../../types/locales';
 
 export const Zz: Locale = {
     "languageName": "Zz",
@@ -99,5 +99,22 @@ export const Zz: Locale = {
     "testVolumeLabel": "Vengê Muzîkê Testan",
     "contributorsSection": "Karsazî",
     "back": "Awa",
-    "test_key_tc002": "serkewtiş"
+    "settingsHeaderTitle": "Ayari",
+    "settingsMusicSectionTitle": "Muzîk",
+    "settingsMusicVolumeTitle": "Seviyeya Vengî",
+    "settingsMusicBadgeTitle": "Lisansî",
+    "settingsInfoSectionTitle": "ZazaLingo Melumat",
+    "settingsTeamTitle": "Takimê ZazaLîngoyî",
+    "settingsDedicationTitle": "İthafî",
+    "settingsThemeTitle": "Tema / Asayiş",
+    "themeLight": "Temayo Roşn",
+    "themeDark": "Temayo Tarî",
+    "themeSolarized": "Temayo Solarize",
+    "labelMusic": "Muzîk:",
+    "labelComposer": "Bestekar:",
+    "labelPerformer": "Vengdar:",
+    "labelSource": "Çime:",
+    "labelLicense": "Lisans:",
+    "labelLink": "Gire:",
+    "labelChanges": "Bedeliyayîşî:"
 };

@@ -254,6 +254,82 @@ export const spacing = {
         "val": 20,
         "unit": "px"
     },
+    "settingsTitleMarginTop": {
+        "val": -351,
+        "unit": "px"
+    },
+    "settingsTitleWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "settingsTitleHeight": {
+        "val": 40,
+        "unit": "px"
+    },
+    "settingsContentBoxWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "settingsContentBoxHeight": {
+        "val": 500,
+        "unit": "px"
+    },
+    "settingsContentBoxMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "settingsContentBoxMarginTop": {
+        "val": -289,
+        "unit": "px"
+    },
+    "settings_music_toggleWidth": {
+        "val": 60,
+        "unit": "px"
+    },
+    "settings_music_toggleHeight": {
+        "val": 30,
+        "unit": "px"
+    },
+    "settings_music_toggleMarginTop": {
+        "val": 10,
+        "unit": "px"
+    },
+    "settings_music_toggleMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "settings_music_slider_generalWidth": {
+        "val": 0.8,
+        "unit": "ratio"
+    },
+    "settings_music_slider_generalHeight": {
+        "val": 20,
+        "unit": "px"
+    },
+    "settings_music_slider_generalMarginTop": {
+        "val": 40,
+        "unit": "px"
+    },
+    "settings_music_slider_generalMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "settings_music_slider_testWidth": {
+        "val": 0.8,
+        "unit": "ratio"
+    },
+    "settings_music_slider_testHeight": {
+        "val": 20,
+        "unit": "px"
+    },
+    "settings_music_slider_testMarginTop": {
+        "val": 40,
+        "unit": "px"
+    },
+    "settings_music_slider_testMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
     "topBarPaddingHorizontal": {
         "val": 0,
         "unit": "px"

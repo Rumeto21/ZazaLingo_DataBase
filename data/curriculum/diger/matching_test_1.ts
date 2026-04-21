@@ -3,7 +3,7 @@ import { TestData } from '@zazalingo/shared';
 export const test_matching_test_1: TestData = {
     "id": "matching_test_1",
     "title": {
-        "tr": "Eşleştirme Alıştırması",
+        "tr": "E��le��tirme AlÄ±��tÄ±rmasÄ±",
         "en": "Matching Exercise"
     },
     "questions": [
@@ -11,11 +11,11 @@ export const test_matching_test_1: TestData = {
             "id": "m1",
             "type": "Matching",
             "title": {
-                "tr": "Kelimeleri Eşleştirin",
+                "tr": "Kelimeleri E��le��tirin",
                 "en": "Match the Words"
             },
             "promptText": {
-                "tr": "Zazakî kelimelerin Türkçe karşılıklarını bulun",
+                "tr": "ZazakÃ® kelimelerin TÃ¼rkÃ§e kar��Ä±lÄ±klarÄ±nÄ± bulun",
                 "en": "Find the Turkish meanings of Zaza words"
             },
             "options": [],
@@ -23,9 +23,9 @@ export const test_matching_test_1: TestData = {
                 {
                     "id": "p1",
                     "left": {
-                        "tr": "Rovî",
+                        "tr": "RovÃ®",
                         "en": "Fox",
-                        "Zz": "Rovî"
+                        "Zz": "RovÃ®"
                     },
                     "right": {
                         "tr": "Tilki",
@@ -64,7 +64,7 @@ export const test_matching_test_1: TestData = {
                         "Zz": "Maran"
                     },
                     "right": {
-                        "tr": "Yılan",
+                        "tr": "YÄ±lan",
                         "en": "Snake"
                     }
                 }

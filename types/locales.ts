@@ -97,4 +97,22 @@ export interface Locale {
     testVolumeLabel: string;
     contributorsSection: string;
     back: string;
+    settingsHeaderTitle: string;
+    settingsMusicSectionTitle: string;
+    settingsMusicVolumeTitle: string;
+    settingsMusicBadgeTitle: string;
+    settingsInfoSectionTitle: string;
+    settingsTeamTitle: string;
+    settingsDedicationTitle: string;
+    settingsThemeTitle: string;
+    themeLight: string;
+    themeDark: string;
+    themeSolarized: string;
+    labelMusic: string;
+    labelComposer: string;
+    labelPerformer: string;
+    labelSource: string;
+    labelLicense: string;
+    labelLink: string;
+    labelChanges: string;
 }

@@ -24,7 +24,10 @@ export const typography = {
     "proverbsTitleFontSize": 26,
     "proverbsTextFontSize": 19,
     "proverbsTranslationFontSize": 15,
-    "settingsTitleFontSize": 24,
+    "settingsTitleFontSize": {
+        "val": 30,
+        "unit": "px"
+    },
     "settingsMusicSectionTitleFontSize": 20,
     "settingsInfoSectionTitleFontSize": 20,
     "settingsMusicItemFontSize": 16,

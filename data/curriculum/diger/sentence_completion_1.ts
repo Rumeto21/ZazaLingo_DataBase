@@ -3,7 +3,7 @@ import { TestData } from '@zazalingo/shared';
 export const test_sentence_completion_1: TestData = {
     "id": "sentence_completion_1",
     "title": {
-        "tr": "Cümle Tamamlama Alıştırması",
+        "tr": "CÃ¼mle Tamamlama AlÄ±��tÄ±rmasÄ±",
         "en": "Sentence Completion Exercise"
     },
     "questions": [
@@ -11,11 +11,11 @@ export const test_sentence_completion_1: TestData = {
             "id": "sc1",
             "type": "Matching",
             "title": {
-                "tr": "Cümleleri Tamamlayın",
+                "tr": "CÃ¼mleleri TamamlayÄ±n",
                 "en": "Complete the Sentences"
             },
             "promptText": {
-                "tr": "Doğru ekleri 'ya' seçerek cümleleri tamamlayın (Interchangeable test)",
+                "tr": "DoÄru ekleri 'ya' seÃ§erek cÃ¼mleleri tamamlayÄ±n (Interchangeable test)",
                 "en": "Choose the correct 'ya' suffix to complete the sentences"
             },
             "options": [],

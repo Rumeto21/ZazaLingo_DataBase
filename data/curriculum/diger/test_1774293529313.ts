@@ -13,16 +13,16 @@ export const test_test_1774293529313: TestData = {
             "id": "q_1774293601150",
             "type": "Matching",
             "title": {
-                "Tr": "Eşleştirme",
+                "Tr": "E��le��tirme",
                 "En": "Matching",
-                "Zz": "eynikerdiş",
-                "Kr": "Eşleştirme"
+                "Zz": "eynikerdi��",
+                "Kr": "E��le��tirme"
             },
             "promptText": {
-                "Tr": "Zamirler ile eklerini eşleştirin",
-                "En": "Match the pronouns with the corresponding forms of the verb ‘to be’ in Zazakî",
-                "Zz": "Zamirler ile eklerini eşleştirin",
-                "Kr": "Zamirler ile eklerini eşleştirin"
+                "Tr": "Zamirler ile eklerini e��le��tirin",
+                "En": "Match the pronouns with the corresponding forms of the verb âto beâ in ZazakÃ®",
+                "Zz": "Zamirler ile eklerini e��le��tirin",
+                "Kr": "Zamirler ile eklerini e��le��tirin"
             },
             "matchingPairs": [
                 {
@@ -43,25 +43,25 @@ export const test_test_1774293529313: TestData = {
                 {
                     "id": "p_1774293636209",
                     "left": {
-                        "Tr": "Ti(nêrî)",
-                        "En": "Ti(nêrî)",
-                        "Zz": "Ti(nêrî)",
-                        "Kr": "Ti(nêrî)"
+                        "Tr": "Ti(nÃªrÃ®)",
+                        "En": "Ti(nÃªrÃ®)",
+                        "Zz": "Ti(nÃªrÃ®)",
+                        "Kr": "Ti(nÃªrÃ®)"
                     },
                     "right": {
-                        "Tr": "î/yî",
-                        "En": "î/yî",
-                        "Zz": "î/yî",
-                        "Kr": "î/yî"
+                        "Tr": "Ã®/yÃ®",
+                        "En": "Ã®/yÃ®",
+                        "Zz": "Ã®/yÃ®",
+                        "Kr": "Ã®/yÃ®"
                     }
                 },
                 {
                     "id": "p_1774293677329",
                     "left": {
-                        "Tr": "Ti(makî)",
-                        "En": "Ti(makî)",
-                        "Zz": "Ti(makî)",
-                        "Kr": "Ti(makî)"
+                        "Tr": "Ti(makÃ®)",
+                        "En": "Ti(makÃ®)",
+                        "Zz": "Ti(makÃ®)",
+                        "Kr": "Ti(makÃ®)"
                     },
                     "right": {
                         "Tr": "a/ya",
@@ -109,40 +109,40 @@ export const test_test_1774293529313: TestData = {
                         "Kr": "Ma"
                     },
                     "right": {
-                        "Tr": "ê/yê",
-                        "En": "ê/yê",
-                        "Zz": "ê/yê",
-                        "Kr": "ê/yê"
+                        "Tr": "Ãª/yÃª",
+                        "En": "Ãª/yÃª",
+                        "Zz": "Ãª/yÃª",
+                        "Kr": "Ãª/yÃª"
                     }
                 },
                 {
                     "id": "p_1774293730947",
                     "left": {
-                        "Tr": "Şima",
-                        "En": "Şima",
-                        "Zz": "Şima",
-                        "Kr": "Şima"
+                        "Tr": "��ima",
+                        "En": "��ima",
+                        "Zz": "��ima",
+                        "Kr": "��ima"
                     },
                     "right": {
-                        "Tr": "ê/yê",
-                        "En": "ê/yê",
-                        "Zz": "ê/yê",
-                        "Kr": "ê/yê"
+                        "Tr": "Ãª/yÃª",
+                        "En": "Ãª/yÃª",
+                        "Zz": "Ãª/yÃª",
+                        "Kr": "Ãª/yÃª"
                     }
                 },
                 {
                     "id": "p_1774293746203",
                     "left": {
-                        "Tr": "Ê",
-                        "En": "Ê",
-                        "Zz": "Ê",
-                        "Kr": "Ê"
+                        "Tr": "Ã",
+                        "En": "Ã",
+                        "Zz": "Ã",
+                        "Kr": "Ã"
                     },
                     "right": {
-                        "Tr": "ê/yê",
-                        "En": "ê/yê",
-                        "Zz": "ê/yê",
-                        "Kr": "ê/yê"
+                        "Tr": "Ãª/yÃª",
+                        "En": "Ãª/yÃª",
+                        "Zz": "Ãª/yÃª",
+                        "Kr": "Ãª/yÃª"
                     }
                 }
             ],
@@ -152,10 +152,10 @@ export const test_test_1774293529313: TestData = {
             "id": "q_1774294068995",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "Doğru kopulayı seçin",
-                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "Zz": "Doğru kopulayı seçin",
-                "Kr": "Doğru kopulayı seçin"
+                "Tr": "DoÄru kopulayÄ± seÃ§in",
+                "En": "Choose the correct equivalent of the verb 'to be' in ZazakÃ®",
+                "Zz": "DoÄru kopulayÄ± seÃ§in",
+                "Kr": "DoÄru kopulayÄ± seÃ§in"
             },
             "promptText": {
                 "Tr": "Ez van_",
@@ -177,10 +177,10 @@ export const test_test_1774293529313: TestData = {
                 {
                     "id": "o2",
                     "text": {
-                        "Tr": "ê",
-                        "En": "ê",
-                        "Zz": "ê",
-                        "Kr": "ê"
+                        "Tr": "Ãª",
+                        "En": "Ãª",
+                        "Zz": "Ãª",
+                        "Kr": "Ãª"
                     }
                 },
                 {
@@ -195,10 +195,10 @@ export const test_test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294363862",
                     "text": {
-                        "Tr": "î",
-                        "En": "î",
-                        "Zz": "î",
-                        "Kr": "î"
+                        "Tr": "Ã®",
+                        "En": "Ã®",
+                        "Zz": "Ã®",
+                        "Kr": "Ã®"
                     }
                 }
             ],
@@ -208,18 +208,18 @@ export const test_test_1774293529313: TestData = {
             "id": "q_1774294384220",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "Doğru kopulayı seçin",
-                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "Tr": "DoÄru kopulayÄ± seÃ§in",
+                "En": "Choose the correct equivalent of the verb 'to be' in ZazakÃ®",
                 "Zz": "Yeni Resimli Soru",
                 "Kr": "Yeni Resimli Soru"
             },
             "promptText": {
-                "Tr": "Ti(makî) şin_",
-                "En": "Ti(makî) şin_",
-                "Zz": "Ti(makî) şin_",
-                "Kr": "Ti(makî) şin_"
+                "Tr": "Ti(makÃ®) ��in_",
+                "En": "Ti(makÃ®) ��in_",
+                "Zz": "Ti(makÃ®) ��in_",
+                "Kr": "Ti(makÃ®) ��in_"
             },
-            "imageRef": "assets/questions/Pictures/şîyayîş.avif",
+            "imageRef": "assets/questions/Pictures/��Ã®yayÃ®��.avif",
             "options": [
                 {
                     "id": "o1",
@@ -233,10 +233,10 @@ export const test_test_1774293529313: TestData = {
                 {
                     "id": "o2",
                     "text": {
-                        "Tr": "ê",
-                        "En": "ê",
-                        "Zz": "ê",
-                        "Kr": "ê"
+                        "Tr": "Ãª",
+                        "En": "Ãª",
+                        "Zz": "Ãª",
+                        "Kr": "Ãª"
                     }
                 },
                 {
@@ -251,10 +251,10 @@ export const test_test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294443324",
                     "text": {
-                        "Tr": "î",
-                        "En": "î",
-                        "Zz": "î",
-                        "Kr": "î"
+                        "Tr": "Ã®",
+                        "En": "Ã®",
+                        "Zz": "Ã®",
+                        "Kr": "Ã®"
                     }
                 }
             ],
@@ -264,18 +264,18 @@ export const test_test_1774293529313: TestData = {
             "id": "q_1774294509005",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "Doğru kopulayı seçin",
-                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "Zz": "Doğru kopulayı seçin",
-                "Kr": "Doğru kopulayı seçin"
+                "Tr": "DoÄru kopulayÄ± seÃ§in",
+                "En": "Choose the correct equivalent of the verb 'to be' in ZazakÃ®",
+                "Zz": "DoÄru kopulayÄ± seÃ§in",
+                "Kr": "DoÄru kopulayÄ± seÃ§in"
             },
             "promptText": {
-                "Tr": "A şimen_",
-                "En": "A şimen_",
-                "Zz": "A şimen_",
-                "Kr": "A şimen_"
+                "Tr": "A ��imen_",
+                "En": "A ��imen_",
+                "Zz": "A ��imen_",
+                "Kr": "A ��imen_"
             },
-            "imageRef": "assets/questions/Pictures/Şimitene.avif",
+            "imageRef": "assets/questions/Pictures/��imitene.avif",
             "options": [
                 {
                     "id": "o1",
@@ -298,19 +298,19 @@ export const test_test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294585099",
                     "text": {
-                        "Tr": "ê",
-                        "En": "ê",
-                        "Zz": "ê",
-                        "Kr": "ê"
+                        "Tr": "Ãª",
+                        "En": "Ãª",
+                        "Zz": "Ãª",
+                        "Kr": "Ãª"
                     }
                 },
                 {
                     "id": "opt_1774294588539",
                     "text": {
-                        "Tr": "î",
-                        "En": "î",
-                        "Zz": "î",
-                        "Kr": "î"
+                        "Tr": "Ã®",
+                        "En": "Ã®",
+                        "Zz": "Ã®",
+                        "Kr": "Ã®"
                     }
                 }
             ],
@@ -320,8 +320,8 @@ export const test_test_1774293529313: TestData = {
             "id": "q_1774294606335",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "Doğru kopulayı seçin",
-                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
+                "Tr": "DoÄru kopulayÄ± seÃ§in",
+                "En": "Choose the correct equivalent of the verb 'to be' in ZazakÃ®",
                 "Zz": "Yeni Resimli Soru",
                 "Kr": "Yeni Resimli Soru"
             },
@@ -354,19 +354,19 @@ export const test_test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294681140",
                     "text": {
-                        "Tr": "ê",
-                        "En": "ê",
-                        "Zz": "ê",
-                        "Kr": "ê"
+                        "Tr": "Ãª",
+                        "En": "Ãª",
+                        "Zz": "Ãª",
+                        "Kr": "Ãª"
                     }
                 },
                 {
                     "id": "opt_1774294685534",
                     "text": {
-                        "Tr": "î",
-                        "En": "î",
-                        "Zz": "î",
-                        "Kr": "î"
+                        "Tr": "Ã®",
+                        "En": "Ã®",
+                        "Zz": "Ã®",
+                        "Kr": "Ã®"
                     }
                 }
             ],
@@ -376,16 +376,16 @@ export const test_test_1774293529313: TestData = {
             "id": "q_1774294699031",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "Doğru kopulayı seçin",
-                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "Zz": "Doğru kopulayı seçin",
-                "Kr": "Doğru kopulayı seçin"
+                "Tr": "DoÄru kopulayÄ± seÃ§in",
+                "En": "Choose the correct equivalent of the verb 'to be' in ZazakÃ®",
+                "Zz": "DoÄru kopulayÄ± seÃ§in",
+                "Kr": "DoÄru kopulayÄ± seÃ§in"
             },
             "promptText": {
-                "Tr": "Ti(nêrî) mamosta __",
-                "En": "Ti(nêrî) mamosta __",
-                "Zz": "Ti(nêrî) mamosta __",
-                "Kr": "Ti(nêrî) mamosta __"
+                "Tr": "Ti(nÃªrÃ®) mamosta __",
+                "En": "Ti(nÃªrÃ®) mamosta __",
+                "Zz": "Ti(nÃªrÃ®) mamosta __",
+                "Kr": "Ti(nÃªrÃ®) mamosta __"
             },
             "imageRef": "assets/questions/Pictures/Mamosta.avif",
             "options": [
@@ -410,19 +410,19 @@ export const test_test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294866465",
                     "text": {
-                        "Tr": "yê",
-                        "En": "yê",
-                        "Zz": "yê",
-                        "Kr": "yê"
+                        "Tr": "yÃª",
+                        "En": "yÃª",
+                        "Zz": "yÃª",
+                        "Kr": "yÃª"
                     }
                 },
                 {
                     "id": "opt_1774294871727",
                     "text": {
-                        "Tr": "yî",
-                        "En": "yî",
-                        "Zz": "yî",
-                        "Kr": "yî"
+                        "Tr": "yÃ®",
+                        "En": "yÃ®",
+                        "Zz": "yÃ®",
+                        "Kr": "yÃ®"
                     }
                 }
             ],
@@ -432,16 +432,16 @@ export const test_test_1774293529313: TestData = {
             "id": "q_1774294941845",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "Doğru kopulayı seçin",
-                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "Zz": "Doğru kopulayı seçin",
-                "Kr": "Doğru kopulayı seçin"
+                "Tr": "DoÄru kopulayÄ± seÃ§in",
+                "En": "Choose the correct equivalent of the verb 'to be' in ZazakÃ®",
+                "Zz": "DoÄru kopulayÄ± seÃ§in",
+                "Kr": "DoÄru kopulayÄ± seÃ§in"
             },
             "promptText": {
-                "Tr": "Ma şêr _",
-                "En": "Ma şêr _",
-                "Zz": "Ma şêr _",
-                "Kr": "Ma şêr _"
+                "Tr": "Ma ��Ãªr _",
+                "En": "Ma ��Ãªr _",
+                "Zz": "Ma ��Ãªr _",
+                "Kr": "Ma ��Ãªr _"
             },
             "correctOptionId": "opt_1774294977819",
             "options": [
@@ -466,10 +466,10 @@ export const test_test_1774293529313: TestData = {
                 {
                     "id": "opt_1774294977819",
                     "text": {
-                        "Tr": "ê",
-                        "En": "ê",
-                        "Zz": "ê",
-                        "Kr": "ê"
+                        "Tr": "Ãª",
+                        "En": "Ãª",
+                        "Zz": "Ãª",
+                        "Kr": "Ãª"
                     }
                 },
                 {
@@ -487,31 +487,31 @@ export const test_test_1774293529313: TestData = {
             "id": "q_1774295033187",
             "type": "WordOrder",
             "title": {
-                "Tr": "Yeni Kelime Sıralama",
+                "Tr": "Yeni Kelime SÄ±ralama",
                 "En": "Word ordering",
-                "Zz": "Yeni Kelime Sıralama",
-                "Kr": "Yeni Kelime Sıralama"
+                "Zz": "Yeni Kelime SÄ±ralama",
+                "Kr": "Yeni Kelime SÄ±ralama"
             },
             "promptText": {
-                "Tr": "Kelimeleri doğru sıraya dizin",
+                "Tr": "Kelimeleri doÄru sÄ±raya dizin",
                 "En": "Order the words correctly",
-                "Zz": "Kelimeleri doğru sıraya dizin",
-                "Kr": "Kelimeleri doğru sıraya dizin"
+                "Zz": "Kelimeleri doÄru sÄ±raya dizin",
+                "Kr": "Kelimeleri doÄru sÄ±raya dizin"
             },
             "correctWords": [
-                "Şima",
+                "��ima",
                 "xeyr",
-                "ameyê"
+                "ameyÃª"
             ],
-            "audioRef": "assets/audio/lessons/Şima xeyr ameyê.wav",
+            "audioRef": "assets/audio/lessons/��ima xeyr ameyÃª.wav",
             "options": [],
             "poolWords": [
-                "Şima",
+                "��ima",
                 "xeyr",
-                "ameyê",
+                "ameyÃª",
                 "Ma",
                 "Ez",
-                "şinê",
+                "��inÃª",
                 "awe"
             ]
         },
@@ -519,16 +519,16 @@ export const test_test_1774293529313: TestData = {
             "id": "q_1774295328300",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "Doğru kopulayı seçin",
-                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "Zz": "Doğru kopulayı seçin",
-                "Kr": "Doğru kopulayı seçin"
+                "Tr": "DoÄru kopulayÄ± seÃ§in",
+                "En": "Choose the correct equivalent of the verb 'to be' in ZazakÃ®",
+                "Zz": "DoÄru kopulayÄ± seÃ§in",
+                "Kr": "DoÄru kopulayÄ± seÃ§in"
             },
             "promptText": {
-                "Tr": "Ê meyman _",
-                "En": "Ê meyman _",
-                "Zz": "Ê meyman _",
-                "Kr": "Ê meyman _"
+                "Tr": "Ã meyman _",
+                "En": "Ã meyman _",
+                "Zz": "Ã meyman _",
+                "Kr": "Ã meyman _"
             },
             "correctOptionId": "opt_1774295374463",
             "options": [
@@ -562,10 +562,10 @@ export const test_test_1774293529313: TestData = {
                 {
                     "id": "opt_1774295374463",
                     "text": {
-                        "Tr": "ê",
-                        "En": "ê",
-                        "Zz": "ê",
-                        "Kr": "ê"
+                        "Tr": "Ãª",
+                        "En": "Ãª",
+                        "Zz": "Ãª",
+                        "Kr": "Ãª"
                     }
                 }
             ]
@@ -574,26 +574,26 @@ export const test_test_1774293529313: TestData = {
             "id": "q_1774295444173",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "Doğru kopulayı seçin",
-                "En": "Choose the correct equivalent of the verb 'to be' in Zazakî",
-                "Zz": "Doğru kopulayı seçin",
-                "Kr": "Doğru kopulayı seçin"
+                "Tr": "DoÄru kopulayÄ± seÃ§in",
+                "En": "Choose the correct equivalent of the verb 'to be' in ZazakÃ®",
+                "Zz": "DoÄru kopulayÄ± seÃ§in",
+                "Kr": "DoÄru kopulayÄ± seÃ§in"
             },
             "promptText": {
-                "Tr": "Şima se ken_",
-                "En": "Şima se ken_",
-                "Zz": "Şima se ken_",
-                "Kr": "Şima se ken_"
+                "Tr": "��ima se ken_",
+                "En": "��ima se ken_",
+                "Zz": "��ima se ken_",
+                "Kr": "��ima se ken_"
             },
             "correctOptionId": "o1",
             "options": [
                 {
                     "id": "o1",
                     "text": {
-                        "Tr": "ê",
-                        "En": "ê",
-                        "Zz": "ê",
-                        "Kr": "ê"
+                        "Tr": "Ãª",
+                        "En": "Ãª",
+                        "Zz": "Ãª",
+                        "Kr": "Ãª"
                     }
                 },
                 {

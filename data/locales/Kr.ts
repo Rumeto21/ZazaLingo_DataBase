@@ -1,4 +1,4 @@
-import { Locale } from '@zazalingo/shared';
+import { Locale } from '../../types/locales';
 
 export const Kr: Locale = {
     "languageName": "Kr",
@@ -99,5 +99,22 @@ export const Kr: Locale = {
     "testVolumeLabel": "Dengê Muzîkê Testan",
     "contributorsSection": "Hevkarên",
     "back": "Paşve",
-    "test_key_tc002": "serkeftin"
+    "settingsHeaderTitle": "Mîheng",
+    "settingsMusicSectionTitle": "Muzîk",
+    "settingsMusicVolumeTitle": "Asta Deng",
+    "settingsMusicBadgeTitle": "Lîsansan",
+    "settingsInfoSectionTitle": "ZazaLingo Agahî",
+    "settingsTeamTitle": "Tîmê ZazaLîngoyê",
+    "settingsDedicationTitle": "Diyariyan",
+    "settingsThemeTitle": "Tema / Dîmen",
+    "themeLight": "Temaya Ronî",
+    "themeDark": "Temaya Tarî",
+    "themeSolarized": "Temaya Solarize",
+    "labelMusic": "Muzîk:",
+    "labelComposer": "Bestekar:",
+    "labelPerformer": "Hunermend:",
+    "labelSource": "Çavkanî:",
+    "labelLicense": "Lîsans:",
+    "labelLink": "Girêdan:",
+    "labelChanges": "Guherandinan:"
 };

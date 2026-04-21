@@ -65,13 +65,11 @@ saveRegistry.register('locales', new LocalesHandler());
 syncManager.setBackupDir(BACKUP_DIR);
 syncManager.addTarget(DATA_DIR, true);
 // --- v8.0 SSoT Migration: Tight Coupling disabled ---
-/* 
 const MOBILE_DATA_DIR = process.env.MOBILE_DATA_DIR || path.join(__dirname, '../ZazaLingo/data');
 if (fs.existsSync(MOBILE_DATA_DIR)) {
     syncManager.addTarget(MOBILE_DATA_DIR, false);
     logger.info(`[Sync] Mobile Data Sync ENABLED: ${MOBILE_DATA_DIR}`);
 }
-*/
 
 
 
@@ -327,7 +325,15 @@ const server = http.createServer((req, res) => {
                     return;
                 }
 
-                const context = { adapter: fsAdapter, stations: payload.stations, curriculumDir: CURRICULUM_DIR, archiveDir: ARCHIVE_DIR, localesDir: LOCALES_DIR };
+                const context = { 
+                    adapter: fsAdapter, 
+                    stations: payload.stations, 
+                    curriculumDir: CURRICULUM_DIR, 
+                    archiveDir: ARCHIVE_DIR, 
+                    localesDir: LOCALES_DIR,
+                    themeDir: THEME_DIR,
+                    dataDir: DATA_DIR
+                };
                 await saveRegistry.process(payload, context);
                 if (fs.existsSync(path.join(DATA_DIR, 'users.json'))) syncManager.syncFile('users.json');
                 res.writeHead(200, { 'Content-Type': 'application/json' });
