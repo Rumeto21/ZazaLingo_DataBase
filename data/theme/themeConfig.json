@@ -28,8 +28,8 @@
     "headerSubtitleColor": "#f40101",
     "buttonContinueColor": "#58CC02",
     "buttonContinueTextColor": "#FFFFFF",
-    "buttonLogoutColor": "#ff0505",
-    "buttonLogoutTextColor": "#FFFFFF",
+    "buttonSettingsColor": "#555b5e",
+    "buttonSettingsTextColor": "#FFFFFF",
     "questionTitleColor": "#4B4B4B",
     "questionPromptColor": "#4B4B4B",
     "questionBtnColor": "#58CC02",
@@ -178,7 +178,7 @@
     "headerSubtitleAlign": "center",
     "proverbsTitleText": "VATEYÊ VERÊNAN",
     "buttonContinueText": "DEVAM ET",
-    "buttonLogoutText": "ÇIKIŞ YAP",
+    "buttonSettingsText": "AYARLAR",
     "buttonTextAlign": "center",
     "proverbsWidth": {
         "val": 0.9,
@@ -390,11 +390,11 @@
         "unit": "ratio"
     },
     "questionBtnHeight": {
-        "val": 50,
+        "val": 40,
         "unit": "px"
     },
     "questionBtnMarginTop": {
-        "val": 330,
+        "val": 335,
         "unit": "px"
     },
     "questionBtnMarginLeft": {
@@ -431,6 +431,10 @@
     },
     "mascotSentenceCompletionTop": {
         "val": -225,
+        "unit": "px"
+    },
+    "questionBtnBorderRadius": {
+        "val": 20,
         "unit": "px"
     }
 }

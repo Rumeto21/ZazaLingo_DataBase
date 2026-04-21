@@ -29,12 +29,12 @@ export interface AppTheme {
     buttonVerticalMargin: ThemeCoordinate; buttonContainerPaddingHorizontal: ThemeCoordinate;
     buttonContainerPaddingBottom: ThemeCoordinate; buttonTextSize: ThemeCoordinate;
     headerTitleText: string; headerTitleFontSize: ThemeCoordinate; headerSubtitleText: string;
-    headerHeight: ThemeCoordinate; buttonContinueText: string; buttonLogoutText: string;
+    headerHeight: ThemeCoordinate; buttonContinueText: string; buttonSettingsText: string;
     headerTitleAlign: string; headerSubtitleAlign: string;
     buttonTextAlign: string; headerTopMargin: ThemeCoordinate; headerBottomMargin: ThemeCoordinate;
     buttonContainerTopMargin: ThemeCoordinate; headerTitleColor: string; headerSubtitleColor: string;
-    buttonContinueColor: string; buttonContinueTextColor: string; buttonLogoutColor: string;
-    buttonLogoutTextColor: string; questionTitleColor: string; questionPromptColor: string;
+    buttonContinueColor: string; buttonContinueTextColor: string; buttonSettingsColor: string;
+    buttonSettingsTextColor: string; questionTitleColor: string; questionPromptColor: string;
     questionBtnColor: string; questionBtnTextColor: string; proverbsTitleText: string;
     proverbsTitleColor: string; proverbsTextColor: string; proverbsTranslationColor: string;
     proverbsTitleFontSize: ThemeCoordinate; proverbsTextFontSize: ThemeCoordinate; proverbsTranslationFontSize: ThemeCoordinate;

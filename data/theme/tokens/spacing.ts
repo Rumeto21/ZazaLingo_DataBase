@@ -235,7 +235,7 @@ export const spacing = {
         "unit": "px"
     },
     "questionBtnMarginTop": {
-        "val": 330,
+        "val": 335,
         "unit": "px"
     },
     "questionBtnMarginLeft": {
@@ -247,7 +247,11 @@ export const spacing = {
         "unit": "ratio"
     },
     "questionBtnHeight": {
-        "val": 50,
+        "val": 40,
+        "unit": "px"
+    },
+    "questionBtnBorderRadius": {
+        "val": 20,
         "unit": "px"
     },
     "topBarPaddingHorizontal": {

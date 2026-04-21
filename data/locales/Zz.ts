@@ -98,5 +98,6 @@ export const Zz: Locale = {
     "bgVolumeLabel": "Vengê Muzîkê Arkaplan",
     "testVolumeLabel": "Vengê Muzîkê Testan",
     "contributorsSection": "Karsazî",
-    "back": "Awa"
+    "back": "Awa",
+    "test_key_tc002": "serkewtiş"
 };

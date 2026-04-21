@@ -493,11 +493,11 @@ export interface AppTheme extends
     SettingsTheme, 
     TopBarTheme {
     buttonContinueText: string;
-    buttonLogoutText: string;
+    buttonSettingsText: string;
     buttonContinueColor: string;
     buttonContinueTextColor: string;
-    buttonLogoutColor: string;
-    buttonLogoutTextColor: string;
+    buttonSettingsColor: string;
+    buttonSettingsTextColor: string;
 }
 
 export type ScaledAppTheme = {

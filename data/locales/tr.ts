@@ -96,5 +96,6 @@ export const Tr = {
     "bgVolumeLabel": "Genel Müzik Ses Seviyesi",
     "testVolumeLabel": "Test Sırasındaki Müzik Seviyesi",
     "contributorsSection": "Katkıda Bulunanlar",
-    "back": "Geri"
+    "back": "Geri",
+    "test_key_tc002": "başarı"
 };

@@ -13,7 +13,7 @@ class ThemeHandler {
                 'accent', 'accentLight', 'secondaryLight',
                 'headerTitleColor', 'headerSubtitleColor',
                 'buttonContinueColor', 'buttonContinueTextColor',
-                'buttonLogoutColor', 'buttonLogoutTextColor',
+                'buttonSettingsColor', 'buttonSettingsTextColor',
                 'questionTitleColor', 'questionPromptColor', 'questionBtnColor', 'questionBtnTextColor',
                 'proverbsTitleColor', 'proverbsTextColor', 'proverbsTranslationColor',
                 'proverbsBgColor', 'proverbsBorderColor'
@@ -104,7 +104,7 @@ class ThemeHandler {
             ],
             'components/header.ts': ['headerTitleText', 'headerSubtitleText', 'headerTitleAlign', 'headerSubtitleAlign'],
             'components/proverbs.ts': ['proverbsTitleText'],
-            'components/buttons.ts': ['buttonContinueText', 'buttonLogoutText', 'buttonTextAlign']
+            'components/buttons.ts': ['buttonContinueText', 'buttonSettingsText', 'buttonTextAlign']
         };
     }
 

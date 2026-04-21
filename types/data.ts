@@ -105,7 +105,7 @@ export interface AppTheme {
     headerSubtitleText: string;
     headerHeight: number;
     buttonContinueText: string;
-    buttonLogoutText: string;
+    buttonSettingsText: string;
 
     // Alignment & Position
     headerTitleAlign: 'left' | 'center';
@@ -121,8 +121,8 @@ export interface AppTheme {
     headerSubtitleColor: string;
     buttonContinueColor: string;
     buttonContinueTextColor: string;
-    buttonLogoutColor: string;
-    buttonLogoutTextColor: string;
+    buttonSettingsColor: string;
+    buttonSettingsTextColor: string;
     questionTitleColor: string;
     questionPromptColor: string;
     questionBtnColor: string;

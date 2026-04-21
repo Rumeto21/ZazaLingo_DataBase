@@ -98,5 +98,6 @@ export const Kr: Locale = {
     "bgVolumeLabel": "Dengê Muzîkê Arkaplan",
     "testVolumeLabel": "Dengê Muzîkê Testan",
     "contributorsSection": "Hevkarên",
-    "back": "Paşve"
+    "back": "Paşve",
+    "test_key_tc002": "serkeftin"
 };
