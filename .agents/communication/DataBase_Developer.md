@@ -1,23 +1,21 @@
 # DataBase Developer Board
 
-## Active Task: [FIX-THEME-SAVE-REGRESSION-FINAL] - Final fix for theme key drop
+## Active Task: [FIX-MAP-SCHEMA-MISMATCH]
 - **Assigned By:** TeamLeader (Antigravity)
 - **Status:** [x] COMPLETED
-- **Priority:** CRITICAL
+- **Priority:** MEDIUM
 
 ### 🎯 Objective:
-Kısmi güncellemeler (partial updates) sırasında tema anahtarlarının silinmesi sorununu kökten çözmek ve veri bütünlüğünü garanti altına almak.
+İstasyon verilerindeki `parentUnitId` alanı kaynaklı tip hatasını gidermek.
 
 ### ✅ Actions Taken:
-1. **Context-Based Paths:** `database-server.js` üzerinden `themeDir` ve `dataDir` bağlamları handlers katmanına aktarıldı. `ThemeHandler.js` artık disk okumaları için bu güvenli yolları kullanıyor.
-2. **Robust Merge Architecture:** `ThemeHandler.js` içine `Fail-Safe Merge` mantığı eklendi. Gelen veri mevcut veriyle derinlemesine birleştiriliyor. Gelen veri eksikse (Partial Update), mevcut anahtarlar korunuyor.
-3. **Advanced Regex Parser:** `SyncManager.js` içindeki enjeksiyon mantığı, string içindeki parantezleri ignore edecek şekilde (True Brace Counting) güncellendi. Bu, karmaşık nesne yapılarında üzerine yazma hatalarını engelliyor.
-4. **E2E Proven Sync:** `e2e_theme_test.js` ile yapılan testte, hem `Data_Base` hem de `ZazaLingo` klasörlerindeki `spacing.ts` dosyalarının partial save sonrası bile tüm anahtarları (settingsContentBoxWidth vb.) koruduğu ve senkronize olduğu kanıtlandı.
+1. **Schema Fix:** `Data_Base/data/map/stations.ts` içindeki `LevelData` interface'ine `parentUnitId?: string;` alanı eklendi. Bu sayede Topic verilerindeki UUID tabanlı eşleşmeler için tip güvenliği sağlandı.
+2. **Sync Force:** Güncellenen `stations.ts` ve `stations.json` dosyaları `ZazaLingo/data/map/` konumuna kopyalanarak mobil uygulama tarafındaki derleme hataları önlendi.
 
 ---
 ## 📜 Task History
-- [x] [FIX-THEME-SAVE-REGRESSION-FINAL] - COMPLETED
-- [x] [DEBUG-THEME-SAVE-REGRESSION] - COMPLETED (Initially failed, now solved by final fix)
-- [x] [SYNC-THEME-HANDLER-MAPPING] - COMPLETED
-- [x] [FIX-INFO-DATA-ENCODING] - COMPLETED
-- [x] [FIX-SETTINGS-LOCALIZATION-KEYS] - COMPLETED
+- [x] [FIX-MAP-SCHEMA-MISMATCH] - COMPLETED
+- [x] [HOTFIX-CURRICULUM-QUOTES] - COMPLETED
+- [x] [FIX-CURRICULUM-SYNTAX-AND-DEEP-CLEAN] - COMPLETED
+- [x] [FINAL-ARTIFACT-CLEANUP] - COMPLETED
+- [x] [GLOBAL-DATA-ENCODING-REPAIR] - COMPLETED

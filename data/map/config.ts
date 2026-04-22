@@ -11,7 +11,7 @@ export const mapConfig: MapConfig = {
     "tieSize": 25,
     "tieThickness": 7,
     "title": {
-        "Zz": "XETA ��ÃYAYÃ��Ã ZAZALÃNGOYÃ",
-        "Tr": "ZAZALÃNGO GÃZERGAHI"
+        "Zz": "XETA ŞÎYAYÎŞÊ ZAZALÎNGOYÎ",
+        "Tr": "ZAZALÎNGO GÜZERGAHI"
     }
 };

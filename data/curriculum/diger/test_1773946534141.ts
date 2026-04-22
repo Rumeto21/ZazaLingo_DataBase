@@ -11,11 +11,11 @@ export const test_test_1773946534141: TestData = {
             "id": "q_1773946545149",
             "type": "Matching",
             "title": {
-                "Tr": "Yeni E��le��tirme",
+                "Tr": "Yeni Eşleştirme",
                 "En": "New Matching"
             },
             "promptText": {
-                "Tr": "Hangi resim doÄrudur?",
+                "Tr": "Hangi resim doğrudur?",
                 "En": "Which image is correct?"
             },
             "matchingPairs": [
@@ -45,22 +45,22 @@ export const test_test_1773946534141: TestData = {
                 "En": "Yeni Soru"
             },
             "promptText": {
-                "Tr": "LÃ¼tfen soruyu cevaplayÄ±n.",
-                "Zz": "LÃ¼tfen soruyu cevaplayÄ±n.",
-                "Kr": "LÃ¼tfen soruyu cevaplayÄ±n.",
-                "En": "LÃ¼tfen soruyu cevaplayÄ±n."
+                "Tr": "Lütfen soruyu cevaplayın.",
+                "Zz": "Lütfen soruyu cevaplayın.",
+                "Kr": "Lütfen soruyu cevaplayın.",
+                "En": "Lütfen soruyu cevaplayın."
             },
             "options": [
                 {
                     "id": "opt_57971b92-4e9c-4e93-8cb5-5b6b0dd5fb7b",
                     "text": {
-                        "Tr": "Yeni SeÃ§enek"
+                        "Tr": "Yeni Seçenek"
                     }
                 },
                 {
                     "id": "opt_16f87e09-24a5-46b2-add9-466eeabb271f",
                     "text": {
-                        "Tr": "Yeni SeÃ§enek3"
+                        "Tr": "Yeni Seçenek3"
                     }
                 }
             ],

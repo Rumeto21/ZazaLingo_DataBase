@@ -19,25 +19,25 @@ export const test_test_c05ef35b_badd_4a04_b06e_80b8c0c84e74: TestData = {
                 "En": "Yeni Soru"
             },
             "promptText": {
-                "Tr": "LÃ¼tfen soruyu cevaplayÄ±n.",
-                "Zz": "LÃ¼tfen soruyu cevaplayÄ±n.",
-                "Kr": "LÃ¼tfen soruyu cevaplayÄ±n.",
-                "En": "LÃ¼tfen soruyu cevaplayÄ±n."
+                "Tr": "Lütfen soruyu cevaplayın.",
+                "Zz": "Lütfen soruyu cevaplayın.",
+                "Kr": "Lütfen soruyu cevaplayın.",
+                "En": "Lütfen soruyu cevaplayın."
             },
             "options": [
                 {
                     "id": "opt_e5835851-6417-46c7-9e00-2a9a239a5637",
                     "text": {
-                        "Tr": "Yeni SeÃ§enek"
+                        "Tr": "Yeni Seçenek"
                     },
                     "imageUrl": "assets/questions/Pictures/doktore.avif"
                 },
                 {
                     "id": "opt_1e0bee4e-eeba-4d0e-9645-53635b117b52",
                     "text": {
-                        "Tr": "Yeni SeÃ§enek"
+                        "Tr": "Yeni Seçenek"
                     },
-                    "imageUrl": "assets/questions/Pictures/kÃªnek.avif"
+                    "imageUrl": "assets/questions/Pictures/kênek.avif"
                 }
             ],
             "correctOptionId": "opt_1e0bee4e-eeba-4d0e-9645-53635b117b52"

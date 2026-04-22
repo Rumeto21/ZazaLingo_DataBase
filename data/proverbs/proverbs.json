@@ -1,29 +1,29 @@
 [
     {
         "id": "prv_1",
-        "text": "Dar bi pelÃª xo yeno ��inasnayÃ®��.",
+        "text": "Dar bi pelê xo yeno şinasnayîş.",
         "translation": {
-            "Tr": "AÄaÃ§ yapraÄÄ±yla tanÄ±nÄ±r/bilinir.",
+            "Tr": "Ağaç yaprağıyla tanınır/bilinir.",
             "En": "A tree is known by its leaves.",
-            "Kr": "Dar bi pelÃªn xwe tÃª naskirin."
+            "Kr": "Dar bi pelên xwe tê naskirin."
         }
     },
     {
         "id": "prv_2",
-        "text": "Mase awa lÃ®mÃ® de tep��Ã®yena.",
+        "text": "Mase awa lîmî de tepşîyena.",
         "translation": {
-            "Tr": "BulanÄ±k suda balÄ±k avlanÄ±r.",
+            "Tr": "Bulanık suda balık avlanır.",
             "En": "Fish are caught in muddy waters.",
-            "Kr": "MasÃ® di ava gemarÃ® de tÃªn girtin."
+            "Kr": "Masî di ava gemarî de tên girtin."
         }
     },
     {
         "id": "prv_3",
-        "text": "ZonÃª xo vÃ®ra mekerÃª.",
+        "text": "Zonê xo vîra mekerê.",
         "translation": {
-            "Tr": "Dilinizi unutmayÄ±n.",
+            "Tr": "Dilinizi unutmayın.",
             "En": "Do not forget your language.",
-            "Kr": "ZimanÃª xwe ji bÃ®r nekin."
+            "Kr": "Zimanê xwe ji bîr nekin."
         }
     }
 ]

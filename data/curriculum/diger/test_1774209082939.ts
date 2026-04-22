@@ -13,16 +13,16 @@ export const test_test_1774209082939: TestData = {
             "id": "q_1774209087719",
             "type": "Matching",
             "title": {
-                "Tr": "E��le��tirme sorusu",
+                "Tr": "Eşleştirme sorusu",
                 "En": "Matching Question",
-                "Zz": "E��le��tirme sorusu",
-                "Kr": "E��le��tirme sorusu"
+                "Zz": "Eşleştirme sorusu",
+                "Kr": "Eşleştirme sorusu"
             },
             "promptText": {
-                "Tr": "Zamirleri e��le��tirin",
+                "Tr": "Zamirleri eşleştirin",
                 "En": "Match the pronouns",
-                "Zz": "Zamirleri e��le��tirin",
-                "Kr": "Zamirleri e��le��tirin"
+                "Zz": "Zamirleri eşleştirin",
+                "Kr": "Zamirleri eşleştirin"
             },
             "matchingPairs": [
                 {
@@ -64,7 +64,7 @@ export const test_test_1774209082939: TestData = {
                     "right": {
                         "Tr": "O(eril)",
                         "En": "He",
-                        "Kr": "Ew(nÃªr)"
+                        "Kr": "Ew(nêr)"
                     }
                 },
                 {
@@ -76,9 +76,9 @@ export const test_test_1774209082939: TestData = {
                         "Kr": "A"
                     },
                     "right": {
-                        "Tr": "O(di��il)",
+                        "Tr": "O(dişil)",
                         "En": "She",
-                        "Kr": "Ew(mÃª)"
+                        "Kr": "Ew(mê)"
                     }
                 },
                 {
@@ -98,29 +98,29 @@ export const test_test_1774209082939: TestData = {
                 {
                     "id": "p_1774209136671",
                     "left": {
-                        "Tr": "��ima",
-                        "En": "��ima",
-                        "Zz": "��ima",
-                        "Kr": "��ima"
+                        "Tr": "Şima",
+                        "En": "Şima",
+                        "Zz": "Şima",
+                        "Kr": "Şima"
                     },
                     "right": {
                         "Tr": "Siz",
                         "En": "You",
-                        "Kr": "HÃ»n"
+                        "Kr": "Hûn"
                     }
                 },
                 {
                     "id": "p_1774209196939",
                     "left": {
-                        "Tr": "Ã",
-                        "En": "Ã",
-                        "Zz": "Ã",
-                        "Kr": "Ã"
+                        "Tr": "Ê",
+                        "En": "Ê",
+                        "Zz": "Ê",
+                        "Kr": "Ê"
                     },
                     "right": {
                         "Tr": "Onlar",
                         "En": "They",
-                        "Kr": "Ew(pirejmarÃ®)"
+                        "Kr": "Ew(pirejmarî)"
                     }
                 }
             ],
@@ -131,16 +131,16 @@ export const test_test_1774209082939: TestData = {
             "id": "q_1774210916825",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
+                "Tr": "Cümlenin doğru çevirisini seçin",
                 "En": "Choose correct translation of the sentence",
-                "Zz": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
-                "Kr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
-                "Tr": "O(di��il) doktordur",
+                "Tr": "O(dişil) doktordur",
                 "En": "She is doctor",
-                "Zz": "O(di��il) doktordur",
-                "Kr": "Ew(mÃª) nijdar e"
+                "Zz": "O(dişil) doktordur",
+                "Kr": "Ew(mê) nijdar e"
             },
             "imageRef": "assets/questions/Pictures/doktore.avif",
             "options": [
@@ -174,10 +174,10 @@ export const test_test_1774209082939: TestData = {
                 {
                     "id": "opt_1774211010405",
                     "text": {
-                        "Tr": "Ma doktor Ãª",
-                        "En": "Ma doktor Ãª",
-                        "Zz": "Ma doktor Ãª",
-                        "Kr": "Ma doktor Ãª"
+                        "Tr": "Ma doktor ê",
+                        "En": "Ma doktor ê",
+                        "Zz": "Ma doktor ê",
+                        "Kr": "Ma doktor ê"
                     }
                 }
             ],
@@ -188,52 +188,52 @@ export const test_test_1774209082939: TestData = {
             "id": "q_1774211032862",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
+                "Tr": "Cümlenin doğru çevirisini seçin",
                 "En": "Choose correct translation of the sentence",
-                "Zz": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
-                "Kr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
-                "Tr": "Ma embaz Ãª",
-                "En": "Ma embaz Ãª",
-                "Zz": "Ma embaz Ãª",
-                "Kr": "Ma embaz Ãª"
+                "Tr": "Ma embaz ê",
+                "En": "Ma embaz ê",
+                "Zz": "Ma embaz ê",
+                "Kr": "Ma embaz ê"
             },
-            "imageRef": "assets/questions/Pictures/embazÃ®.avif",
+            "imageRef": "assets/questions/Pictures/embazî.avif",
             "options": [
                 {
                     "id": "o1",
                     "text": {
-                        "Tr": "Siz arkada��sÄ±nÄ±z",
+                        "Tr": "Siz arkadaşsınız",
                         "En": "You are friends",
-                        "Zz": "Siz arkada��sÄ±nÄ±z",
-                        "Kr": "HÃ»n heval in"
+                        "Zz": "Siz arkadaşsınız",
+                        "Kr": "Hûn heval in"
                     }
                 },
                 {
                     "id": "o2",
                     "text": {
-                        "Tr": "Onlar arkada��tÄ±rlar",
+                        "Tr": "Onlar arkadaştırlar",
                         "En": "They are friends",
-                        "Zz": "Onlar arkada��tÄ±rlar",
+                        "Zz": "Onlar arkadaştırlar",
                         "Kr": "Ew heval in"
                     }
                 },
                 {
                     "id": "opt_1774211110668",
                     "text": {
-                        "Tr": "O(eril) arkada��tÄ±r",
+                        "Tr": "O(eril) arkadaştır",
                         "En": "He is friend",
-                        "Zz": "O(eril) arkada��tÄ±r",
-                        "Kr": "Ew(nÃªr) heval e"
+                        "Zz": "O(eril) arkadaştır",
+                        "Kr": "Ew(nêr) heval e"
                     }
                 },
                 {
                     "id": "opt_1774211123484",
                     "text": {
-                        "Tr": "Biz arkada��Ä±z",
+                        "Tr": "Biz arkadaşız",
                         "En": "We are friends",
-                        "Zz": "Biz arkada��Ä±z",
+                        "Zz": "Biz arkadaşız",
                         "Kr": "Em heval in"
                     }
                 }
@@ -245,44 +245,44 @@ export const test_test_1774209082939: TestData = {
             "id": "q_1774211662321",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
+                "Tr": "Cümlenin doğru çevirisini seçin",
                 "En": "Choose correct translation of the sentence",
-                "Zz": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
-                "Kr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
-                "Tr": "Siz Ã¶Äretmensiniz.",
+                "Tr": "Siz öğretmensiniz.",
                 "En": "You are teachers.",
-                "Zz": "Siz Ã¶Äretmensiniz.",
-                "Kr": "HÃ»n mamoste ne."
+                "Zz": "Siz öğretmensiniz.",
+                "Kr": "Hûn mamoste ne."
             },
             "correctOptionId": "o2",
             "options": [
                 {
                     "id": "o1",
                     "text": {
-                        "Tr": "Ma mamosta yÃª",
-                        "En": "Ma mamosta yÃª",
-                        "Zz": "Ma mamosta yÃª",
-                        "Kr": "Ma mamosta yÃª"
+                        "Tr": "Ma mamosta yê",
+                        "En": "Ma mamosta yê",
+                        "Zz": "Ma mamosta yê",
+                        "Kr": "Ma mamosta yê"
                     }
                 },
                 {
                     "id": "o2",
                     "text": {
-                        "Tr": "��ima mamosta yÃª",
-                        "En": "��ima mamosta yÃª",
-                        "Zz": "��ima mamosta yÃª",
-                        "Kr": "��ima mamosta yÃª"
+                        "Tr": "Şima mamosta yê",
+                        "En": "Şima mamosta yê",
+                        "Zz": "Şima mamosta yê",
+                        "Kr": "Şima mamosta yê"
                     }
                 },
                 {
                     "id": "opt_1774211719650",
                     "text": {
-                        "Tr": "Ã mamosta yÃª",
-                        "En": "Ã mamosta yÃª",
-                        "Zz": "Ã mamosta yÃª",
-                        "Kr": "Ã mamosta yÃª"
+                        "Tr": "Ê mamosta yê",
+                        "En": "Ê mamosta yê",
+                        "Zz": "Ê mamosta yê",
+                        "Kr": "Ê mamosta yê"
                     }
                 },
                 {
@@ -301,10 +301,10 @@ export const test_test_1774209082939: TestData = {
             "id": "q_1774211743519",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
+                "Tr": "Cümlenin doğru çevirisini seçin",
                 "En": "Choose correct translation of the sentence",
-                "Zz": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
-                "Kr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
                 "Tr": "Sen(eril) yemek yiyorsun?",
@@ -344,10 +344,10 @@ export const test_test_1774209082939: TestData = {
                 {
                     "id": "opt_1774211865382",
                     "text": {
-                        "Tr": "Ti wer wenÃ®?",
-                        "En": "Ti wer wenÃ®?",
-                        "Zz": "Ti wer wenÃ®?",
-                        "Kr": "Ti wer wenÃ®?"
+                        "Tr": "Ti wer wenî?",
+                        "En": "Ti wer wenî?",
+                        "Zz": "Ti wer wenî?",
+                        "Kr": "Ti wer wenî?"
                     }
                 }
             ],
@@ -357,16 +357,16 @@ export const test_test_1774209082939: TestData = {
             "id": "q_1774211883008",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
+                "Tr": "Cümlenin doğru çevirisini seçin",
                 "En": "Choose correct translation of the sentence",
-                "Zz": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
-                "Kr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
-                "Tr": "O(eril) Ã¶Ärencidir",
+                "Tr": "O(eril) öğrencidir",
                 "En": "He is student",
-                "Zz": "O(eril) Ã¶Ärencidir",
-                "Kr": "O(eril) Ã¶Ärencidir"
+                "Zz": "O(eril) öğrencidir",
+                "Kr": "O(eril) öğrencidir"
             },
             "imageRef": "assets/questions/Pictures/Wendekar.avif",
             "options": [
@@ -414,10 +414,10 @@ export const test_test_1774209082939: TestData = {
             "id": "q_1774211978333",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
+                "Tr": "Cümlenin doğru çevirisini seçin",
                 "En": "Choose correct translation of the sentence",
-                "Zz": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
-                "Kr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
                 "Tr": "Ez citkar a",
@@ -430,37 +430,37 @@ export const test_test_1774209082939: TestData = {
                 {
                     "id": "o1",
                     "text": {
-                        "Tr": "Ben Ã§iftÃ§iyim",
+                        "Tr": "Ben çiftçiyim",
                         "En": "I am farmer",
-                        "Zz": "Ben Ã§iftÃ§iyim",
-                        "Kr": "Ben Ã§iftÃ§iyim"
+                        "Zz": "Ben çiftçiyim",
+                        "Kr": "Ben çiftçiyim"
                     }
                 },
                 {
                     "id": "o2",
                     "text": {
-                        "Tr": "Sen(eril) Ã§iftÃ§isin",
+                        "Tr": "Sen(eril) çiftçisin",
                         "En": "You(male) are farmer",
-                        "Zz": "Sen(eril) Ã§iftÃ§isin",
-                        "Kr": "Sen(eril) Ã§iftÃ§isin"
+                        "Zz": "Sen(eril) çiftçisin",
+                        "Kr": "Sen(eril) çiftçisin"
                     }
                 },
                 {
                     "id": "opt_1774212099376",
                     "text": {
-                        "Tr": "Biz Ã§iftÃ§iyiz",
+                        "Tr": "Biz çiftçiyiz",
                         "En": "We are farmers",
-                        "Zz": "Biz Ã§iftÃ§iyiz",
-                        "Kr": "Biz Ã§iftÃ§iyiz"
+                        "Zz": "Biz çiftçiyiz",
+                        "Kr": "Biz çiftçiyiz"
                     }
                 },
                 {
                     "id": "opt_1774212106592",
                     "text": {
-                        "Tr": "Siz Ã§iftÃ§isiniz",
+                        "Tr": "Siz çiftçisiniz",
                         "En": "You are farmers",
-                        "Zz": "Siz Ã§iftÃ§isiniz",
-                        "Kr": "Siz Ã§iftÃ§isiniz"
+                        "Zz": "Siz çiftçisiniz",
+                        "Kr": "Siz çiftçisiniz"
                     }
                 }
             ],
@@ -471,16 +471,16 @@ export const test_test_1774209082939: TestData = {
             "id": "q_1774212198837",
             "type": "CoktanSecmeli",
             "title": {
-                "Tr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
+                "Tr": "Cümlenin doğru çevirisini seçin",
                 "En": "Choose correct translation of the sentence",
-                "Zz": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in",
-                "Kr": "CÃ¼mlenin doÄru Ã§evirisini seÃ§in"
+                "Zz": "Cümlenin doğru çevirisini seçin",
+                "Kr": "Cümlenin doğru çevirisini seçin"
             },
             "promptText": {
-                "Tr": "Ã kay kenÃª",
-                "En": "Ã kay kenÃª",
-                "Zz": "Ã kay kenÃª",
-                "Kr": "Ã kay kenÃª"
+                "Tr": "Ê kay kenê",
+                "En": "Ê kay kenê",
+                "Zz": "Ê kay kenê",
+                "Kr": "Ê kay kenê"
             },
             "correctOptionId": "opt_1774212322527",
             "options": [
@@ -527,16 +527,16 @@ export const test_test_1774209082939: TestData = {
             "id": "q_1774212364187",
             "type": "Dialogue",
             "title": {
-                "Tr": "DiyaloÄu dinleyin/okuyun",
+                "Tr": "Diyaloğu dinleyin/okuyun",
                 "En": "Listen/Read the dialog",
-                "Zz": "DiyaloÄu dinleyin/okuyun",
-                "Kr": "DiyaloÄu dinleyin/okuyun"
+                "Zz": "Diyaloğu dinleyin/okuyun",
+                "Kr": "Diyaloğu dinleyin/okuyun"
             },
             "promptText": {
-                "Tr": "Bo��luklara gelmesi gereken zamirleri, sÄ±rasÄ±yla seÃ§in.",
+                "Tr": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin.",
                 "En": "Choose the pronouns needed respectively to fill the blanks.",
-                "Zz": "Bo��luklara gelmesi gereken zamirleri, sÄ±rasÄ±yla seÃ§in.",
-                "Kr": "Bo��luklara gelmesi gereken zamirleri, sÄ±rasÄ±yla seÃ§in."
+                "Zz": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin.",
+                "Kr": "Boşluklara gelmesi gereken zamirleri, sırasıyla seçin."
             },
             "options": [
                 {
@@ -551,28 +551,28 @@ export const test_test_1774209082939: TestData = {
                 {
                     "id": "opt_1774212822878",
                     "text": {
-                        "Tr": "O / A / Ez / ��ima",
-                        "En": "O / A / Ez / ��ima",
-                        "Zz": "O / A / Ez / ��ima",
-                        "Kr": "O / A / Ez / ��ima"
+                        "Tr": "O / A / Ez / Şima",
+                        "En": "O / A / Ez / Şima",
+                        "Zz": "O / A / Ez / Şima",
+                        "Kr": "O / A / Ez / Şima"
                     }
                 },
                 {
                     "id": "opt_1774212823881",
                     "text": {
-                        "Tr": "Ez / O / Ez / Ã",
-                        "En": "Ez / O / Ez / Ã",
-                        "Zz": "Ez / O / Ez / Ã",
-                        "Kr": "Ez / O / Ez / Ã"
+                        "Tr": "Ez / O / Ez / Ê",
+                        "En": "Ez / O / Ez / Ê",
+                        "Zz": "Ez / O / Ez / Ê",
+                        "Kr": "Ez / O / Ez / Ê"
                     }
                 },
                 {
                     "id": "opt_1774212824926",
                     "text": {
-                        "Tr": "Ti / A / ��ima / Ã",
-                        "En": "Ti / A / ��ima / Ã",
-                        "Zz": "Ti / A / ��ima / Ã",
-                        "Kr": "Ti / A / ��ima / Ã"
+                        "Tr": "Ti / A / Şima / Ê",
+                        "En": "Ti / A / Şima / Ê",
+                        "Zz": "Ti / A / Şima / Ê",
+                        "Kr": "Ti / A / Şima / Ê"
                     }
                 }
             ],
@@ -580,21 +580,21 @@ export const test_test_1774209082939: TestData = {
                 {
                     "id": "d1",
                     "text": {
-                        "Tr": "Merhaba embazo! NameyÃª mi Ro��na ya. __ wendekar a.  Yew birayÃª mi est o. __ mamosta yo. Ti kam Ã®?",
-                        "En": "Merhaba embazo! NameyÃª mi Ro��na ya. __ wendekar a.  Yew birayÃª mi est o. __ mamosta yo. Ti kam Ã®?",
-                        "Zz": "Merhaba embazo! NameyÃª mi Ro��na ya. __ wendekar a.  Yew birayÃª mi est o. __ mamosta yo. Ti kam Ã®?",
-                        "Kr": "Merhaba embazo! NameyÃª mi Ro��na ya. __ wendekar a.  Yew birayÃª mi est o. __ mamosta yo. Ti kam Ã®?"
+                        "Tr": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?",
+                        "En": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?",
+                        "Zz": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?",
+                        "Kr": "Merhaba embazo! Nameyê mi Roşna ya. __ wendekar a.  Yew birayê mi est o. __ mamosta yo. Ti kam î?"
                     },
                     "position": "left",
-                    "imageRef": "assets/questions/Pictures/kÃªnek.avif"
+                    "imageRef": "assets/questions/Pictures/kênek.avif"
                 },
                 {
                     "id": "d2",
                     "text": {
-                        "Tr": "Merhaba embazÃª! NameyÃª mi RÃ»met o. __ endezyar a.  Di wayÃª mi est Ãª. __ hem��Ã®ra yÃª.",
-                        "En": "Merhaba embazÃª! NameyÃª mi RÃ»met o. __ endezyar a.  Di wayÃª mi est Ãª. __ hem��Ã®ra yÃª.",
-                        "Zz": "Merhaba embazÃª! NameyÃª mi RÃ»met o. __ endezyar a.  Di wayÃª mi est Ãª. __ hem��Ã®ra yÃª.",
-                        "Kr": "Merhaba embazÃª! NameyÃª mi RÃ»met o. __ endezyar a.  Di wayÃª mi est Ãª. __ hem��Ã®ra yÃª."
+                        "Tr": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê.",
+                        "En": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê.",
+                        "Zz": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê.",
+                        "Kr": "Merhaba embazê! Nameyê mi Rûmet o. __ endezyar a.  Di wayê mi est ê. __ hemşîra yê."
                     },
                     "position": "right",
                     "imageRef": "assets/questions/Pictures/lajek.avif"
@@ -607,38 +607,38 @@ export const test_test_1774209082939: TestData = {
             "id": "q_1774212971303",
             "type": "WordOrder",
             "title": {
-                "Tr": "Yeni Kelime SÄ±ralama",
+                "Tr": "Yeni Kelime Sıralama",
                 "En": "Ordering the words",
-                "Zz": "Yeni Kelime SÄ±ralama",
-                "Kr": "Yeni Kelime SÄ±ralama"
+                "Zz": "Yeni Kelime Sıralama",
+                "Kr": "Yeni Kelime Sıralama"
             },
             "promptText": {
-                "Tr": "Kelimeleri doÄru sÄ±raya dizin",
+                "Tr": "Kelimeleri doğru sıraya dizin",
                 "En": "Order the words correctly",
-                "Zz": "Kelimeleri doÄru sÄ±raya dizin",
-                "Kr": "Kelimeleri doÄru sÄ±raya dizin"
+                "Zz": "Kelimeleri doğru sıraya dizin",
+                "Kr": "Kelimeleri doğru sıraya dizin"
             },
             "correctWords": [
                 "Ti",
                 "pers",
-                "nÃªkena",
+                "nêkena",
                 "ez",
                 "se",
                 "kena",
-                "senÃ®na"
+                "senîna"
             ],
-            "audioRef": "assets/audio/lessons/Ti pers nÃªkena ez se kena, senÃ®na.wav",
+            "audioRef": "assets/audio/lessons/Ti pers nêkena ez se kena, senîna.wav",
             "options": [],
             "poolWords": [
                 "Ti",
                 "pers",
-                "nÃªkena",
+                "nêkena",
                 "ez",
                 "se",
                 "kena",
-                "senÃ®na",
+                "senîna",
                 "To",
-                "��ima",
+                "Şima",
                 "nika",
                 "yena"
             ],

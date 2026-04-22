@@ -3,7 +3,7 @@ import { TestData } from '@zazalingo/shared';
 export const test_word_order_example: TestData = {
     "id": "word_order_example",
     "title": {
-        "tr": "Dinleme ve SÄ±ralama",
+        "tr": "Dinleme ve Sıralama",
         "en": "Listening and Ordering"
     },
     "questions": [
@@ -11,15 +11,15 @@ export const test_word_order_example: TestData = {
             "id": "wo_q1",
             "type": "WordOrder",
             "title": {
-                "tr": "DuyduÄunuz cÃ¼mleyi olu��turun",
+                "tr": "Duyduğunuz cümleyi oluşturun",
                 "en": "Form the sentence you hear"
             },
-            "audioRef": "Homa, ��ima ra razÃ® bo.wav",
+            "audioRef": "Homa, Şima ra razî bo.wav",
             "correctWords": [
                 "Homa",
-                "��ima",
+                "Şima",
                 "ra",
-                "razÃ®",
+                "razî",
                 "bo"
             ],
             "options": [
@@ -34,9 +34,9 @@ export const test_word_order_example: TestData = {
                 {
                     "id": "w2",
                     "text": {
-                        "tr": "��ima",
-                        "en": "��ima",
-                        "Zz": "��ima"
+                        "tr": "Şima",
+                        "en": "Şima",
+                        "Zz": "Şima"
                     }
                 },
                 {
@@ -50,9 +50,9 @@ export const test_word_order_example: TestData = {
                 {
                     "id": "w4",
                     "text": {
-                        "tr": "razÃ®",
-                        "en": "razÃ®",
-                        "Zz": "razÃ®"
+                        "tr": "razî",
+                        "en": "razî",
+                        "Zz": "razî"
                     }
                 },
                 {
