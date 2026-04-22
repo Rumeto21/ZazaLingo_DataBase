@@ -1,5 +1,5 @@
 {
-    "primary": "#E2E_TEST_COLOR",
+    "primary": "#58CC02",
     "primaryDark": "#58A700",
     "secondary": "#FFC800",
     "tertiary": "#FF4B4B",
@@ -17,6 +17,7 @@
     "inactiveText": "#AFAFAF",
     "selectedBg": "#DDF4FF",
     "selectedBorder": "#84D8FF",
+    "selectedText": "#4B4B4B",
     "progressBarBg": "#E5E5E5",
     "progressFill": "#58CC02",
     "feedbackCorrectBg": "#D7FFB8",

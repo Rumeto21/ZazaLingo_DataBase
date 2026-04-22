@@ -17828,3 +17828,20 @@
 {"level":"info","message":"[SyncManager] Cloned to mirror: C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data\\locales\\Kr.json","service":"data-base-server","timestamp":"2026-04-22 20:36:18"}
 {"level":"info","message":"✅ [Registry] Save successful for: /save","service":"data-base-server","timestamp":"2026-04-22 20:36:18"}
 {"level":"info","message":"[SyncManager] Cloned to mirror: C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data\\users.json","service":"data-base-server","timestamp":"2026-04-22 20:36:18"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-22 21:05:22"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data (Primary: false)","service":"data-base-server","timestamp":"2026-04-22 21:05:22"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-22 21:05:22"}
+{"level":"info","message":"[SyncManager] Cloned to mirror: C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-22 21:05:22"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json updated.","service":"data-base-server","timestamp":"2026-04-22 21:05:22"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-22 21:05:35"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data (Primary: false)","service":"data-base-server","timestamp":"2026-04-22 21:05:35"}
+{"level":"info","message":"[SyncManager] Primary JSON updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-22 21:05:35"}
+{"level":"info","message":"[SyncManager] Cloned to mirror: C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data\\theme\\themeSchemes.json","service":"data-base-server","timestamp":"2026-04-22 21:05:35"}
+{"level":"info","message":"[SyncManager] Primary updated: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data\\theme\\themeSchemes.ts","service":"data-base-server","timestamp":"2026-04-22 21:05:35"}
+{"level":"info","message":"[SyncManager] Cloned to mirror: C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data\\theme\\themeSchemes.ts","service":"data-base-server","timestamp":"2026-04-22 21:05:35"}
+{"level":"info","message":"[ThemeHandler] themeSchemes.json and themeSchemes.ts updated.","service":"data-base-server","timestamp":"2026-04-22 21:05:35"}
+{"level":"info","message":"[GET /assets] Served 49 total assets (flat list).","service":"data-base-server","timestamp":"2026-04-22 21:15:20"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\Data_Base\\data (Primary: true)","service":"data-base-server","timestamp":"2026-04-22 21:21:42"}
+{"level":"info","message":"[SyncManager] Registered sync target: C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data (Primary: false)","service":"data-base-server","timestamp":"2026-04-22 21:21:42"}
+{"level":"info","message":"[Sync] Mobile Data Sync ENABLED: C:\\Users\\pc\\Documents\\ZazaLingo\\ZazaLingo\\data","service":"data-base-server","timestamp":"2026-04-22 21:21:42"}
+{"level":"info","message":"⚠️ Port 4000 already in use.","service":"data-base-server","timestamp":"2026-04-22 21:21:42"}

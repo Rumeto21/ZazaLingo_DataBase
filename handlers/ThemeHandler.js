@@ -9,7 +9,7 @@ class ThemeHandler {
                 'primary', 'primaryDark', 'secondary', 'tertiary', 'background', 'surface',
                 'textDark', 'textLight', 'textWhite', 'border',
                 'correct', 'correctShadow', 'incorrect', 'incorrectShadow',
-                'inactive', 'inactiveText', 'selectedBg', 'selectedBorder',
+                'inactive', 'inactiveText', 'selectedBg', 'selectedBorder', 'selectedText',
                 'progressBarBg', 'progressFill', 'feedbackCorrectBg', 'feedbackIncorrectBg',
                 'accent', 'accentLight', 'secondaryLight',
                 'headerTitleColor', 'headerSubtitleColor',
@@ -176,8 +176,15 @@ class ThemeHandler {
 class ThemeSchemesHandler {
     async save(themeSchemes, { adapter }) {
         if (!themeSchemes) return;
+        
+        // Save to JSON
         await adapter.injectJSON(path.join('theme', 'themeSchemes.json'), themeSchemes);
-        logger.info('[ThemeHandler] themeSchemes.json updated.');
+        
+        // Inject into TS
+        await adapter.injectData(path.join('theme', 'themeSchemes.ts'), 'THEME_SCHEMES', themeSchemes,
+            `export const THEME_SCHEMES: Record<ThemeType, any> = {{DATA}};`);
+            
+        logger.info('[ThemeHandler] themeSchemes.json and themeSchemes.ts updated.');
     }
 }
 
