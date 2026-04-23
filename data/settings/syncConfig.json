@@ -1,0 +1,16 @@
+{
+    "pruneSafeList": [
+        "layoutEngine.ts",
+        "themeAxisConfig.ts",
+        "users.json",
+        ".gitkeep"
+    ],
+    "retrySettings": {
+        "maxRetries": 5,
+        "delay": 150
+    },
+    "cleanupSettings": {
+        "maxAgeMinutes": 10
+    }
+}
+

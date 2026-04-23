@@ -14,25 +14,46 @@ class MapHandler {
  */
 class StationsHandler {
     async save(stations, { adapter }) {
-        await adapter.injectData(path.join('map', 'stations.ts'), 'courseLevels', stations, 
+        const tsRes = await adapter.injectData(path.join('map', 'stations.ts'), 'courseLevels', stations, 
             `export const courseLevels = {{DATA}};`);
-        await adapter.injectJSON(path.join('map', 'stations.json'), stations);
+        const jsonRes = await adapter.injectJSON(path.join('map', 'stations.json'), stations);
+        
+        const errors = [...(tsRes.errors || []), ...(jsonRes.errors || [])];
+        return {
+            success: tsRes.success && jsonRes.success,
+            partial: tsRes.partial || jsonRes.partial || errors.length > 0,
+            errors
+        };
     }
 }
 
 class DecorationsHandler {
     async save(decorations, { adapter }) {
-        await adapter.injectData(path.join('map', 'decorations.ts'), 'decorations', decorations, 
+        const tsRes = await adapter.injectData(path.join('map', 'decorations.ts'), 'decorations', decorations, 
             `export const decorations = {{DATA}};`);
-        await adapter.injectJSON(path.join('map', 'decorations.json'), decorations);
+        const jsonRes = await adapter.injectJSON(path.join('map', 'decorations.json'), decorations);
+
+        const errors = [...(tsRes.errors || []), ...(jsonRes.errors || [])];
+        return {
+            success: tsRes.success && jsonRes.success,
+            partial: tsRes.partial || jsonRes.partial || errors.length > 0,
+            errors
+        };
     }
 }
 
 class MapConfigHandler {
     async save(mapConfig, { adapter }) {
-        await adapter.injectData(path.join('map', 'config.ts'), 'mapConfig', mapConfig, 
+        const tsRes = await adapter.injectData(path.join('map', 'config.ts'), 'mapConfig', mapConfig, 
             `export const mapConfig = {{DATA}};`);
-        await adapter.injectJSON(path.join('map', 'config.json'), mapConfig);
+        const jsonRes = await adapter.injectJSON(path.join('map', 'config.json'), mapConfig);
+
+        const errors = [...(tsRes.errors || []), ...(jsonRes.errors || [])];
+        return {
+            success: tsRes.success && jsonRes.success,
+            partial: tsRes.partial || jsonRes.partial || errors.length > 0,
+            errors
+        };
     }
 }
 

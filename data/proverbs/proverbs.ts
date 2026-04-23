@@ -1,17 +1,9 @@
-export interface Proverb {
-    id: string;
-    text: string;
-    translation: {
-        Tr: string;
-        En: string;
-        Kr?: string;
-        Zz?: string;
-    };
-}
+import { Proverb } from '@zazalingo/shared';
+
 export const proverbs: Proverb[] = [
     {
         "id": "prv_1",
-        "text": "Dar bi pelê xo yeno şinasnayîş.",
+        "text": "Dar bi pelê xo yeno nasnayene.",
         "translation": {
             "Tr": "Ağaç yaprağıyla tanınır/bilinir.",
             "En": "A tree is known by its leaves.",

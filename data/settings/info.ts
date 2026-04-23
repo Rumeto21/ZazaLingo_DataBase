@@ -1,29 +1,4 @@
-export interface MusicCredit {
-    title: { Tr: string, En?: string, Zz?: string, Kr?: string };
-    composer: string;
-    performer: string;
-    source: string;
-    license: string;
-    licenseLink: string;
-    changes: { Tr: string, En?: string, Zz?: string, Kr?: string };
-}
-
-export interface Dedication {
-    from: string;
-    to: { Tr: string, En?: string, Zz?: string, Kr?: string };
-}
-
-export interface ZazaLingoInfoData {
-    mainTitle: { Tr: string, En?: string, Zz?: string, Kr?: string };
-    teamTitle: { Tr: string, En?: string, Zz?: string, Kr?: string };
-    dedicationTitle: { Tr: string, En?: string, Zz?: string, Kr?: string };
-    musicTitle: { Tr: string, En?: string, Zz?: string, Kr?: string };
-    missionTitle: { Tr: string, En?: string, Zz?: string, Kr?: string };
-    mission: { Tr: string, En?: string, Zz?: string, Kr?: string };
-    team: string[];
-    dedications: Dedication[];
-    music: MusicCredit[];
-}
+import { ZazaLingoInfoData } from '@zazalingo/shared';
 
 export const zazaLingoInfo: ZazaLingoInfoData = {
     "mainTitle": {
@@ -37,6 +12,9 @@ export const zazaLingoInfo: ZazaLingoInfoData = {
     },
     "missionTitle": {
         "Tr": "Misyonumuz"
+    },
+    "infoTitle": {
+        "Tr": "Hakkında"
     },
     "mission": {
         "Tr": "Bu uygulamadaki amaçlarımız;\n-Kürtçe'nin Zazakî Lehçesini dijital ortama taşımak\n-Standart Zazakî'nin bilinmesini arttırmak\n-Çocuklar ve gençlerimize eğlenceli bir şekilde Zazakî'yi öğretmek"
@@ -65,9 +43,8 @@ export const zazaLingoInfo: ZazaLingoInfoData = {
             "source": "Musopen",
             "license": "CC BY 3.0",
             "licenseLink": "https://creativecommons.org/licenses/by/3.0/",
-            "changes": {
-                "Tr": "looped"
-            }
+            "changes": "looped"
         }
+
     ]
 };

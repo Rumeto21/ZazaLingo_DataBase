@@ -27,30 +27,40 @@ class InfoHandler {
             });
         }
 
-        await adapter.injectData(path.join('settings', 'info.ts'), 'zazaLingoInfo', info, 
+        const tsRes = await adapter.injectData(path.join('settings', 'info.ts'), 'zazaLingoInfo', info, 
             `export const zazaLingoInfo = {{DATA}};`);
+        return tsRes;
     }
 }
 
 class ZazaConstantsHandler {
     async save(zazaConstants, { adapter }) {
         if (!zazaConstants) return;
-        await adapter.injectData(path.join('settings', 'zazaConstants.ts'), 'zazaConstants', zazaConstants, 
+        const tsRes = await adapter.injectData(path.join('settings', 'zazaConstants.ts'), 'zazaConstants', zazaConstants, 
             `export const zazaConstants = {{DATA}};`);
+        return tsRes;
     }
 }
 
 class LocalesHandler {
     async save(locales, { adapter, localesDir }) {
-        if (!locales) return;
+        if (!locales) return { success: true };
+        const results = [];
         const langs = ['Tr', 'En', 'Zz', 'Kr'];
         for (const lang of langs) {
             if (locales[lang]) {
-                await adapter.injectData(path.join('locales', `${lang}.ts`), lang, locales[lang], 
+                const tsRes = await adapter.injectData(path.join('locales', `${lang}.ts`), lang, locales[lang], 
                     `import { Locale } from '@zazalingo/shared';\n\nexport const ${lang}: Locale = {{DATA}};`);
-                await adapter.injectJSON(path.join('locales', `${lang}.json`), locales[lang]);
+                const jsonRes = await adapter.injectJSON(path.join('locales', `${lang}.json`), locales[lang]);
+                results.push(tsRes, jsonRes);
             }
         }
+        const errors = results.flatMap(r => r.errors || []);
+        return {
+            success: results.every(r => r.success),
+            partial: results.some(r => r.partial) || errors.length > 0,
+            errors
+        };
     }
 }
 

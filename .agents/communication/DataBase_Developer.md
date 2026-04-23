@@ -1,22 +1,25 @@
 # DataBase Developer Board
 
-## Active Task: [FINAL-THEME-SYNC-&-POLICY]
+## Active Task: [RESTORE-DATA-AGGREGATION-RUNTIME]
 - **Assigned By:** TeamLeader (Antigravity)
 - **Status:** [x] COMPLETED
-- **Priority:** MEDIUM
+- **Priority:** CRITICAL
 
 ### 🎯 Objective:
-Tema şemalarını eşitlemek ve temizlik politikasını mühürlemek.
+`/data` endpoint'indeki `aggregationManager is not defined` hatasını gidererek runtime sağlığını geri kazanmak ve tüm sistemi mühürlemek.
 
 ### ✅ Actions Taken:
-1. **Force Sync Success:** `Data_Base/data/theme/themeSchemes.json` dosyası `ZazaLingo` projesine kopyalandı. `light`, `dark` ve `solarized` temalarının tamamı yeni global seçim renkleriyle (`selectedText` vb.) eşitlendi.
-2. **Policy Adherence:** İletişim dosyalarındaki (`.md`) geçmiş hata kodu referansları, TeamLeader direktifi doğrultusunda tarihsel kayıt olarak bırakıldı. Temizlik odağı %100 veri (`data/`) ve yedek (`backups/`) katmanlarına odaklanarak başarıyla tamamlandı.
-3. **Parity Confirmed:** Mobil uygulama tarafındaki şema dosyaları görsel olarak doğrulandı ve veritabanı ile tam uyumlu olduğu kanıtlandı.
+1. **Composition Root Fix:** `database-server.js` içinde `AggregationReader`, `AggregationAssembler` ve `AggregationManager` nesneleri DIP prensiplerine uygun olarak ilklendirildi ve birbirine bağlandı.
+2. **Wiring:** 
+   - `GET /data` rotası `aggregationManager` nesnesine bağlandı.
+   - `GET /data/locales.json` rotası `aggReader` nesnesine bağlandı.
+3. **Full Seal:** Sunucu restart edildi.
+   - **Read Test:** `/data` endpoint'inden başarılı bir şekilde tüm payload çekildi.
+   - **Write Test:** `/save` endpoint'i üzerinden modüler tema güncellemesi başarıyla gerçekleştirildi (`success: true`).
+4. **Architecture Audit:** Tüm sistem artık `FileSystemAdapter` üzerinden soyutlanmış ve `SaveRegistry` sözleşmesine uyumlu durumdadır.
 
 ---
 ## 📜 Task History
-- [x] [FINAL-THEME-SYNC-&-POLICY] - COMPLETED
-- [x] [BACKUP-PRUNING-FINAL] - COMPLETED
-- [x] [GLOBAL-COLOR-SYNC-VERIFICATION] - COMPLETED
-- [x] [VERIFY-THEME-SCHEME-SAVING] - COMPLETED
-- [x] [GLOBAL-DATA-ENCODING-REPAIR] - COMPLETED
+- [x] [RESTORE-DATA-AGGREGATION-RUNTIME] - COMPLETED
+- [x] [INTERFACE-CONTRACT-FIX] - COMPLETED
+- [x] [SOLID-STRICT-COMPLIANCE] - COMPLETED

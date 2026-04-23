@@ -4,11 +4,19 @@ const fs = require('fs');
 const path = require('path');
 const morgan = require('morgan');
 const logger = require('./logger');
-const syncManager = require('./SyncManager');
 const httpLogger = morgan('dev');
 
-// Classes (DIP)
+// --- DIP Infrastructure ---
 const FileSystemAdapter = require('./FileSystemAdapter');
+const TSInjectionService = require('./services/TSInjectionService');
+const AtomicWriter = require('./services/AtomicWriter');
+const BackupService = require('./services/BackupService');
+const MirrorService = require('./services/MirrorService');
+const SyncManager = require('./SyncManager');
+const ConfigService = require('./services/ConfigService');
+const ThemeRegistry = require('./ThemeRegistry');
+
+// --- Managers & Tools ---
 const AggregationReader = require('./AggregationReader');
 const AggregationAssembler = require('./AggregationAssembler');
 const AggregationManager = require('./AggregationManager');
@@ -16,7 +24,7 @@ const CurriculumManager = require('./CurriculumManager');
 const SaveRegistry = require('./SaveRegistry');
 const SchemaValidator = require('./SchemaValidator');
 
-// Handlers (OCP)
+// --- Handlers ---
 const { StationsHandler, DecorationsHandler, MapConfigHandler } = require('./handlers/MapHandler');
 const CurriculumHandler = require('./handlers/CurriculumHandler');
 const ProverbsHandler = require('./handlers/ProverbsHandler');
@@ -41,43 +49,134 @@ const SETTINGS_DIR = path.join(DATA_DIR, 'settings');
 const BACKUP_DIR = path.join(__dirname, 'backups');
 const ARCHIVE_DIR = path.join(__dirname, 'archive');
 
-// --- Initialization (DIP Construction) ---
-const fsAdapter = new FileSystemAdapter(syncManager);
+// --- Initialization (Composition Root) ---
+const fsAdapter = new FileSystemAdapter();
+const config = ConfigService.loadConfig(path.join(__dirname, 'data', 'settings', 'syncConfig.json'));
+
+const atomicWriter = new AtomicWriter(fsAdapter);
+atomicWriter.setConfig(config);
+
+const backupService = new BackupService(fsAdapter, atomicWriter);
+backupService.setBackupDir(BACKUP_DIR);
+
+const mirrorService = new MirrorService(fsAdapter, atomicWriter);
+mirrorService.addMirror(DATA_DIR); // Primary as a target for some ops if needed? No, usually Primary is source.
+
+const syncManager = new SyncManager(fsAdapter, atomicWriter, backupService, mirrorService, TSInjectionService);
+syncManager.addTarget(DATA_DIR, true);
+
+// Aggregation Runtime (DIP)
 const aggReader = new AggregationReader(fsAdapter);
 const aggAssembler = new AggregationAssembler(aggReader, fsAdapter);
 const aggregationManager = new AggregationManager(aggReader, aggAssembler);
-const curriculumManager = new CurriculumManager(fsAdapter);
 
-// --- Registry Setup (OCP) ---
-const saveRegistry = new SaveRegistry();
-saveRegistry.register('stations', new StationsHandler());
-saveRegistry.register('decorations', new DecorationsHandler());
-saveRegistry.register('mapConfig', new MapConfigHandler());
-saveRegistry.register('tests', new CurriculumHandler(curriculumManager));
-saveRegistry.register('proverbs', new ProverbsHandler());
-saveRegistry.register('theme', new ThemeHandler());
-saveRegistry.register('themeSchemes', new ThemeSchemesHandler());
-saveRegistry.register('info', new InfoHandler());
-saveRegistry.register('zazaConstants', new ZazaConstantsHandler());
-saveRegistry.register('locales', new LocalesHandler());
-
-// SyncManager Setup
-syncManager.setBackupDir(BACKUP_DIR);
-syncManager.addTarget(DATA_DIR, true);
-// --- v8.0 SSoT Migration: Tight Coupling disabled ---
+// Mobile Sync Target
 const MOBILE_DATA_DIR = process.env.MOBILE_DATA_DIR || path.join(__dirname, '../ZazaLingo/data');
 if (fs.existsSync(MOBILE_DATA_DIR)) {
     syncManager.addTarget(MOBILE_DATA_DIR, false);
     logger.info(`[Sync] Mobile Data Sync ENABLED: ${MOBILE_DATA_DIR}`);
 }
 
+// --- Theme Registry (OCP) ---
+const themeRegistry = new ThemeRegistry();
+themeRegistry.register('tokens/colors.ts', [
+    'primary', 'primaryDark', 'secondary', 'tertiary', 'background', 'surface',
+    'textDark', 'textLight', 'textWhite', 'border', 'correct', 'correctShadow',
+    'incorrect', 'incorrectShadow', 'inactive', 'inactiveText', 'selectedBg',
+    'selectedBorder', 'selectedText', 'progressBarBg', 'progressFill',
+    'feedbackCorrectBg', 'feedbackIncorrectBg', 'accent', 'accentLight',
+    'secondaryLight', 'headerTitleColor', 'headerSubtitleColor',
+    'buttonContinueColor', 'buttonContinueTextColor', 'buttonSettingsColor',
+    'buttonSettingsTextColor', 'questionTitleColor', 'questionPromptColor',
+    'questionBtnColor', 'questionBtnTextColor', 'proverbsTitleColor',
+    'proverbsTextColor', 'proverbsTranslationColor', 'proverbsBgColor',
+    'proverbsBorderColor'
+]);
+themeRegistry.register('components/map.ts', [
+    'mapBgColor', 'mapGridColor', 'mapRiverColor', 'railSteelColor', 'railActiveColor',
+    'tieNormalColor', 'tieActiveColor', 'pinLockedBg', 'pinLockedFg', 'pinActiveBg',
+    'pinActiveFg', 'pinActiveRing', 'pinDoneBg', 'pinDoneFg', 'pinDoneRing',
+    'labelBgColor', 'labelTextColor', 'labelLockedColor', 'locoColor',
+    'locoAccentColor', 'locoWindowColor', 'locoLightColor',
+    'mapRailWidth', 'mapTieSize', 'mapTieThickness', 'mapTieSpacing',
+    'mapPinRadius', 'mapTopicPinRadius'
+]);
+themeRegistry.register('tokens/spacing.ts', [
+    'borderRadius', 'buttonPadding', 'buttonBorderRadius', 'buttonHeight',
+    'buttonVerticalMargin', 'buttonContainerPaddingHorizontal', 'buttonContainerPaddingBottom',
+    'headerHeight', 'headerTopMargin', 'headerBottomMargin', 'buttonContainerTopMargin',
+    'buttonContainerMarginLeft', 'buttonWidth', 'buttonMarginTop', 'buttonMarginLeft',
+    'buttonGap', 'headerTitleMarginTop', 'headerTitleMarginLeft', 'headerTitleWidth',
+    'headerTitleHeight', 'headerSubtitleMarginTop', 'headerSubtitleMarginLeft',
+    'headerSubtitleWidth', 'headerSubtitleHeight', 'proverbsMarginTop',
+    'proverbsMarginLeft', 'proverbsWidth', 'proverbsHeight', 'mascotHomeTop',
+    'mascotHomeMarginLeft', 'mascotHomeSize', 'mascotQuestionTop',
+    'mascotQuestionMarginLeft', 'mascotQuestionSize', 'mascotWordOrderTop',
+    'mascotWordOrderMarginLeft', 'mascotWordOrderSize', 'mascotMatchingTop',
+    'mascotMatchingMarginLeft', 'mascotMatchingSize', 'mascotImageChoiceTop',
+    'mascotImageChoiceMarginLeft', 'mascotImageChoiceSize', 'mascotChoiceImageTop',
+    'mascotChoiceImageMarginLeft', 'mascotChoiceImageSize', 'mascotDialogueTop',
+    'mascotDialogueMarginLeft', 'mascotDialogueSize', 'mascotDinlemeTop',
+    'mascotDinlemeMarginLeft', 'mascotDinlemeSize', 'mascotGorselEslesirmeTop',
+    'mascotGorselEslesirmeMarginLeft', 'mascotGorselEslesirmeSize',
+    'mascotSentenceCompletionTop', 'mascotSentenceCompletionMarginLeft',
+    'mascotSentenceCompletionSize', 'mascotImageQuestionTop',
+    'mascotImageQuestionMarginLeft', 'mascotImageQuestionSize',
+    'questionTitleMarginTop', 'questionTitleMarginLeft', 'questionTitleWidth',
+    'questionTitleHeight', 'questionPromptMarginTop', 'questionPromptMarginBottom',
+    'questionPromptMarginLeft', 'questionPromptWidth', 'questionPromptHeight',
+    'questionPromptPaddingHorizontal', 'questionOptionsMarginTop',
+    'questionOptionsMarginBottom', 'questionOptionsMarginLeft', 'questionOptionsWidth',
+    'questionOptionsHeight', 'questionOptionsPaddingHorizontal', 'questionBtnMarginTop',
+    'questionBtnMarginLeft', 'questionBtnWidth', 'questionBtnHeight', 'questionBtnBorderRadius'
+]);
+themeRegistry.register('tokens/typography.ts', [
+    'buttonTextSize', 'headerTitleFontSize', 'headerSubtitleFontSize',
+    'questionPromptFontSize', 'questionOptionFontSize', 'questionBtnTextFontSize',
+    'questionTitleFontSize', 'proverbsTitleFontSize', 'proverbsTextFontSize', 
+    'proverbsTranslationFontSize', 'settingsTitleFontSize', 'settingsMusicSectionTitleFontSize',
+    'settingsInfoSectionTitleFontSize', 'settingsMusicItemFontSize', 'settingsInfoItemFontSize',
+    'settingsSubHeaderFontSize', 'settingsBackFontSize'
+]);
+themeRegistry.register('components/questions.ts', [
+    'coktanSecmeliBgColor', 'coktanSecmeliTextColor', 'coktanSecmeliSelectedBgColor',
+    'coktanSecmeliSelectedBorderColor', 'coktanSecmeliSelectedTextColor',
+    'wordOrderBgColor', 'wordOrderTextColor', 'wordOrderSelectedBgColor',
+    'wordOrderSelectedBorderColor', 'wordOrderSelectedTextColor',
+    'matchingBgColor', 'matchingTextColor', 'matchingSelectedBgColor',
+    'matchingSelectedBorderColor', 'matchingSelectedTextColor',
+    'imageChoiceBgColor', 'imageChoiceTextColor', 'imageChoiceSelectedBgColor',
+    'imageChoiceSelectedBorderColor', 'imageChoiceSelectedTextColor',
+    'choiceImageBgColor', 'choiceImageTextColor', 'choiceImageSelectedBgColor',
+    'choiceImageSelectedBorderColor', 'choiceImageSelectedTextColor',
+    'dialogueBgColor', 'dialogueTextColor', 'dialogueSelectedBgColor',
+    'dialogueSelectedBorderColor', 'dialogueSelectedTextColor',
+    'dinlemeBgColor', 'dinlemeTextColor', 'dinlemeSelectedBgColor',
+    'dinlemeSelectedBorderColor', 'dinlemeSelectedTextColor',
+    'gorselEslesirmeBgColor', 'gorselEslesirmeTextColor', 'gorselEslesirmeSelectedBgColor',
+    'gorselEslesirmeSelectedBorderColor', 'gorselEslesirmeSelectedTextColor',
+    'sentenceCompletionBgColor', 'sentenceCompletionTextColor', 'sentenceCompletionSelectedBgColor',
+    'sentenceCompletionSelectedBorderColor', 'sentenceCompletionSelectedTextColor',
+    'imageQuestionBgColor', 'imageQuestionTextColor', 'imageQuestionSelectedBgColor',
+    'imageQuestionSelectedBorderColor', 'imageQuestionSelectedTextColor'
+]);
 
+// --- Registry Setup (OCP) ---
+const saveRegistry = new SaveRegistry();
+saveRegistry.register('stations', new StationsHandler());
+saveRegistry.register('decorations', new DecorationsHandler());
+saveRegistry.register('mapConfig', new MapConfigHandler());
+saveRegistry.register('tests', new CurriculumHandler(new CurriculumManager(fsAdapter)));
+saveRegistry.register('proverbs', new ProverbsHandler());
+saveRegistry.register('theme', new ThemeHandler(fsAdapter, syncManager, themeRegistry));
+saveRegistry.register('themeSchemes', new ThemeSchemesHandler(fsAdapter, syncManager));
+saveRegistry.register('info', new InfoHandler());
+saveRegistry.register('zazaConstants', new ZazaConstantsHandler());
+saveRegistry.register('locales', new LocalesHandler());
 
 // Ensure directories exist locally
 [DATA_DIR, CURRICULUM_DIR, MAP_DIR, THEME_DIR, PROVERBS_DIR, LOCALES_DIR, SETTINGS_DIR, BACKUP_DIR, ARCHIVE_DIR].forEach(dir => {
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-    }
+    fsAdapter.mkdir(dir);
 });
 
 
@@ -325,6 +424,30 @@ const server = http.createServer((req, res) => {
                     return;
                 }
 
+                // v9.0 Strict Integrity Lock
+                if (payload.stations) {
+                    const idResult = SchemaValidator.validateMandatoryIDs(payload.stations, 'stations');
+                    if (!idResult.isValid) {
+                        res.writeHead(400, { 'Content-Type': 'application/json' });
+                        res.end(JSON.stringify({ error: 'Missing mandatory ID in stations', offendingKey: idResult.errorPath }));
+                        return;
+                    }
+                    const integrityResult = SchemaValidator.validateDataIntegrity(payload.stations);
+                    if (!integrityResult.isValid) {
+                        res.writeHead(400, { 'Content-Type': 'application/json' });
+                        res.end(JSON.stringify({ error: 'Data integrity failed: Topics must have parentUnitId', offendingKey: integrityResult.errorPath }));
+                        return;
+                    }
+                }
+                if (payload.tests) {
+                    const idResult = SchemaValidator.validateMandatoryIDs(payload.tests, 'tests');
+                    if (!idResult.isValid) {
+                        res.writeHead(400, { 'Content-Type': 'application/json' });
+                        res.end(JSON.stringify({ error: 'Missing mandatory ID in tests', offendingKey: idResult.errorPath }));
+                        return;
+                    }
+                }
+
                 const context = { 
                     adapter: fsAdapter, 
                     stations: payload.stations, 
@@ -334,11 +457,17 @@ const server = http.createServer((req, res) => {
                     themeDir: THEME_DIR,
                     dataDir: DATA_DIR
                 };
-                await saveRegistry.process(payload, context);
+                const syncReport = await saveRegistry.process(payload, context);
                 if (fs.existsSync(path.join(DATA_DIR, 'users.json'))) syncManager.syncFile('users.json');
-                res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ success: true }));
-                logger.info(`✅ [Registry] Save successful for: ${req.url}`);
+                
+                res.writeHead(syncReport.partial ? 207 : 200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ 
+                    success: syncReport.success,
+                    partial: syncReport.partial,
+                    errors: syncReport.errors,
+                    message: syncReport.partial ? 'Primary saved but some mirrors failed to sync.' : 'Save successful'
+                }));
+                logger.info(`✅ [Registry] Save successful for: ${req.url} (Partial: ${syncReport.partial})`);
             } catch (err) {
                 logger.error(`[POST ${req.url}] Error: ${err.message}`);
                 res.writeHead(500, { 'Content-Type': 'application/json' });

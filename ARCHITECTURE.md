@@ -1,88 +1,90 @@
-# ZazaLingo Data_Base - Mimari Dökümantasyonu
+# ZazaLingo Data_Base - Mimari Dökümantasyonu (v10.0 - Sealed)
 
 Bu döküman, ZazaLingo ekosisteminin veri yönetim merkezi olan **Data_Base** backend servisinin teknik mimarisini, veri güvenliği protokollerini ve senkronizasyon mantığını detaylandırmaktadır.
 
+---
+
 ## 1. Genel Bakış (Overview)
 Data_Base, ZazaLingo uygulaması (Mobile/Web) ve Geliştirici Uygulaması (DevApp) arasında köprü görevi gören, verilerin kalıcı olarak saklandığı ve merkezi olarak yönetildiği bir Node.js servisidir.
-
-**Temel Sorumluluklar:**
-- Editörden gelen JSON verilerini TypeScript (`.ts`) dosyalarına enjekte etmek.
-- Verilerin anlık olarak mobil uygulama diziniyle senkronize edilmesini sağlamak.
-- Medya varlıklarını (Resim, Ses) yönetmek ve servis etmek.
-- Veri bütünlüğünü korumak için otomatik yedekleme ve "Safe-Write" mekanizmalarını işletmek.
 
 ---
 
 ## 2. Teknoloji Yığını (Tech Stack)
 - **Runtime:** Node.js
-- **Network:** Native `http` modülü (Hafif ve hızlı bir Express alternatifi)
+- **Network:** Native `http` modülü (Hafif ve hızlı)
 - **File System:** `fs` & `path` (Doğrudan disk erişimi)
-- **Security:** X-API-KEY & Bearer Token Authentication
-- **Scripting:** Python (Veri düzeltme ve tarama yardımcıları için)
+- **Security:** X-API-KEY Authentication & Schema Validation
+- **Patterns:** Facade, Registry, Adapter, Service-Oriented Architecture (SOA)
 
 ---
 
-## 3. Çekirdek Mekanizmalar
+## 3. Çekirdek Mimari Kavramları
 
-### 3.1 Demirbaş Veri Güvenliği (Ironclad Safe-Write)
-Veri kaybını önlemek için `database-server.js` içerisinde gelişmiş bir kayıt sistemi mevcuttur:
-1.  **Backup:** Dosya güncellenmeden önce `backups/` klasörüne zaman damgalı bir kopya oluşturulur.
-2.  **Atomic Write:** Veri önce `.tmp` uzantılı geçici bir dosyaya yazılır. Yazma başarılıysa orijinal dosya ile yer değiştirilir (`renameSync`).
-3.  **TS Hijacking:** JSON verileri, TypeScript dosyalarındaki `export const X = ...` tanımını bozmadan ilgili değişkene enjekte edilir.
+### 3.1 Hybrid SSoT (Single Source of Truth)
+ZazaLingo, verinin hem backend'de (`Data_Base/data`) hem de mobil uygulama dizininde (`ZazaLingo/data`) bulunduğu hibrit bir yapı kullanır.
+- **Primary (SSoT):** `Data_Base/data` klasörü mutlak doğrudur. Tüm yazma işlemleri önce buraya yapılır.
+- **Mirror (Target):** `ZazaLingo/data` klasörü, uygulamanın çalışması için gerekli olan anlık kopyadır.
+- **Orchestration:** `SyncManager`, Primary'deki değişiklikleri otomatik olarak Mirror hedeflere klonlar.
 
-### 3.2 Çoklu Hedef Senkronizasyonu (Sync Logic)
-Data_Base'e kaydedilen herhangi bir veri, eşzamanlı olarak iki farklı konuma yazılır:
-- **Merkezi Depo:** `Data_Base/data/` (Arşiv ve ana kaynak)
-- **Mobil Uygulama Deposu:** `ZazaLingo/data/` (Üretim ortamı için anlık güncelleme)
+### 3.2 Registry Pattern (OCP Compliance)
+Veri kaydetme işlemleri artık devasa bir `switch/case` bloğu yerine `SaveRegistry` üzerinden yönetilir.
+- Her veri türü (istasyonlar, testler, temalar) kendi handler'ına sahiptir.
+- Yeni bir veri türü eklemek için `database-server.js` kodunu değiştirmek gerekmez; sadece yeni bir handler register edilir.
 
----
-
-## 4. Veri Modelleme ve Eşleme (Mapping)
-
-### 4.1 Tema Ayrıştırma (`THEME_MAPPING`)
-Büyük bir tema JSON dosyası, mobil uygulamanın performanslı çalışması için parçalanarak ilgili token dosyalarına dağıtılır:
-- `tokens/colors.ts`
-- `tokens/spacing.ts`
-- `tokens/typography.ts`
-- `components/questions.ts`, `settings.ts`, vb.
-
-### 4.2 Eğitim İçeriği (Curriculum) Hiyerarşisi
-Testler, disk üzerinde hiyerarşik bir klasör yapısında saklanır:
-`data/curriculum/Unite_[X]/[Konu_Adi]/[test_id].ts`
+### 3.3 Partial Success (HTTP 207) Mechanism
+Sistem, senkronizasyon durumunu şeffaf bir şekilde raporlar:
+- **HTTP 200 (OK):** Veri Primary'ye başarıyla yazıldı ve TÜM Mirror'lara senkronize edildi.
+- **HTTP 207 (Multi-Status):** Veri Primary'ye başarıyla yazıldı ANCAK bir veya daha fazla Mirror'a yazılırken hata oluştu.
+- **HTTP 400/500:** Kritik bir hata oluştu ve veri Primary'ye bile yazılamadı.
 
 ---
 
-## 5. API Uç Noktaları (Endpoints)
+## 4. Servis Haritası (Service Map)
 
-| Metot | Uç Nokta | Açıklama |
-| :--- | :--- | :--- |
-| **GET** | `/data` | Tüm verileri (Map, Theme, Locales, Settings) paket halinde döndürür. |
-| **POST** | `/save` | Gelen verileri ilgili `.ts` dosyalarına enjekte eder ve senkronize eder. |
-| **POST** | `/upload` | Resim ve ses dosyalarını `assets/` klasörüne kaydeder. |
-| **POST** | `/login` | Kullanıcı kimlik doğrulaması yapar ve oturum (session) oluşturur. |
-| **GET** | `/assets` | Kayıtlı tüm medya varlıklarının listesini döndürür. |
+| Servis | Sorumluluk |
+| :--- | :--- |
+| **SyncManager** | **Facade:** Tüm veri akışını orkestre eder. Backups, Atomic Writes ve Mirror Sync işlemlerini tetikler. |
+| **AtomicWriter** | **Security:** Veriyi önce `.tmp` dosyasına yazar, başarılıysa yer değiştirir. Retry logic ile Windows dosya kilitlerini aşar. |
+| **MirrorService** | **Sync:** Primary dosyasını kayıtlı tüm ayna dizinlere kopyalar ve Primary'de silinen dosyaları Mirror'lardan temizler (Pruning). |
+| **SchemaValidator** | **Integrity:** Gelen verilerin PascalCase kurallarına ve hiyerarşik zorunluluklara (örn: topic'ler için `parentUnitId`) uygunluğunu denetler. |
+| **BackupService** | **Safety:** Her yazma işleminden önce dosyanın zaman damgalı bir kopyasını `backups/` klasörüne alır. |
 
----
-
-## 6. Klasör Yapısı (Directory Structure)
-```text
-Data_Base/
-├── data/            # Ana veri deposu (JSON/TS)
-│   ├── backups/     # Otomatik oluşturulan yedekler
-│   ├── curriculum/  # Test içerikleri
-│   ├── locales/     # Dil dosyaları (tr, en, zzk, krmnc)
-│   └── theme/       # Tema konfigürasyonları
-├── assets/          # Medya dosyaları (Audio, Pictures)
-├── types/           # Paylaşılan TS tanımlamaları
-└── database-server.js # Ana servis mantığı
+### 4.1 Servis İlişki Diyagramı
+```mermaid
+graph TD
+    API[HTTP POST /save] --> SV[SchemaValidator]
+    SV --> SR[SaveRegistry]
+    SR --> SM[SyncManager]
+    
+    subgraph "SyncManager Orchestration"
+        SM --> BS[BackupService]
+        SM --> AW[AtomicWriter]
+        AW --> MS[MirrorService]
+    end
+    
+    AW -- Write --> P[(Primary Data)]
+    MS -- Sync --> M1[(Mirror: Mobile App)]
+    MS -- Sync --> M2[(Mirror: Backups/Others)]
 ```
 
 ---
 
-## 7. Güvenlik
-- **API Key:** `x-api-key` başlığı ile sınırlı erişim.
-- **Path Traversal:** Dosya yüklemelerinde `path.basename` kullanılarak dizin dışına çıkılması engellenir.
-- **CORS:** Güvenli geliştirme için sadece belirli kökenlere (localhost:5173 vb.) izin verilir.
+
+## 5. Veri Yazma Akış Şeması (Write Flow)
+1.  **Request:** DevApp bir `POST /save` isteği gönderir.
+2.  **Validate:** `SchemaValidator` veriyi yapısal ve semantik olarak kontrol eder.
+3.  **Registry:** `SaveRegistry`, ilgili handler'ı (örn: `StationHandler`) bulur ve çalıştırır.
+4.  **Backup:** `BackupService` orijinal dosyanın yedeğini alır.
+5.  **Atomic Write:** `AtomicWriter` veriyi Primary depoya güvenli bir şekilde yazar.
+6.  **Mirror Sync:** `MirrorService` güncellenen dosyayı Mobil Uygulama dizinine klonlar.
+7.  **Response:** İşlem sonucuna göre `200` veya `207` koduyla rapor döner.
 
 ---
-> **Not:** Bu backend servisi "Stateful" bir yapıdadır; veriyi doğrudan dosya sisteminde tutarak veritabanı bağımlılığını ortadan kaldırır.
+
+## 6. Güvenlik ve Bütünlük
+- **Atomic Renaming:** Dosya yazma işlemi sırasında sistem çökse bile dosya asla bozulmaz (yarım yazılma olmaz).
+- **Domain Isolation:** Her servis sadece kendi sorumluluk alanındaki (`AtomicWriter`, `MirrorService` vb.) işleri yapar.
+- **Path Guard:** Tüm dosya erişimleri merkezi bir `FileSystemAdapter` üzerinden yapılarak güvenlik denetimi sağlanır.
+
+---
+> **Not:** Bu mimari, ZazaLingo v10.0 "Sealing" fazında SOLID prensiplerine tam uyum için refaktör edilmiştir.

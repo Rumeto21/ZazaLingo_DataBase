@@ -59,6 +59,7 @@ class CurriculumManager {
         const testIds = Object.keys(tests || {});
         const currentTestFiles = new Set(['index.ts']);
         const testToPathMap = this.resolveTestPaths(stations);
+        const syncResults = [];
 
         let indexContent = `import { TestData } from '@zazalingo/shared';\n\n`;
 
@@ -76,8 +77,9 @@ class CurriculumManager {
             currentTestFiles.add(posixPath.toLowerCase());
 
             // Use adapter injection for individual test files
-            await this.fs.injectData(path.join('curriculum', posixPath), testExportName, test, 
+            const res = await this.fs.injectData(path.join('curriculum', posixPath), testExportName, test, 
                 `import { TestData } from '@zazalingo/shared';\n\nexport const ${testExportName}: TestData = {{DATA}};\n`);
+            syncResults.push(res);
             
             indexContent += `import { ${testExportName} } from './${posixPath.replace('.ts', '')}';\n`;
         }
@@ -85,14 +87,23 @@ class CurriculumManager {
         indexContent += `\nexport const TESTS: Record<string, TestData> = {\n`;
         testIds.forEach(tid => {
             const testExportName = this.getSafeExportName(tid);
-            indexContent += `    ${tid}: ${testExportName},\n`;
+            indexContent += `    "${tid}": ${testExportName},\n`;
         });
         indexContent += `};\n`;
 
         await this.fs.writeFile(path.join(curriculumDir, 'index.ts'), indexContent);
-        await this.fs.syncFile(path.join('curriculum', 'index.ts'));
+        const indexSyncRes = await this.fs.syncFile(path.join('curriculum', 'index.ts'));
+        syncResults.push(indexSyncRes);
 
         await this.archiveOldTests(curriculumDir, currentTestFiles, archiveDir);
+
+        const validResults = syncResults.filter(r => r);
+        const errors = validResults.flatMap(r => r.errors || []);
+        return {
+            success: validResults.every(r => r.success),
+            partial: validResults.some(r => r.partial) || errors.length > 0,
+            errors
+        };
     }
 
     /**

@@ -71,6 +71,62 @@ class SchemaValidator {
     }
 
     /**
+     * Ensures all objects in an array or top-level records have a non-empty 'id'.
+     * v9.0 Safety: Mandatory for Map Stations and Tests.
+     */
+    static validateMandatoryIDs(obj, path = '') {
+        if (!obj) return { isValid: true };
+
+        if (Array.isArray(obj)) {
+            for (let i = 0; i < obj.length; i++) {
+                const item = obj[i];
+                if (typeof item === 'object' && item !== null) {
+                    if (!item.id || typeof item.id !== 'string' || item.id.trim() === '') {
+                        const errorPath = `${path}[${i}].id`;
+                        logger.error(`[SchemaValidator] ID ERROR: Missing or invalid ID at "${errorPath}"`);
+                        return { isValid: false, errorPath };
+                    }
+                }
+            }
+        } else if (typeof obj === 'object') {
+            // For top-level records (e.g., tests object in curriculum)
+            for (const key in obj) {
+                const item = obj[key];
+                const currentPath = path ? `${path}.${key}` : key;
+                if (typeof item === 'object' && item !== null) {
+                    if (!item.id) {
+                        logger.error(`[SchemaValidator] ID ERROR: Item at "${currentPath}" is missing internal "id" field.`);
+                        return { isValid: false, errorPath: `${currentPath}.id` };
+                    }
+                }
+            }
+        }
+        return { isValid: true };
+    }
+
+    /**
+     * Validates semantic integrity between fields.
+     * v9.0 Integration: Topic parentUnitId cross-check.
+     */
+    static validateDataIntegrity(obj) {
+        if (!obj || typeof obj !== 'object') return { isValid: true };
+
+        // 1. Map Integrity: Topics must have parentUnitId
+        if (Array.isArray(obj)) {
+            for (let i = 0; i < obj.length; i++) {
+                const item = obj[i];
+                if (item.type === 'topic' && !item.parentUnitId) {
+                    const errorPath = `[${i}].parentUnitId`;
+                    logger.error(`[SchemaValidator] INTEGRITY ERROR: Topic "${item.id}" is missing "parentUnitId".`);
+                    return { isValid: false, errorPath };
+                }
+            }
+        }
+
+        return { isValid: true };
+    }
+
+    /**
      * Middleware function for http server
      */
     static middleware(req, res, body, next) {
@@ -78,9 +134,8 @@ class SchemaValidator {
 
         try {
             const payload = JSON.parse(body);
-            // v8.0 Strict Schema Check
+            // 1. PascalCase Check
             const result = this.validatePascalCaseKeys(payload);
-            
             if (!result.isValid) {
                 logger.error(`[SchemaValidator] Validation failed for ${req.url}. Error Path: ${result.errorPath}`);
                 res.writeHead(400, { 'Content-Type': 'application/json' });
@@ -89,6 +144,32 @@ class SchemaValidator {
                     offendingKey: result.errorPath
                 }));
                 return;
+            }
+
+            // 2. Mandatory ID Check (for stations and tests)
+            if (payload.stations) {
+                const idResult = this.validateMandatoryIDs(payload.stations, 'stations');
+                if (!idResult.isValid) {
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: 'Missing mandatory ID in stations', offendingKey: idResult.errorPath }));
+                    return;
+                }
+
+                const integrityResult = this.validateDataIntegrity(payload.stations);
+                if (!integrityResult.isValid) {
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: 'Data integrity failed: Topics must have parentUnitId', offendingKey: integrityResult.errorPath }));
+                    return;
+                }
+            }
+
+            if (payload.tests) {
+                const idResult = this.validateMandatoryIDs(payload.tests, 'tests');
+                if (!idResult.isValid) {
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: 'Missing mandatory ID in tests', offendingKey: idResult.errorPath }));
+                    return;
+                }
             }
 
             next();

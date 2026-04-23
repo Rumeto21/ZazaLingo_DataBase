@@ -1,190 +1,107 @@
-const path = require('path');
-const fs = require('fs');
 const logger = require('../logger');
 
+/**
+ * ThemeHandler
+ * Manages theme updates and modular TS file injections.
+ * Implements OCP by using ThemeRegistry for mapping.
+ * Implements DIP by using FileSystemAdapter.
+ */
 class ThemeHandler {
-    constructor() {
-        this.mapping = {
-            'tokens/colors.ts': [
-                'primary', 'primaryDark', 'secondary', 'tertiary', 'background', 'surface',
-                'textDark', 'textLight', 'textWhite', 'border',
-                'correct', 'correctShadow', 'incorrect', 'incorrectShadow',
-                'inactive', 'inactiveText', 'selectedBg', 'selectedBorder', 'selectedText',
-                'progressBarBg', 'progressFill', 'feedbackCorrectBg', 'feedbackIncorrectBg',
-                'accent', 'accentLight', 'secondaryLight',
-                'headerTitleColor', 'headerSubtitleColor',
-                'buttonContinueColor', 'buttonContinueTextColor',
-                'buttonSettingsColor', 'buttonSettingsTextColor',
-                'questionTitleColor', 'questionPromptColor', 'questionBtnColor', 'questionBtnTextColor',
-                'proverbsTitleColor', 'proverbsTextColor', 'proverbsTranslationColor',
-                'proverbsBgColor', 'proverbsBorderColor'
-            ],
-            'components/map.ts': [
-                'mapBgColor', 'mapGridColor', 'mapRiverColor', 'railSteelColor', 'railActiveColor',
-                'tieNormalColor', 'tieActiveColor', 'pinLockedBg', 'pinLockedFg', 'pinActiveBg',
-                'pinActiveFg', 'pinActiveRing', 'pinDoneBg', 'pinDoneFg', 'pinDoneRing',
-                'labelBgColor', 'labelTextColor', 'labelLockedColor', 'locoColor',
-                'locoAccentColor', 'locoWindowColor', 'locoLightColor',
-                'mapRailWidth', 'mapTieSize', 'mapTieThickness', 'mapTieSpacing',
-                'mapPinRadius', 'mapTopicPinRadius'
-            ],
-            'tokens/spacing.ts': [
-                'borderRadius', 'buttonPadding', 'buttonBorderRadius', 'buttonHeight',
-                'buttonVerticalMargin', 'buttonContainerPaddingHorizontal', 'buttonContainerPaddingBottom',
-                'headerHeight', 'headerTopMargin', 'headerBottomMargin',
-                'buttonContainerTopMargin', 'buttonContainerMarginLeft',
-                'buttonWidth', 'buttonMarginTop', 'buttonMarginLeft', 'buttonGap',
-                'headerTitleMarginTop', 'headerTitleMarginLeft', 'headerTitleWidth', 'headerTitleHeight',
-                'headerSubtitleMarginTop', 'headerSubtitleMarginLeft', 'headerSubtitleWidth', 'headerSubtitleHeight',
-                'proverbsMarginTop', 'proverbsMarginLeft', 'proverbsWidth', 'proverbsHeight',
-                'mascotHomeTop', 'mascotHomeMarginLeft', 'mascotHomeSize',
-                'mascotQuestionTop', 'mascotQuestionMarginLeft', 'mascotQuestionSize',
-                'mascotWordOrderTop', 'mascotWordOrderMarginLeft', 'mascotWordOrderSize',
-                'mascotMatchingTop', 'mascotMatchingMarginLeft', 'mascotMatchingSize',
-                'mascotImageChoiceTop', 'mascotImageChoiceMarginLeft', 'mascotImageChoiceSize',
-                'mascotChoiceImageTop', 'mascotChoiceImageMarginLeft', 'mascotChoiceImageSize',
-                'mascotDialogueTop', 'mascotDialogueMarginLeft', 'mascotDialogueSize',
-                'mascotDinlemeTop', 'mascotDinlemeMarginLeft', 'mascotDinlemeSize',
-                'mascotGorselEslesirmeTop', 'mascotGorselEslesirmeMarginLeft', 'mascotGorselEslesirmeSize',
-                'mascotSentenceCompletionTop', 'mascotSentenceCompletionMarginLeft', 'mascotSentenceCompletionSize',
-                'mascotImageQuestionTop', 'mascotImageQuestionMarginLeft', 'mascotImageQuestionSize',
-                'questionTitleMarginTop', 'questionTitleMarginLeft', 'questionTitleWidth', 'questionTitleHeight',
-                'questionPromptMarginTop', 'questionPromptMarginBottom', 'questionPromptMarginLeft',
-                'questionPromptWidth', 'questionPromptHeight', 'questionPromptPaddingHorizontal',
-                'questionOptionsMarginTop', 'questionOptionsMarginBottom', 'questionOptionsMarginLeft',
-                'questionOptionsWidth', 'questionOptionsHeight', 'questionOptionsPaddingHorizontal',
-                'questionBtnMarginTop', 'questionBtnMarginLeft', 'questionBtnWidth', 'questionBtnHeight',
-                'questionBtnBorderRadius',
-                'settingsTitleMarginTop', 'settingsTitleMarginLeft', 'settingsTitleWidth', 'settingsTitleHeight',
-                'settingsBackMarginTop', 'settingsBackMarginLeft', 'settingsBackWidth', 'settingsBackHeight', 'settingsBackFontSize',
-                'settingsMusicSectionMarginTop', 'settingsMusicSectionMarginLeft', 'settingsMusicSectionWidth', 'settingsMusicSectionHeight',
-                'settingsInfoSectionMarginTop', 'settingsInfoSectionMarginLeft', 'settingsInfoSectionWidth', 'settingsInfoSectionHeight',
-                'settingsThemeSectionMarginTop', 'settingsThemeSectionMarginLeft', 'settingsThemeSectionWidth', 'settingsThemeSectionHeight',
-                'settingsThemeItemWidth', 'settingsThemeItemHeight',
-                'settingsThemeItem0MarginTop', 'settingsThemeItem0MarginLeft',
-                'settingsThemeItem1MarginTop', 'settingsThemeItem1MarginLeft',
-                'settingsThemeItem2MarginTop', 'settingsThemeItem2MarginLeft',
-                'settings_music_item_0MarginTop', 'settings_music_item_0MarginLeft', 'settings_music_item_0Width', 'settings_music_item_0Height',
-                'settings_music_item_1MarginTop', 'settings_music_item_1MarginLeft', 'settings_music_item_1Width', 'settings_music_item_1Height',
-                'settings_info_menu_0MarginTop', 'settings_info_menu_0MarginLeft', 'settings_info_menu_0Width', 'settings_info_menu_0Height',
-                'settings_info_menu_1MarginTop', 'settings_info_menu_1MarginLeft', 'settings_info_menu_1Width', 'settings_info_menu_1Height',
-                'settings_info_menu_2MarginTop', 'settings_info_menu_2MarginLeft', 'settings_info_menu_2Width', 'settings_info_menu_2Height',
-                'settingsMenuBorderRadius', 'settingsMusicItemBorderRadius', 'settingsThemeItemBorderRadius',
-                'settingsInfoMenuBorderRadius', 'settingsContentBoxBorderRadius', 'settingsMusicToggleBorderRadius',
-                'settingsMusicSliderBorderRadius',
-                'settingsContentBoxWidth', 'settingsContentBoxHeight', 'settingsContentBoxMarginLeft', 'settingsContentBoxMarginTop',
-                'settings_music_toggleWidth', 'settings_music_toggleHeight', 'settings_music_toggleMarginTop', 'settings_music_toggleMarginLeft',
-                'settings_music_slider_generalWidth', 'settings_music_slider_generalHeight', 'settings_music_slider_generalMarginTop', 'settings_music_slider_generalMarginLeft',
-                'settings_music_slider_testWidth', 'settings_music_slider_testHeight', 'settings_music_slider_testMarginTop', 'settings_music_slider_testMarginLeft',
-                'topBarPaddingHorizontal', 'topBarPaddingTop', 'topBarPaddingBottom', 'topBarDropdownWidth',
-                'topBarFlagWidth', 'topBarFlagHeight', 'topBarHelperMarginLeft'
-            ],
-            'tokens/typography.ts': [
-                'buttonTextSize', 'headerTitleFontSize', 'headerSubtitleFontSize',
-                'questionPromptFontSize', 'questionOptionFontSize', 'questionBtnTextFontSize',
-                'questionTitleFontSize', 'proverbsTitleFontSize', 'proverbsTextFontSize', 
-                'proverbsTranslationFontSize', 'settingsTitleFontSize', 'settingsMusicSectionTitleFontSize',
-                'settingsInfoSectionTitleFontSize', 'settingsMusicItemFontSize', 'settingsInfoItemFontSize',
-                'settingsSubHeaderFontSize', 'settingsBackFontSize'
-            ],
-            'components/questions.ts': [
-                'coktanSecmeliBgColor', 'coktanSecmeliTextColor', 'coktanSecmeliSelectedBgColor',
-                'coktanSecmeliSelectedBorderColor', 'coktanSecmeliSelectedTextColor',
-                'wordOrderBgColor', 'wordOrderTextColor', 'wordOrderSelectedBgColor',
-                'wordOrderSelectedBorderColor', 'wordOrderSelectedTextColor',
-                'matchingBgColor', 'matchingTextColor', 'matchingSelectedBgColor',
-                'matchingSelectedBorderColor', 'matchingSelectedTextColor',
-                'imageChoiceBgColor', 'imageChoiceTextColor', 'imageChoiceSelectedBgColor',
-                'imageChoiceSelectedBorderColor', 'imageChoiceSelectedTextColor',
-                'choiceImageBgColor', 'choiceImageTextColor', 'choiceImageSelectedBgColor',
-                'choiceImageSelectedBorderColor', 'choiceImageSelectedTextColor',
-                'dialogueBgColor', 'dialogueTextColor', 'dialogueSelectedBgColor',
-                'dialogueSelectedBorderColor', 'dialogueSelectedTextColor',
-                'questionOptionBgColor', 'questionOptionTextColor', 'questionOptionSelectedBgColor',
-                'questionOptionSelectedBorderColor', 'questionOptionSelectedTextColor'
-            ],
-            'components/settings.ts': [
-                'settingsHeaderTitle', 'settingsMusicSectionTitle', 'settingsInfoSectionTitle',
-                'settingsTeamTitle', 'settingsDedicationTitle', 'settingsMusicBadgeTitle', 'settingsMusicVolumeTitle'
-            ],
-            'components/header.ts': ['headerTitleText', 'headerSubtitleText', 'headerTitleAlign', 'headerSubtitleAlign'],
-            'components/proverbs.ts': ['proverbsTitleText'],
-            'components/buttons.ts': ['buttonContinueText', 'buttonSettingsText', 'buttonTextAlign']
-        };
+    constructor(fsAdapter, syncManager, themeRegistry) {
+        this.fs = fsAdapter;
+        this.syncManager = syncManager;
+        this.registry = themeRegistry;
     }
 
-    async save(theme, { adapter, themeDir }) {
-        if (!theme) {
-            logger.warn('[ThemeHandler] No theme data in payload, skipping save.');
-            return;
-        }
-
-        // --- SSoT Protection: Use themeDir from context or fallback to relative path ---
-        const themeConfigPath = themeDir 
-            ? path.join(themeDir, 'themeConfig.json')
-            : path.join(__dirname, '../data/theme/themeConfig.json');
-
-        let mergedTheme = { ...theme };
-        try {
-            if (fs.existsSync(themeConfigPath)) {
-                const raw = fs.readFileSync(themeConfigPath, 'utf-8');
-                const currentConfig = JSON.parse(raw);
-                
-                // Only merge if currentConfig is a valid object with keys
-                if (currentConfig && typeof currentConfig === 'object' && Object.keys(currentConfig).length > 0) {
-                    // Pre-merge check: If incoming theme is very small compared to existing, log it
-                    if (Object.keys(theme).length < Object.keys(currentConfig).length / 2) {
-                        logger.warn(`[ThemeHandler] Partial update detected (${Object.keys(theme).length} vs ${Object.keys(currentConfig).length}). Merging to protect data.`);
-                    }
-                    mergedTheme = { ...currentConfig, ...theme };
-                }
-            } else {
-                logger.warn(`[ThemeHandler] themeConfig.json not found at ${themeConfigPath}. Proceeding with payload.`);
-            }
-        } catch (err) {
-            logger.error(`[ThemeHandler] Merge failed at ${themeConfigPath}: ${err.message}`);
-            // If it's a parse error, we definitely don't want to overwrite with possibly bad data
-            // unless the user intended to start fresh. But for safety, we fallback to payload.
-        }
-
-        logger.info(`[ThemeHandler] Final theme contains ${Object.keys(mergedTheme).length} keys.`);
+    async save(data, context = {}) {
+        const results = [];
+        const mappings = this.registry.getMappings();
         
-        for (const [relativePath, keys] of Object.entries(this.mapping)) {
-            const partData = {};
-            let matchCount = 0;
-            keys.forEach(k => { 
-                if (k in mergedTheme) {
-                    partData[k] = mergedTheme[k]; 
-                    matchCount++;
+        // 1. Update Modular Files based on Registry
+        for (const [relativePath, keysSet] of mappings.entries()) {
+            const keys = Array.from(keysSet);
+            const modularData = {};
+            let hasData = false;
+
+            keys.forEach(key => {
+                if (data[key] !== undefined) {
+                    modularData[key] = data[key];
+                    hasData = true;
                 }
             });
-            
-            if (matchCount > 0) {
-                const varName = path.basename(relativePath, '.ts');
-                await adapter.injectData(path.join('theme', relativePath), varName, partData, 
-                    `export const ${varName} = {{DATA}};`);
-            } else {
-                logger.debug(`[ThemeHandler] No keys found for ${relativePath}, skipping.`);
+
+            if (hasData) {
+                try {
+                    const varName = this.fs.basename(relativePath, '.ts');
+                    const res = await this.syncManager.injectDataIntoTSFile(
+                        this.fs.join('theme', relativePath),
+                        varName,
+                        modularData,
+                        `export const ${varName} = {{DATA}};`
+                    );
+                    results.push(res);
+                } catch (err) {
+                    results.push({ success: false, errors: [err.message] });
+                }
             }
         }
 
-        await adapter.injectJSON(path.join('theme', 'themeConfig.json'), mergedTheme);
-        logger.info('[ThemeHandler] Modular files and themeConfig.json updated (Fail-Safe Merged).');
+        // 2. Update Master themeConfig.json (Atomic)
+        try {
+            const res = await this.syncManager.injectJSONAtomic('theme/themeConfig.json', data);
+            results.push(res);
+            logger.info('[ThemeHandler] Modular files and themeConfig.json updated via Registry.');
+        } catch (err) {
+            results.push({ success: false, errors: [err.message] });
+        }
+
+        // 3. Consolidate Results
+        const errors = results.flatMap(r => r.errors || []);
+        const partial = results.some(r => r.partial);
+        return {
+            success: results.every(r => r.success),
+            partial: partial || errors.length > 0,
+            errors
+        };
     }
 }
 
+/**
+ * ThemeSchemesHandler
+ * Minimal handler for theme schemes.
+ */
 class ThemeSchemesHandler {
-    async save(themeSchemes, { adapter }) {
-        if (!themeSchemes) return;
-        
-        // Save to JSON
-        await adapter.injectJSON(path.join('theme', 'themeSchemes.json'), themeSchemes);
-        
-        // Inject into TS
-        await adapter.injectData(path.join('theme', 'themeSchemes.ts'), 'THEME_SCHEMES', themeSchemes,
-            `export const THEME_SCHEMES: Record<ThemeType, any> = {{DATA}};`);
-            
-        logger.info('[ThemeHandler] themeSchemes.json and themeSchemes.ts updated.');
+    constructor(fsAdapter, syncManager) {
+        this.fs = fsAdapter;
+        this.syncManager = syncManager;
+    }
+
+    async save(data, context = {}) {
+        const results = [];
+        try {
+            // Update TS
+            const tsRes = await this.syncManager.injectDataIntoTSFile(
+                'theme/themeSchemes.ts',
+                'themeSchemes',
+                data,
+                'export const themeSchemes = {{DATA}};'
+            );
+            results.push(tsRes);
+
+            // Update JSON
+            const jsonRes = await this.syncManager.injectJSONAtomic('theme/themeSchemes.json', data);
+            results.push(jsonRes);
+
+        } catch (err) {
+            results.push({ success: false, errors: [err.message] });
+        }
+
+        const errors = results.flatMap(r => r.errors || []);
+        return {
+            success: results.every(r => r.success),
+            partial: errors.length > 0,
+            errors
+        };
     }
 }
 

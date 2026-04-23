@@ -20,6 +20,8 @@ export const THEME_SCHEMES: Record<ThemeType, any> = {
         "textLight": "#AFAFAF",
         "border": "#37464F",
         "cardBg": "#202F36",
+        "selectedBg": "#37464F",
+        "selectedBorder": "#1CB0F6",
         "selectedText": "#FFFFFF"
     },
     "solarized": {
@@ -28,9 +30,9 @@ export const THEME_SCHEMES: Record<ThemeType, any> = {
         "textDark": "#6f6e6d",
         "textLight": "#93a1a1",
         "border": "#d33682",
-        "selectedBg": "#eee8d5",
+        "selectedBg": "#268bd2",
         "selectedBorder": "#859900",
-        "selectedText": "#6f6e6d",
+        "selectedText": "#FFFFFF",
         "cardBg": "#eee8d5",
         "primary": "#859900",
         "primaryDark": "#586e75",

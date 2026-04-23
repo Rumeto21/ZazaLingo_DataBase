@@ -21,35 +21,43 @@ class SaveRegistry {
 
     /**
      * Executes the registered handler for the given key.
-     * @param {string} key 
-     * @param {any} data 
-     * @param {Object} context - Shared context (paths, adapter, etc.)
+     * @returns {Promise<Object>} The sync result from the handler.
      */
     async handle(key, data, context) {
         const handler = this.handlers.get(key);
         if (handler) {
             try {
-                await handler.save(data, context);
+                return await handler.save(data, context);
             } catch (err) {
                 logger.error(`[SaveRegistry] Error in handler for '${key}': ${err.message}`);
                 throw err;
             }
         } else {
             logger.warn(`[SaveRegistry] No handler registered for key: '${key}'`);
+            return { success: true }; // No handler is not a sync error
         }
     }
 
     /**
      * Processes a full payload.
-     * @param {Object} payload 
-     * @param {Object} context 
+     * @returns {Promise<{success: boolean, partial: boolean, errors: string[]}>}
      */
     async process(payload, context) {
+        const allResults = [];
         for (const [key, data] of Object.entries(payload)) {
             if (data !== undefined && data !== null) {
-                await this.handle(key, data, context);
+                const res = await this.handle(key, data, context);
+                if (res) allResults.push(res);
             }
         }
+
+        const errors = allResults.flatMap(r => r.errors || []);
+        const partial = allResults.some(r => r.partial);
+        return {
+            success: allResults.every(r => r.success),
+            partial: partial || errors.length > 0,
+            errors
+        };
     }
 }
 

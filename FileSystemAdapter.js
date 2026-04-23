@@ -1,20 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-const logger = require('./logger');
 
 /**
  * FileSystemAdapter
- * Decouples managers from direct 'fs' and 'SyncManager' dependencies.
- * Implements Dependency Inversion Principle (DIP).
+ * Pure wrapper for Node.js 'fs' and 'path' modules.
+ * Implements Dependency Inversion Principle (DIP) by providing a clean interface for I/O.
  */
 class FileSystemAdapter {
-    /**
-     * @param {Object} syncer - An object providing injectDataIntoTSFile, injectJSONAtomic, and syncFile methods.
-     */
-    constructor(syncer) {
-        this.syncer = syncer;
-    }
-
     exists(filePath) {
         return fs.existsSync(filePath);
     }
@@ -26,70 +18,56 @@ class FileSystemAdapter {
     }
 
     readFile(filePath, encoding = 'utf-8') {
+        if (!fs.existsSync(filePath)) return null;
         return fs.readFileSync(filePath, encoding);
     }
 
-    async writeFile(filePath, content, encoding = 'utf-8') {
-        if (this.syncer && this.syncer._retry) {
-            await this.syncer._retry(fs.writeFileSync, [filePath, content, encoding]);
-        } else {
-            fs.writeFileSync(filePath, content, encoding);
+    writeFile(filePath, content, encoding = 'utf-8') {
+        fs.writeFileSync(filePath, content, encoding);
+    }
+
+    unlink(filePath) {
+        if (fs.existsSync(filePath)) {
+            fs.unlinkSync(filePath);
         }
     }
 
+    rename(oldPath, newPath) {
+        fs.renameSync(oldPath, newPath);
+    }
+
     readdir(dirPath) {
+        if (!fs.existsSync(dirPath)) return [];
         return fs.readdirSync(dirPath);
     }
 
     stat(filePath) {
+        if (!fs.existsSync(filePath)) return null;
         return fs.statSync(filePath);
     }
 
-    async rename(oldPath, newPath) {
-        if (this.syncer && this.syncer._retry) {
-            await this.syncer._retry(fs.renameSync, [oldPath, newPath]);
-        } else {
-            fs.renameSync(oldPath, newPath);
-        }
+    copy(src, dest) {
+        const dir = path.dirname(dest);
+        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        fs.copyFileSync(src, dest);
     }
 
-    async rmdir(dirPath) {
-        if (this.syncer && this.syncer._retry) {
-            await this.syncer._retry(fs.rmSync, [dirPath, { recursive: true, force: true }]);
-        } else {
+    rmdir(dirPath) {
+        if (fs.existsSync(dirPath)) {
             fs.rmSync(dirPath, { recursive: true, force: true });
         }
     }
 
-    /**
-     * Specialized method for TS data injection via injected syncer.
-     */
-    async injectData(filePath, exportName, data, template) {
-        if (this.syncer) {
-            await this.syncer.injectDataIntoTSFile(filePath, exportName, data, template);
-        } else {
-            logger.warn(`[FileSystemAdapter] No syncer provided. injection failed for ${filePath}`);
-        }
+    join(...parts) {
+        return path.join(...parts);
     }
 
-    /**
-     * Specialized method for atomic JSON writing via injected syncer.
-     */
-    async injectJSON(filePath, data) {
-        if (this.syncer) {
-            await this.syncer.injectJSONAtomic(filePath, data);
-        } else {
-            logger.warn(`[FileSystemAdapter] No syncer provided. JSON injection failed for ${filePath}`);
-        }
+    dirname(filePath) {
+        return path.dirname(filePath);
     }
 
-    /**
-     * Specialized method for triggering a file sync via injected syncer.
-     */
-    async syncFile(relativeInternalPath) {
-        if (this.syncer) {
-            await this.syncer.syncFile(relativeInternalPath);
-        }
+    basename(filePath) {
+        return path.basename(filePath);
     }
 }
 

@@ -1,33 +1,9 @@
-export interface LevelData {
-    id: string;
-    ZzName: string;
-    TrName: string;
-    EnName?: string;
-    KrName?: string;
-    x: number;
-    y: number;
-    testIds?: string[];
-    type: 'station' | 'topic';
-    unitIndex?: number;
-    topicIndex?: number;
-    UnitZzName?: string;
-    UnitTrName?: string;
-    UnitEnName?: string;
-    UnitKrName?: string;
-    railX?: number;
-    railY?: number;
-    tagX?: number;
-    tagY?: number;
-    signX?: number;
-    signY?: number;
-    nameWidth?: number;
-    railAngle?: number;
-    parentUnitId?: string;
-}
+import { LevelData } from '@zazalingo/shared';
 
 export const courseLevels: LevelData[] = [
     {
         "id": "l01",
+        "parentUnitId": "l01",
         "ZzName": "Pilemurîye",
         "TrName": "Pülümür",
         "EnName": "Pülümür",
@@ -47,6 +23,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l01_t2",
+        "parentUnitId": "l01",
         "ZzName": "Canameyî",
         "TrName": "Zamirler",
         "x": 266,
@@ -63,6 +40,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l01_t3",
+        "parentUnitId": "l01",
         "ZzName": "Kopula",
         "TrName": "Kopula",
         "x": 221,
@@ -79,6 +57,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l02",
+        "parentUnitId": "l02",
         "ZzName": "Dêrsim",
         "TrName": "Tunceli",
         "KrName": "Dêrsim",
@@ -98,6 +77,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l02_t1",
+        "parentUnitId": "l02",
         "ZzName": "",
         "TrName": "",
         "x": 61,
@@ -110,6 +90,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l03",
+        "parentUnitId": "l03",
         "ZzName": "Qowancîyan",
         "TrName": "Kovancılar",
         "KrName": "Qowanciyan",
@@ -128,6 +109,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l04",
+        "parentUnitId": "l04",
         "ZzName": "Pali",
         "TrName": "Palu",
         "KrName": "Palu",
@@ -146,6 +128,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l05",
+        "parentUnitId": "l05",
         "ZzName": "Depe",
         "TrName": "Karakoçan",
         "KrName": "Dep",
@@ -164,6 +147,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l06",
+        "parentUnitId": "l06",
         "ZzName": "Çolig",
         "TrName": "Bingöl",
         "KrName": "Çewlîg",
@@ -182,6 +166,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l07",
+        "parentUnitId": "l07",
         "ZzName": "Kanîreş",
         "TrName": "Karlıova",
         "KrName": "Kanîreş",
@@ -200,6 +185,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l08",
+        "parentUnitId": "l08",
         "ZzName": "Xinûs",
         "TrName": "Hınıs",
         "KrName": "Xinûs",
@@ -218,6 +204,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l09",
+        "parentUnitId": "l09",
         "ZzName": "Gimgim",
         "TrName": "Varto",
         "KrName": "Gimgim",
@@ -236,6 +223,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l10",
+        "parentUnitId": "l10",
         "ZzName": "Bongilan",
         "TrName": "Solhan",
         "KrName": "Bongilan",
@@ -254,6 +242,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l11",
+        "parentUnitId": "l11",
         "ZzName": "Dara Hênî",
         "TrName": "Genç",
         "KrName": "Dara Hênî",
@@ -272,6 +261,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l12",
+        "parentUnitId": "l12",
         "ZzName": "Pasûr",
         "TrName": "Kulp",
         "KrName": "Pasûr",
@@ -290,6 +280,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l13",
+        "parentUnitId": "l13",
         "ZzName": "Licê",
         "TrName": "Lice",
         "KrName": "Lice",
@@ -308,6 +299,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l14",
+        "parentUnitId": "l14",
         "ZzName": "Hênî",
         "TrName": "Hani",
         "KrName": "Hênî",
@@ -326,6 +318,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l15",
+        "parentUnitId": "l15",
         "ZzName": "Pîran",
         "TrName": "Dicle",
         "KrName": "Pîran",
@@ -344,6 +337,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l16",
+        "parentUnitId": "l16",
         "ZzName": "Erxenî",
         "TrName": "Ergani",
         "KrName": "Erganî",
@@ -362,6 +356,7 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l17",
+        "parentUnitId": "l17",
         "ZzName": "Amed",
         "TrName": "Diyarbakır",
         "KrName": "Amed",
