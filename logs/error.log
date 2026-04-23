@@ -99,3 +99,9 @@
 {"level":"error","message":"[GET /data] Error: aggregationManager is not defined","service":"data-base-server","timestamp":"2026-04-23 02:48:50"}
 {"level":"error","message":"[GET /data] Error: aggregationManager is not defined","service":"data-base-server","timestamp":"2026-04-23 02:49:29"}
 {"level":"error","message":"[GET /data] Error: aggregationManager is not defined","service":"data-base-server","timestamp":"2026-04-23 03:26:11"}
+{"level":"error","message":"[SaveRegistry] Error in handler for 'stations': adapter.injectData is not a function","service":"data-base-server","timestamp":"2026-04-23 03:52:46"}
+{"level":"error","message":"[POST /save] Error: adapter.injectData is not a function","service":"data-base-server","timestamp":"2026-04-23 03:52:46"}
+{"level":"error","message":"[POST /save] Error: Expected property name or '}' in JSON at position 1 (line 1 column 2)","service":"data-base-server","timestamp":"2026-04-23 03:56:17"}
+{"level":"error","message":"[SchemaValidator] ID ERROR: Item at \"stations.value\" is missing internal \"id\" field.","service":"data-base-server","timestamp":"2026-04-23 04:00:03"}
+{"level":"error","message":"[SchemaValidator] ID ERROR: Item at \"stations.value\" is missing internal \"id\" field.","service":"data-base-server","timestamp":"2026-04-23 04:00:17"}
+{"level":"error","message":"[POST /save] Error: Expected property name or '}' in JSON at position 1 (line 1 column 2)","service":"data-base-server","timestamp":"2026-04-23 04:05:19"}

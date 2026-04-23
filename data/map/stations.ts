@@ -3,10 +3,9 @@ import { LevelData } from '@zazalingo/shared';
 export const courseLevels: LevelData[] = [
     {
         "id": "l01",
-        "parentUnitId": "l01",
         "ZzName": "Pilemurîye",
-        "TrName": "Pülümür",
-        "EnName": "Pülümür",
+        "TrName": "P�l�m�r",
+        "EnName": "P�l�m�r",
         "KrName": "Pilemuriye",
         "x": 414,
         "y": 95,
@@ -23,7 +22,6 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l01_t2",
-        "parentUnitId": "l01",
         "ZzName": "Canameyî",
         "TrName": "Zamirler",
         "x": 266,
@@ -34,13 +32,13 @@ export const courseLevels: LevelData[] = [
         "type": "topic",
         "topicIndex": 2,
         "EnName": "Pronouns",
-        "KrName": "Cînavk",
+        "KrName": "C�navk",
         "railX": 194,
-        "railY": 233
+        "railY": 233,
+        "parentUnitId": "l01"
     },
     {
         "id": "l01_t3",
-        "parentUnitId": "l01",
         "ZzName": "Kopula",
         "TrName": "Kopula",
         "x": 221,
@@ -53,14 +51,14 @@ export const courseLevels: LevelData[] = [
         "EnName": "Kopula",
         "KrName": "Kopula",
         "railX": 147,
-        "railY": 404
+        "railY": 404,
+        "parentUnitId": "l01"
     },
     {
         "id": "l02",
-        "parentUnitId": "l02",
         "ZzName": "Dêrsim",
         "TrName": "Tunceli",
-        "KrName": "Dêrsim",
+        "KrName": "D�rsim",
         "EnName": "Tunceli",
         "x": 44,
         "y": 531,
@@ -77,7 +75,6 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l02_t1",
-        "parentUnitId": "l02",
         "ZzName": "",
         "TrName": "",
         "x": 61,
@@ -86,13 +83,13 @@ export const courseLevels: LevelData[] = [
             "test_1773946534141"
         ],
         "type": "topic",
-        "topicIndex": 1
+        "topicIndex": 1,
+        "parentUnitId": "l02"
     },
     {
         "id": "l03",
-        "parentUnitId": "l03",
         "ZzName": "Qowancîyan",
-        "TrName": "Kovancılar",
+        "TrName": "Kovancilar",
         "KrName": "Qowanciyan",
         "x": 78,
         "y": 950,
@@ -109,7 +106,6 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l04",
-        "parentUnitId": "l04",
         "ZzName": "Pali",
         "TrName": "Palu",
         "KrName": "Palu",
@@ -128,9 +124,8 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l05",
-        "parentUnitId": "l05",
         "ZzName": "Depe",
-        "TrName": "Karakoçan",
+        "TrName": "Karako�an",
         "KrName": "Dep",
         "x": 666,
         "y": 720,
@@ -147,10 +142,9 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l06",
-        "parentUnitId": "l06",
         "ZzName": "Çolig",
-        "TrName": "Bingöl",
-        "KrName": "Çewlîg",
+        "TrName": "Bing�l",
+        "KrName": "�ewl�g",
         "x": 1108,
         "y": 752,
         "type": "station",
@@ -166,10 +160,9 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l07",
-        "parentUnitId": "l07",
         "ZzName": "Kanîreş",
-        "TrName": "Karlıova",
-        "KrName": "Kanîreş",
+        "TrName": "Karliova",
+        "KrName": "Kan�res",
         "x": 1341,
         "y": 313,
         "type": "station",
@@ -185,10 +178,9 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l08",
-        "parentUnitId": "l08",
         "ZzName": "Xinûs",
-        "TrName": "Hınıs",
-        "KrName": "Xinûs",
+        "TrName": "Hinis",
+        "KrName": "Xin�s",
         "x": 2069,
         "y": 159,
         "type": "station",
@@ -204,7 +196,6 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l09",
-        "parentUnitId": "l09",
         "ZzName": "Gimgim",
         "TrName": "Varto",
         "KrName": "Gimgim",
@@ -223,7 +214,6 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l10",
-        "parentUnitId": "l10",
         "ZzName": "Bongilan",
         "TrName": "Solhan",
         "KrName": "Bongilan",
@@ -242,10 +232,9 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l11",
-        "parentUnitId": "l11",
         "ZzName": "Dara Hênî",
-        "TrName": "Genç",
-        "KrName": "Dara Hênî",
+        "TrName": "Gen�",
+        "KrName": "Dara H�n�",
         "x": 1134,
         "y": 1185,
         "type": "station",
@@ -261,10 +250,9 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l12",
-        "parentUnitId": "l12",
         "ZzName": "Pasûr",
         "TrName": "Kulp",
-        "KrName": "Pasûr",
+        "KrName": "Pas�r",
         "x": 1670,
         "y": 1396,
         "type": "station",
@@ -280,7 +268,6 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l13",
-        "parentUnitId": "l13",
         "ZzName": "Licê",
         "TrName": "Lice",
         "KrName": "Lice",
@@ -299,10 +286,9 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l14",
-        "parentUnitId": "l14",
         "ZzName": "Hênî",
         "TrName": "Hani",
-        "KrName": "Hênî",
+        "KrName": "H�n�",
         "x": 997,
         "y": 1470,
         "type": "station",
@@ -318,10 +304,9 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l15",
-        "parentUnitId": "l15",
         "ZzName": "Pîran",
         "TrName": "Dicle",
-        "KrName": "Pîran",
+        "KrName": "P�ran",
         "x": 669,
         "y": 1439,
         "type": "station",
@@ -337,10 +322,9 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l16",
-        "parentUnitId": "l16",
         "ZzName": "Erxenî",
         "TrName": "Ergani",
-        "KrName": "Erganî",
+        "KrName": "Ergan�",
         "x": 216,
         "y": 1537,
         "type": "station",
@@ -356,9 +340,8 @@ export const courseLevels: LevelData[] = [
     },
     {
         "id": "l17",
-        "parentUnitId": "l17",
         "ZzName": "Amed",
-        "TrName": "Diyarbakır",
+        "TrName": "Diyarbakir",
         "KrName": "Amed",
         "x": 458,
         "y": 2115,

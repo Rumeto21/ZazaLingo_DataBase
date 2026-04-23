@@ -163,16 +163,16 @@ themeRegistry.register('components/questions.ts', [
 
 // --- Registry Setup (OCP) ---
 const saveRegistry = new SaveRegistry();
-saveRegistry.register('stations', new StationsHandler());
-saveRegistry.register('decorations', new DecorationsHandler());
-saveRegistry.register('mapConfig', new MapConfigHandler());
-saveRegistry.register('tests', new CurriculumHandler(new CurriculumManager(fsAdapter)));
-saveRegistry.register('proverbs', new ProverbsHandler());
+saveRegistry.register('stations', new StationsHandler(fsAdapter, syncManager));
+saveRegistry.register('decorations', new DecorationsHandler(fsAdapter, syncManager));
+saveRegistry.register('mapConfig', new MapConfigHandler(fsAdapter, syncManager));
+saveRegistry.register('tests', new CurriculumHandler(new CurriculumManager(fsAdapter, syncManager)));
+saveRegistry.register('proverbs', new ProverbsHandler(fsAdapter, syncManager));
 saveRegistry.register('theme', new ThemeHandler(fsAdapter, syncManager, themeRegistry));
 saveRegistry.register('themeSchemes', new ThemeSchemesHandler(fsAdapter, syncManager));
-saveRegistry.register('info', new InfoHandler());
-saveRegistry.register('zazaConstants', new ZazaConstantsHandler());
-saveRegistry.register('locales', new LocalesHandler());
+saveRegistry.register('info', new InfoHandler(fsAdapter, syncManager));
+saveRegistry.register('zazaConstants', new ZazaConstantsHandler(fsAdapter, syncManager));
+saveRegistry.register('locales', new LocalesHandler(fsAdapter, syncManager));
 
 // Ensure directories exist locally
 [DATA_DIR, CURRICULUM_DIR, MAP_DIR, THEME_DIR, PROVERBS_DIR, LOCALES_DIR, SETTINGS_DIR, BACKUP_DIR, ARCHIVE_DIR].forEach(dir => {

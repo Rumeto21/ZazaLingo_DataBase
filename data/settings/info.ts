@@ -43,8 +43,9 @@ export const zazaLingoInfo: ZazaLingoInfoData = {
             "source": "Musopen",
             "license": "CC BY 3.0",
             "licenseLink": "https://creativecommons.org/licenses/by/3.0/",
-            "changes": "looped"
+            "changes": {
+                "Tr": "looped"
+            }
         }
-
     ]
 };

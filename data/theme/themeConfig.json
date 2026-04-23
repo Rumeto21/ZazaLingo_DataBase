@@ -1,3 +1,298 @@
 {
-    "primary": "#654321"
+    "primary": "#654321",
+    "topBarPaddingHorizontal": {
+        "val": 0,
+        "unit": "px"
+    },
+    "topBarPaddingTop": {
+        "val": -362,
+        "unit": "px"
+    },
+    "topBarPaddingBottom": {
+        "val": 0,
+        "unit": "px"
+    },
+    "topBarDropdownWidth": {
+        "val": 50,
+        "unit": "px"
+    },
+    "topBarFlagWidth": {
+        "val": 150,
+        "unit": "ratio"
+    },
+    "topBarFlagHeight": {
+        "val": 20,
+        "unit": "px"
+    },
+    "topBarHelperMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "headerTitleWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "headerTitleHeight": {
+        "val": 80,
+        "unit": "px"
+    },
+    "headerTitleMarginTop": {
+        "val": -350,
+        "unit": "px"
+    },
+    "headerTitleMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "headerTitleFontSize": {
+        "val": 50,
+        "unit": "px"
+    },
+    "headerSubtitleFontSize": {
+        "val": 40,
+        "unit": "px"
+    },
+    "headerSubtitleWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "headerSubtitleHeight": {
+        "val": 70,
+        "unit": "px"
+    },
+    "headerSubtitleMarginTop": {
+        "val": -300,
+        "unit": "px"
+    },
+    "headerSubtitleMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "proverbsTitleFontSize": {
+        "val": 17,
+        "unit": "px"
+    },
+    "proverbsTextFontSize": {
+        "val": 21,
+        "unit": "px"
+    },
+    "proverbsTranslationFontSize": {
+        "val": 15,
+        "unit": "px"
+    },
+    "proverbsWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "proverbsHeight": {
+        "val": 150,
+        "unit": "px"
+    },
+    "borderRadius": {
+        "val": 20,
+        "unit": "px"
+    },
+    "proverbsMarginTop": {
+        "val": -234,
+        "unit": "px"
+    },
+    "proverbsMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "proverbsBgColor": "#e2ff52",
+    "proverbsBorderColor": "#ff0000",
+    "proverbsTitleColor": "#ff0000",
+    "proverbsTextColor": "#185c00",
+    "proverbsTranslationColor": "#595959",
+    "mascotHomeTop": {
+        "val": 35,
+        "unit": "px"
+    },
+    "mascotHomeMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "mascotHomeSize": {
+        "val": 0.37,
+        "unit": "ratio"
+    },
+    "buttonTextSize": {
+        "val": 25,
+        "unit": "px"
+    },
+    "buttonContinueColor": "#00800f",
+    "buttonContinueTextColor": "#ffffff",
+    "buttonSettingsColor": "#404040",
+    "buttonSettingsTextColor": "#ffffff",
+    "buttonWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "buttonHeight": {
+        "val": 50,
+        "unit": "px"
+    },
+    "buttonGap": {
+        "val": 15,
+        "unit": "px"
+    },
+    "buttonBorderRadius": {
+        "val": 20,
+        "unit": "px"
+    },
+    "buttonMarginTop": {
+        "val": 240,
+        "unit": "px"
+    },
+    "buttonMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "headerTitleColor": "#ff0000",
+    "headerSubtitleColor": "#089118",
+    "questionTitleFontSize": {
+        "val": 20,
+        "unit": "px"
+    },
+    "questionTitleWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "questionTitleMarginTop": {
+        "val": -360,
+        "unit": "px"
+    },
+    "questionTitleMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "questionPromptFontSize": {
+        "val": 30,
+        "unit": "px"
+    },
+    "questionOptionFontSize": {
+        "val": 25,
+        "unit": "px"
+    },
+    "questionTitleColor": "#0d0d0d",
+    "questionPromptColor": "#ff1a1a",
+    "questionPromptPaddingHorizontal": {
+        "val": 0,
+        "unit": "px"
+    },
+    "questionOptionsWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "questionContentOptionsGap": {
+        "val": 0,
+        "unit": "px"
+    },
+    "questionOptionsPaddingHorizontal": {
+        "val": 0,
+        "unit": "px"
+    },
+    "questionBtnWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "questionBtnHeight": {
+        "val": 50,
+        "unit": "px"
+    },
+    "questionBtnMarginTop": {
+        "val": 330,
+        "unit": "px"
+    },
+    "questionBtnMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "questionBtnBorderRadius": {
+        "val": 20,
+        "unit": "px"
+    },
+    "mascotQuestionSize": {
+        "val": 0.1,
+        "unit": "ratio"
+    },
+    "questionBtnColor": "#00ff62",
+    "questionBtnTextColor": "#ffffff",
+    "questionBtnTextFontSize": {
+        "val": 40,
+        "unit": "px"
+    },
+    "mascotChoiceImageSize": {
+        "val": 0.1,
+        "unit": "ratio"
+    },
+    "mascotMatchingSize": {
+        "val": 0.1,
+        "unit": "ratio"
+    },
+    "mascotDialogueSize": {
+        "val": 0.1,
+        "unit": "ratio"
+    },
+    "mascotWordOrderSize": {
+        "val": 0.1,
+        "unit": "ratio"
+    },
+    "settingsContentBoxBorderRadius": {
+        "val": 20,
+        "unit": "px"
+    },
+    "settingsContentBoxWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "settingsContentBoxHeight": {
+        "val": 250,
+        "unit": "px"
+    },
+    "settingsContentBoxMarginTop": {
+        "val": -300,
+        "unit": "px"
+    },
+    "settingsContentBoxMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "settingsTitleFontSize": {
+        "val": 30,
+        "unit": "px"
+    },
+    "settingsTitleWidth": {
+        "val": 0.9,
+        "unit": "ratio"
+    },
+    "settingsTitleHeight": {
+        "val": 80,
+        "unit": "px"
+    },
+    "settingsTitleMarginTop": {
+        "val": -360,
+        "unit": "px"
+    },
+    "settingsTitleMarginLeft": {
+        "val": 0,
+        "unit": "px"
+    },
+    "settingsBackMarginTop": {
+        "val": -360,
+        "unit": "px"
+    },
+    "settingsBackMarginLeft": {
+        "val": -150,
+        "unit": "px"
+    },
+    "settingsBackHeight": {
+        "val": 20,
+        "unit": "px"
+    },
+    "settingsBackWidth": {
+        "val": 50,
+        "unit": "px"
+    }
 }

@@ -1,6 +1,4 @@
-export type ThemeType = 'light' | 'dark' | 'solarized';
-
-export const THEME_SCHEMES: Record<ThemeType, any> = {
+export const themeSchemes = {
     "light": {
         "background": "#ffffff",
         "surface": "#ffffff",

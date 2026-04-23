@@ -1,16 +1,22 @@
-export const typography = {
+export const typography.ts = {
     "buttonTextSize": {
-        "val": 35,
+        "val": 25,
         "unit": "px"
     },
-    "headerTitleFontSize": 60,
-    "headerSubtitleFontSize": 40,
+    "headerTitleFontSize": {
+        "val": 50,
+        "unit": "px"
+    },
+    "headerSubtitleFontSize": {
+        "val": 40,
+        "unit": "px"
+    },
     "questionPromptFontSize": {
         "val": 30,
         "unit": "px"
     },
     "questionOptionFontSize": {
-        "val": 20,
+        "val": 25,
         "unit": "px"
     },
     "questionBtnTextFontSize": {
@@ -18,19 +24,23 @@ export const typography = {
         "unit": "px"
     },
     "questionTitleFontSize": {
-        "val": 24,
+        "val": 20,
         "unit": "px"
     },
-    "proverbsTitleFontSize": 26,
-    "proverbsTextFontSize": 19,
-    "proverbsTranslationFontSize": 15,
+    "proverbsTitleFontSize": {
+        "val": 17,
+        "unit": "px"
+    },
+    "proverbsTextFontSize": {
+        "val": 21,
+        "unit": "px"
+    },
+    "proverbsTranslationFontSize": {
+        "val": 15,
+        "unit": "px"
+    },
     "settingsTitleFontSize": {
         "val": 30,
         "unit": "px"
-    },
-    "settingsMusicSectionTitleFontSize": 20,
-    "settingsInfoSectionTitleFontSize": 20,
-    "settingsMusicItemFontSize": 16,
-    "settingsInfoItemFontSize": 16,
-    "settingsSubHeaderFontSize": 18
+    }
 };
