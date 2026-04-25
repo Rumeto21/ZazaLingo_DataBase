@@ -1,0 +1,33 @@
+{
+    "stations": [
+        {
+            "id": "l01",
+            "ZzName": "Pilemurîye",
+            "TrName": "Pülümür",
+            "x": 414,
+            "y": 95,
+            "testIds": [],
+            "type": "station",
+            "unitIndex": 1,
+            "signX": 5,
+            "signY": -35,
+            "tagX": 54,
+            "tagY": 15,
+            "railX": 362,
+            "railY": 82,
+            "railAngle": -187,
+            "parentUnitId": null
+        }
+    ],
+    "info": {
+        "mainTitle": { "Tr": "ZazaLingo Ayarları" },
+        "teamTitle": { "Tr": "ZazaLingo Ekibi" },
+        "dedicationTitle": { "Tr": "İthaflar" },
+        "missionTitle": { "Tr": "Misyonumuz" },
+        "infoTitle": { "Tr": "Hakkında" },
+        "mission": { "Tr": "Zazakî Öğreniyoruz!" },
+        "team": [ { "name": "Onur Şenoğlu" } ],
+        "dedications": [],
+        "music": []
+    }
+}

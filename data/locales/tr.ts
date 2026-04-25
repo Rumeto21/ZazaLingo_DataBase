@@ -41,7 +41,7 @@ export const Tr: Locale = {
     "addNewTopic": "+ Yeni Konu Ekle",
     "selectTestToEdit": "Düzenlemek için soldan bir test seçin",
     "moveTest": "↗ Testi Taşı",
-    "delete": "🗑 Sil",
+    "delete": "🗑️ Sil",
     "testTitle": "Test Başlığı",
     "questions": "Sorular",
     "questionTitle": "Soru Başlığı",

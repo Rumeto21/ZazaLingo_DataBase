@@ -41,7 +41,7 @@ class InfoHandler {
                 path.join('settings', 'info.ts'), 
                 'zazaLingoInfo', 
                 info, 
-                `export const zazaLingoInfo = {{DATA}};`
+                `import { ZazaLingoInfoData } from '../../types/data';\n\nexport const zazaLingoInfo: ZazaLingoInfoData = {{DATA}};`
             );
         } catch (err) {
             return { success: false, errors: [err.message] };

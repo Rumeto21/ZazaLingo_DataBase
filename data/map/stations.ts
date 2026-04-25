@@ -1,11 +1,11 @@
-import { LevelData } from '@zazalingo/shared';
+import { LevelData } from '../../types/data';
 
 export const courseLevels: LevelData[] = [
     {
         "id": "l01",
         "ZzName": "Pilemurîye",
-        "TrName": "P�l�m�r",
-        "EnName": "P�l�m�r",
+        "TrName": "Pülümür",
+        "EnName": "Pülümür",
         "KrName": "Pilemuriye",
         "x": 414,
         "y": 95,
@@ -18,7 +18,8 @@ export const courseLevels: LevelData[] = [
         "tagY": 15,
         "railX": 362,
         "railY": 82,
-        "railAngle": -187
+        "railAngle": -187,
+        "parentUnitId": null
     },
     {
         "id": "l01_t2",
@@ -32,7 +33,7 @@ export const courseLevels: LevelData[] = [
         "type": "topic",
         "topicIndex": 2,
         "EnName": "Pronouns",
-        "KrName": "C�navk",
+        "KrName": "Cînavk",
         "railX": 194,
         "railY": 233,
         "parentUnitId": "l01"
@@ -58,7 +59,7 @@ export const courseLevels: LevelData[] = [
         "id": "l02",
         "ZzName": "Dêrsim",
         "TrName": "Tunceli",
-        "KrName": "D�rsim",
+        "KrName": "Dersim",
         "EnName": "Tunceli",
         "x": 44,
         "y": 531,
@@ -71,7 +72,8 @@ export const courseLevels: LevelData[] = [
         "tagY": 31,
         "railAngle": 85,
         "railX": 138,
-        "railY": 492
+        "railY": 492,
+        "parentUnitId": null
     },
     {
         "id": "l02_t1",
@@ -102,7 +104,8 @@ export const courseLevels: LevelData[] = [
         "tagY": 49,
         "signX": 19,
         "signY": -42,
-        "railAngle": 58
+        "railAngle": 58,
+        "parentUnitId": null
     },
     {
         "id": "l04",
@@ -120,12 +123,13 @@ export const courseLevels: LevelData[] = [
         "tagY": -27,
         "signX": -13,
         "signY": -37,
-        "railAngle": -2
+        "railAngle": -2,
+        "parentUnitId": null
     },
     {
         "id": "l05",
         "ZzName": "Depe",
-        "TrName": "Karako�an",
+        "TrName": "Karakoçan",
         "KrName": "Dep",
         "x": 666,
         "y": 720,
@@ -138,13 +142,14 @@ export const courseLevels: LevelData[] = [
         "railY": 725,
         "tagX": -26,
         "tagY": -141,
-        "railAngle": 263
+        "railAngle": 263,
+        "parentUnitId": null
     },
     {
         "id": "l06",
         "ZzName": "Çolig",
-        "TrName": "Bing�l",
-        "KrName": "�ewl�g",
+        "TrName": "Bingöl",
+        "KrName": "Şewlig",
         "x": 1108,
         "y": 752,
         "type": "station",
@@ -156,13 +161,14 @@ export const courseLevels: LevelData[] = [
         "signX": -4,
         "signY": -35,
         "railAngle": 44,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l07",
         "ZzName": "Kanîreş",
         "TrName": "Karliova",
-        "KrName": "Kan�res",
+        "KrName": "Kanîreş",
         "x": 1341,
         "y": 313,
         "type": "station",
@@ -174,13 +180,14 @@ export const courseLevels: LevelData[] = [
         "railAngle": -98,
         "signX": -12,
         "signY": -35,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l08",
         "ZzName": "Xinûs",
         "TrName": "Hinis",
-        "KrName": "Xin�s",
+        "KrName": "Xinûs",
         "x": 2069,
         "y": 159,
         "type": "station",
@@ -192,7 +199,8 @@ export const courseLevels: LevelData[] = [
         "tagX": 42,
         "tagY": -59,
         "railAngle": 91,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l09",
@@ -210,7 +218,8 @@ export const courseLevels: LevelData[] = [
         "tagY": -36,
         "signX": -10,
         "signY": -34,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l10",
@@ -228,13 +237,14 @@ export const courseLevels: LevelData[] = [
         "tagY": -29,
         "signX": -10,
         "signY": -35,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l11",
         "ZzName": "Dara Hênî",
-        "TrName": "Gen�",
-        "KrName": "Dara H�n�",
+        "TrName": "Genç",
+        "KrName": "Dara Hênî",
         "x": 1134,
         "y": 1185,
         "type": "station",
@@ -246,13 +256,14 @@ export const courseLevels: LevelData[] = [
         "tagY": -37,
         "signX": -6,
         "signY": -41,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l12",
         "ZzName": "Pasûr",
         "TrName": "Kulp",
-        "KrName": "Pas�r",
+        "KrName": "Pasûr",
         "x": 1670,
         "y": 1396,
         "type": "station",
@@ -264,7 +275,8 @@ export const courseLevels: LevelData[] = [
         "tagX": 62,
         "tagY": -38,
         "railAngle": 70,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l13",
@@ -282,13 +294,14 @@ export const courseLevels: LevelData[] = [
         "railX": 1300,
         "railY": 1540,
         "railAngle": 174,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l14",
         "ZzName": "Hênî",
         "TrName": "Hani",
-        "KrName": "H�n�",
+        "KrName": "Hênî",
         "x": 997,
         "y": 1470,
         "type": "station",
@@ -300,13 +313,14 @@ export const courseLevels: LevelData[] = [
         "tagY": -41,
         "signX": -7,
         "signY": -31,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l15",
         "ZzName": "Pîran",
         "TrName": "Dicle",
-        "KrName": "P�ran",
+        "KrName": "Pîran",
         "x": 669,
         "y": 1439,
         "type": "station",
@@ -318,13 +332,14 @@ export const courseLevels: LevelData[] = [
         "signX": 5,
         "signY": -32,
         "railAngle": 183,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l16",
         "ZzName": "Erxenî",
         "TrName": "Ergani",
-        "KrName": "Ergan�",
+        "KrName": "Erganî",
         "x": 216,
         "y": 1537,
         "type": "station",
@@ -336,7 +351,8 @@ export const courseLevels: LevelData[] = [
         "tagY": -3,
         "signX": -9,
         "signY": -23,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l17",
@@ -354,7 +370,8 @@ export const courseLevels: LevelData[] = [
         "signY": -33,
         "tagX": -112,
         "tagY": -36,
-        "testIds": []
+        "testIds": [],
+        "parentUnitId": null
     },
     {
         "id": "l03_t1_964aec42-0921-47d8-b234-41bf336661bb",

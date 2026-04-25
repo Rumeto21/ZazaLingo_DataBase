@@ -264,11 +264,13 @@ const server = http.createServer((req, res) => {
 
     // ── POST /login ────────────────────────────────────────────────────────
     if (req.method === 'POST' && req.url === '/login') {
-        let body = '';
-        req.on('data', chunk => { body += chunk.toString(); });
+        let chunks = [];
+        req.on('data', chunk => { chunks.push(chunk); });
         req.on('end', () => {
             try {
+                const body = Buffer.concat(chunks).toString('utf-8');
                 const { username, password } = JSON.parse(body);
+
                 const usersFile = path.join(DATA_DIR, 'users.json');
                 const users = JSON.parse(fs.readFileSync(usersFile, 'utf-8'));
                 const user = users.find(u => u.username === username && u.password === password);
@@ -290,14 +292,29 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // ── GET /data ──────────────────────────────────────────────────────────
-    if (req.method === 'GET' && req.url === '/data') {
+    // ── GET /data | /full-payload ──────────────────────────────────────────
+    if (req.method === 'GET' && (req.url === '/data' || req.url === '/full-payload')) {
         try {
             const dirs = { mapDir: MAP_DIR, curriculumDir: CURRICULUM_DIR, themeDir: THEME_DIR, proverbsDir: PROVERBS_DIR, localesDir: LOCALES_DIR, settingsDir: SETTINGS_DIR };
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify(aggregationManager.buildFullPayload(dirs)));
         } catch (err) {
-            logger.error(`[GET /data] Error: ${err.message}`);
+            logger.error(`[GET ${req.url}] Error: ${err.message}`);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: err.message }));
+        }
+        return;
+    }
+
+    // ── GET /curriculum ────────────────────────────────────────────────────
+    if (req.method === 'GET' && req.url === '/curriculum') {
+        try {
+            const curriculumData = aggregationManager.scanCurriculum(CURRICULUM_DIR);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(curriculumData));
+            logger.info(`[GET /curriculum] Served ${Object.keys(curriculumData).length} tests.`);
+        } catch (err) {
+            logger.error(`[GET /curriculum] Error: ${err.message}`);
             res.writeHead(500, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: err.message }));
         }
@@ -406,11 +423,13 @@ const server = http.createServer((req, res) => {
 
     // ── POST /save ─────────────────────────────────────────────────────────
     if (req.method === 'POST' && (req.url === '/save' || req.url === '/saveLocales')) {
-        let body = '';
-        req.on('data', chunk => { body += chunk.toString(); });
+        let chunks = [];
+        req.on('data', chunk => { chunks.push(chunk); });
         req.on('end', async () => {
             try {
+                const body = Buffer.concat(chunks).toString('utf-8');
                 const payload = JSON.parse(body);
+
                 
                 // v8.0 Schema Validation Middleware
                 const validation = SchemaValidator.validatePascalCaseKeys(payload);

@@ -1,4 +1,4 @@
-export const spacing.ts = {
+export const spacing = {
     "borderRadius": {
         "val": 20,
         "unit": "px"
@@ -28,7 +28,7 @@ export const spacing.ts = {
         "unit": "px"
     },
     "headerTitleMarginTop": {
-        "val": -350,
+        "val": -300,
         "unit": "px"
     },
     "headerTitleMarginLeft": {
@@ -44,7 +44,7 @@ export const spacing.ts = {
         "unit": "px"
     },
     "headerSubtitleMarginTop": {
-        "val": -300,
+        "val": -225,
         "unit": "px"
     },
     "headerSubtitleMarginLeft": {
@@ -60,7 +60,7 @@ export const spacing.ts = {
         "unit": "px"
     },
     "proverbsMarginTop": {
-        "val": -234,
+        "val": -160,
         "unit": "px"
     },
     "proverbsMarginLeft": {
@@ -76,7 +76,7 @@ export const spacing.ts = {
         "unit": "px"
     },
     "mascotHomeTop": {
-        "val": 35,
+        "val": 80,
         "unit": "px"
     },
     "mascotHomeMarginLeft": {
@@ -84,7 +84,7 @@ export const spacing.ts = {
         "unit": "px"
     },
     "mascotHomeSize": {
-        "val": 0.37,
+        "val": 0.3,
         "unit": "ratio"
     },
     "mascotQuestionSize": {

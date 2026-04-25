@@ -23,7 +23,9 @@ export const zazaLingoInfo: ZazaLingoInfoData = {
         "Tr": "Müzik Bilgileri"
     },
     "team": [
-        "Onur Şenoğlu"
+        {
+            "name": "Onur Şenoğlu"
+        }
     ],
     "dedications": [
         {

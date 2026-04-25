@@ -16,7 +16,7 @@ class StationsHandler {
                 path.join('map', 'stations.ts'), 
                 'courseLevels', 
                 stations, 
-                `export const courseLevels = {{DATA}};`
+                `import { LevelData } from '../../types/data';\n\nexport const courseLevels: LevelData[] = {{DATA}};`
             );
             const jsonRes = await this.syncManager.injectJSONAtomic(
                 path.join('map', 'stations.json'), 
@@ -47,7 +47,7 @@ class DecorationsHandler {
                 path.join('map', 'decorations.ts'), 
                 'decorations', 
                 decorations, 
-                `export const decorations = {{DATA}};`
+                `import { DecorationData } from '../../types/data';\n\nexport const decorations: DecorationData[] = {{DATA}};`
             );
             const jsonRes = await this.syncManager.injectJSONAtomic(
                 path.join('map', 'decorations.json'), 
@@ -78,7 +78,7 @@ class MapConfigHandler {
                 path.join('map', 'config.ts'), 
                 'mapConfig', 
                 mapConfig, 
-                `export const mapConfig = {{DATA}};`
+                `import { MapConfig } from '../../types/data';\n\nexport const mapConfig: MapConfig = {{DATA}};`
             );
             const jsonRes = await this.syncManager.injectJSONAtomic(
                 path.join('map', 'config.json'), 

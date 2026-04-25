@@ -1,4 +1,4 @@
-export const typography.ts = {
+export const typography = {
     "buttonTextSize": {
         "val": 25,
         "unit": "px"

@@ -17,8 +17,8 @@
         "unit": "px"
     },
     "topBarFlagWidth": {
-        "val": 150,
-        "unit": "ratio"
+        "val": 25,
+        "unit": "px"
     },
     "topBarFlagHeight": {
         "val": 20,
@@ -37,7 +37,7 @@
         "unit": "px"
     },
     "headerTitleMarginTop": {
-        "val": -350,
+        "val": -300,
         "unit": "px"
     },
     "headerTitleMarginLeft": {
@@ -61,7 +61,7 @@
         "unit": "px"
     },
     "headerSubtitleMarginTop": {
-        "val": -300,
+        "val": -225,
         "unit": "px"
     },
     "headerSubtitleMarginLeft": {
@@ -93,7 +93,7 @@
         "unit": "px"
     },
     "proverbsMarginTop": {
-        "val": -234,
+        "val": -160,
         "unit": "px"
     },
     "proverbsMarginLeft": {
@@ -106,7 +106,7 @@
     "proverbsTextColor": "#185c00",
     "proverbsTranslationColor": "#595959",
     "mascotHomeTop": {
-        "val": 35,
+        "val": 80,
         "unit": "px"
     },
     "mascotHomeMarginLeft": {
@@ -114,7 +114,7 @@
         "unit": "px"
     },
     "mascotHomeSize": {
-        "val": 0.37,
+        "val": 0.3,
         "unit": "ratio"
     },
     "buttonTextSize": {
@@ -294,5 +294,20 @@
     "settingsBackWidth": {
         "val": 50,
         "unit": "px"
-    }
+    },
+    "headerTitleText": "ZazaLîngo",
+    "headerSubtitleText": "",
+    "headerTitleAlign": "center",
+    "headerSubtitleAlign": "center",
+    "buttonContinueText": "DEVAM ET",
+    "buttonSettingsText": "AYARLAR",
+    "buttonTextAlign": "center",
+    "proverbsTitleText": "VATEYÊ VERÊNAN",
+    "settingsHeaderTitle": "Ayarlar",
+    "settingsMusicSectionTitle": "Müzik Ayarları",
+    "settingsInfoSectionTitle": "ZazaLingo Info",
+    "settingsTeamTitle": "ZazaLingo Team",
+    "settingsDedicationTitle": "İthaflar",
+    "settingsMusicBadgeTitle": "Lisanslar",
+    "settingsMusicVolumeTitle": "Ses Seviyesi"
 }

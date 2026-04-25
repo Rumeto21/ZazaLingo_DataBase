@@ -66,8 +66,8 @@ class FileSystemAdapter {
         return path.dirname(filePath);
     }
 
-    basename(filePath) {
-        return path.basename(filePath);
+    basename(filePath, ext) {
+        return path.basename(filePath, ext);
     }
 }
 

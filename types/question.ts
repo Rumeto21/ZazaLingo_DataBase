@@ -35,6 +35,7 @@ export interface QuestionData {
     audioRef?: string;   // Ses dosyası (require veya URI)
     options: Option[];
     correctOptionId?: string; // CoktanSecmeli için
+    correctOptionIndex?: number; // Standardized index for frontend
     correctWords?: string[];   // WordOrder için doğru kelime sırası
     poolWords?: string[];      // Kullanıcıya sunulacak kelime havuzu (opsiyonel)
     imageRef?: string;   // Soru görseli (ImageChoice için)

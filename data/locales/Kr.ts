@@ -41,7 +41,7 @@ export const Kr: Locale = {
     "addNewTopic": "+ Mijara Nû Lê Zêde Bike",
     "selectTestToEdit": "Ji çepê testekê hilbijêre ku biguherînî",
     "moveTest": "↗ Testê Biguhêze",
-    "delete": "🗑 Jê Bibe",
+    "delete": "🗑️ Jê Bibe",
     "testTitle": "Sernavê Testê",
     "questions": "Pirs",
     "questionTitle": "Sernavê Pirsê",

@@ -41,7 +41,7 @@ export const Zz: Locale = {
     "addNewTopic": "+ Mewzuyo Newe Têare Ke",
     "selectTestToEdit": "Vurnayîş rê çepî ra yew test bıweçîne",
     "moveTest": "↗ Testî Bıkırışne",
-    "delete": "🗑 Bestere",
+    "delete": "🗑️ Bestere",
     "testTitle": "Sernameyê Testî",
     "questions": "Persî",
     "questionTitle": "Sernameyê Persî",

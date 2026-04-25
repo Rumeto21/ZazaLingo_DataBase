@@ -1,0 +1,9 @@
+{
+  "theme": {
+    "primary": "#654321",
+    "borderRadius": 20,
+    "buttonTextSize": 25,
+    "mapBgColor": "#ffffff",
+    "coktanSecmeliBgColor": "#f0f0f0"
+  }
+}

@@ -18,13 +18,27 @@ class AggregationAssembler {
             proverbs: this.reader.readTSExport(path.join(proverbsDir, 'proverbs.ts')) || [],
             tests: this.reader.scanCurriculum(curriculumDir) || {},
             theme: (() => {
+                let theme = {};
                 try {
                     const jsonPath = path.join(themeDir, 'themeConfig.json');
-                    if (this.fs.exists(jsonPath)) return JSON.parse(this.fs.readFile(jsonPath));
-                    return this.reader.readTSExport(path.join(themeDir, 'theme.ts')) || {};
+                    if (this.fs.exists(jsonPath)) {
+                        theme = JSON.parse(this.fs.readFile(jsonPath));
+                    } else {
+                        theme = this.reader.readTSExport(path.join(themeDir, 'theme.ts')) || {};
+                    }
                 } catch (e) {
-                    return this.reader.readTSExport(path.join(themeDir, 'theme.ts')) || {};
+                    theme = this.reader.readTSExport(path.join(themeDir, 'theme.ts')) || {};
                 }
+
+                // Merge Component Tokens (OCP Expansion)
+                const compDir = path.join(themeDir, 'components');
+                const comps = ['header.ts', 'buttons.ts', 'proverbs.ts', 'settings.ts'];
+                comps.forEach(file => {
+                    const data = this.reader.readTSExport(path.join(compDir, file));
+                    if (data) Object.assign(theme, data);
+                });
+
+                return theme;
             })(),
             themeSchemes: (() => {
                 try {

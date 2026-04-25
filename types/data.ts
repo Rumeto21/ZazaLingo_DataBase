@@ -30,6 +30,7 @@ export interface LevelData {
     signY?: number;
     nameWidth?: number;
     railAngle?: number;
+    parentUnitId: string | null;
 }
 
 export interface MapConfig {

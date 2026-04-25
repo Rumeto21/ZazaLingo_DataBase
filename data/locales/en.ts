@@ -41,7 +41,7 @@ export const En: Locale = {
     "addNewTopic": "+ Add New Topic",
     "selectTestToEdit": "Select a test from the left to edit",
     "moveTest": "↗ Move Test",
-    "delete": "🗑 Delete",
+    "delete": "🗑️ Delete",
     "testTitle": "Test Title",
     "questions": "Questions",
     "questionTitle": "Question Title",

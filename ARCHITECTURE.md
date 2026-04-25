@@ -14,6 +14,7 @@ Data_Base, ZazaLingo uygulaması (Mobile/Web) ve Geliştirici Uygulaması (DevAp
 - **Network:** Native `http` modülü (Hafif ve hızlı)
 - **File System:** `fs` & `path` (Doğrudan disk erişimi)
 - **Security:** X-API-KEY Authentication & Schema Validation
+- **Encoding:** Strict UTF-8 Protocol (Buffer-based body accumulation)
 - **Patterns:** Facade, Registry, Adapter, Service-Oriented Architecture (SOA)
 
 ---
@@ -84,7 +85,8 @@ graph TD
 ## 6. Güvenlik ve Bütünlük
 - **Atomic Renaming:** Dosya yazma işlemi sırasında sistem çökse bile dosya asla bozulmaz (yarım yazılma olmaz).
 - **Domain Isolation:** Her servis sadece kendi sorumluluk alanındaki (`AtomicWriter`, `MirrorService` vb.) işleri yapar.
-- **Path Guard:** Tüm dosya erişimleri merkezi bir `FileSystemAdapter` üzerinden yapılarak güvenlik denetimi sağlanır.
+- **DIP (Dependency Inversion):** Tüm I/O işlemleri (fs, path) doğrudan kullanılmak yerine merkezi bir `FileSystemAdapter` üzerinden yapılarak altyapı bağımlılığı soyutlanır.
+- **Byte-Safe Protocol (v16.10):** Sunucuya gelen POST paketleri `Buffer.concat()` ile toplanıp ancak paket tamamlandığında UTF-8'e dönüştürülür. Bu, Zazakî karakter bütünlüğünü mühürler.
 
 ---
-> **Not:** Bu mimari, ZazaLingo v10.0 "Sealing" fazında SOLID prensiplerine tam uyum için refaktör edilmiştir.
+> **Not:** Bu mimari, ZazaLingo v16.10 "Absolute Gold Seal" fazında %100 UTF-8 saflığı ve SOLID uyumu için mühürlenmiştir.

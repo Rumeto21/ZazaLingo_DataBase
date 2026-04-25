@@ -1,4 +1,4 @@
-export const colors.ts = {
+export const colors = {
     "primary": "#654321",
     "headerTitleColor": "#ff0000",
     "headerSubtitleColor": "#089118",
