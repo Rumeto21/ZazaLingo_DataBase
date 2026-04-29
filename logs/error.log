@@ -107,3 +107,5 @@
 {"level":"error","message":"[POST /save] Error: Expected property name or '}' in JSON at position 1 (line 1 column 2)","service":"data-base-server","timestamp":"2026-04-23 04:05:19"}
 {"level":"error","message":"[AggregationReader] Failed to parse data/curriculum/index.ts: Unexpected token 'e', ...\"  \"t01\": test_t01,\n}\" is not valid JSON","service":"data-base-server","timestamp":"2026-04-25 12:31:28"}
 {"level":"error","message":"[AggregationReader] Failed to parse data/theme/theme.ts: Expected property name or '}' in JSON at position 6 (line 2 column 5)","service":"data-base-server","timestamp":"2026-04-25 12:31:28"}
+{"level":"error","message":"[SchemaValidator] KEY ERROR: \"tests.info.mainTitle\" must be PascalCase.","service":"data-base-server","timestamp":"2026-04-30 01:07:44"}
+{"level":"error","message":"[SchemaValidator] Validation failed for /save. Error Path: tests.info.mainTitle","service":"data-base-server","timestamp":"2026-04-30 01:07:44"}

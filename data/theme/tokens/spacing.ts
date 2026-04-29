@@ -16,7 +16,7 @@ export const spacing = {
         "unit": "ratio"
     },
     "buttonMarginTop": {
-        "val": 240,
+        "val": 220,
         "unit": "px"
     },
     "buttonMarginLeft": {
@@ -28,7 +28,7 @@ export const spacing = {
         "unit": "px"
     },
     "headerTitleMarginTop": {
-        "val": -300,
+        "val": -350,
         "unit": "px"
     },
     "headerTitleMarginLeft": {
@@ -44,7 +44,7 @@ export const spacing = {
         "unit": "px"
     },
     "headerSubtitleMarginTop": {
-        "val": -225,
+        "val": -295,
         "unit": "px"
     },
     "headerSubtitleMarginLeft": {
@@ -60,7 +60,7 @@ export const spacing = {
         "unit": "px"
     },
     "proverbsMarginTop": {
-        "val": -160,
+        "val": -230,
         "unit": "px"
     },
     "proverbsMarginLeft": {
@@ -76,7 +76,7 @@ export const spacing = {
         "unit": "px"
     },
     "mascotHomeTop": {
-        "val": 80,
+        "val": 38,
         "unit": "px"
     },
     "mascotHomeMarginLeft": {

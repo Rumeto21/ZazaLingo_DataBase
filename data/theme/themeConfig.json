@@ -37,7 +37,7 @@
         "unit": "px"
     },
     "headerTitleMarginTop": {
-        "val": -300,
+        "val": -350,
         "unit": "px"
     },
     "headerTitleMarginLeft": {
@@ -61,7 +61,7 @@
         "unit": "px"
     },
     "headerSubtitleMarginTop": {
-        "val": -225,
+        "val": -295,
         "unit": "px"
     },
     "headerSubtitleMarginLeft": {
@@ -93,7 +93,7 @@
         "unit": "px"
     },
     "proverbsMarginTop": {
-        "val": -160,
+        "val": -230,
         "unit": "px"
     },
     "proverbsMarginLeft": {
@@ -106,7 +106,7 @@
     "proverbsTextColor": "#185c00",
     "proverbsTranslationColor": "#595959",
     "mascotHomeTop": {
-        "val": 80,
+        "val": 38,
         "unit": "px"
     },
     "mascotHomeMarginLeft": {
@@ -142,7 +142,7 @@
         "unit": "px"
     },
     "buttonMarginTop": {
-        "val": 240,
+        "val": 220,
         "unit": "px"
     },
     "buttonMarginLeft": {

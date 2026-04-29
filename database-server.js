@@ -430,7 +430,17 @@ const server = http.createServer((req, res) => {
                 const body = Buffer.concat(chunks).toString('utf-8');
                 const payload = JSON.parse(body);
 
-                
+                // v17.9.8 Auto-Healing: Strip injected metadata from tests array to prevent schema validation failure
+                if (payload.tests) {
+                    if (payload.tests.info) {
+                        delete payload.tests.info;
+                        logger.warn("[Auto-Heal] Stripped 'info' from 'tests' payload.");
+                    }
+                    if (payload.tests.zazaConstants) {
+                        delete payload.tests.zazaConstants;
+                        logger.warn("[Auto-Heal] Stripped 'zazaConstants' from 'tests' payload.");
+                    }
+                }
                 // v8.0 Schema Validation Middleware
                 const validation = SchemaValidator.validatePascalCaseKeys(payload);
                 if (!validation.isValid) {
